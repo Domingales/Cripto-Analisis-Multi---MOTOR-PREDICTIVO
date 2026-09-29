@@ -1,0 +1,49 @@
+name: Auditoría de precisión ADA 1h
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'evaluation/**'
+      - '.github/workflows/market-baseline.yml'
+      - 'app/src/main/java/com/domingales/criptoanalisis/multi/domain/**'
+      - 'app/src/test/java/com/domingales/criptoanalisis/multi/evaluation/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Descargar velas históricas cerradas
+        run: python3 evaluation/fetch_binance.py
+        env:
+          MARKET_DATA_DIR: ${{ github.workspace }}/evaluation/data
+      - name: Ejecutar el motor y generar el informe
+        run: bash ./gradlew --no-daemon testDebugUnitTest --tests com.domingales.criptoanalisis.multi.evaluation.MarketBaselineTest
+        env:
+          MARKET_DATA_DIR: ${{ github.workspace }}/evaluation/data
+          MARKET_REPORT_DIR: ${{ github.workspace }}/evaluation/output
+      - name: Conservar velas e informes para su revisión
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: auditoria-ada-1h-v3-8-0
+          path: |
+            evaluation/data/
+            evaluation/output/
+            app/build/test-results/testDebugUnitTest/
+          if-no-files-found: warn
+          retention-days: 90

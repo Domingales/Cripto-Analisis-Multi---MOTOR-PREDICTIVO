@@ -34,7 +34,8 @@ object BacktestEngine {
         btcCandles4h: List<Candle> = emptyList(),
         fundamentalTimeline: List<HistoricalFundamentalPoint> = emptyList(),
         allowBuy: Boolean = true,
-        allowSell: Boolean = true
+        allowSell: Boolean = true,
+        outcomeCandles5m: List<Candle>? = null
     ): BacktestResult {
         val primary = candlesByTimeframe[timeframe].orEmpty().sortedBy { it.openTime }
         if (primary.size < 240) return BacktestResult(symbol, timeframe, 0, 0, 0, 0, 0.0, contextNote = "Histórico insuficiente")
@@ -42,6 +43,9 @@ object BacktestEngine {
         val horizonBars = max(1, (outcomeWindowMinutes * 60_000L / timeframeMillis(timeframe)).toInt())
         val fundamentals = fundamentalTimeline.sortedBy { it.timestamp }
         val patterns = mutableListOf<ResolvedPattern>()
+        val cases = mutableListOf<BacktestCase>()
+        val fiveMinute = outcomeCandles5m?.sortedBy { it.openTime }
+        var missingFiveMinuteData = 0
 
         var signals = 0; var hits = 0; var fails = 0; var neutral = 0
         var buySignals = 0; var buyHits = 0; var buyFails = 0; var buyNeutral = 0
@@ -85,15 +89,32 @@ object BacktestEngine {
                     idx++
                     continue
                 }
-                lastAccepted[side] = asOf to analysis.confidence
-                signals++
-                if (isSell) sellSignals++ else buySignals++
-
                 val entry = indicators.price
                 val next = primary.subList(idx + 1, minOf(idx + 1 + horizonBars, primary.size))
                     .filter { it.openTime > asOf }
                 val target = max(0.45, indicators.atrPct * 0.55)
-                val outcome = OutcomeTracker.firstTouch(entry, analysis.direction, next, target)
+                val outcomeEnd = asOf + outcomeWindowMinutes * 60_000L
+                val resolved = if (fiveMinute == null) {
+                    OutcomeTracker.firstTouchResolution(entry, analysis.direction, next, target)
+                } else {
+                    val exact = OutcomeTracker.candlesStrictlyAfter(asOf, outcomeEnd, fiveMinute)
+                    if (!completeFiveMinuteWindow(asOf, outcomeEnd, exact)) {
+                        missingFiveMinuteData++
+                        cases += BacktestCase(symbol, timeframe, asOf, analysis.direction, entry,
+                            analysis.confidence, analysis.probability, target,
+                            OutcomeStatus.PENDING, null, "MISSING_5M_DATA")
+                        idx++
+                        continue
+                    }
+                    OutcomeTracker.firstTouchResolution(entry, analysis.direction, exact, target)
+                }
+                val outcome = resolved?.status ?: OutcomeStatus.NEUTRAL
+                cases += BacktestCase(symbol, timeframe, asOf, analysis.direction, entry,
+                    analysis.confidence, analysis.probability, target,
+                    outcome, resolved?.marketTimestamp, resolved?.reason ?: "WINDOW_EXPIRED")
+                lastAccepted[side] = asOf to analysis.confidence
+                signals++
+                if (isSell) sellSignals++ else buySignals++
                 when (outcome) {
                     OutcomeStatus.HIT -> { hits++; if (isSell) sellHits++ else buyHits++ }
                     OutcomeStatus.FAIL -> { fails++; if (isSell) sellFails++ else buyFails++ }
@@ -118,8 +139,21 @@ object BacktestEngine {
             evaluated, skippedMtf,
             DirectionBacktestResult(buySignals, buyHits, buyFails, buyNeutral),
             DirectionBacktestResult(sellSignals, sellHits, sellFails, sellNeutral),
-            walkForwardCasesUsed, btcContextWindows, fundamentalContextWindows, note
+            walkForwardCasesUsed, btcContextWindows, fundamentalContextWindows, note,
+            cases, missingFiveMinuteData
         )
+    }
+
+    /** A missing minute must not turn an unobserved stop into an apparent hit. */
+    internal fun completeFiveMinuteWindow(start: Long, end: Long, candles: List<Candle>): Boolean {
+        val step = 5 * 60_000L
+        if (candles.isEmpty() || end <= start) return false
+        var expectedOpen = start + 1L
+        for (c in candles) {
+            if (c.openTime != expectedOpen || c.closeTime != c.openTime + step - 1L) return false
+            expectedOpen += step
+        }
+        return candles.last().closeTime >= end
     }
 
     private fun evaluateWalkForward(

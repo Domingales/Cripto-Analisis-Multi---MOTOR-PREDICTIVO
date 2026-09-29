@@ -154,6 +154,20 @@ data class PerformanceSummary(
     val resolvedAccuracy: Double
 )
 
+data class BacktestCase(
+    val symbol: String,
+    val timeframe: String,
+    val signalCloseTime: Long,
+    val direction: Direction,
+    val entry: Double,
+    val confidence: Int,
+    val historicalProbability: Int?,
+    val targetPct: Double,
+    val outcome: OutcomeStatus,
+    val outcomeTime: Long?,
+    val outcomeReason: String
+)
+
 data class BacktestResult(
     val symbol: String,
     val timeframe: String,
@@ -169,7 +183,9 @@ data class BacktestResult(
     val walkForwardCasesUsed: Int = 0,
     val btcContextWindows: Int = 0,
     val fundamentalContextWindows: Int = 0,
-    val contextNote: String = ""
+    val contextNote: String = "",
+    val cases: List<BacktestCase> = emptyList(),
+    val missingFiveMinuteData: Int = 0
 )
 
 data class HistoricalFundamentalPoint(
