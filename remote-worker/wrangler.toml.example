@@ -1,0 +1,17 @@
+name = "criptoanalisis-multi-trigger"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# Ajusta el cron al intervalo deseado. El ejemplo despierta la app cada 5 min.
+[triggers]
+crons = ["*/5 * * * *"]
+
+[[kv_namespaces]]
+binding = "DEVICES"
+id = "SUSTITUIR_POR_ID_KV"
+
+# Secretos que se cargan con `wrangler secret put` (nunca se escriben aquí):
+# APP_REGISTRATION_SECRET
+# FIREBASE_PROJECT_ID
+# FIREBASE_CLIENT_EMAIL
+# FIREBASE_PRIVATE_KEY

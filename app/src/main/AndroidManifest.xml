@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name=".CryptoApplication"
+        android:allowBackup="true"
+        android:label="CriptoAnálisis Multi"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="false">
+
+        <activity android:name=".ui.InfoActivity" />
+        <activity android:name=".ui.PriceAlarmsActivity" />
+        <activity android:name=".ui.ExplosionActivity" />
+        <activity android:name=".ui.AnalysisSelectorActivity" />
+        <activity android:name=".ui.CoverageActivity" />
+        <activity android:name=".ui.ExportActivity" />
+        <activity android:name=".ui.BacktestActivity" />
+        <activity android:name=".ui.OpportunitiesActivity" />
+        <activity android:name=".ui.PerformanceActivity" />
+        <activity android:name=".ui.CryptoConfigActivity" />
+        <activity android:name=".ui.SettingsActivity" />
+        <activity android:name=".ui.DiagnosticsActivity" />
+        <activity android:name=".ui.HistoryActivity" />
+        <activity android:name=".ui.WatchlistActivity" />
+        <activity android:name=".ui.CryptoDetailActivity" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".service.MarketScanJobService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service
+            android:name=".service.MarketWatchService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Vigilancia continua de mercados y alarmas activada expresamente por el usuario" />
+        </service>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.files"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/export_paths" />
+        </provider>
+
+        <service
+            android:name=".service.RemoteMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".service.BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

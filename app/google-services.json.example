@@ -1,0 +1,15 @@
+{
+  "project_info": {
+    "project_number": "SUSTITUIR",
+    "project_id": "SUSTITUIR",
+    "storage_bucket": "SUSTITUIR.firebasestorage.app"
+  },
+  "client": [{
+    "client_info": {
+      "mobilesdk_app_id": "SUSTITUIR",
+      "android_client_info": { "package_name": "com.domingales.criptoanalisis.multi" }
+    },
+    "api_key": [{ "current_key": "SUSTITUIR" }]
+  }],
+  "configuration_version": "1"
+}
