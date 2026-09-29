@@ -1,0 +1,20 @@
+# Android Studio y compilación
+.idea/
+.gradle/
+**/build/
+local.properties
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Configuración privada y dependencias locales
+app/google-services.json
+remote-worker/wrangler.toml
+remote-worker/node_modules/
+*.jks
+*.keystore
+*.p12
+.env
+.env.*
+!.env.example
