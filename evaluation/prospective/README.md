@@ -1,0 +1,3 @@
+# Registro prospectivo ADA 1h
+
+JSONL append-only: DECISION precede a OUTCOME. Sin rellenar huecos retrospectivamente. Sólo se toma la última vela cerrada, con retraso máximo de 65 minutos. Se registran también decisiones sin señal. Cada versión tiene su cohorte. La calibración se reconstruye sobre 45 días conocidos; no es la vigilancia del móvil. La evaluación empieza en la primera vela 5m completa posterior al registro, con precio de referencia de la vela 1h cerrada y horizonte de 24h. Por ello esta cohorte retrasada se informa por separado del backtest. Los periodos entre ejecuciones no son decisiones observadas. Los huecos 5m quedan pendientes. MFE/MAE corresponden al horizonte completo.
