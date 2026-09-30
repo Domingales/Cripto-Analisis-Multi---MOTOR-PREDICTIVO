@@ -16,4 +16,4 @@ Al vencer 24h se requiere la serie 5m completa. Primer toque; ambos niveles en l
 
 Criterio de publicación de esta instrumentación: pruebas Android y compilación exitosas; referencia idéntica caso por caso; captura prospectiva válida en la PR. No afirmar mejora de precisión porque las reglas no cambian. Las futuras candidatas predictivas requieren hipótesis, comparación con las mismas velas y evidencia reservada/prospectiva suficiente, incertidumbre, cobertura y frecuencia.
 
-Próxima revisión: inspeccionar Actions y events.jsonl, evaluar casos vencidos y separar BUY/SELL, pendientes y ausencia de señales. No optimizar a diario las mismas 126 señales. Si una ejecución tarda más de 20 minutos desde la última vela, rechazar la captura antigua en vez de presentarla como prospectiva.
+Próxima revisión: inspeccionar Actions y events.jsonl, evaluar casos vencidos y separar BUY/SELL, pendientes y ausencia de señales. No optimizar a diario las mismas 126 señales. Si una ejecución tarda más de 65 minutos desde la última vela, rechazar la captura antigua en vez de presentarla como prospectiva.

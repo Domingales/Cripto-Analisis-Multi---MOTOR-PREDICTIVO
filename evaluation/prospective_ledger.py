@@ -60,7 +60,7 @@ def main():
     fields = pathlib.Path(args.decision).read_text().strip().split('\t')
     close, recorded, accepted, direction, entry, target, first, end, snapshot = fields
     close, recorded, first, end = map(int, (close, recorded, first, end))
-    if not 0 <= recorded - close <= 20 * 60000 or not 0 <= now - recorded <= 10 * 60000:
+    if not 0 <= recorded - close <= 65 * 60000 or not 0 <= now - recorded <= 10 * 60000:
         raise ValueError('Decision stale: do not backfill it as prospective')
     base64.b64decode(snapshot, validate=True)
     identifier = f"ADA-1h-{close}-{args.version}"
@@ -89,7 +89,7 @@ def main():
     (root / 'README.md').write_text(
         '# Registro prospectivo ADA 1h\n\n'
         'JSONL append-only: DECISION precede a OUTCOME. Sin rellenar huecos retrospectivamente. '
-        'Sólo se toma la última vela cerrada, con retraso máximo de 20 minutos. '
+        'Sólo se toma la última vela cerrada, con retraso máximo de 65 minutos. '
         'Se registran también decisiones sin señal. Cada versión tiene su cohorte. '
         'La calibración se reconstruye sobre 45 días conocidos; no es la vigilancia del móvil. '
         'La evaluación empieza en la primera vela 5m completa posterior al registro, '
