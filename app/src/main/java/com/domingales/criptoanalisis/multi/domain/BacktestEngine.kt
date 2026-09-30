@@ -35,7 +35,10 @@ object BacktestEngine {
         fundamentalTimeline: List<HistoricalFundamentalPoint> = emptyList(),
         allowBuy: Boolean = true,
         allowSell: Boolean = true,
-        outcomeCandles5m: List<Candle>? = null
+        outcomeCandles5m: List<Candle>? = null,
+        auditThroughLatest: Boolean = false,
+        onEvaluation: ((AnalysisResult) -> Unit)? = null,
+        onAccepted: ((AnalysisResult) -> Unit)? = null
     ): BacktestResult {
         val primary = candlesByTimeframe[timeframe].orEmpty().sortedBy { it.openTime }
         if (primary.size < 240) return BacktestResult(symbol, timeframe, 0, 0, 0, 0, 0.0, contextNote = "Histórico insuficiente")
@@ -55,7 +58,7 @@ object BacktestEngine {
         var idx = 220
         val lastAccepted = mutableMapOf<String, Pair<Long, Int>>()
 
-        while (idx < primary.size - horizonBars) {
+        while (idx < primary.size - if (auditThroughLatest) 0 else horizonBars) {
             val window = primary.subList(0, idx + 1)
             val indicators = TechnicalEngine.calculate(window.takeLast(300))
             val asOf = window.last().closeTime
@@ -78,6 +81,7 @@ object BacktestEngine {
                 symbol, timeframe, asOf, indicators, mtf, btcRegime, fundamental,
                 threshold, allowBuy, allowSell, eligiblePatterns
             )
+            onEvaluation?.invoke(analysis)
             walkForwardCasesUsed += analysis.calibration.comparableCases
 
             if (analysis.isSignal) {
@@ -89,11 +93,20 @@ object BacktestEngine {
                     idx++
                     continue
                 }
+                onAccepted?.invoke(analysis)
                 val entry = indicators.price
                 val next = primary.subList(idx + 1, minOf(idx + 1 + horizonBars, primary.size))
                     .filter { it.openTime > asOf }
                 val target = max(0.45, indicators.atrPct * 0.55)
                 val outcomeEnd = asOf + outcomeWindowMinutes * 60_000L
+                if (auditThroughLatest && outcomeEnd > primary.last().closeTime) {
+                    lastAccepted[side] = asOf to analysis.confidence
+                    cases += BacktestCase(symbol, timeframe, asOf, analysis.direction, entry,
+                        analysis.confidence, analysis.probability, target, OutcomeStatus.PENDING,
+                        null, "WINDOW_NOT_EXPIRED")
+                    idx++
+                    continue
+                }
                 val resolved = if (fiveMinute == null) {
                     OutcomeTracker.firstTouchResolution(entry, analysis.direction, next, target)
                 } else {
@@ -276,3 +289,4 @@ object BacktestEngine {
         else -> 60 * 60_000L
     }
 }
+

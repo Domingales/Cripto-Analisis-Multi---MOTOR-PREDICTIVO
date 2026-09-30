@@ -1,0 +1,81 @@
+name: Registro prospectivo ADA 1h
+
+on:
+  schedule:
+    - cron: '5 */4 * * *'
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'evaluation/**'
+      - '.github/workflows/prospective.yml'
+      - 'app/src/main/java/com/domingales/criptoanalisis/multi/domain/**'
+      - 'app/src/test/java/com/domingales/criptoanalisis/multi/evaluation/**'
+  push:
+    branches: [main]
+    paths:
+      - 'evaluation/*.py'
+      - '.github/workflows/prospective.yml'
+      - 'app/src/main/java/com/domingales/criptoanalisis/multi/domain/**'
+      - 'app/src/test/java/com/domingales/criptoanalisis/multi/evaluation/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: prospective-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Python tests
+        run: python3 -m unittest discover -s evaluation -p 'test_*.py'
+      - name: Download closed Binance candles up to this hour
+        run: python3 evaluation/fetch_binance.py
+        env:
+          MARKET_DATA_DIR: ${{ github.workspace }}/prospective-data
+          EVALUATION_END_UTC: ''
+      - name: Record latest decision with production Kotlin engine
+        run: bash ./gradlew --no-daemon testDebugUnitTest --tests com.domingales.criptoanalisis.multi.evaluation.ProspectiveCaptureTest
+        env:
+          PROSPECTIVE_DATA_DIR: ${{ github.workspace }}/prospective-data
+          PROSPECTIVE_REPORT_DIR: ${{ github.workspace }}/prospective-output
+      - name: Append predictions and resolve expired cases
+        run: |
+          python3 evaluation/prospective_ledger.py --root evaluation/prospective --data prospective-data --decision prospective-output/decision.tsv --version "$(git rev-parse HEAD)"
+      - name: Persist ledger on main without overwriting other changes
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "CriptoAnalisis evaluator"
+          git config user.email "evaluator@users.noreply.github.com"
+          git add evaluation/prospective/
+          if ! git diff --cached --quiet; then
+            git commit -m "Registrar decisiones prospectivas ADA 1h y resultados vencidos"
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prospective-${{ github.run_id }}
+          path: |
+            prospective-data/
+            prospective-output/
+            evaluation/prospective/
+            app/build/test-results/testDebugUnitTest/
+          retention-days: 90

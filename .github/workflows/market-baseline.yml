@@ -8,6 +8,8 @@ on:
       - '.github/workflows/market-baseline.yml'
       - 'app/src/main/java/com/domingales/criptoanalisis/multi/domain/**'
       - 'app/src/test/java/com/domingales/criptoanalisis/multi/evaluation/**'
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -27,15 +29,17 @@ jobs:
         with:
           packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
       - uses: gradle/actions/setup-gradle@v4
-      - name: Descargar velas históricas cerradas
-        run: python3 evaluation/fetch_binance.py
-        env:
-          MARKET_DATA_DIR: ${{ github.workspace }}/evaluation/data
+      - name: Recuperar las velas originales inmutables
+        run: python3 -m zipfile -e evaluation/reference_501819f.zip evaluation/reference
+      - name: Preparar datos idénticos para la comparación
+        run: cp -r evaluation/reference/data evaluation/data
       - name: Ejecutar el motor y generar el informe
         run: bash ./gradlew --no-daemon testDebugUnitTest --tests com.domingales.criptoanalisis.multi.evaluation.MarketBaselineTest
         env:
           MARKET_DATA_DIR: ${{ github.workspace }}/evaluation/data
           MARKET_REPORT_DIR: ${{ github.workspace }}/evaluation/output
+      - name: Comparar candidata y referencia sobre las mismas velas
+        run: python3 evaluation/compare.py --base evaluation/reference --candidate evaluation --output evaluation/output/comparison.json
       - name: Conservar velas e informes para su revisión
         if: always()
         uses: actions/upload-artifact@v4
@@ -47,3 +51,4 @@ jobs:
             app/build/test-results/testDebugUnitTest/
           if-no-files-found: warn
           retention-days: 90
+
