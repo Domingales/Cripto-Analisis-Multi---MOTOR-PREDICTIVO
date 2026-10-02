@@ -47,3 +47,6 @@ No actualizar la app durante el recorrido ni subir un commit por vela/día simul
 Hacer cambios técnicos necesarios para ejecutar y corregir errores, sin alterar candidatas tras observar resultados.
 No anunciar ganador sin muestra y límites.
 La vigilancia Android/remota y el registro prospectivo actuales continúan intactos.
+
+## Alternativa de disponibilidad autorizada
+Si no puede recuperarse el inicio de octubre de 2020, usar el inicio real más antiguo posterior con cobertura verificable suficiente de ADA y los intervalos/contexto necesarios. No confundir un timeout o bloqueo de red con ausencia histórica: probar el acceso desde Actions y verificar archivos antes de recortar el periodo. Registrar fecha efectiva, fuente, huecos y motivo del recorte. Mantener inicio del examen 2023-10-02 siempre que haya entrenamiento/calibración suficiente; si no, desplazar el examen después de esas fases y explicar la reducción, sin utilizar futuro ni inventar datos. No exigir exactamente tres años iniciales ni bloquear por faltar octubre de 2020.
