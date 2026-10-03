@@ -1,5 +1,5 @@
 # Experimento cronológico de dos motores — autorizado 2026-10-02
-Estado: protocolo registrado; descarga completa y simulación pendientes.
+Estado actualizado 2026-10-03: primer ensayo fijo concluido, Actions 37104820553; informes en docs/engine-reviews/2026-10-03-fixed-report.json. Ensayo mensual separado preparado; resultados aún pendientes.
 
 ## Orden acordado
 1. Comparación inicial con código y modelo entrenado congelados.
@@ -18,8 +18,7 @@ Ampliar monedas/intervalos sólo después de validar esta primera ruta.
 Archivos oficiales Binance Spot diarios/mensuales con CHECKSUM; API oficial para completar días recientes.
 Normalizar timestamps: archivos Spot desde enero de 2025 usan microsegundos.
 Guardar manifest con origen, fechas, hashes, conteos y huecos. No inventar ni rellenar precios ausentes.
-La prueba local de acceso al archivo ADAUSDT 1h 2020-10 agotó 15 segundos sin recuperar bytes: disponibilidad específica aún no verificada.
-No afirmar que los seis años están descargados.
+Prueba inicial 2026-10-02: timeout local. Verificación posterior desde Actions 37104097309: las cinco series se recuperaron desde 2020-10-02 hasta el corte, incluido septiembre 2026. Huecos antiguos y anomalías se conservan y excluyen, sin sintetizar precios; el examen desde 2023-10-02 no tiene huecos.
 
 ## Motor fijo y frontera de información
 Congelar reglas/código de ambos motores y artefacto entrenado del alternativo antes del examen.
@@ -50,3 +49,7 @@ La vigilancia Android/remota y el registro prospectivo actuales continúan intac
 
 ## Alternativa de disponibilidad autorizada
 Si no puede recuperarse el inicio de octubre de 2020, usar el inicio real más antiguo posterior con cobertura verificable suficiente de ADA y los intervalos/contexto necesarios. No confundir un timeout o bloqueo de red con ausencia histórica: probar el acceso desde Actions y verificar archivos antes de recortar el periodo. Registrar fecha efectiva, fuente, huecos y motivo del recorte. Mantener inicio del examen 2023-10-02 siempre que haya entrenamiento/calibración suficiente; si no, desplazar el examen después de esas fases y explicar la reducción, sin utilizar futuro ni inventar datos. No exigir exactamente tres años iniciales ni bloquear por faltar octubre de 2020.
+
+## Ensayo mensual separado — política fijada antes de ejecutarlo
+
+Mismas 36 variables de mercado, árbol/calibrador, umbral 65%, entrada, ATR objetivo/stop y horizonte24h. Primer mes conserva modelo c2e5d08fd51387924accfebfa9e26e996c7d64f3f02d6ea5c9fa21601ed74a00. Reentrenar al comienzo de cada mes posterior; entrenamiento expansivo anterior al bloque de calibración de seis meses naturales. Excluir etiquetas que cruzan la frontera entrenamiento/calibración y las que no maduraron al menos24h antes del origen mensual. Persistir37 modelos con hashes antes de predecir; comparar congelado/mensual/Kotlin en las mismas26.319 ventanas y declarar abstenciones, pendientes, cobertura, calibración y costes ilustrativos. No ajustar hiperparámetros tras conocer resultados ni activar producción. El examen histórico ya se inspeccionó; este contraste de cadencia no equivale a validación independiente futura.

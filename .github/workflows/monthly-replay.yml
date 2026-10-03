@@ -1,0 +1,44 @@
+name: Ensayo separado de aprendizaje mensual 2023-2026
+on:
+  pull_request:
+    paths:
+      - 'evaluation/monthly_replay.py'
+      - 'evaluation/test_monthly_replay.py'
+      - '.github/workflows/monthly-replay.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  monthly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - name: Pruebas de integridad y fronteras de información
+        run: python3 -m unittest discover -s evaluation -p 'test_*.py'
+      - name: Recuperar el experimento fijo sin repetir ni alterar sus datos
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh run download 37104820553 --repo "$GITHUB_REPOSITORY" --dir fixed-artifacts
+      - name: Congelar cada modelo mensual antes de sus predicciones
+        run: |
+          python3 - <<'PY'
+          import os,sys
+          from pathlib import Path
+          sys.path.insert(0,'evaluation')
+          from monthly_replay import run
+          roots=list(Path('fixed-artifacts').rglob('replay-data'))
+          assert len(roots)==1, 'Expected one fixed experiment'
+          run(roots[0].parent,Path('monthly-output'),os.environ['GITHUB_SHA'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: comparacion-aprendizaje-mensual-${{ github.run_id }}
+          path: monthly-output/
+          retention-days: 90
