@@ -1,7 +1,7 @@
 name: Recopilar histórico real 2020-2026
 on:
   pull_request:
-    paths: ['evaluation/download_long_history.py', '.github/workflows/long-history.yml']
+    paths: ['evaluation/download_long_history.py', 'evaluation/test_download_long_history.py', '.github/workflows/long-history.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -24,7 +24,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python3 -m py_compile evaluation/download_long_history.py
+      - name: Probar integridad, límites y huecos
+        run: python3 -m unittest discover -s evaluation -p 'test_download_long_history.py'
       - name: Descargar y verificar archivos oficiales
         run: python3 evaluation/download_long_history.py --symbol '${{ matrix.symbol }}' --interval '${{ matrix.interval }}' --output evaluation/long-history
       - uses: actions/upload-artifact@v4
