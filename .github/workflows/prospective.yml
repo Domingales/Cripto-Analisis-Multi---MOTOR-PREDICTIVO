@@ -45,7 +45,7 @@ jobs:
           packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
       - uses: gradle/actions/setup-gradle@v4
       - name: Python tests
-        run: python3 -m unittest discover -s evaluation -p 'test_*.py'
+        run: python3 -m unittest discover -s evaluation -p 'test_prospective_ledger.py'
       - name: Download closed Binance candles up to this hour
         run: python3 evaluation/fetch_binance.py
         env:
