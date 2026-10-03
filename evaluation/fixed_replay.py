@@ -2,6 +2,7 @@
 import argparse
 import csv
 import hashlib
+import datetime as dt
 import json
 import pickle
 from pathlib import Path
@@ -163,7 +164,9 @@ def run(data, kotlin, output, version):
     (output / 'frozen_model.pkl').write_bytes(blob)
     freeze = dict(version=version, model_sha256=hashlib.sha256(blob).hexdigest(), threshold=THRESHOLD,
                   train_end=TRAIN_END, calibration_end=CAL_END, examination_start=TEST_START, cutoff=CUT,
-                  counts=counts, inputs={n: m['csv_sha256'] for n, m in manifests.items()},
+                  counts=counts, feature_names=[name+':'+feature for name in NAMES[:4] for feature in
+                      ('return_1','return_4','return_12','return_24','volatility_24','range_14','volume_ratio_20','mean_distance_50','mean_distance_200')],
+                  inputs={n: m['csv_sha256'] for n, m in manifests.items()},
                   status='HISTORICAL_RECONSTRUCTION_NOT_PROSPECTIVE')
     (output / 'model_manifest.json').write_text(json.dumps(freeze, indent=2)+'\n')
     # Freeze is written before scoring the examination; do not adjust using examination results.
@@ -207,8 +210,11 @@ def run(data, kotlin, output, version):
         paired_both_select=dict(cases=len(paired),
             kotlin_hits=sum(r['kotlin']['result']['status']=='HIT' for r in paired),
             alternative_hits=sum(r['alternative']['result']['status']=='HIT' for r in paired)),
-        by_year={str(year): {e:summary([r for r in decisions if __import__('datetime').datetime.fromtimestamp(r['time']/1000,__import__('datetime').timezone.utc).year==year],e)
+        by_year={str(year): {e:summary([r for r in decisions if dt.datetime.fromtimestamp(r['time']/1000, dt.timezone.utc).year==year],e)
                             for e in ('kotlin','alternative')} for year in (2023,2024,2025,2026)},
+        by_month={month: {e:summary([r for r in decisions if dt.datetime.fromtimestamp(r['time']/1000,dt.timezone.utc).strftime('%Y-%m')==month],e)
+                          for e in ('kotlin','alternative')}
+                  for month in sorted({dt.datetime.fromtimestamp(r['time']/1000,dt.timezone.utc).strftime('%Y-%m') for r in decisions})},
         limitations=['Code designed after 2023: historical reconstruction, not authentic prospective validation.',
           'No future news supplied; absent news excluded neutrally.',
           'Fixed Kotlin code learns only from already matured past patterns; alternative never retrained.',
@@ -218,7 +224,7 @@ def run(data, kotlin, output, version):
           'Invalid context windows excluded without synthetic market data.',
           'No production improvement established: holdout not yet declared independent for future tuning.'])
     (output/'report.json').write_text(json.dumps(report,indent=2)+'\n')
-    print(json.dumps({k:v for k,v in report.items() if k not in ('by_year','freeze')},indent=2))
+    print(json.dumps({k:v for k,v in report.items() if k not in ('by_year','by_month','freeze')},indent=2))
 
 
 if __name__ == '__main__':
