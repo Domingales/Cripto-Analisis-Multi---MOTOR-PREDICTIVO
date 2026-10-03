@@ -1,0 +1,2404 @@
+{
+  "status": "EXPLORATORY_FIXED_HISTORICAL_RECONSTRUCTION",
+  "freeze": {
+    "version": "1e3732c223e7a4095fa8d920093a838063212b45",
+    "model_sha256": "c2e5d08fd51387924accfebfa9e26e996c7d64f3f02d6ea5c9fa21601ed74a00",
+    "threshold": 0.65,
+    "train_end": 1680307200000,
+    "calibration_end": 1696118400000,
+    "examination_start": 1696204800000,
+    "cutoff": 1790953200000,
+    "counts": {
+      "BUY": {
+        "train": 12838,
+        "calibration": 4243,
+        "latest_train_label": 1679659199999,
+        "latest_calibration_label": 1696118399999
+      },
+      "SELL": {
+        "train": 12838,
+        "calibration": 4243,
+        "latest_train_label": 1679659199999,
+        "latest_calibration_label": 1696118399999
+      }
+    },
+    "feature_names": [
+      "ADAUSDT_1h:return_1",
+      "ADAUSDT_1h:return_4",
+      "ADAUSDT_1h:return_12",
+      "ADAUSDT_1h:return_24",
+      "ADAUSDT_1h:volatility_24",
+      "ADAUSDT_1h:range_14",
+      "ADAUSDT_1h:volume_ratio_20",
+      "ADAUSDT_1h:mean_distance_50",
+      "ADAUSDT_1h:mean_distance_200",
+      "ADAUSDT_4h:return_1",
+      "ADAUSDT_4h:return_4",
+      "ADAUSDT_4h:return_12",
+      "ADAUSDT_4h:return_24",
+      "ADAUSDT_4h:volatility_24",
+      "ADAUSDT_4h:range_14",
+      "ADAUSDT_4h:volume_ratio_20",
+      "ADAUSDT_4h:mean_distance_50",
+      "ADAUSDT_4h:mean_distance_200",
+      "ADAUSDT_1d:return_1",
+      "ADAUSDT_1d:return_4",
+      "ADAUSDT_1d:return_12",
+      "ADAUSDT_1d:return_24",
+      "ADAUSDT_1d:volatility_24",
+      "ADAUSDT_1d:range_14",
+      "ADAUSDT_1d:volume_ratio_20",
+      "ADAUSDT_1d:mean_distance_50",
+      "ADAUSDT_1d:mean_distance_200",
+      "BTCUSDT_4h:return_1",
+      "BTCUSDT_4h:return_4",
+      "BTCUSDT_4h:return_12",
+      "BTCUSDT_4h:return_24",
+      "BTCUSDT_4h:volatility_24",
+      "BTCUSDT_4h:range_14",
+      "BTCUSDT_4h:volume_ratio_20",
+      "BTCUSDT_4h:mean_distance_50",
+      "BTCUSDT_4h:mean_distance_200"
+    ],
+    "inputs": {
+      "ADAUSDT_1h": "33587651d8779150499a657ee668a8ae76308a131e7b03f88d849781e49101cc",
+      "ADAUSDT_4h": "78cec37dae342e342b43e6ff9a1995c44a81a2eff5781741d9d938a546b0823c",
+      "ADAUSDT_1d": "0a3bdd71136f7745c8cbe96b1af883a502866c94bab2cf195f48ffe8968c8a3f",
+      "BTCUSDT_4h": "6b9f9aa38cf08ea5174f412e4a3662a31d2ca6658713a3031ecca5137367b11c",
+      "ADAUSDT_5m": "44a9f90135703edfb05d50621e21645e6860a6565f9b922d034f40a414c2321b"
+    },
+    "status": "HISTORICAL_RECONSTRUCTION_NOT_PROSPECTIVE"
+  },
+  "kotlin": {
+    "decisions": 26319,
+    "signals": 4863,
+    "coverage": 0.1847714578821384,
+    "resolved": 4848,
+    "HIT": 2510,
+    "FAIL": 2338,
+    "NEUTRAL": 5,
+    "PENDING": 10,
+    "accuracy": 0.5177392739273927,
+    "directions": {
+      "BUY": {
+        "HIT": 1072,
+        "FAIL": 1000,
+        "NEUTRAL": 2,
+        "PENDING": 10
+      },
+      "SELL": {
+        "HIT": 1438,
+        "FAIL": 1338,
+        "NEUTRAL": 3,
+        "PENDING": 0
+      }
+    },
+    "barrier_return_cost_sensitivity_pct": {
+      "0": 0.037152884496534096,
+      "5": -0.012847115503465933,
+      "10": -0.0628471155034659,
+      "20": -0.1628471155034659
+    }
+  },
+  "alternative": {
+    "decisions": 26319,
+    "signals": 0,
+    "coverage": 0.0,
+    "resolved": 0,
+    "HIT": 0,
+    "FAIL": 0,
+    "NEUTRAL": 0,
+    "PENDING": 0,
+    "accuracy": null,
+    "directions": {
+      "BUY": {
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0
+      },
+      "SELL": {
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0
+      }
+    },
+    "brier_all_resolved_chosen_directions": 0.25021672565384445,
+    "calibration_bins": [
+      {
+        "low": 0.0,
+        "high": 0.1,
+        "cases": 0,
+        "mean_probability": null,
+        "observed_hit_rate": null
+      },
+      {
+        "low": 0.1,
+        "high": 0.2,
+        "cases": 0,
+        "mean_probability": null,
+        "observed_hit_rate": null
+      },
+      {
+        "low": 0.2,
+        "high": 0.30000000000000004,
+        "cases": 0,
+        "mean_probability": null,
+        "observed_hit_rate": null
+      },
+      {
+        "low": 0.3,
+        "high": 0.4,
+        "cases": 0,
+        "mean_probability": null,
+        "observed_hit_rate": null
+      },
+      {
+        "low": 0.4,
+        "high": 0.5,
+        "cases": 0,
+        "mean_probability": null,
+        "observed_hit_rate": null
+      },
+      {
+        "low": 0.5,
+        "high": 0.6,
+        "cases": 26276,
+        "mean_probability": 0.5261531814502307,
+        "observed_hit_rate": 0.5091718678642106
+      },
+      {
+        "low": 0.6,
+        "high": 0.7,
+        "cases": 0,
+        "mean_probability": null,
+        "observed_hit_rate": null
+      },
+      {
+        "low": 0.7,
+        "high": 0.7999999999999999,
+        "cases": 0,
+        "mean_probability": null,
+        "observed_hit_rate": null
+      },
+      {
+        "low": 0.8,
+        "high": 0.9,
+        "cases": 0,
+        "mean_probability": null,
+        "observed_hit_rate": null
+      },
+      {
+        "low": 0.9,
+        "high": 1.0,
+        "cases": 0,
+        "mean_probability": null,
+        "observed_hit_rate": null
+      }
+    ],
+    "barrier_return_cost_sensitivity_pct": {
+      "0": null,
+      "5": null,
+      "10": null,
+      "20": null
+    }
+  },
+  "paired_both_select": {
+    "cases": 0,
+    "kotlin_hits": 0,
+    "alternative_hits": 0
+  },
+  "by_year": {
+    "2023": {
+      "kotlin": {
+        "decisions": 2184,
+        "signals": 441,
+        "coverage": 0.20192307692307693,
+        "resolved": 441,
+        "HIT": 213,
+        "FAIL": 228,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.48299319727891155,
+        "directions": {
+          "BUY": {
+            "HIT": 201,
+            "FAIL": 203,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 12,
+            "FAIL": 25,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 2184,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.25115000798708836
+      }
+    },
+    "2024": {
+      "kotlin": {
+        "decisions": 8784,
+        "signals": 1648,
+        "coverage": 0.18761384335154827,
+        "resolved": 1645,
+        "HIT": 904,
+        "FAIL": 741,
+        "NEUTRAL": 3,
+        "PENDING": 0,
+        "accuracy": 0.5495440729483283,
+        "directions": {
+          "BUY": {
+            "HIT": 356,
+            "FAIL": 310,
+            "NEUTRAL": 2,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 548,
+            "FAIL": 431,
+            "NEUTRAL": 1,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 8784,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.2501358924283867
+      }
+    },
+    "2025": {
+      "kotlin": {
+        "decisions": 8760,
+        "signals": 1617,
+        "coverage": 0.18458904109589042,
+        "resolved": 1616,
+        "HIT": 805,
+        "FAIL": 811,
+        "NEUTRAL": 1,
+        "PENDING": 0,
+        "accuracy": 0.49814356435643564,
+        "directions": {
+          "BUY": {
+            "HIT": 272,
+            "FAIL": 261,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 533,
+            "FAIL": 550,
+            "NEUTRAL": 1,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 8760,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.2500218951268891
+      }
+    },
+    "2026": {
+      "kotlin": {
+        "decisions": 6591,
+        "signals": 1157,
+        "coverage": 0.1755424063116371,
+        "resolved": 1146,
+        "HIT": 588,
+        "FAIL": 558,
+        "NEUTRAL": 1,
+        "PENDING": 10,
+        "accuracy": 0.5130890052356021,
+        "directions": {
+          "BUY": {
+            "HIT": 243,
+            "FAIL": 226,
+            "NEUTRAL": 0,
+            "PENDING": 10
+          },
+          "SELL": {
+            "HIT": 345,
+            "FAIL": 332,
+            "NEUTRAL": 1,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 6591,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.250274240431966
+      }
+    }
+  },
+  "by_month": {
+    "2023-10": {
+      "kotlin": {
+        "decisions": 720,
+        "signals": 131,
+        "coverage": 0.18194444444444444,
+        "resolved": 131,
+        "HIT": 54,
+        "FAIL": 77,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.4122137404580153,
+        "directions": {
+          "BUY": {
+            "HIT": 42,
+            "FAIL": 60,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 12,
+            "FAIL": 17,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 720,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.251108929998163
+      }
+    },
+    "2023-11": {
+      "kotlin": {
+        "decisions": 720,
+        "signals": 144,
+        "coverage": 0.2,
+        "resolved": 144,
+        "HIT": 72,
+        "FAIL": 72,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5,
+        "directions": {
+          "BUY": {
+            "HIT": 72,
+            "FAIL": 72,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 720,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.25019212009853226
+      }
+    },
+    "2023-12": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 166,
+        "coverage": 0.22311827956989247,
+        "resolved": 166,
+        "HIT": 87,
+        "FAIL": 79,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5240963855421686,
+        "directions": {
+          "BUY": {
+            "HIT": 87,
+            "FAIL": 71,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 8,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.25211669394649394
+      }
+    },
+    "2024-01": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 149,
+        "coverage": 0.20026881720430106,
+        "resolved": 149,
+        "HIT": 78,
+        "FAIL": 71,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5234899328859061,
+        "directions": {
+          "BUY": {
+            "HIT": 11,
+            "FAIL": 16,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 67,
+            "FAIL": 55,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.2493200379180036
+      }
+    },
+    "2024-02": {
+      "kotlin": {
+        "decisions": 696,
+        "signals": 144,
+        "coverage": 0.20689655172413793,
+        "resolved": 143,
+        "HIT": 73,
+        "FAIL": 70,
+        "NEUTRAL": 1,
+        "PENDING": 0,
+        "accuracy": 0.5104895104895105,
+        "directions": {
+          "BUY": {
+            "HIT": 57,
+            "FAIL": 54,
+            "NEUTRAL": 1,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 16,
+            "FAIL": 16,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 696,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.25178103346287933
+      }
+    },
+    "2024-03": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 119,
+        "coverage": 0.15994623655913978,
+        "resolved": 119,
+        "HIT": 57,
+        "FAIL": 62,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.4789915966386555,
+        "directions": {
+          "BUY": {
+            "HIT": 24,
+            "FAIL": 31,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 33,
+            "FAIL": 31,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.25026250685160206
+      }
+    },
+    "2024-04": {
+      "kotlin": {
+        "decisions": 720,
+        "signals": 155,
+        "coverage": 0.2152777777777778,
+        "resolved": 155,
+        "HIT": 90,
+        "FAIL": 65,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5806451612903226,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 1,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 90,
+            "FAIL": 64,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 720,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.24811290210741682
+      }
+    },
+    "2024-05": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 100,
+        "coverage": 0.13440860215053763,
+        "resolved": 100,
+        "HIT": 54,
+        "FAIL": 46,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.54,
+        "directions": {
+          "BUY": {
+            "HIT": 17,
+            "FAIL": 19,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 37,
+            "FAIL": 27,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.24917537788428154
+      }
+    },
+    "2024-06": {
+      "kotlin": {
+        "decisions": 720,
+        "signals": 119,
+        "coverage": 0.16527777777777777,
+        "resolved": 119,
+        "HIT": 70,
+        "FAIL": 49,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5882352941176471,
+        "directions": {
+          "BUY": {
+            "HIT": 1,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 69,
+            "FAIL": 49,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 720,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.24854992463964895
+      }
+    },
+    "2024-07": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 134,
+        "coverage": 0.18010752688172044,
+        "resolved": 133,
+        "HIT": 74,
+        "FAIL": 59,
+        "NEUTRAL": 1,
+        "PENDING": 0,
+        "accuracy": 0.556390977443609,
+        "directions": {
+          "BUY": {
+            "HIT": 39,
+            "FAIL": 36,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 35,
+            "FAIL": 23,
+            "NEUTRAL": 1,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.25000995848788254
+      }
+    },
+    "2024-08": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 145,
+        "coverage": 0.19489247311827956,
+        "resolved": 145,
+        "HIT": 90,
+        "FAIL": 55,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.6206896551724138,
+        "directions": {
+          "BUY": {
+            "HIT": 25,
+            "FAIL": 16,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 65,
+            "FAIL": 39,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.2505547788077085
+      }
+    },
+    "2024-09": {
+      "kotlin": {
+        "decisions": 720,
+        "signals": 165,
+        "coverage": 0.22916666666666666,
+        "resolved": 165,
+        "HIT": 82,
+        "FAIL": 83,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.49696969696969695,
+        "directions": {
+          "BUY": {
+            "HIT": 46,
+            "FAIL": 51,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 36,
+            "FAIL": 32,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 720,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.25111864572808745
+      }
+    },
+    "2024-10": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 115,
+        "coverage": 0.15456989247311828,
+        "resolved": 115,
+        "HIT": 59,
+        "FAIL": 56,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5130434782608696,
+        "directions": {
+          "BUY": {
+            "HIT": 15,
+            "FAIL": 10,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 44,
+            "FAIL": 46,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.2508017753817409
+      }
+    },
+    "2024-11": {
+      "kotlin": {
+        "decisions": 720,
+        "signals": 184,
+        "coverage": 0.25555555555555554,
+        "resolved": 183,
+        "HIT": 115,
+        "FAIL": 68,
+        "NEUTRAL": 1,
+        "PENDING": 0,
+        "accuracy": 0.6284153005464481,
+        "directions": {
+          "BUY": {
+            "HIT": 104,
+            "FAIL": 57,
+            "NEUTRAL": 1,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 11,
+            "FAIL": 11,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 720,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.2533172816150873
+      }
+    },
+    "2024-12": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 119,
+        "coverage": 0.15994623655913978,
+        "resolved": 119,
+        "HIT": 62,
+        "FAIL": 57,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5210084033613446,
+        "directions": {
+          "BUY": {
+            "HIT": 17,
+            "FAIL": 19,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 45,
+            "FAIL": 38,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.2487536533971287
+      }
+    },
+    "2025-01": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 145,
+        "coverage": 0.19489247311827956,
+        "resolved": 145,
+        "HIT": 73,
+        "FAIL": 72,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.503448275862069,
+        "directions": {
+          "BUY": {
+            "HIT": 31,
+            "FAIL": 34,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 42,
+            "FAIL": 38,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.24956072800780438
+      }
+    },
+    "2025-02": {
+      "kotlin": {
+        "decisions": 672,
+        "signals": 130,
+        "coverage": 0.19345238095238096,
+        "resolved": 130,
+        "HIT": 68,
+        "FAIL": 62,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5230769230769231,
+        "directions": {
+          "BUY": {
+            "HIT": 6,
+            "FAIL": 4,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 62,
+            "FAIL": 58,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 672,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.2506174660154776
+      }
+    },
+    "2025-03": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 124,
+        "coverage": 0.16666666666666666,
+        "resolved": 124,
+        "HIT": 63,
+        "FAIL": 61,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5080645161290323,
+        "directions": {
+          "BUY": {
+            "HIT": 14,
+            "FAIL": 13,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 49,
+            "FAIL": 48,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.2513033510256837
+      }
+    },
+    "2025-04": {
+      "kotlin": {
+        "decisions": 720,
+        "signals": 103,
+        "coverage": 0.14305555555555555,
+        "resolved": 103,
+        "HIT": 51,
+        "FAIL": 52,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.49514563106796117,
+        "directions": {
+          "BUY": {
+            "HIT": 21,
+            "FAIL": 17,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 30,
+            "FAIL": 35,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 720,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.2509169916881681
+      }
+    },
+    "2025-05": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 164,
+        "coverage": 0.22043010752688172,
+        "resolved": 164,
+        "HIT": 87,
+        "FAIL": 77,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5304878048780488,
+        "directions": {
+          "BUY": {
+            "HIT": 52,
+            "FAIL": 43,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 35,
+            "FAIL": 34,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.2506019451322183
+      }
+    },
+    "2025-06": {
+      "kotlin": {
+        "decisions": 720,
+        "signals": 146,
+        "coverage": 0.20277777777777778,
+        "resolved": 146,
+        "HIT": 75,
+        "FAIL": 71,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5136986301369864,
+        "directions": {
+          "BUY": {
+            "HIT": 4,
+            "FAIL": 6,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 71,
+            "FAIL": 65,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 720,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.25036433342627723
+      }
+    },
+    "2025-07": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 172,
+        "coverage": 0.23118279569892472,
+        "resolved": 172,
+        "HIT": 90,
+        "FAIL": 82,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5232558139534884,
+        "directions": {
+          "BUY": {
+            "HIT": 73,
+            "FAIL": 72,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 17,
+            "FAIL": 10,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.24979782624545835
+      }
+    },
+    "2025-08": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 119,
+        "coverage": 0.15994623655913978,
+        "resolved": 119,
+        "HIT": 64,
+        "FAIL": 55,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5378151260504201,
+        "directions": {
+          "BUY": {
+            "HIT": 32,
+            "FAIL": 34,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 32,
+            "FAIL": 21,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.25008036321956517
+      }
+    },
+    "2025-09": {
+      "kotlin": {
+        "decisions": 720,
+        "signals": 119,
+        "coverage": 0.16527777777777777,
+        "resolved": 119,
+        "HIT": 59,
+        "FAIL": 60,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.4957983193277311,
+        "directions": {
+          "BUY": {
+            "HIT": 26,
+            "FAIL": 26,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 33,
+            "FAIL": 34,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 720,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.24995518363626118
+      }
+    },
+    "2025-10": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 110,
+        "coverage": 0.1478494623655914,
+        "resolved": 109,
+        "HIT": 43,
+        "FAIL": 66,
+        "NEUTRAL": 1,
+        "PENDING": 0,
+        "accuracy": 0.3944954128440367,
+        "directions": {
+          "BUY": {
+            "HIT": 6,
+            "FAIL": 9,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 37,
+            "FAIL": 57,
+            "NEUTRAL": 1,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.24742690337237283
+      }
+    },
+    "2025-11": {
+      "kotlin": {
+        "decisions": 720,
+        "signals": 164,
+        "coverage": 0.22777777777777777,
+        "resolved": 164,
+        "HIT": 81,
+        "FAIL": 83,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.49390243902439024,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 81,
+            "FAIL": 83,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 720,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.24791063723428575
+      }
+    },
+    "2025-12": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 121,
+        "coverage": 0.16263440860215053,
+        "resolved": 121,
+        "HIT": 51,
+        "FAIL": 70,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.4214876033057851,
+        "directions": {
+          "BUY": {
+            "HIT": 7,
+            "FAIL": 3,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 44,
+            "FAIL": 67,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.2517623922253797
+      }
+    },
+    "2026-01": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 122,
+        "coverage": 0.1639784946236559,
+        "resolved": 122,
+        "HIT": 65,
+        "FAIL": 57,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5327868852459017,
+        "directions": {
+          "BUY": {
+            "HIT": 17,
+            "FAIL": 22,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 48,
+            "FAIL": 35,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.2494791442625638
+      }
+    },
+    "2026-02": {
+      "kotlin": {
+        "decisions": 672,
+        "signals": 111,
+        "coverage": 0.16517857142857142,
+        "resolved": 111,
+        "HIT": 50,
+        "FAIL": 61,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.45045045045045046,
+        "directions": {
+          "BUY": {
+            "HIT": 13,
+            "FAIL": 4,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 37,
+            "FAIL": 57,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 672,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.25039385232582906
+      }
+    },
+    "2026-03": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 120,
+        "coverage": 0.16129032258064516,
+        "resolved": 120,
+        "HIT": 67,
+        "FAIL": 53,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5583333333333333,
+        "directions": {
+          "BUY": {
+            "HIT": 23,
+            "FAIL": 16,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 44,
+            "FAIL": 37,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.24848989599439872
+      }
+    },
+    "2026-04": {
+      "kotlin": {
+        "decisions": 720,
+        "signals": 115,
+        "coverage": 0.1597222222222222,
+        "resolved": 115,
+        "HIT": 51,
+        "FAIL": 64,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.4434782608695652,
+        "directions": {
+          "BUY": {
+            "HIT": 16,
+            "FAIL": 31,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 35,
+            "FAIL": 33,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 720,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.2515603196695437
+      }
+    },
+    "2026-05": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 140,
+        "coverage": 0.1881720430107527,
+        "resolved": 140,
+        "HIT": 69,
+        "FAIL": 71,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.4928571428571429,
+        "directions": {
+          "BUY": {
+            "HIT": 35,
+            "FAIL": 33,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 34,
+            "FAIL": 38,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.249076706313876
+      }
+    },
+    "2026-06": {
+      "kotlin": {
+        "decisions": 720,
+        "signals": 167,
+        "coverage": 0.23194444444444445,
+        "resolved": 167,
+        "HIT": 98,
+        "FAIL": 69,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5868263473053892,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 98,
+            "FAIL": 69,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 720,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.24722688714445845
+      }
+    },
+    "2026-07": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 112,
+        "coverage": 0.15053763440860216,
+        "resolved": 112,
+        "HIT": 59,
+        "FAIL": 53,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5267857142857143,
+        "directions": {
+          "BUY": {
+            "HIT": 39,
+            "FAIL": 27,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 20,
+            "FAIL": 26,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.25251545301432204
+      }
+    },
+    "2026-08": {
+      "kotlin": {
+        "decisions": 744,
+        "signals": 145,
+        "coverage": 0.19489247311827956,
+        "resolved": 145,
+        "HIT": 66,
+        "FAIL": 79,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.45517241379310347,
+        "directions": {
+          "BUY": {
+            "HIT": 48,
+            "FAIL": 52,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 18,
+            "FAIL": 27,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 744,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.2516963393890957
+      }
+    },
+    "2026-09": {
+      "kotlin": {
+        "decisions": 720,
+        "signals": 115,
+        "coverage": 0.1597222222222222,
+        "resolved": 114,
+        "HIT": 63,
+        "FAIL": 51,
+        "NEUTRAL": 1,
+        "PENDING": 0,
+        "accuracy": 0.5526315789473685,
+        "directions": {
+          "BUY": {
+            "HIT": 52,
+            "FAIL": 41,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 11,
+            "FAIL": 10,
+            "NEUTRAL": 1,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 720,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.2522939041186625
+      }
+    },
+    "2026-10": {
+      "kotlin": {
+        "decisions": 39,
+        "signals": 10,
+        "coverage": 0.2564102564102564,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 10,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 10
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        }
+      },
+      "alternative": {
+        "decisions": 39,
+        "signals": 0,
+        "coverage": 0.0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "directions": {
+          "BUY": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          },
+          "SELL": {
+            "HIT": 0,
+            "FAIL": 0,
+            "NEUTRAL": 0,
+            "PENDING": 0
+          }
+        },
+        "brier_all_resolved_chosen_directions": 0.23846170770398792
+      }
+    }
+  },
+  "limitations": [
+    "Code designed after 2023: historical reconstruction, not authentic prospective validation.",
+    "No future news supplied; absent news excluded neutrally.",
+    "Fixed Kotlin code learns only from already matured past patterns; alternative never retrained.",
+    "Both engines use same entry, ATR target/stop and 24h horizon. Confidence is not probability.",
+    "Overlapping horizons are correlated; no independent-case significance claim.",
+    "Costs are illustrative barrier-return sensitivity, no spread/slippage/execution or profitability guarantee.",
+    "Invalid context windows excluded without synthetic market data.",
+    "No production improvement established: holdout not yet declared independent for future tuning."
+  ],
+  "full_artifact": {
+    "actions_run": 37104820553,
+    "artifact_id": 11267117887,
+    "file": "CriptoAnalisis_comparacion_fija_2023-2026.zip"
+  }
+}
