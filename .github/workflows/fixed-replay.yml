@@ -1,0 +1,59 @@
+name: Comparación histórica de motores fijos 2023-2026
+on:
+  pull_request:
+    paths:
+      - 'evaluation/fixed_replay.py'
+      - 'evaluation/test_fixed_replay.py'
+      - 'evaluation/requirements-replay.txt'
+      - 'app/src/test/java/com/domingales/criptoanalisis/multi/evaluation/FixedReplayTest.kt'
+      - '.github/workflows/fixed-replay.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - name: Probar tiempos, embargo, primer toque e integridad
+        run: python3 -m unittest discover -s evaluation -p 'test_*.py'
+      - name: Recuperar cinco series oficiales verificadas del corte fijo
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 37104097309 --repo "$GITHUB_REPOSITORY" --dir history-artifacts
+          mkdir replay-data
+          find history-artifacts -type f \( -name '*.csv' -o -name '*_manifest.json' \) -exec cp {} replay-data/ \;
+          python3 -c "import sys;sys.path.insert(0,'evaluation');from pathlib import Path;from fixed_replay import read_data;read_data(Path('replay-data'))"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Registrar evaluaciones cronológicas Kotlin antes de resolver
+        run: bash ./gradlew --no-daemon testDebugUnitTest --tests com.domingales.criptoanalisis.multi.evaluation.FixedReplayTest
+        env:
+          REPLAY_DATA_DIR: ${{ github.workspace }}/replay-data
+          REPLAY_OUTPUT_DIR: ${{ github.workspace }}/replay-kotlin
+          JAVA_TOOL_OPTIONS: '-Xmx4g'
+      - name: Congelar modelo anterior a octubre 2023 y comparar mismos objetivos
+        run: python3 evaluation/fixed_replay.py --data replay-data --kotlin replay-kotlin --output replay-output --version "$GITHUB_SHA"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: comparacion-motores-fijos-${{ github.run_id }}
+          path: |
+            replay-data/
+            replay-kotlin/
+            replay-output/
+            app/build/test-results/testDebugUnitTest/
+          retention-days: 90

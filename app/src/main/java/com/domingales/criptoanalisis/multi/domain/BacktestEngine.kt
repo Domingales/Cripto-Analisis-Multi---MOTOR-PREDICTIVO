@@ -38,7 +38,9 @@ object BacktestEngine {
         outcomeCandles5m: List<Candle>? = null,
         auditThroughLatest: Boolean = false,
         onEvaluation: ((AnalysisResult) -> Unit)? = null,
-        onAccepted: ((AnalysisResult) -> Unit)? = null
+        onAccepted: ((AnalysisResult) -> Unit)? = null,
+        // Research-only gate; production callers keep the unchanged null default.
+        evaluationEligible: ((Long) -> Boolean)? = null
     ): BacktestResult {
         val primary = candlesByTimeframe[timeframe].orEmpty().sortedBy { it.openTime }
         if (primary.size < 240) return BacktestResult(symbol, timeframe, 0, 0, 0, 0, 0.0, contextNote = "Histórico insuficiente")
@@ -62,6 +64,10 @@ object BacktestEngine {
             val window = primary.subList(0, idx + 1)
             val indicators = TechnicalEngine.calculate(window.takeLast(300))
             val asOf = window.last().closeTime
+            if (evaluationEligible?.invoke(asOf) == false) {
+                idx++
+                continue
+            }
             val mtf = buildHistoricalMtf(timeframe, indicators, asOf, candlesByTimeframe)
             if (mtf.byTimeframe.size < 2) {
                 skippedMtf++
