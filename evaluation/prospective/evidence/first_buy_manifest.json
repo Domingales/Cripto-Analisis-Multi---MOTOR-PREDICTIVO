@@ -1,0 +1,26 @@
+{
+  "source": "Binance Spot official public API",
+  "url": "https://data-api.binance.vision/api/v3/klines?symbol=ADAUSDT&interval=5m&startTime=1790915400000&endTime=1791001799999&limit=1000",
+  "sha256": "a4a2e4681f752903071aceeac6ac4568dd8f0462e6725d27c5517a170711dfdf",
+  "count": 288,
+  "first_open": 1790915400000,
+  "last_close": 1791001799999,
+  "prediction_id": "ADA-1h-1790913599999-55a9341fba169a21fdf63b8fce89f3238ba7b61d",
+  "outcome": {
+    "type": "OUTCOME",
+    "id": "ADA-1h-1790913599999-55a9341fba169a21fdf63b8fce89f3238ba7b61d",
+    "evaluated_at": 1791009797816,
+    "status": "HIT",
+    "reason": "TARGET_FIRST",
+    "outcome_time": 1790915699999,
+    "mfe": 3.961584633853527,
+    "mae": -5.202080832332938,
+    "window_candle_sha256": "1b11861f4ecea1e3151e965e3836ea78bf589caca74a62d1ecf0f7bab106c26b"
+  },
+  "news": "Historical news unavailable, excluded neutrally",
+  "limitations": [
+    "Delayed cohort with last closed hourly reference price; not a real executed trade.",
+    "MFE/MAE refer to the full 24h horizon, including after first target touch.",
+    "One case provides no demonstrated predictive improvement."
+  ]
+}
