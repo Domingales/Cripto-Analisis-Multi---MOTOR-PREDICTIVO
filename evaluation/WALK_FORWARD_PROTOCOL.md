@@ -1,5 +1,5 @@
 # Experimento cronológico de dos motores — autorizado 2026-10-02
-Estado actualizado 2026-10-03: primer ensayo fijo concluido, Actions 37104820553; informes en docs/engine-reviews/2026-10-03-fixed-report.json. Ensayo mensual separado preparado; resultados aún pendientes.
+Estado actualizado 2026-10-03: primer ensayo fijo concluido, Actions 37104820553; informes en docs/engine-reviews/2026-10-03-fixed-report.json. Ensayo mensual separado concluido, Actions 37105792276; informe en docs/engine-reviews/2026-10-03-monthly-report.json. Ambos alternativos seleccionaron cero señales al 65%; no hay mejora demostrada ni activación de producción.
 
 ## Orden acordado
 1. Comparación inicial con código y modelo entrenado congelados.
