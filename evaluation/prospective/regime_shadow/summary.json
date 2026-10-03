@@ -1,0 +1,34 @@
+{
+  "mode": "OBSERVATION_ONLY",
+  "rule_sha256": "45ab9c0ee1f36deda9b3b52f2f5fe4414883e5b60bb13dd80cf1161789fb186f",
+  "by_regime": {
+    "RANGE_OR_MIXED": {
+      "baseline": {
+        "decisions": 1,
+        "signals": 0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "descriptive_wilson_interval": null,
+        "coverage": 0.0
+      },
+      "rejected_filter_shadow": {
+        "decisions": 1,
+        "signals": 0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "descriptive_wilson_interval": null,
+        "coverage": 0.0
+      }
+    }
+  },
+  "probability_claim": null,
+  "production_changed": false
+}
