@@ -59,6 +59,10 @@ jobs:
       - name: Append predictions and resolve expired cases
         run: |
           python3 evaluation/prospective_ledger.py --root evaluation/prospective --data prospective-data --decision prospective-output/decision.tsv --version "$(git rev-parse HEAD)"
+      - name: Test regime observations
+        run: python3 -m unittest discover -s evaluation -p 'test_regime_selection.py'
+      - name: Record frozen regime observations without changing signals
+        run: python3 evaluation/regime_selection.py capture --root evaluation/prospective --data prospective-data --version "${{ github.sha }}"
       - name: Persist ledger on main without overwriting other changes
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         run: |

@@ -1,0 +1,325 @@
+{
+  "status": "EXPLORATORY_ALREADY_INSPECTED_HISTORY",
+  "rule": {
+    "id": "trend-volume-btc-v1",
+    "ada_4h_distance_200": 0.01,
+    "volume_ratio_1h_min": 1.0,
+    "minimum_resolved_for_review": 100,
+    "description": "Existing accepted signal, ADA trend aligned with BTC, 1h volume >=20-candle mean."
+  },
+  "rule_sha256": "45ab9c0ee1f36deda9b3b52f2f5fe4414883e5b60bb13dd80cf1161789fb186f",
+  "source_archive_sha256": "c528d03be6bcd4d78264bc035f49a1059514bf249c43d326be860a6e8d531964",
+  "overall": {
+    "kotlin": {
+      "decisions": 26319,
+      "signals": 4863,
+      "resolved": 4848,
+      "HIT": 2510,
+      "FAIL": 2338,
+      "NEUTRAL": 5,
+      "PENDING": 10,
+      "accuracy": 0.5177392739273927,
+      "descriptive_wilson_interval": [
+        0.5036647697532087,
+        0.5317856868321834
+      ],
+      "coverage": 0.1847714578821384
+    },
+    "alternative": {
+      "decisions": 26319,
+      "signals": 0,
+      "resolved": 0,
+      "HIT": 0,
+      "FAIL": 0,
+      "NEUTRAL": 0,
+      "PENDING": 0,
+      "accuracy": null,
+      "descriptive_wilson_interval": null,
+      "coverage": 0.0
+    },
+    "candidate": {
+      "decisions": 26319,
+      "signals": 2075,
+      "resolved": 2064,
+      "HIT": 1047,
+      "FAIL": 1017,
+      "NEUTRAL": 3,
+      "PENDING": 8,
+      "accuracy": 0.5072674418604651,
+      "descriptive_wilson_interval": [
+        0.48570521215460044,
+        0.5288026689132725
+      ],
+      "coverage": 0.07884038147346024
+    }
+  },
+  "by_regime": {
+    "RANGE_OR_MIXED": {
+      "kotlin": {
+        "decisions": 8280,
+        "signals": 719,
+        "resolved": 719,
+        "HIT": 370,
+        "FAIL": 349,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5146036161335188,
+        "descriptive_wilson_interval": [
+          0.4780908866962151,
+          0.5509611213785831
+        ],
+        "coverage": 0.08683574879227053
+      },
+      "alternative": {
+        "decisions": 8280,
+        "signals": 0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "descriptive_wilson_interval": null,
+        "coverage": 0.0
+      },
+      "candidate": {
+        "decisions": 8280,
+        "signals": 0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "descriptive_wilson_interval": null,
+        "coverage": 0.0
+      }
+    },
+    "TREND_DOWN": {
+      "kotlin": {
+        "decisions": 10676,
+        "signals": 2410,
+        "resolved": 2407,
+        "HIT": 1248,
+        "FAIL": 1159,
+        "NEUTRAL": 3,
+        "PENDING": 0,
+        "accuracy": 0.5184877440797674,
+        "descriptive_wilson_interval": [
+          0.49851277529214844,
+          0.5384037935940033
+        ],
+        "coverage": 0.2257399775196703
+      },
+      "alternative": {
+        "decisions": 10676,
+        "signals": 0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "descriptive_wilson_interval": null,
+        "coverage": 0.0
+      },
+      "candidate": {
+        "decisions": 10676,
+        "signals": 1056,
+        "resolved": 1055,
+        "HIT": 523,
+        "FAIL": 532,
+        "NEUTRAL": 1,
+        "PENDING": 0,
+        "accuracy": 0.4957345971563981,
+        "descriptive_wilson_interval": [
+          0.46563424288622324,
+          0.5258659021779678
+        ],
+        "coverage": 0.09891345073061071
+      }
+    },
+    "TREND_UP": {
+      "kotlin": {
+        "decisions": 7363,
+        "signals": 1734,
+        "resolved": 1722,
+        "HIT": 892,
+        "FAIL": 830,
+        "NEUTRAL": 2,
+        "PENDING": 10,
+        "accuracy": 0.5180023228803716,
+        "descriptive_wilson_interval": [
+          0.49438763873701186,
+          0.5415368632566819
+        ],
+        "coverage": 0.23550183349178325
+      },
+      "alternative": {
+        "decisions": 7363,
+        "signals": 0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "descriptive_wilson_interval": null,
+        "coverage": 0.0
+      },
+      "candidate": {
+        "decisions": 7363,
+        "signals": 1019,
+        "resolved": 1009,
+        "HIT": 524,
+        "FAIL": 485,
+        "NEUTRAL": 2,
+        "PENDING": 8,
+        "accuracy": 0.5193260654112983,
+        "descriptive_wilson_interval": [
+          0.4884824527689299,
+          0.5500230746501652
+        ],
+        "coverage": 0.13839467608311828
+      }
+    }
+  },
+  "by_year": {
+    "2023": {
+      "kotlin": {
+        "decisions": 2184,
+        "signals": 441,
+        "resolved": 441,
+        "HIT": 213,
+        "FAIL": 228,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.48299319727891155,
+        "descriptive_wilson_interval": [
+          0.4367019938743665,
+          0.5295781381996122
+        ],
+        "coverage": 0.20192307692307693
+      },
+      "candidate": {
+        "decisions": 2184,
+        "signals": 261,
+        "resolved": 261,
+        "HIT": 132,
+        "FAIL": 129,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5057471264367817,
+        "descriptive_wilson_interval": [
+          0.4454487615713311,
+          0.5658787640137735
+        ],
+        "coverage": 0.11950549450549451
+      }
+    },
+    "2024": {
+      "kotlin": {
+        "decisions": 8784,
+        "signals": 1648,
+        "resolved": 1645,
+        "HIT": 904,
+        "FAIL": 741,
+        "NEUTRAL": 3,
+        "PENDING": 0,
+        "accuracy": 0.5495440729483283,
+        "descriptive_wilson_interval": [
+          0.5254127318766598,
+          0.5734445507149487
+        ],
+        "coverage": 0.18761384335154827
+      },
+      "candidate": {
+        "decisions": 8784,
+        "signals": 656,
+        "resolved": 653,
+        "HIT": 346,
+        "FAIL": 307,
+        "NEUTRAL": 3,
+        "PENDING": 0,
+        "accuracy": 0.5298621745788668,
+        "descriptive_wilson_interval": [
+          0.49151733049961843,
+          0.5678577151734935
+        ],
+        "coverage": 0.07468123861566485
+      }
+    },
+    "2025": {
+      "kotlin": {
+        "decisions": 8760,
+        "signals": 1617,
+        "resolved": 1616,
+        "HIT": 805,
+        "FAIL": 811,
+        "NEUTRAL": 1,
+        "PENDING": 0,
+        "accuracy": 0.49814356435643564,
+        "descriptive_wilson_interval": [
+          0.47379864829346596,
+          0.5224972858275
+        ],
+        "coverage": 0.18458904109589042
+      },
+      "candidate": {
+        "decisions": 8760,
+        "signals": 671,
+        "resolved": 671,
+        "HIT": 330,
+        "FAIL": 341,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.4918032786885246,
+        "descriptive_wilson_interval": [
+          0.45413033573338896,
+          0.5295695428751614
+        ],
+        "coverage": 0.07659817351598174
+      }
+    },
+    "2026": {
+      "kotlin": {
+        "decisions": 6591,
+        "signals": 1157,
+        "resolved": 1146,
+        "HIT": 588,
+        "FAIL": 558,
+        "NEUTRAL": 1,
+        "PENDING": 10,
+        "accuracy": 0.5130890052356021,
+        "descriptive_wilson_interval": [
+          0.4841545324846976,
+          0.54193601772674
+        ],
+        "coverage": 0.1755424063116371
+      },
+      "candidate": {
+        "decisions": 6591,
+        "signals": 487,
+        "resolved": 479,
+        "HIT": 239,
+        "FAIL": 240,
+        "NEUTRAL": 0,
+        "PENDING": 8,
+        "accuracy": 0.4989561586638831,
+        "descriptive_wilson_interval": [
+          0.4543657024120267,
+          0.5435632250043352
+        ],
+        "coverage": 0.07388863601881353
+      }
+    }
+  },
+  "limitations": [
+    "Rule defined after inspecting the overall historical examination. Exploratory only.",
+    "No threshold tuning or probability claim. Alternative selected zero signals.",
+    "Simple mean-based research regime, not replacement for production regime taxonomy.",
+    "Overlapping 24h labels; Wilson interval descriptive only.",
+    "No profitability or execution simulation; no production activation.",
+    "Prospective cohort is delayed and sparse, distinct from this historical reconstruction."
+  ]
+}
