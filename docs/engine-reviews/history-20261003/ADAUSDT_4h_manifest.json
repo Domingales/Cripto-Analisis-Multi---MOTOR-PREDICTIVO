@@ -1,0 +1,767 @@
+{
+  "symbol": "ADAUSDT",
+  "interval": "4h",
+  "start": 1601596800000,
+  "end": 1790953200000,
+  "sources": [
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2020-10.zip",
+      "sha256": "d8f258e802669928393dbacb9996175bf1850947fba6367e1c4d9bdea872a3af",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2020-11.zip",
+      "sha256": "4a4d95085a2cc56cbe1ee8714dae9c6a8b6a54ccb65d2fefe6dd819186022b18",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2020-12.zip",
+      "sha256": "2c12e0ca8b88fe5237b924aaff78c4df4a518da9ae0684dc3b73489c00073408",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2021-01.zip",
+      "sha256": "3c073c7a9b230b168d5388b0abdb8574b9a544a38437fda5a41aacd2bef918ec",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2021-02.zip",
+      "sha256": "05972ab8aad5ddb7e1a22e1c8f94d7bc4cc112b224383e7e9ac1382208ac0c0c",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2021-03.zip",
+      "sha256": "fb68f33350d963ce9e7e120659fd581b71eb8ec22d69062e7d565e487873e024",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2021-04.zip",
+      "sha256": "89fd26ff3a17c8a59d050bdc0b8cf2dbba7d40e92a10b7f95f9b317356e92afe",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2021-05.zip",
+      "sha256": "5eac2a317a2610ef48a709db9753383d37cbe6c402c6813e41257d2c5912e608",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2021-06.zip",
+      "sha256": "1a2ee16379811930fb47498440dcec65b10de604f14d6db47416d90fec1cc82a",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2021-07.zip",
+      "sha256": "e5228ff3181abcfc9252320e74dfb6b0a4bb59286589bd6862525f57168f6d39",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2021-08.zip",
+      "sha256": "dca2b853d20eda0467086834455740634757420dd486fd88363928129471a8d3",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2021-09.zip",
+      "sha256": "e8452f94cf828cb330d77f48779fa175755fe32bfc132ca84cff3986b41e47cf",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2021-10.zip",
+      "sha256": "7b2bbd17340fb3999a1a0dd2a9a8f3797ac33cddb5edad35397ed8478cf98e87",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2021-11.zip",
+      "sha256": "66b1d025d8d2f5825d7157d59ace197f463dca832d4b748ea4806649d88e3e25",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2021-12.zip",
+      "sha256": "8daf3bb140406f66f145e245ab25af1cfa67fd28c5e94312aeb71c48942347c2",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2022-01.zip",
+      "sha256": "2c007ccb2ab2602da12b06bd6b0285c8b1252ab0a8ef2bf384ef639f0db8c00f",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2022-02.zip",
+      "sha256": "3a6f9cdecb7b0bf01e3c82a7c3a2e060c904e213da35c071d5dacfc58b89e734",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2022-03.zip",
+      "sha256": "56365aa9d51895f0c00485d2569be2b12c76e0f825a630b828c13b3f9942514a",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2022-04.zip",
+      "sha256": "50adfed2f5dd46bc27d237c892d0c4500179cc1001b39a2c3c7ee5c284356eae",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2022-05.zip",
+      "sha256": "5c9bae6aacd62007856021d9dfdbd83c65568b96a64dce65868e055dd1b3909a",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2022-06.zip",
+      "sha256": "5016fbbc54d8a7ef222c06670147c11287c855f0543bc0005e8dd5118e76e2bb",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2022-07.zip",
+      "sha256": "0aa953e2f94b420aa7a9e6028d5ce6d13e0990e26aad32846c8680dda9a7adda",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2022-08.zip",
+      "sha256": "ea46989b837ffdb53faceb71a55be838e51b2ec14c55832e5d055d37412c1c78",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2022-09.zip",
+      "sha256": "1b32828b398ace9c36bf04d2031c7ba38a978e4342abc612c71de39fded82996",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2022-10.zip",
+      "sha256": "9c4c4cd9ba45d2fb40c487f755a69fbe546152584193d308b774b4bbbdd7fb5e",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2022-11.zip",
+      "sha256": "dee342ba2ff3e388c93be003299877203a01a0768f5e8fb49686aa1d5f46085e",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2022-12.zip",
+      "sha256": "926a5f5f590c854fd69c709220f2a6a2960f95254802b9970ffe10e81cc03301",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2023-01.zip",
+      "sha256": "20c065fbc2096227f3ce20f50a00f539ee5f9a66d46724bade147f47eaead38a",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2023-02.zip",
+      "sha256": "3eedef3980f4ef5330058e34cb64f01457a2a7395baf21fb52a2cd2795c68260",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2023-03.zip",
+      "sha256": "1649746190e83ee96a9ff998328d98dacb4be8430d2021a0b95a322351b00e88",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2023-04.zip",
+      "sha256": "093e07132fab722899d1b8400be3639022d6f1100eec97ccd57dd549c6902bac",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2023-05.zip",
+      "sha256": "aa0d7b40b39b39087fc39565d5e4bf4a7d3b5e69a708f38ce7d6b50232ee3a7c",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2023-06.zip",
+      "sha256": "fc69fbf66bb4a76c11b9c5d2e45ba8833c2ef342227cdc3facec888e49b3ca31",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2023-07.zip",
+      "sha256": "cf97fb9ac40b87f33036d8bf855ceeb832e27b0cf2af59c3121ea7a33a9bc9ed",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2023-08.zip",
+      "sha256": "0639204e77a75fa9f719980f3f659be3e4a062bfe329ffe25d39b8574b3d07b1",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2023-09.zip",
+      "sha256": "762ea36317a5d85712e626eb08726913f43f97a9014bb9f15390d36d1cb352a4",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2023-10.zip",
+      "sha256": "240fcba79374b2e1e6b3ec70aeb98d73636b37e302fbaed1fc29e22b23780bf8",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2023-11.zip",
+      "sha256": "d94548cc5a24c31e80f1bbde003cfce939dfa4bf3a17407166631bb23a85339e",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2023-12.zip",
+      "sha256": "72118787049a29a3ad272774193dac375b077198a98e7b19fd993c133000bc63",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2024-01.zip",
+      "sha256": "eaca36869f15fff69c7882074b632d5e14e7917b69af1381f261c349cf3cd1b7",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2024-02.zip",
+      "sha256": "228f694d03ebe96f4b5852a9c224613335a947c9423d39a81448a43115c6351f",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2024-03.zip",
+      "sha256": "9be112e01dad75cd017fef4199862d2cd92243ea61893fb00e55f7faf6e17795",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2024-04.zip",
+      "sha256": "88c51d6672c9d703223fc4a2e35c1dbb602617becf34c5b3f63dd312dcffa5d6",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2024-05.zip",
+      "sha256": "12588da6b019c55d279f3ebeed2e3ede119929b8537fac3b0752dc3091696c67",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2024-06.zip",
+      "sha256": "cb5dd246a1154c4a39215cf6cc767aded1a603c01b2762872ad3462df18b726e",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2024-07.zip",
+      "sha256": "0bffa574f9603ec4c368fc3760798fad985ffdf7abce384296c7c4e6656048c2",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2024-08.zip",
+      "sha256": "6f7dc77348aacc21ee8415529d834a5586dadb29b814b7e26c9f89d160a8e712",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2024-09.zip",
+      "sha256": "bb8c4c0fcadab2513060cf92e1981b6317af4c0f2684ca4f9fd93c69e8b97036",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2024-10.zip",
+      "sha256": "b278466026d83c226b454be92a81eb9e935d03aa6563d17e5fe52e5db195542b",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2024-11.zip",
+      "sha256": "5ffb3ec386d81d8bf090296d7fdc5f46735929486a712ad93094da23e5ba656d",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2024-12.zip",
+      "sha256": "0f5204ab7eee78f05757d342fd89fd609a3b0d3ad7c9f52179780795cd5bfec5",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2025-01.zip",
+      "sha256": "f4b3e768dbb740105693c8b23e57ccec6d1472f05c1afda6504486e30d31e6b7",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2025-02.zip",
+      "sha256": "ca6d804e3dc074e56eda5cb98e46a520d10a2cbf4e7bb47d2c02daf8533f5ae9",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2025-03.zip",
+      "sha256": "6f919f51f63482a395bc8ed94a211b161ac3bbc6d00d21639ac6d63f0ae9644d",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2025-04.zip",
+      "sha256": "a35651362c80539d3eea376865334b97aee65ef3c3449698928c141112e7eaa9",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2025-05.zip",
+      "sha256": "6a4c6113aa6884e5218553355f9f4d31f943798efd8a952d3540db4bedb0c9a5",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2025-06.zip",
+      "sha256": "6226e99da49ab878072f4763d4d3bd4eba4805a93321565763e682d3fd871f19",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2025-07.zip",
+      "sha256": "9fb16036d57d73426c7583d28693c7046b6ab0b0a31e98b6293e1edde6d5bdc6",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2025-08.zip",
+      "sha256": "e87be9409581d01cc93890d930771390250ddbbe1fdf65948061a4097b5f8f80",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2025-09.zip",
+      "sha256": "8ad8437814051bb1627ae20d59a628298fd0c19683ae3bbcf46f3d2351ddcabf",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2025-10.zip",
+      "sha256": "11f65af78fe582cb1d20ec614d508b9a1432bfeb5353f3bb042dd2bd68b21c32",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2025-11.zip",
+      "sha256": "b028bfbc64062faec76ee452d9db41e926dae5bbcc6672cd71c807eff79a820f",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2025-12.zip",
+      "sha256": "ac9aded48d4528a1ca80ab838fd57b6b18e0034d20a7e30765e24a50f38560ef",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2026-01.zip",
+      "sha256": "097e8ccf4a242e9b4c40df525f362e72647f86ae9679bc7bc6049325bcb00183",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2026-02.zip",
+      "sha256": "fad94e8b8092704c91d40002b55c3390dde2880b6bb1b86bd003469effcba777",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2026-03.zip",
+      "sha256": "5b967e5df14e62ab463bb506e786007e5cbf9be5a2938d9a0ae336b9e68094bb",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2026-04.zip",
+      "sha256": "aa6cdf9699c99423110417633a0d26b3a7d8f272ebe0c93dc6646408e0390acf",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2026-05.zip",
+      "sha256": "ae6bd30ade7cbe08c8a32366313c652357b190fd55f67b7eb55113ddb30d605c",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2026-06.zip",
+      "sha256": "f35b4a0064accece65fd0a29485cc71254fb555441742f9425c349ea066fb9e1",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2026-07.zip",
+      "sha256": "80b19680b3983796518cde7d4b215ee6e344c898a7313f82c650149e2b4f5c10",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2026-08.zip",
+      "sha256": "5bf152a3b058d74c1440d00b9c8256c87a391f3d6169fe615a7f60f430dc6bd6",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-01.zip",
+      "sha256": "c8b36300c6c02c0be67db56208d23b131f6e6af32378a2a496401520e093416b",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-02.zip",
+      "sha256": "56d14dee144184d71fbd75a8c4a3882d245c1cf2dcc3b684519541242a267f35",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-03.zip",
+      "sha256": "ae09564b36ce485e96011c3c8a56e3c5cfecfb11dcbb7bbf23555c1a4e4e7892",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-04.zip",
+      "sha256": "485f5def9b393574d0831f27dc585e779c537d184b8221c035c3ec776fa3135a",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-05.zip",
+      "sha256": "0dc2131950404368db6343785a19199e703567cc6e625deb541600c1867836d1",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-06.zip",
+      "sha256": "bbae62f3917cb9df20520f9caaf4101600807aeb39f847b2e23ef3a3b311d594",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-07.zip",
+      "sha256": "ee24fe420ab7a0ca740f64e8c0c7027d5c18c4f6e8815f1d1130cee5eb465dcd",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-08.zip",
+      "sha256": "88d637faa3797e90cd95807aed94adcbad8fcda3411b1fe6c4a4bc62a974ca17",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-09.zip",
+      "sha256": "30d0ff156e42b02f888a9796ecb8877d3dbf09e70f2159b16a8d219644c50e94",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-10.zip",
+      "sha256": "4a7f60a7e25d1829f78108bcdd5c14aa664a396632644191983cff2ee7ff05cf",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-11.zip",
+      "sha256": "9078da0cb5b536e02ec3cb643c2a0d13e1b274bee21869aeee3253d29ea798a0",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-12.zip",
+      "sha256": "f82c9a7145438b5985b5ffee6f5cfd3508b5921ed220c81b6dbbc73e9894f16e",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-13.zip",
+      "sha256": "8aad53600f7d00d1c35b3b1cefff0f2cf5a0616b692d884019437ebc133977e1",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-14.zip",
+      "sha256": "14ae6e0604d437442c9fe5b5c5a650d70a30afe4708fc58552040e5d9f7d5675",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-15.zip",
+      "sha256": "0a063a6907d2f8ac01590b1d29d0a0714c33df8fd6ece075fc67a91a81e43e25",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-16.zip",
+      "sha256": "0c56b9d93d6ab379a583a5b756e8cde66b938b6cb5240ffce2ede6d3b9828e37",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-17.zip",
+      "sha256": "22ae39cffee9b1de2560fdf0c443b212c3956c110a42603e050d1ebd3743d832",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-18.zip",
+      "sha256": "c0d7ef30cd7c21f14d854f66ee8172abe0e60ecd451e1dbf7d0f4931e47f9c0f",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-19.zip",
+      "sha256": "28552210cc0c7d5ca498486b3277ba6faa1963bd30f3cfbd2d23f0659a338cb6",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-20.zip",
+      "sha256": "6a5a178484521f98a8ce278f029bd75bbdcf53f408011f165894f77c670b6c34",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-21.zip",
+      "sha256": "edc159e641b12130014e45ab9b29764c148b7d8d5c5b588efbcb7b4450da6387",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-22.zip",
+      "sha256": "ae14bb2991b5f9fd07b38c496775e95709378d018660b55713125e5bc97ef95e",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-23.zip",
+      "sha256": "b4e67325446b05748f3992ec1ff3b53410d9a95c16ecf3e800f6770362498240",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-24.zip",
+      "sha256": "86c3e255725b34d5a288c4a3354fed7f978961ebf7ba002b1fd0272d6cf49bd0",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-25.zip",
+      "sha256": "0668d65830429b78cb24bdaeb8c0ef1c2dbff576a01865ee4f32533231f7de5f",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-26.zip",
+      "sha256": "a904c4563d19f76af63f2b837a50062496d713005f384ceb8f804911b9b50ce9",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-27.zip",
+      "sha256": "c8ae3ac9c3a8bea3ce85f1216f19c9e45fba0faf6f61e8cb93c503eba163f940",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-28.zip",
+      "sha256": "447153af2441105072dad9f48f0a8c943b46c66a2f452eadf8454484ed6e6a39",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-29.zip",
+      "sha256": "941892554ffc270e157657ed41bcbaebbf2cf66e134c4263c8e751ce503f02fa",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09-30.zip",
+      "sha256": "1bfae9883792852fa5b4b375d90bd126d311ee0ee9461546054ff3fed110611f",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/ADAUSDT/4h/ADAUSDT-4h-2026-10-01.zip",
+      "sha256": "e3c0cf1bec50d8c0e5961bd40e2982b48ca13d5f002448b4c0092c8c7cd3b48d",
+      "verification": "official_CHECKSUM"
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=ADAUSDT&interval=4h&startTime=1608552000000&endTime=1608566399999&limit=1000",
+      "sha256": "e11b8fcf2824ee71d8608ca54e837b51ab8dd62bd177d3891ff2e117631d9247",
+      "verification": "official_API_response_hash"
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=ADAUSDT&interval=4h&startTime=1613001600000&endTime=1613015999999&limit=1000",
+      "sha256": "d7a3e6ae38d009a88ee5aa89fed5d0000503ba7a1b6440254707637051537241",
+      "verification": "official_API_response_hash"
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=ADAUSDT&interval=4h&startTime=1618876800000&endTime=1618891199999&limit=1000",
+      "sha256": "30e2eb8ef1cfef69f61e4f85d128edeb7fd6be08e8d01f9b8aa0efeca536f760",
+      "verification": "official_API_response_hash"
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=ADAUSDT&interval=4h&startTime=1619323200000&endTime=1619337599999&limit=1000",
+      "sha256": "2141daff1511723400b4cf834093ab80a57891a45038feaab6210de94d4e4f17",
+      "verification": "official_API_response_hash"
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=ADAUSDT&interval=4h&startTime=1628812800000&endTime=1628827199999&limit=1000",
+      "sha256": "0cc4976400eb8f03577acb891ec8e595a50aa2d0b9b8c5e0e9f604f7083cd544",
+      "verification": "official_API_response_hash"
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=ADAUSDT&interval=4h&startTime=1632888000000&endTime=1632902399999&limit=1000",
+      "sha256": "d81d64c87ad2c5bfc93d2aad93e72d42a8a3ae892fcdca8a3c456eef5aa9ca3c",
+      "verification": "official_API_response_hash"
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=ADAUSDT&interval=4h&startTime=1790899200000&endTime=1790942399999&limit=1000",
+      "sha256": "9d49934624068d175ea35ee4086638fc3273e8cde19743798e5e47208dc77640",
+      "verification": "official_API_response_hash"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ADAUSDT/4h/ADAUSDT-4h-2026-09.zip",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    }
+  ],
+  "anomalies": [
+    {
+      "reason": "nonstandard_candle_time",
+      "row": [
+        1608552000000,
+        "0.15105000",
+        "0.15210000",
+        "0.14680000",
+        "0.15177000",
+        "90384502.90000000",
+        1608558441633
+      ]
+    },
+    {
+      "reason": "nonstandard_candle_time",
+      "row": [
+        1613001600000,
+        "0.94041000",
+        "0.94873000",
+        "0.86513000",
+        "0.88301000",
+        "203040951.60000000",
+        1613014853902
+      ]
+    },
+    {
+      "reason": "nonstandard_candle_time",
+      "row": [
+        1618876800000,
+        "1.19451000",
+        "1.20076000",
+        "1.13000000",
+        "1.15774000",
+        "66299834.90000000",
+        1618883999999
+      ]
+    },
+    {
+      "reason": "nonstandard_candle_time",
+      "row": [
+        1619323200000,
+        "1.09147000",
+        "1.09773000",
+        "1.09080000",
+        "1.09773000",
+        "238748.40000000",
+        1619323257224
+      ]
+    },
+    {
+      "reason": "nonstandard_candle_time",
+      "row": [
+        1628812800000,
+        "1.83300000",
+        "1.89850000",
+        "1.82120000",
+        "1.87100000",
+        "76870541.19000000",
+        1628819999000
+      ]
+    },
+    {
+      "reason": "nonstandard_candle_time",
+      "row": [
+        1632888000000,
+        "2.07700000",
+        "2.12300000",
+        "2.07400000",
+        "2.12200000",
+        "19906197.00000000",
+        1632898799999
+      ]
+    },
+    {
+      "reason": "nonstandard_candle_time",
+      "row": [
+        1608552000000,
+        "0.15105000",
+        "0.15210000",
+        "0.14680000",
+        "0.15177000",
+        "90384502.90000000",
+        1608558441633
+      ]
+    },
+    {
+      "reason": "nonstandard_candle_time",
+      "row": [
+        1613001600000,
+        "0.94041000",
+        "0.94873000",
+        "0.86513000",
+        "0.88301000",
+        "203040951.60000000",
+        1613014853902
+      ]
+    },
+    {
+      "reason": "nonstandard_candle_time",
+      "row": [
+        1618876800000,
+        "1.19451000",
+        "1.20076000",
+        "1.13000000",
+        "1.15774000",
+        "66299834.90000000",
+        1618883999999
+      ]
+    },
+    {
+      "reason": "nonstandard_candle_time",
+      "row": [
+        1619323200000,
+        "1.09147000",
+        "1.09773000",
+        "1.09080000",
+        "1.09773000",
+        "238748.40000000",
+        1619323257224
+      ]
+    },
+    {
+      "reason": "nonstandard_candle_time",
+      "row": [
+        1628812800000,
+        "1.83300000",
+        "1.89850000",
+        "1.82120000",
+        "1.87100000",
+        "76870541.19000000",
+        1628819999000
+      ]
+    },
+    {
+      "reason": "nonstandard_candle_time",
+      "row": [
+        1632888000000,
+        "2.07700000",
+        "2.12300000",
+        "2.07400000",
+        "2.12200000",
+        "19906197.00000000",
+        1632898799999
+      ]
+    }
+  ],
+  "missing_before_api": [
+    [
+      1608552000000,
+      1608566400000
+    ],
+    [
+      1613001600000,
+      1613016000000
+    ],
+    [
+      1618876800000,
+      1618891200000
+    ],
+    [
+      1619323200000,
+      1619337600000
+    ],
+    [
+      1628812800000,
+      1628827200000
+    ],
+    [
+      1632888000000,
+      1632902400000
+    ],
+    [
+      1790899200000,
+      1790942400000
+    ]
+  ],
+  "count": 13143,
+  "first": 1601596800000,
+  "last": 1790928000000,
+  "missing_ranges": [
+    [
+      1608552000000,
+      1608566400000
+    ],
+    [
+      1613001600000,
+      1613016000000
+    ],
+    [
+      1618876800000,
+      1618891200000
+    ],
+    [
+      1619323200000,
+      1619337600000
+    ],
+    [
+      1628812800000,
+      1628827200000
+    ],
+    [
+      1632888000000,
+      1632902400000
+    ]
+  ],
+  "missing_candles": 6,
+  "csv_sha256": "78cec37dae342e342b43e6ff9a1995c44a81a2eff5781741d9d938a546b0823c",
+  "status": "INCOMPLETE_REQUIRES_REVIEW"
+}
