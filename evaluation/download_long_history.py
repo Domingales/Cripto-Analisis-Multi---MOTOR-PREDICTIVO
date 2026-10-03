@@ -41,13 +41,16 @@ def normalize(row):
     return [timestamp(row[0]), *row[1:6], timestamp(row[6])]
 
 
-def insert(candles, row, interval, start=START, end=END):
+def insert(candles, row, interval, start=START, end=END, anomalies=None):
     r = normalize(row)
     step = STEPS[interval]
     if not start <= r[0] or r[6] >= end:
         return
     if r[0] % step or r[6] != r[0] + step - 1:
-        raise ValueError('Invalid candle time/alignment')
+        if anomalies is None:
+            raise ValueError('Invalid candle time/alignment')
+        anomalies.append(dict(reason='nonstandard_candle_time', row=r))
+        return  # preserve original in manifest, exclude from complete-candle dataset
     o, h, l, c, v = map(float, r[1:6])
     if (not all(math.isfinite(x) for x in (o, h, l, c, v)) or
             min(o, h, l, c) <= 0 or v < 0 or l > min(o, c) or h < max(o, c) or l > h):
@@ -89,7 +92,7 @@ def archive(symbol, interval, frequency, date, candles, manifest):
             for name in package.namelist():
                 for row in csv.reader(io.TextIOWrapper(package.open(name))):
                     if row and row[0].isdigit():
-                        insert(staged, row, interval)
+                        insert(staged, row, interval, anomalies=manifest['anomalies'])
         # Commit only after the whole source has passed validation.
         for row in staged.values():
             insert(candles, row, interval)
@@ -117,7 +120,7 @@ def api_range(symbol, interval, begin, end, candles, manifest):
             break  # real exchange gaps remain explicit, never synthesize candles
         staged = {}
         for row in rows:
-            insert(staged, row, interval, start=begin, end=end)
+            insert(staged, row, interval, start=begin, end=end, anomalies=manifest['anomalies'])
         for row in staged.values():
             insert(candles, row, interval)
         next_cursor = timestamp(rows[-1][0]) + STEPS[interval]
@@ -128,7 +131,7 @@ def api_range(symbol, interval, begin, end, candles, manifest):
 
 def run(symbol, interval, output):
     output.mkdir(parents=True, exist_ok=True)
-    manifest = dict(symbol=symbol, interval=interval, start=START, end=END, sources=[], errors=[])
+    manifest = dict(symbol=symbol, interval=interval, start=START, end=END, sources=[], errors=[], anomalies=[])
     candles = {}
     for year in range(2020, 2027):
         for month in range(1, 13):

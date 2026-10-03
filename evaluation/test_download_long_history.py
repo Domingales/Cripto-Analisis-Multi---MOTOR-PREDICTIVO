@@ -48,15 +48,25 @@ class HistoryTest(unittest.TestCase):
         b = io.BytesIO()
         with zipfile.ZipFile(b, 'w') as z:
             z.writestr('test.csv', ','.join(map(str, candle())))
-        data, manifest = {}, dict(sources=[], errors=[])
+        data, manifest = {}, dict(sources=[], errors=[], anomalies=[])
         with patch.object(history, 'get', side_effect=[b.getvalue(), b'wrong test.zip']):
             with self.assertRaises(ValueError):
                 history.archive('ADAUSDT', '1h', 'daily', '2020-10-02', data, manifest)
         self.assertFalse(data)
         self.assertFalse(manifest['sources'])
 
+    def test_nonstandard_archive_time_is_preserved_but_excluded(self):
+        data, anomalies = {}, []
+        row = candle()
+        row[6] = row[0] - 1000  # observed Binance archive anomaly, not a full candle
+        history.insert(data, row, '1h', anomalies=anomalies)
+        self.assertFalse(data)
+        self.assertEqual(anomalies[0]['row'], row)
+        self.assertEqual(history.missing_ranges(data, '1h', history.START, history.START+3600000),
+                         [[history.START, history.START+3600000]])
+
     def test_api_empty_gap_stays_missing(self):
-        data, manifest = {}, dict(sources=[], errors=[])
+        data, manifest = {}, dict(sources=[], errors=[], anomalies=[])
         with patch.object(history, 'get', return_value=b'[]'):
             history.api_range('ADAUSDT', '1h', history.START, history.START + 3600000, data, manifest)
         self.assertFalse(data)
@@ -64,7 +74,7 @@ class HistoryTest(unittest.TestCase):
 
     def test_api_range_filters_and_hash(self):
         blob = json.dumps([candle(), candle(history.START + 3600000)]).encode()
-        data, manifest = {}, dict(sources=[], errors=[])
+        data, manifest = {}, dict(sources=[], errors=[], anomalies=[])
         with patch.object(history, 'get', return_value=blob):
             history.api_range('ADAUSDT', '1h', history.START, history.START + 3600000, data, manifest)
         self.assertEqual(len(data), 1)
