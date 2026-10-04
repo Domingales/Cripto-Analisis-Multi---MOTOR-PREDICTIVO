@@ -27,6 +27,32 @@
         "descriptive_wilson_interval": null,
         "coverage": 0.0
       }
+    },
+    "TREND_UP": {
+      "baseline": {
+        "decisions": 1,
+        "signals": 0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "descriptive_wilson_interval": null,
+        "coverage": 0.0
+      },
+      "rejected_filter_shadow": {
+        "decisions": 1,
+        "signals": 0,
+        "resolved": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null,
+        "descriptive_wilson_interval": null,
+        "coverage": 0.0
+      }
     }
   },
   "probability_claim": null,
