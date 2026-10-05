@@ -1,0 +1,135 @@
+name: Comparación cronológica 150 combinaciones
+on:
+  pull_request:
+    paths:
+      - 'evaluation/expanded_replay.py'
+      - 'evaluation/test_expanded_replay.py'
+      - 'evaluation/prepare_expanded_adapter.py'
+      - 'app/src/test/java/com/domingales/criptoanalisis/multi/evaluation/ExpandedReplayTest.kt'
+      - '.github/workflows/expanded-replay.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    outputs:
+      matrix: ${{ steps.catalog.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - run: python3 -m unittest discover -s evaluation -p 'test_*.py'
+      - name: Comprobar contraste oficial previo
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 37275087288 --repo "$GITHUB_REPOSITORY" --name auditoria-historico-ampliado-37275087288 --dir parity
+          python3 - <<'PY'
+          import json
+          r=json.load(open('parity/expanded-coverage-parity.json'))
+          assert r['assets']==30
+          p=[x for a in r['reports'] for x in a['official_interval_parity']]
+          assert len(p)==300
+          assert sum(x['status']=='MATCH_ON_ALL_DERIVED_CANDLES' for x in p)==295
+          assert all(x['status']=='MATCH_ON_ALL_DERIVED_CANDLES' or (x['symbol']=='MKRUSDT' and x['date']=='2026-09-01' and x['status']=='NO_DERIVED_DATA_FOR_FIXED_DAY') for x in p)
+          PY
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - run: python3 evaluation/prepare_expanded_adapter.py
+      - name: Compilar y comprobar paridad con motor original y ausencia de futuro
+        run: bash ./gradlew --no-daemon testDebugUnitTest --tests com.domingales.criptoanalisis.multi.evaluation.ExpandedReplayTest.optimizedAdapterMatchesUntouchedEngine
+      - id: catalog
+        run: echo "matrix=$(python3 evaluation/expanded_replay.py --matrix)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verificacion-adaptador-150
+          path: app/build/test-results/testDebugUnitTest/
+  replay:
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix: ${{ fromJSON(needs.verify.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - name: Recuperar datos del corte fijo ya auditado
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SYMBOL: ${{ matrix.symbol }}
+        run: |
+          gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name "historico-ampliado-${SYMBOL}USDT" --dir replay-data
+          if [ "$SYMBOL" != BTC ]; then
+            gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-BTCUSDT --dir btc-data
+            cp btc-data/BTCUSDT_4h.csv btc-data/BTCUSDT_4h_manifest.json replay-data/
+          fi
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - run: python3 evaluation/prepare_expanded_adapter.py
+      - name: Registrar decisiones originales con reloj cronológico
+        run: bash ./gradlew --no-daemon testDebugUnitTest --tests com.domingales.criptoanalisis.multi.evaluation.ExpandedReplayTest.chronologicalExpandedDecisions
+        env:
+          EXPANDED_SYMBOL: ${{ matrix.symbol }}
+          EXPANDED_TF: ${{ matrix.timeframe }}
+          EXPANDED_DATA_DIR: ${{ github.workspace }}/replay-data
+          EXPANDED_KOTLIN_DIR: ${{ github.workspace }}/replay-kotlin
+          JAVA_TOOL_OPTIONS: '-Xmx4g'
+      - name: Congelar alternativo anterior al examen y resolver ambos motores
+        env:
+          SYMBOL: ${{ matrix.symbol }}
+          TF: ${{ matrix.timeframe }}
+        run: python3 evaluation/expanded_replay.py --data replay-data --kotlin replay-kotlin --output replay-output --symbol "$SYMBOL" --timeframe "$TF" --version "$GITHUB_SHA"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: replay-${{ matrix.symbol }}-${{ matrix.timeframe }}
+          path: |
+            replay-kotlin/
+            replay-output/
+            app/build/test-results/testDebugUnitTest/
+          retention-days: 90
+  summarize:
+    needs: [verify, replay]
+    if: always() && needs.verify.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: replay-*
+          path: results
+      - name: Verificar 150 informes únicos y guardar resumen completo o parcial
+        run: python3 evaluation/expanded_replay.py --aggregate results --output summary
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: resumen-150-combinaciones-${{ github.run_id }}
+          path: summary/
+          retention-days: 90
