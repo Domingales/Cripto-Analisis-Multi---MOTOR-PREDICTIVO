@@ -19,7 +19,13 @@ elegibles, no todo el histórico de mercado.
 Se mantienen las velas 5m y sus huecos. Los buckets derivados incompletos de
 15m, 30m, 1h, 4h y 1d se recuperan exclusivamente de archivos nativos oficiales
 de Binance con CHECKSUM. Los buckets completos coincidentes se contrastan;
-un conflicto de precios OHLC detiene el trabajo. Las diferencias de volumen
+un conflicto de precios OHLC sin explicación demostrable detiene el trabajo.
+Se permite una diferencia de convención sólo si el bucket derivado coincide
+exactamente con sus velas 5m completas y el nativo coincide con las mismas
+velas excluyendo las de volumen cero. Ambas representaciones se auditan;
+se conservan los precios derivados originales. La prueba real SOL15m del
+2020-11-01 mostró una vela 5m vacía a1,608 y la primera operación a1,6099;
+la misma regla debe demostrarse para cada discrepancia, nunca suponerse. Las diferencias de volumen
 entre fuentes oficiales se registran con ambos valores y se conserva el bucket
 derivado completo, sin sustituirlo silenciosamente. El contraste real detectó
 BTC15m 2021-04-22: OHLC idéntico, volumen derivado 3645,095528 frente al
@@ -74,7 +80,22 @@ con los puntos 7, 14, 18, 25–29, 43, 51, 53–55. No modifica producción
 Android, alarmas, notificaciones, persistencia, temas o vigilancia híbrida.
 La compilación/paridad en GitHub se requiere antes del nuevo examen.
 
-Estado al publicar: implementado y probado localmente en Python; pendiente
-del contraste nativo real, compilación Android y ejecución corregida en CI.
+Estado: reparación demostrada en BTC, modelos históricos evaluables, 51
+pruebas Python y captura real de15 combinaciones comprobadas en CI previo.
+Nueva comprobación pendiente para la última regla de convención vacía.
+La matriz completa continúa y no hay mejora predictiva demostrada.
+Ejemplo BTC4h:3235 entrenamientos y1065 calibraciones por dirección con
+fronteras previas al examen verificadas. Modelo prospectivo ETH diario:
+1593 entrenamientos y170 calibraciones por dirección, hash y fronteras
+2026 verificados; todavía no hay pronósticos futuros evaluados.
 La validación prospectiva requiere integrar el flujo en main para que se
 ejecute su horario, reunir pronósticos futuros y esperar sus horizontes.
+
+## Integración pendiente
+
+La revisión automática rechazó fusionar PR9 en main mientras150 seguía
+ejecutándose y consideró necesaria autorización expresa para publicar en la
+rama principal. No se ha integrado ni activado el horario futuro.
+No eludir el rechazo: terminar y revisar las comparaciones y resolver la
+autorización/revisión antes de integrar. Las primeras discrepancias de precio
+en SOL/ADA bloquearon trabajos; la causa vacía debe demostrarse caso a caso.

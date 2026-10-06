@@ -10,11 +10,36 @@ import hashlib
 import json
 import math
 from pathlib import Path
+import numpy as np
 import download_long_history as history
 from expanded_history import INTERVALS, save
 
+PARENT_CACHE = {}
 
-def merge_native(derived, native, step, volume_discrepancies=None):
+
+def carry_price_convention(fine,t,step,derived,native):
+    """Prove a source convention, never accept arbitrary price discrepancies."""
+    i=int(np.searchsorted(fine[:,0],t)); w=fine[i:i+step//300000]
+    if (len(w)!=step//300000 or not len(w) or w[0,0]!=t or
+        w[-1,6]!=t+step-1 or np.any(np.diff(w[:,0])!=300000)):
+        return None
+    traded=w[w[:,5]>0]
+    if not len(traded) or len(traded)==len(w):return None
+    def prices(a):return [a[0,1],max(a[:,2]),min(a[:,3]),a[-1,4]]
+    same=lambda a,b:all(math.isclose(float(x),float(y),rel_tol=1e-9,abs_tol=1e-8) for x,y in zip(a,b))
+    if not same(derived[1:5],prices(w)) or not same(native[1:5],prices(traded)):
+        return None
+    if not math.isclose(float(derived[5]),float(sum(w[:,5])),rel_tol=1e-9,abs_tol=1e-8):
+        return None
+    return dict(open_time=t,derived_prices=list(map(float,derived[1:5])),
+        native_prices=list(map(float,native[1:5])),
+        zero_volume_open_times=list(map(int,w[w[:,5]==0,0])),
+        reason='KNOWN_CARRY_PRICE_CANDLES_VS_ACTUAL_TRADE_OHLC',
+        policy='KEEP_COMPLETE_5M_DERIVED_BUCKET_UNCHANGED')
+
+
+def merge_native(derived, native, step, volume_discrepancies=None,
+                 price_checker=None, price_conventions=None):
     result = dict(derived)
     added = []
     for t, row in sorted(native.items()):
@@ -26,7 +51,10 @@ def merge_native(derived, native, step, volume_discrepancies=None):
                 not math.isclose(float(a), float(b), rel_tol=1e-9, abs_tol=1e-8)
                 for a, b in zip(old[1:5], row[1:5])
             ):
-                raise ValueError('Native/derived OHLC conflict at ' + str(t) + '; derived=' + str(old) + '; native=' + str(row))
+                convention=price_checker(t,old,row) if price_checker else None
+                if convention is None:
+                    raise ValueError('Native/derived OHLC conflict at ' + str(t) + '; derived=' + str(old) + '; native=' + str(row))
+                if price_conventions is not None:price_conventions.append(convention)
             if not math.isclose(float(old[5]),float(row[5]),rel_tol=1e-9,abs_tol=1e-8):
                 if volume_discrepancies is not None:
                     volume_discrepancies.append(dict(open_time=t,derived_volume=float(old[5]),native_volume=float(row[5]),
@@ -57,12 +85,24 @@ def repair(root, symbol, interval):
     for start, end in gaps:
         for t in range(start, end, step):
             months.add(dt.datetime.fromtimestamp(t / 1000, dt.timezone.utc).strftime('%Y-%m'))
-    evidence = dict(symbol=symbol+'USDT', interval=interval, sources=[], errors=[], anomalies=[], volume_discrepancies=[])
+    evidence = dict(symbol=symbol+'USDT', interval=interval, sources=[], errors=[], anomalies=[],
+        volume_discrepancies=[],price_conventions=[])
     native = {}
     for month in sorted(months):
         if not history.archive(symbol+'USDT', interval, 'monthly', month, native, evidence):
             raise RuntimeError('Official native context repair failed: '+name+' '+month)
-    rows, added = merge_native(rows, native, step, evidence['volume_discrepancies'])
+    def price_checker(t,old,new):
+        parent=root/(symbol+'USDT_5m.csv')
+        if not parent.exists():return None
+        key=str(parent.resolve())
+        if key not in PARENT_CACHE:
+            m=json.loads((root/(symbol+'USDT_5m_manifest.json')).read_text())
+            if hashlib.sha256(parent.read_bytes()).hexdigest()!=m['csv_sha256']:
+                raise ValueError('Parent 5m input hash mismatch')
+            PARENT_CACHE[key]=np.loadtxt(parent,delimiter=',',skiprows=1,ndmin=2)
+        return carry_price_convention(PARENT_CACHE[key],t,step,old,new)
+    rows, added = merge_native(rows,native,step,evidence['volume_discrepancies'],
+        price_checker,evidence['price_conventions'])
     evidence['added_open_times'] = added
     evidence_path = root / (name + '_native_repair_sources.json')
     evidence_path.write_text(json.dumps(evidence, indent=2)+'\n')
@@ -72,6 +112,7 @@ def repair(root, symbol, interval):
         repair_sources_sha256=hashlib.sha256(evidence_path.read_bytes()).hexdigest()))
     updated['native_repair_count'] = len(added)
     updated['native_volume_discrepancy_count'] = len(evidence['volume_discrepancies'])
+    updated['verified_carry_price_convention_count'] = len(evidence['price_conventions'])
     manifest_path.write_text(json.dumps(updated, indent=2)+'\n')
     print(name, 'native repairs', len(added), 'remaining missing', updated['missing_candles'], 'volume variants retained', updated['native_volume_discrepancy_count'], flush=True)
     return updated

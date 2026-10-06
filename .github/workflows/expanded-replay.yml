@@ -69,6 +69,8 @@ jobs:
         run: |
           gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-BTCUSDT --dir probe-data
           python3 evaluation/repair_native_context.py --data probe-data --symbol BTC
+          gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-SOLUSDT --dir probe-sol
+          python3 evaluation/repair_native_context.py --data probe-sol --symbol SOL
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
