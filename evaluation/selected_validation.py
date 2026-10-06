@@ -51,7 +51,8 @@ def is_fresh(close,recorded,now,tf):
 
 
 def capture(root,data,decision_file,model_root,version,engine_sha,now=None):
-    now=now or int(time.time()*1000)
+    injected_clock=now is not None
+    now=now if injected_clock else int(time.time()*1000)
     protocol=json.loads(PROTOCOL.read_text()); phash=hashlib.sha256(PROTOCOL.read_bytes()).hexdigest()
     start=int(dt.datetime.fromisoformat(protocol['start_utc']).timestamp()*1000)
     root.mkdir(parents=True,exist_ok=True)
@@ -96,8 +97,15 @@ def capture(root,data,decision_file,model_root,version,engine_sha,now=None):
                 index=int(np.argmax(scores)); prob=scores[index]
                 alt.update(accepted=prob>=protocol['threshold_alternative'],direction=('BUY','SELL')[index],
                     probability=prob,model_sha256=model_manifest['model_sha256'],reason='' if prob>=.65 else 'BELOW_FROZEN_THRESHOLD')
+        # The durable journal time is later than Kotlin computation. Outcomes must
+        # start AFTER this append, never after an earlier buffered computation.
+        computed_at=recorded
+        recorded=now if injected_clock else int(time.time()*1000)
+        first=(recorded//300000+1)*300000
+        if first-recorded<1000: first+=300000
+        end=first+replay.horizon(tf)-1
         event=dict(type='DECISION',id=identifier,symbol=symbol,timeframe=tf,candle_close=close,
-            recorded_at=recorded,version=version,engine_sha256=engine_sha,protocol_sha256=phash,
+            recorded_at=recorded,computed_at=computed_at,version=version,engine_sha256=engine_sha,protocol_sha256=phash,
             entry=float(entry),target_pct=float(target),first_open=first,horizon_end=end,
             entry_price_time=price_time,context_snapshot_base64=snapshot,
             original=dict(accepted=accepted=='true',direction=side),alternative=alt,

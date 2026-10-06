@@ -26,7 +26,7 @@ def merge_native(derived, native, step):
                 not math.isclose(float(a), float(b), rel_tol=1e-9, abs_tol=1e-8)
                 for a, b in zip(old[1:6], row[1:6])
             ):
-                raise ValueError('Native/derived OHLCV conflict at ' + str(t))
+                raise ValueError('Native/derived OHLCV conflict at ' + str(t) + '; derived=' + str(old) + '; native=' + str(row))
         else:
             result[t] = row
             added.append(t)

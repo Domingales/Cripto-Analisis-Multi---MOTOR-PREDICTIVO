@@ -42,6 +42,12 @@ jobs:
           assert sum(x['status']=='MATCH_ON_ALL_DERIVED_CANDLES' for x in p)==295
           assert all(x['status']=='MATCH_ON_ALL_DERIVED_CANDLES' or (x['symbol']=='MKRUSDT' and x['date']=='2026-09-01' and x['status']=='NO_DERIVED_DATA_FOR_FIXED_DAY') for x in p)
           PY
+      - name: Comprobar reparación nativa real antes de lanzar la matriz
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-BTCUSDT --dir probe-data
+          python3 evaluation/repair_native_context.py --data probe-data --symbol BTC
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
