@@ -30,7 +30,7 @@
     },
     "TREND_UP": {
       "baseline": {
-        "decisions": 5,
+        "decisions": 6,
         "signals": 1,
         "resolved": 0,
         "HIT": 0,
@@ -39,10 +39,10 @@
         "PENDING": 1,
         "accuracy": null,
         "descriptive_wilson_interval": null,
-        "coverage": 0.2
+        "coverage": 0.16666666666666666
       },
       "rejected_filter_shadow": {
-        "decisions": 5,
+        "decisions": 6,
         "signals": 0,
         "resolved": 0,
         "HIT": 0,
