@@ -15,14 +15,35 @@ on:
 permissions:
   contents: read
   actions: read
+concurrency:
+  group: expanded-replay-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   verify:
+    permissions:
+      contents: read
+      actions: write
     runs-on: ubuntu-latest
     timeout-minutes: 25
     outputs:
       matrix: ${{ steps.catalog.outputs.matrix }}
     steps:
       - uses: actions/checkout@v4
+      - name: Detener sólo repeticiones obsoletas de este experimento y rama
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/actions/workflows/375769353/runs?per_page=50" > own-runs.json
+          python3 - <<'PY' > obsolete-runs.txt
+          import json,os
+          for r in json.load(open('own-runs.json'))['workflow_runs']:
+              if r['head_branch']==os.environ['GITHUB_HEAD_REF'] and r['id']<int(os.environ['GITHUB_RUN_ID']) and r['status'] in ('queued','in_progress','pending'):
+                  print(r['id'])
+          PY
+          while read -r run_id; do
+            gh run cancel "$run_id" --repo "$GITHUB_REPOSITORY" || true
+          done < obsolete-runs.txt
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
