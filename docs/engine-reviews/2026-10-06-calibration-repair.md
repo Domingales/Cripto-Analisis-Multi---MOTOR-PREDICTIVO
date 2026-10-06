@@ -52,6 +52,10 @@ combinación. No rellena retrospectivamente las velas omitidas. Las entradas
 y ventanas se referencian al registro real: sólo se evalúa desde la primera
 vela 5m que abre después de registrar el pronóstico. Se publican separados
 aciertos, fallos, neutrales, pendientes, cobertura y modelos no disponibles.
+La calidad de probabilidad (Brier y bins de calibración) se evalúa también
+para pronósticos puntuados bajo el umbral, sin contarlos como señales.
+La ventana empieza después del registro duradero, no después de un cálculo
+Kotlin previo que pudiera permanecer en un búfer.
 
 Es una cohorte de investigación con retraso explícito y memoria reconstruida
 (45 días intradía, 350 diarios, 120 días de 5m), no el estado persistido del

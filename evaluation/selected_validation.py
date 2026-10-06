@@ -46,6 +46,22 @@ def checked_model(folder,protocol_hash,lock=None):
     return pickle.loads(blob),manifest
 
 
+def probability_quality(decisions,outcomes):
+    scores={e['id']:e['alternative']['probability'] for e in decisions
+            if e['alternative'].get('probability') is not None}
+    cases=[(scores[e['id']],1. if e['status']=='HIT' else 0.) for e in outcomes
+           if e['id'] in scores and e['status'] in ('HIT','FAIL')]
+    bins=[]
+    for index in range(10):
+        rows=[(p,y) for p,y in cases if min(9,int(p*10))==index]
+        bins.append(dict(low=index/10,high=(index+1)/10,cases=len(rows),
+            mean_probability=sum(p for p,y in rows)/len(rows) if rows else None,
+            observed_hit_rate=sum(y for p,y in rows)/len(rows) if rows else None))
+    return dict(scored_resolved=len(cases),
+        brier=sum((p-y)**2 for p,y in cases)/len(cases) if cases else None,
+        calibration_bins=bins,scope='ALL_SCORED_DIRECTIONS_SEPARATE_FROM_ACCEPTED_SIGNALS')
+
+
 def is_fresh(close,recorded,now,tf):
     return 0<=recorded-close<=INTERVALS[tf]+15*60000 and 0<=now-recorded<=15*60000
 
@@ -112,17 +128,19 @@ def capture(root,data,decision_file,model_root,version,engine_sha,now=None):
             data_hashes={k:v['sha256'] for k,v in manifest['inputs'].items() if k.startswith(symbol+'USDT_') or k=='BTCUSDT_4h.csv'})
         append(root,event);history.append(event);known.add(identifier)
     resolved={(e['id'],e['engine']) for e in history if e['type']=='OUTCOME'}
+    def needs_outcome(event,engine):
+        return event[engine]['accepted'] or (engine=='alternative' and event[engine].get('model_sha256') is not None)
     fine_cache={}
     for event in history[:]:
         if event['type']!='DECISION' or now<=event['horizon_end']:continue
-        if not any(event[e]['accepted'] and (event['id'],e) not in resolved for e in ('original','alternative')):continue
+        if not any(needs_outcome(event,e) and (event['id'],e) not in resolved for e in ('original','alternative')):continue
         symbol=event['symbol']
         if symbol not in fine_cache:
             path=data/(symbol+'USDT_5m.csv')
             with path.open() as f: fine_cache[symbol]=list(csv.DictReader(f))
         candles=fine_cache[symbol]
         for engine in ('original','alternative'):
-            if not event[engine]['accepted'] or (event['id'],engine) in resolved:continue
+            if not needs_outcome(event,engine) or (event['id'],engine) in resolved:continue
             prediction=dict(event,direction=event[engine]['direction'])
             result=resolve(prediction,candles,now)
             if result is not None:
@@ -135,10 +153,14 @@ def capture(root,data,decision_file,model_root,version,engine_sha,now=None):
         ids={e['id'] for e in decisions}
         for engine in ('original','alternative'):
             outcomes=[e for e in history if e['type']=='OUTCOME' and e['id'] in ids and e['engine']==engine]
-            counts={s:sum(e['status']==s for e in outcomes) for s in ('HIT','FAIL','NEUTRAL')}
+            accepted_ids={e['id'] for e in decisions if e[engine]['accepted']}
+            signal_outcomes=[e for e in outcomes if e['id'] in accepted_ids]
+            counts={s:sum(e['status']==s for e in signal_outcomes) for s in ('HIT','FAIL','NEUTRAL')}
             signals=sum(e[engine]['accepted'] for e in decisions); n=counts['HIT']+counts['FAIL']
             summaries.append(dict(symbol=symbol,timeframe=tf,engine=engine,decisions=len(decisions),signals=signals,
-                pending=signals-len(outcomes),accuracy=counts['HIT']/n if n else None,**counts))
+                pending=signals-len(signal_outcomes),accuracy=counts['HIT']/n if n else None,**counts))
+            if engine=='alternative':
+                summaries[-1].update(probability_quality=probability_quality(decisions,outcomes))
     status='AWAITING_REGISTERED_START' if now<start else 'COLLECTING_NO_CONFIRMED_IMPROVEMENT'
     (root/'summary.json').write_text(json.dumps(dict(status=status,protocol_sha256=phash,
         updated_at=now,combinations=summaries,winner=None),indent=2)+'\n')

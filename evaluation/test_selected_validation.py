@@ -68,5 +68,14 @@ class SelectedValidationTests(unittest.TestCase):
             self.assertGreater(e['first_open'],written)
             self.assertEqual(e['horizon_end']-e['first_open']+1,72*replay.HOUR)
 
+    def test_probability_quality_includes_below_threshold_predictions_separately(self):
+        decisions=[dict(id='a',alternative=dict(probability=.6,accepted=False)),
+                   dict(id='b',alternative=dict(probability=.8,accepted=True))]
+        outcomes=[dict(id='a',status='HIT'),dict(id='b',status='FAIL')]
+        quality=validation.probability_quality(decisions,outcomes)
+        self.assertEqual(quality['scored_resolved'],2)
+        self.assertAlmostEqual(quality['brier'],(.4**2+.8**2)/2)
+        self.assertEqual(sum(x['cases'] for x in quality['calibration_bins']),2)
+
 
 if __name__=='__main__':unittest.main()
