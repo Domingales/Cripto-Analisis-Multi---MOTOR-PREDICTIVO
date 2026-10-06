@@ -19,7 +19,11 @@ elegibles, no todo el histórico de mercado.
 Se mantienen las velas 5m y sus huecos. Los buckets derivados incompletos de
 15m, 30m, 1h, 4h y 1d se recuperan exclusivamente de archivos nativos oficiales
 de Binance con CHECKSUM. Los buckets completos coincidentes se contrastan;
-un conflicto de OHLCV detiene el trabajo. Nunca se interpolan precios.
+un conflicto de precios OHLC detiene el trabajo. Las diferencias de volumen
+entre fuentes oficiales se registran con ambos valores y se conserva el bucket
+derivado completo, sin sustituirlo silenciosamente. El contraste real detectó
+BTC15m 2021-04-22: OHLC idéntico, volumen derivado 3645,095528 frente al
+nativo 3647,809069. Esta variación de fuente no se oculta ni se llama coincidencia exacta. Nunca se interpolan precios.
 
 Cada input conserva el hash anterior y la evidencia de la reparación. Los
 plazos con 5m ausentes continúan PENDING. Se repite la reconstrucción de las

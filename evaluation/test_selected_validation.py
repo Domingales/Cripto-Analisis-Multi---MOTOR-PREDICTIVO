@@ -52,5 +52,21 @@ class SelectedValidationTests(unittest.TestCase):
             (p/'frozen_model.pkl').write_bytes(b'not a trusted model')
             with self.assertRaises(ValueError):validation.checked_model(p,phash)
 
+    def test_result_window_starts_after_journal_write_not_buffered_computation(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)/'ledger';data=Path(d)/'data';data.mkdir()
+            (data/'manifest.json').write_text(json.dumps({'inputs':{}}))
+            computed=1791331500000; written=computed+600000
+            close=computed//3600000*3600000-1
+            first=(computed//300000+1)*300000;end=first+72*replay.HOUR-1
+            row=['ADA','4h',close,computed,'true','BUY',100,1,first,end,close,base64.b64encode(b'context').decode()]
+            decisions=Path(d)/'decision.tsv';decisions.write_text('\t'.join(map(str,row))+'\n')
+            validation.capture(root,data,decisions,Path(d)/'models','v1','engine',now=written)
+            e=validation.load_events(root)[0]
+            self.assertEqual(e['computed_at'],computed)
+            self.assertEqual(e['recorded_at'],written)
+            self.assertGreater(e['first_open'],written)
+            self.assertEqual(e['horizon_end']-e['first_open']+1,72*replay.HOUR)
+
 
 if __name__=='__main__':unittest.main()

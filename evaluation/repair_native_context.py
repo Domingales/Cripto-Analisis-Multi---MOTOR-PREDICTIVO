@@ -1,7 +1,7 @@
 """Fill incomplete derived buckets only from checksum-verified native Binance bars.
 
-Never modify 5m outcomes or synthesize OHLCV. Complete overlapping buckets must
-agree with the native archive; maintenance gaps stay explicit in the 5m series.
+Never modify 5m outcomes or synthesize OHLCV. Complete overlapping prices must
+agree with the native archive; volume source variants are audited without replacement; maintenance gaps stay explicit in the 5m series.
 """
 import argparse
 import csv
@@ -14,7 +14,7 @@ import download_long_history as history
 from expanded_history import INTERVALS, save
 
 
-def merge_native(derived, native, step):
+def merge_native(derived, native, step, volume_discrepancies=None):
     result = dict(derived)
     added = []
     for t, row in sorted(native.items()):
@@ -24,9 +24,13 @@ def merge_native(derived, native, step):
             old = result[t]
             if int(old[6]) != int(row[6]) or any(
                 not math.isclose(float(a), float(b), rel_tol=1e-9, abs_tol=1e-8)
-                for a, b in zip(old[1:6], row[1:6])
+                for a, b in zip(old[1:5], row[1:5])
             ):
-                raise ValueError('Native/derived OHLCV conflict at ' + str(t) + '; derived=' + str(old) + '; native=' + str(row))
+                raise ValueError('Native/derived OHLC conflict at ' + str(t) + '; derived=' + str(old) + '; native=' + str(row))
+            if not math.isclose(float(old[5]),float(row[5]),rel_tol=1e-9,abs_tol=1e-8):
+                if volume_discrepancies is not None:
+                    volume_discrepancies.append(dict(open_time=t,derived_volume=float(old[5]),native_volume=float(row[5]),
+                        policy='KEEP_COMPLETE_5M_DERIVED_BUCKET_UNCHANGED'))
         else:
             result[t] = row
             added.append(t)
@@ -53,12 +57,12 @@ def repair(root, symbol, interval):
     for start, end in gaps:
         for t in range(start, end, step):
             months.add(dt.datetime.fromtimestamp(t / 1000, dt.timezone.utc).strftime('%Y-%m'))
-    evidence = dict(symbol=symbol+'USDT', interval=interval, sources=[], errors=[], anomalies=[])
+    evidence = dict(symbol=symbol+'USDT', interval=interval, sources=[], errors=[], anomalies=[], volume_discrepancies=[])
     native = {}
     for month in sorted(months):
         if not history.archive(symbol+'USDT', interval, 'monthly', month, native, evidence):
             raise RuntimeError('Official native context repair failed: '+name+' '+month)
-    rows, added = merge_native(rows, native, step)
+    rows, added = merge_native(rows, native, step, evidence['volume_discrepancies'])
     evidence['added_open_times'] = added
     evidence_path = root / (name + '_native_repair_sources.json')
     evidence_path.write_text(json.dumps(evidence, indent=2)+'\n')
@@ -67,8 +71,9 @@ def repair(root, symbol, interval):
         original_derived_sha256=original['csv_sha256'],
         repair_sources_sha256=hashlib.sha256(evidence_path.read_bytes()).hexdigest()))
     updated['native_repair_count'] = len(added)
+    updated['native_volume_discrepancy_count'] = len(evidence['volume_discrepancies'])
     manifest_path.write_text(json.dumps(updated, indent=2)+'\n')
-    print(name, 'native repairs', len(added), 'remaining missing', updated['missing_candles'], flush=True)
+    print(name, 'native repairs', len(added), 'remaining missing', updated['missing_candles'], 'volume variants retained', updated['native_volume_discrepancy_count'], flush=True)
     return updated
 
 

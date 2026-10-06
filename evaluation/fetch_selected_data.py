@@ -12,7 +12,7 @@ from expanded_history import INTERVALS
 
 def collect(root, protocol, now=None):
     now = now or dt.datetime.now(dt.timezone.utc)
-    end = int(now.replace(minute=0,second=0,microsecond=0).timestamp()*1000)
+    end = int(now.timestamp()*1000)//300000*300000
     root.mkdir(parents=True,exist_ok=True)
     symbols = sorted({s for s,tf in protocol['selections']} | {'BTC'})
     inputs = {}
