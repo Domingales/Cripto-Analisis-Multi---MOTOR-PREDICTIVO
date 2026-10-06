@@ -2,7 +2,13 @@ name: Comparación cronológica 150 combinaciones
 on:
   pull_request:
     paths:
-      - 'evaluation/**'
+      - 'evaluation/prepare_selected_models.py'
+      - 'evaluation/selected_validation_protocol.json'
+      - 'evaluation/repair_native_context.py'
+      - 'evaluation/test_repair_native_context.py'
+      - 'evaluation/expanded_replay.py'
+      - 'evaluation/test_expanded_replay.py'
+      - 'evaluation/prepare_expanded_adapter.py'
       - 'app/src/test/java/com/domingales/criptoanalisis/multi/evaluation/ExpandedReplayTest.kt'
       - '.github/workflows/expanded-replay.yml'
   workflow_dispatch:
@@ -78,6 +84,14 @@ jobs:
             gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-BTCUSDT --dir btc-data
             cp btc-data/BTCUSDT_4h.csv btc-data/BTCUSDT_4h_manifest.json replay-data/
           fi
+      - name: Reparar contexto con velas nativas oficiales; conservar huecos 5m
+        env:
+          SYMBOL: ${{ matrix.symbol }}
+        run: |
+          python3 evaluation/repair_native_context.py --data replay-data --symbol "$SYMBOL"
+          if [ "$SYMBOL" != BTC ]; then
+            python3 evaluation/repair_native_context.py --data replay-data --symbol BTC --interval 4h
+          fi
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -100,6 +114,17 @@ jobs:
           SYMBOL: ${{ matrix.symbol }}
           TF: ${{ matrix.timeframe }}
         run: python3 evaluation/expanded_replay.py --data replay-data --kotlin replay-kotlin --output replay-output --symbol "$SYMBOL" --timeframe "$TF" --version "$GITHUB_SHA"
+      - name: Congelar modelos para validación futura, separados del examen 2023
+        env:
+          SYMBOL: ${{ matrix.symbol }}
+          TF: ${{ matrix.timeframe }}
+        run: python3 evaluation/prepare_selected_models.py --data replay-data --kotlin replay-kotlin --output prospective-model --symbol "$SYMBOL" --timeframe "$TF" --version "$GITHUB_SHA"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prospective-frozen-${{ matrix.symbol }}-${{ matrix.timeframe }}
+          path: prospective-model/
+          if-no-files-found: ignore
+          retention-days: 90
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -107,6 +132,8 @@ jobs:
           path: |
             replay-kotlin/
             replay-output/
+            replay-data/*_manifest.json
+            replay-data/*_native_repair_sources.json
             app/build/test-results/testDebugUnitTest/
           retention-days: 90
   summarize:
