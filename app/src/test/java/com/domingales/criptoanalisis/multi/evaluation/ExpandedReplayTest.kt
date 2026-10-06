@@ -40,13 +40,16 @@ class ExpandedReplayTest {
         val aa=mutableListOf<Long>(); val bb=mutableListOf<Long>()
         val ra=BacktestEngine.run("ADA","15m",all,0,btcCandles4h=all.getValue("1h"),outcomeCandles5m=fine,auditThroughLatest=true,onEvaluation={a.add(it)},onAccepted={aa.add(it.candleCloseTime)})
         val rb=ExpandedResearchEngine.run("ADA","15m",all,0,btcCandles4h=all.getValue("1h"),outcomeCandles5m=fine,auditThroughLatest=true,onEvaluation={b.add(it)},onAccepted={bb.add(it.candleCloseTime)})
-        assertTrue(a.isNotEmpty()); assertEquals(a,b); assertEquals(aa,bb); assertEquals(ra,rb)
+        // Wall-clock creation time is incidental; simulated candle time and every
+        // indicator, decision, calibration and outcome must remain identical.
+        fun normalized(rows: List<AnalysisResult>) = rows.map { it.copy(timestamp = 0L) }
+        assertTrue(a.isNotEmpty()); assertEquals(normalized(a),normalized(b)); assertEquals(aa,bb); assertEquals(ra,rb)
         // Changing future candles must not alter earlier analyses or acceptance.
         val boundary=all.getValue("15m")[400].closeTime
         val changed=all.mapValues { (_,c) -> c.map { if(it.closeTime>boundary) it.copy(open=it.open*2,high=it.high*2,low=it.low*2,close=it.close*2) else it } }
         val future=mutableListOf<AnalysisResult>()
         ExpandedResearchEngine.run("ADA","15m",changed,0,btcCandles4h=all.getValue("1h"),outcomeCandles5m=fine,auditThroughLatest=true,onEvaluation={future.add(it)})
-        assertEquals(b.filter { it.candleCloseTime<=boundary },future.filter { it.candleCloseTime<=boundary })
+        assertEquals(normalized(b.filter { it.candleCloseTime<=boundary }),normalized(future.filter { it.candleCloseTime<=boundary }))
     }
     @Test fun chronologicalExpandedDecisions() {
         val dir=System.getenv("EXPANDED_DATA_DIR")?.let(::File) ?: return
