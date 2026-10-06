@@ -2,9 +2,7 @@ name: Comparación cronológica 150 combinaciones
 on:
   pull_request:
     paths:
-      - 'evaluation/expanded_replay.py'
-      - 'evaluation/test_expanded_replay.py'
-      - 'evaluation/prepare_expanded_adapter.py'
+      - 'evaluation/**'
       - 'app/src/test/java/com/domingales/criptoanalisis/multi/evaluation/ExpandedReplayTest.kt'
       - '.github/workflows/expanded-replay.yml'
   workflow_dispatch:
