@@ -1,0 +1,13 @@
+# Recuperación auditable de ALGO y cierre de la matriz
+
+La ejecución 37607394740 conserva la versión predictiva segura 68b0335ca0c1a8aed44b1f20393c84bb25c42543 (rama c8bfcc00d3d07d2d6527bb1688aa06653c376987). Los cinco intervalos de ALGO fallan después de corregir 171 conflictos y 115 filas de 5m: los cambios corroborados en intervalos mayores modifican una vela de 15m que antes coincidía con la mensual. El conflicto registrado es 2021-04-23 02:00 UTC, openTime 1619143200000. Reconstruida: O1.0854 H1.1 L1.0472 C1.0474 V2015234.75; mensual 15m: O1.0854 H1.1 L1.05 C1.0516 V1803064.16.
+
+La reparación vuelve a contrastar los intervalos después de cada cambio del padre 5m hasta alcanzar un estado estable. Cada desacuerdo nuevo exige consenso entre daily 5m agregado y daily native. El registro distingue ORIGINAL_MONTHLY_VARIANT y CROSS_INTERVAL_REBUILD, preserva la variante derivada original, la reconstruida, las representaciones oficiales y cada fila cambiada. Rechaza propuestas incompatibles, datos diarios ausentes o desacuerdo diario; no rellena 5m ni elige una fuente por su frecuencia. Una prueba reproduce el caso de 30m que obliga a revalidar una vela de 15m antes coincidente.
+
+La recuperación sólo reutiliza informes de esa ejecución y versión segura, con aritmética, límites temporales e inputs compartidos comprobados. Si falta un intervalo de una moneda, se repiten sus cinco intervalos, evitando mezclar versiones de histórico dentro de la moneda. Los no evaluables por falta de entrenamiento anterior al examen son informes válidos, no resultados perdidos.
+
+Antes de recuperar, CI compara los blobs y modos de todos los archivos de la versión predictiva original con el checkout actual. Sólo admite cambios en preparación de datos, sus pruebas, control de recuperación, workflow de investigación y documentación. Un cambio predictivo, de dependencias o del código de producción bloquea la recuperación. La versión del motor sigue siendo la versión exacta comprobada, no una versión nueva supuesta equivalente.
+
+Cada informe repetido conserva esa identidad predictiva y tiene un recovery_provenance.json con el commit real de ejecución y preparación de datos, hashes de inputs y modelo, y ejecución fuente. El artefacto final incluye recovery-provenance.json con todas las combinaciones reutilizadas y repetidas, SHA256 del resumen fuente, identidad de archivos predictivos y hashes originales de modelos. No se oculta el cambio de commit al reutilizar una identidad predictiva demostrablemente idéntica.
+
+Estado al preparar: pendiente de CI, reparación real de ALGO y comprobación final de 150 combinaciones. No es una declaración de finalización.

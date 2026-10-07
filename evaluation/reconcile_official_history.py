@@ -47,6 +47,50 @@ def choose_variant(parent, derived, monthly, daily_fine, daily_native, step):
         for k in times if not same(parent[k], daily_fine[k])]
 
 
+def reconcile_overlaps(parent, original_parent, originals, monthly_native, archive, audit):
+    """Recheck all intervals after parent corrections; never silently accept propagation."""
+    for pass_index in range(len(monthly_native) + 1):
+        changed = False
+        for tf, native_rows in monthly_native.items():
+            step = INTERVALS[tf]
+            derived = aggregate(parent, step)
+            fine = np.array([r for _, r in sorted(parent.items())], dtype=float)
+            for t, native in sorted(native_rows.items()):
+                old = derived.get(t)
+                if old is None or all(math.isclose(float(x), float(y), rel_tol=1e-9, abs_tol=1e-8)
+                                      for x, y in zip(old[1:5], native[1:5])):
+                    continue
+                if carry_price_convention(fine, t, step, old, native) is not None:
+                    continue
+                if any(p['timeframe'] == tf and p['open_time'] == t and
+                       p.get('daily_native') is not None and same(old, p['daily_native']) and
+                       same(native, p['monthly_native']) for p in audit['conflicts']):
+                    continue
+                original = originals[tf].get(t)
+                date = dt.datetime.fromtimestamp(t / 1000, dt.timezone.utc).strftime('%Y-%m-%d')
+                evidence = dict(timeframe=tf, open_time=t, derived=old,
+                    original_derived=original, monthly_native=native,
+                    stage='CROSS_INTERVAL_REBUILD' if original is not None and not same(original, old)
+                          else 'ORIGINAL_MONTHLY_VARIANT', reconciliation_pass=pass_index + 1)
+                audit['conflicts'].append(evidence)
+                daily_fine = archive('5m', 'daily', date)
+                daily_native = archive(tf, 'daily', date).get(t)
+                evidence['daily_native'] = daily_native
+                policy, changes = choose_variant(parent, old, native, daily_fine, daily_native, step)
+                evidence['policy'] = policy
+                for change in changes:
+                    k = change['open_time']
+                    if not same(parent[k], original_parent[k]) and not same(parent[k], change['after']):
+                        raise ValueError('Conflicting corroborated 5m proposals')
+                    if not same(parent[k], change['after']):
+                        parent[k] = change['after']
+                        changed = True
+        if not changed:
+            audit['reconciliation_passes'] = pass_index + 1
+            return
+    raise ValueError('UNRESOLVED_CROSS_INTERVAL_RECONCILIATION_DID_NOT_CONVERGE')
+
+
 def read_verified(root, symbol, tf):
     p = root / f'{symbol}_{tf}.csv'
     m = json.loads((root / f'{symbol}_{tf}_manifest.json').read_text())
@@ -67,7 +111,6 @@ def reconcile(root, symbol):
         raise ValueError('Reconciliation already attempted; restore original snapshot first')
     parent, manifest = read_verified(root, symbol, '5m')
     original_parent = dict(parent)
-    fine = np.array([r for _, r in sorted(parent.items())], dtype=float)
     audit = dict(symbol=symbol, status='IN_PROGRESS', input_sha256=manifest['csv_sha256'],
                  sources=[], errors=[], anomalies=[], conflicts=[], changed_5m_rows=[])
     cache = {}
@@ -88,37 +131,20 @@ def reconcile(root, symbol):
             p = root / f'{symbol}_{tf}{suffix}'
             shutil.copy2(p, snapshot / p.name)
     try:
-        # Each interval uses the original derived inputs for independent evidence.
+        originals, monthly_native = {}, {}
         for tf, step in INTERVALS.items():
             history.STEPS[tf] = step
             derived, _ = read_verified(root, symbol, tf)
+            originals[tf] = derived
             gaps = history.missing_ranges(derived, tf, min(derived), max(derived) + step)
             months = sorted({dt.datetime.fromtimestamp(t / 1000, dt.timezone.utc).strftime('%Y-%m')
                              for a, b in gaps for t in range(a, b, step)})
             with ThreadPoolExecutor(max_workers=4) as pool:
                 list(pool.map(lambda month: archive(tf, 'monthly', month), months))
+            monthly_native[tf] = {}
             for month in months:
-                for t, native in archive(tf, 'monthly', month).items():
-                    old = derived.get(t)
-                    if old is None or all(math.isclose(float(x), float(y), rel_tol=1e-9, abs_tol=1e-8)
-                                          for x, y in zip(old[1:5], native[1:5])):
-                        continue
-                    if carry_price_convention(fine, t, step, old, native) is not None:
-                        continue  # Existing rule proves and audits this separately.
-                    date = dt.datetime.fromtimestamp(t / 1000, dt.timezone.utc).strftime('%Y-%m-%d')
-                    evidence = dict(timeframe=tf, open_time=t, derived=old, monthly_native=native)
-                    audit['conflicts'].append(evidence)
-                    daily_fine = archive('5m', 'daily', date)
-                    daily_native = archive(tf, 'daily', date).get(t)
-                    evidence['daily_native'] = daily_native
-                    policy, changes = choose_variant(original_parent, old, native, daily_fine, daily_native, step)
-                    evidence['policy'] = policy
-                    # Conflicting proposals across intervals must not overwrite one another.
-                    for change in changes:
-                        k = change['open_time']
-                        if not same(parent[k], original_parent[k]) and not same(parent[k], change['after']):
-                            raise ValueError('Conflicting corroborated 5m proposals')
-                        parent[k] = change['after']
+                monthly_native[tf].update(archive(tf, 'monthly', month))
+        reconcile_overlaps(parent, original_parent, originals, monthly_native, archive, audit)
         audit['changed_5m_rows'] = [dict(open_time=t, before=original_parent[t], after=parent[t])
                                    for t in parent if not same(original_parent[t], parent[t])]
         audit['status'] = 'CORROBORATED_RECONCILIATION_COMPLETE'
