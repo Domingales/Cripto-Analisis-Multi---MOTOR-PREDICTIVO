@@ -1,7 +1,9 @@
 """Generate a research-only copy of BacktestEngine, never edit production.
 
-Only closed-window lookup and memoization change. CI requires decision/result
-parity with the untouched engine before any historical job is allowed to run.
+Closed-window lookup and memoization preserve parity on complete inputs.
+Acceptance cooldown is recorded before reading future outcome availability:
+the untouched engine omits that update for MISSING_5M_DATA, a temporal leak.
+CI proves parity on complete inputs and explicitly tests this audited exception.
 """
 import hashlib
 from pathlib import Path
@@ -25,6 +27,8 @@ def generate():
            'val btcRegime = historicalBtcRegime(symbol, asOf, btcCandles4h, indicatorCache)')
     change('var signals = 0; var hits = 0; var fails = 0; var neutral = 0',
            'val indicatorCache = mutableMapOf<String, Pair<Long, IndicatorSet>>()\n        var signals = 0; var hits = 0; var fails = 0; var neutral = 0')
+    change('onAccepted?.invoke(analysis)\n                val entry = indicators.price',
+           'onAccepted?.invoke(analysis)\n                // Acceptance is known now; future data gaps cannot alter cooldown.\n                lastAccepted[side] = asOf to analysis.confidence\n                val entry = indicators.price')
     change('candlesByTimeframe: Map<String, List<Candle>>\n    ): MultiTimeframeContext',
            'candlesByTimeframe: Map<String, List<Candle>>,\n        cache: MutableMap<String, Pair<Long, IndicatorSet>>\n    ): MultiTimeframeContext')
     change('val historical = allCandles.asSequence().filter { it.closeTime <= asOf }.sortedBy { it.openTime }.toList()\n            if (historical.size >= 210) add(tf, TechnicalEngine.calculate(historical.takeLast(300)))',

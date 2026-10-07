@@ -50,6 +50,23 @@ class ExpandedReplayTest {
         val future=mutableListOf<AnalysisResult>()
         ExpandedResearchEngine.run("ADA","15m",changed,0,btcCandles4h=all.getValue("1h"),outcomeCandles5m=fine,auditThroughLatest=true,onEvaluation={future.add(it)})
         assertEquals(normalized(b.filter { it.candleCloseTime<=boundary }),normalized(future.filter { it.candleCloseTime<=boundary }))
+        // Availability is information too. Removing a future 5m candle must
+        // never change acceptance before that candle, including cooldown.
+        val missingAt=boundary+1+300000L
+        val missingFine=fine.filter { it.openTime!=missingAt }
+        assertEquals(fine.size-1,missingFine.size)
+        val gapAccepted=mutableListOf<Long>()
+        val gapAnalyses=mutableListOf<AnalysisResult>()
+        ExpandedResearchEngine.run("ADA","15m",all,0,btcCandles4h=all.getValue("1h"),outcomeCandles5m=missingFine,auditThroughLatest=true,
+            onEvaluation={gapAnalyses.add(it)},onAccepted={gapAccepted.add(it.candleCloseTime)})
+        assertEquals(normalized(b.filter { it.candleCloseTime<=boundary }),normalized(gapAnalyses.filter { it.candleCloseTime<=boundary }))
+        assertEquals(bb.filter { it<=boundary },gapAccepted.filter { it<=boundary })
+        // Document the exception to untouched-engine parity rather than hide it.
+        val untouchedGapAccepted=mutableListOf<Long>()
+        BacktestEngine.run("ADA","15m",all,0,btcCandles4h=all.getValue("1h"),outcomeCandles5m=missingFine,auditThroughLatest=true,
+            onAccepted={untouchedGapAccepted.add(it.candleCloseTime)})
+        assertFalse("The regression fixture must expose the original future-availability leak",
+            aa.filter { it<=boundary }==untouchedGapAccepted.filter { it<=boundary })
     }
     @Test fun chronologicalExpandedDecisions() {
         val dir=System.getenv("EXPANDED_DATA_DIR")?.let(::File) ?: return
