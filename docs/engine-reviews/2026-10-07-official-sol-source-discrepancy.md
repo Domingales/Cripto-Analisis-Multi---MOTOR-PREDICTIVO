@@ -13,7 +13,7 @@ Revisión a las 08:26 Europe/Madrid. Investigación; sin cambios al motor Androi
 
 ## Hallazgo nuevo comprobado directamente con archivos oficiales Binance
 
-Bucket SOLUSDT15m abierto1619144100000 (2021-04-23T03:35:00Z), cerrado1619144999999:
+Bucket SOLUSDT15m abierto1619144100000 (2021-04-23T02:15:00Z), cerrado1619144999999:
 - Derivado de monthly5m: open36.3239 high36.7999 low34.1 close34.8737 volume391787.77.
 - Nativo15m monthly y daily: open36.3239 high36.8154 low34.1 close34.8737 volume403824.89.
 - La PR hizo bien en detenerse: no es una convención de velas vacías.
