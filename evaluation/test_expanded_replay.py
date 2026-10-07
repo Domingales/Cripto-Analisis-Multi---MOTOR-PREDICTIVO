@@ -59,5 +59,30 @@ class ExpandedReplayTests(unittest.TestCase):
             m=json.loads((Path(d)/'out/summary_150.json').read_text())
             self.assertEqual(m['status'],'PARTIAL_NOT_COMPLETE'); self.assertEqual(len(m['missing']),5)
 
+    def test_150_unique_combinations_and_duplicate_and_version_rejection(self):
+        from expanded_history import assets,INTERVALS
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)/'inputs';root.mkdir();out=Path(d)/'out'
+            keys=[(s,tf) for s in assets(Path(__file__).resolve().parents[1]) for tf in INTERVALS]
+            self.assertEqual(len(keys),150);self.assertEqual(len(set(keys)),150)
+            for i,(s,tf) in enumerate(keys):
+                p=root/str(i);p.mkdir()
+                m=dict(decisions=1,signals=0,HIT=0,FAIL=0,NEUTRAL=0,PENDING=0,accuracy=None)
+                r=dict(symbol=s,timeframe=tf,freeze=dict(version='one',status='FROZEN_BEFORE_EXAMINATION'),kotlin=m,alternative=m)
+                (p/'report.json').write_text(json.dumps(r))
+            replay.aggregate_reports(root,out)
+            self.assertEqual(json.loads((out/'summary_150.json').read_text())['completed'],150)
+            duplicate=root/'duplicate';duplicate.mkdir();(duplicate/'report.json').write_text((root/'0/report.json').read_text())
+            with self.assertRaisesRegex(ValueError,'duplicate'):replay.aggregate_reports(root,out)
+            (duplicate/'report.json').unlink()
+            r=json.loads((root/'0/report.json').read_text());r['freeze']['version']='two'
+            (root/'0/report.json').write_text(json.dumps(r))
+            with self.assertRaisesRegex(ValueError,'Mixed engine versions'):replay.aggregate_reports(root,out)
+            r['freeze']['version']='one';r['freeze']['inputs']={'BTCUSDT_4h':'first'}
+            (root/'0/report.json').write_text(json.dumps(r))
+            other=json.loads((root/'1/report.json').read_text());other['freeze']['inputs']={'BTCUSDT_4h':'second'}
+            (root/'1/report.json').write_text(json.dumps(other))
+            with self.assertRaisesRegex(ValueError,'Mixed historical input versions'):replay.aggregate_reports(root,out)
+
 
 if __name__=='__main__': unittest.main()

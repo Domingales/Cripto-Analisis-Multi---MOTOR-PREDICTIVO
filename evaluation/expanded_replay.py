@@ -228,11 +228,23 @@ def aggregate_reports(root,output):
         if key not in expected or key in reports:
             raise ValueError('Unexpected or duplicate combination: '+str(key))
         reports[key]=r
+    versions={r['freeze'].get('version') for r in reports.values()}
+    if len(versions)>1:
+        raise ValueError('Mixed engine versions cannot form one experiment')
+    input_hashes={}
+    for r in reports.values():
+        for name,digest in r['freeze'].get('inputs',{}).items():
+            if name in input_hashes and input_hashes[name]!=digest:
+                raise ValueError('Mixed historical input versions: '+name)
+            input_hashes[name]=digest
     missing=sorted(expected-set(reports))
     output.mkdir(parents=True,exist_ok=True)
     result=dict(status='COMPLETE_150_COMBINATIONS' if not missing else 'PARTIAL_NOT_COMPLETE',
         completed=len(reports),expected=len(expected),missing=missing,
         fixed_alternative_evaluable=sum(r['freeze']['status']=='FROZEN_BEFORE_EXAMINATION' for r in reports.values()),
+        not_evaluable=[dict(symbol=k[0],timeframe=k[1],reason=r['freeze']['status'],
+                           counts=r['freeze'].get('counts',{}))
+                       for k,r in sorted(reports.items()) if r['freeze']['status']!='FROZEN_BEFORE_EXAMINATION'],
         reports=[reports[k] for k in sorted(reports)],winner=None)
     (output/'summary_150.json').write_text(json.dumps(result,indent=2)+'\n')
     with (output/'summary_150.csv').open('w',newline='') as f:
@@ -240,6 +252,9 @@ def aggregate_reports(root,output):
         for k,r in sorted(reports.items()):
             for e in ('kotlin','alternative'):
                 m=r[e]; w.writerow([*k,e,r['freeze']['status'],*[m[n] for n in ('decisions','signals','HIT','FAIL','NEUTRAL','PENDING','accuracy')]])
+        for k in missing:
+            for e in ('kotlin','alternative'):
+                w.writerow([*k,e,'NOT_RUN_OR_NO_VALID_REPORT',*(['']*7)])
     print(json.dumps({k:v for k,v in result.items() if k!='reports'}))
     if missing:
         raise ValueError('Incomplete experiment; missing '+str(len(missing))+' combinations')

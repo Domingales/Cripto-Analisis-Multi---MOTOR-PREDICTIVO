@@ -5,6 +5,8 @@ on:
       - 'evaluation/prepare_selected_models.py'
       - 'evaluation/selected_validation_protocol.json'
       - 'evaluation/repair_native_context.py'
+      - 'evaluation/reconcile_official_history.py'
+      - 'evaluation/test_reconcile_official_history.py'
       - 'evaluation/test_repair_native_context.py'
       - 'evaluation/expanded_replay.py'
       - 'evaluation/test_expanded_replay.py'
@@ -68,9 +70,14 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-BTCUSDT --dir probe-data
+          python3 evaluation/reconcile_official_history.py --data probe-data --symbol BTC
           python3 evaluation/repair_native_context.py --data probe-data --symbol BTC
           gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-SOLUSDT --dir probe-sol
+          python3 evaluation/reconcile_official_history.py --data probe-sol --symbol SOL
           python3 evaluation/repair_native_context.py --data probe-sol --symbol SOL
+          gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-ADAUSDT --dir probe-ada
+          python3 evaluation/reconcile_official_history.py --data probe-ada --symbol ADA
+          python3 evaluation/repair_native_context.py --data probe-ada --symbol ADA
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -88,7 +95,11 @@ jobs:
         if: always()
         with:
           name: verificacion-adaptador-150
-          path: app/build/test-results/testDebugUnitTest/
+          path: |
+            app/build/test-results/testDebugUnitTest/
+            probe-*/*_reconciliation.json
+            probe-*/*_native_repair_sources.json
+            probe-*/*_manifest.json
   replay:
     needs: verify
     runs-on: ubuntu-latest
@@ -111,16 +122,17 @@ jobs:
           gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name "historico-ampliado-${SYMBOL}USDT" --dir replay-data
           if [ "$SYMBOL" != BTC ]; then
             gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-BTCUSDT --dir btc-data
+            python3 evaluation/reconcile_official_history.py --data btc-data --symbol BTC
+            python3 evaluation/repair_native_context.py --data btc-data --symbol BTC --interval 4h
             cp btc-data/BTCUSDT_4h.csv btc-data/BTCUSDT_4h_manifest.json replay-data/
+            cp btc-data/BTCUSDT_reconciliation.json btc-data/BTCUSDT_4h_native_repair_sources.json replay-data/
           fi
       - name: Reparar contexto con velas nativas oficiales; conservar huecos 5m
         env:
           SYMBOL: ${{ matrix.symbol }}
         run: |
+          python3 evaluation/reconcile_official_history.py --data replay-data --symbol "$SYMBOL"
           python3 evaluation/repair_native_context.py --data replay-data --symbol "$SYMBOL"
-          if [ "$SYMBOL" != BTC ]; then
-            python3 evaluation/repair_native_context.py --data replay-data --symbol BTC --interval 4h
-          fi
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -163,6 +175,7 @@ jobs:
             replay-output/
             replay-data/*_manifest.json
             replay-data/*_native_repair_sources.json
+            replay-data/*_reconciliation.json
             app/build/test-results/testDebugUnitTest/
           retention-days: 90
   summarize:

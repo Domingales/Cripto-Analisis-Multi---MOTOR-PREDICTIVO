@@ -92,6 +92,24 @@ def repair(root, symbol, interval):
         if not history.archive(symbol+'USDT', interval, 'monthly', month, native, evidence):
             raise RuntimeError('Official native context repair failed: '+name+' '+month)
     def price_checker(t,old,new):
+        reconciliation=root/(symbol+'USDT_reconciliation.json')
+        if reconciliation.exists():
+            audit=json.loads(reconciliation.read_text())
+            m=json.loads(manifest_path.read_text())
+            if (audit['status']!='CORROBORATED_RECONCILIATION_COMPLETE' or
+                hashlib.sha256(reconciliation.read_bytes()).hexdigest()!=m['origin'].get('reconciliation_sha256')):
+                raise ValueError('Reconciliation evidence hash/status mismatch')
+            for proof in audit['conflicts']:
+                if (proof['timeframe']==interval and proof['open_time']==t and
+                    proof.get('policy') in ('KEEP_CORROBORATED_DERIVED',
+                        'USE_CORROBORATED_DAILY_5M_REBUILD_ALL_INTERVALS',
+                        'USE_THIRD_VARIANT_CORROBORATED_DAILY_5M_AND_NATIVE_REBUILD_ALL_INTERVALS') and
+                    all(math.isclose(float(a),float(b),rel_tol=1e-9,abs_tol=1e-8)
+                        for a,b in zip(old[1:6],proof['daily_native'][1:6])) and
+                    all(math.isclose(float(a),float(b),rel_tol=1e-9,abs_tol=1e-8)
+                        for a,b in zip(new[1:6],proof['monthly_native'][1:6]))):
+                    return dict(proof,reason='CORROBORATED_DAILY_ARCHIVE_VARIANT',
+                                reconciliation_sha256=hashlib.sha256(reconciliation.read_bytes()).hexdigest())
         parent=root/(symbol+'USDT_5m.csv')
         if not parent.exists():return None
         key=str(parent.resolve())
@@ -112,7 +130,10 @@ def repair(root, symbol, interval):
         repair_sources_sha256=hashlib.sha256(evidence_path.read_bytes()).hexdigest()))
     updated['native_repair_count'] = len(added)
     updated['native_volume_discrepancy_count'] = len(evidence['volume_discrepancies'])
-    updated['verified_carry_price_convention_count'] = len(evidence['price_conventions'])
+    updated['verified_carry_price_convention_count'] = sum(
+        p.get('reason')=='KNOWN_CARRY_PRICE_CANDLES_VS_ACTUAL_TRADE_OHLC' for p in evidence['price_conventions'])
+    updated['verified_source_reconciliation_count'] = sum(
+        p.get('reason')=='CORROBORATED_DAILY_ARCHIVE_VARIANT' for p in evidence['price_conventions'])
     manifest_path.write_text(json.dumps(updated, indent=2)+'\n')
     print(name, 'native repairs', len(added), 'remaining missing', updated['missing_candles'], 'volume variants retained', updated['native_volume_discrepancy_count'], flush=True)
     return updated
