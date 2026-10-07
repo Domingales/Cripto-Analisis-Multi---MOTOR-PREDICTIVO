@@ -256,6 +256,9 @@ def aggregate_reports(root,output):
             for e in ('kotlin','alternative'):
                 w.writerow([*k,e,'NOT_RUN_OR_NO_VALID_REPORT',*(['']*7)])
     print(json.dumps({k:v for k,v in result.items() if k!='reports'}))
+    # Bounded per-combination records make the full table independently inspectable in CI logs.
+    for report in result['reports']:
+        print('RESULT_ROW_JSON '+json.dumps({k:report[k] for k in ('symbol','timeframe','freeze','kotlin','alternative','coverage') if k in report},separators=(',',':')))
     if missing:
         raise ValueError('Incomplete experiment; missing '+str(len(missing))+' combinations')
 
