@@ -10,6 +10,7 @@ on:
       - 'evaluation/test_repair_native_context.py'
       - 'evaluation/expanded_replay.py'
       - 'evaluation/test_expanded_replay.py'
+      - 'evaluation/test_generated_expanded_adapter.py'
       - 'evaluation/prepare_expanded_adapter.py'
       - 'app/src/test/java/com/domingales/criptoanalisis/multi/evaluation/ExpandedReplayTest.kt'
       - '.github/workflows/expanded-replay.yml'

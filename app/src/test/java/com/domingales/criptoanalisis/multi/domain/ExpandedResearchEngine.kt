@@ -102,6 +102,8 @@ object ExpandedResearchEngine {
                     continue
                 }
                 onAccepted?.invoke(analysis)
+                // Acceptance is known now; future data gaps cannot alter cooldown.
+                lastAccepted[side] = asOf to analysis.confidence
                 val entry = indicators.price
                 val next = primary.subList(idx + 1, minOf(idx + 1 + horizonBars, primary.size))
                     .filter { it.openTime > asOf }
