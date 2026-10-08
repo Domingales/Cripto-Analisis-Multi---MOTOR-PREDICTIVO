@@ -20,7 +20,11 @@ jobs:
       - name: Detener repetición redundante de la matriz ya completada
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh run cancel 37744338397 --repo "$GITHUB_REPOSITORY"
+        run: |
+          status=$(gh run view 37744338397 --repo "$GITHUB_REPOSITORY" --json status --jq .status)
+          if [ "$status" != completed ]; then
+            gh run cancel 37744338397 --repo "$GITHUB_REPOSITORY"
+          fi
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
