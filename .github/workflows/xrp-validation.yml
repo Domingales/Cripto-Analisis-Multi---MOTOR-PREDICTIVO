@@ -38,7 +38,7 @@ jobs:
           gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-XRPUSDT --dir replay-data
           gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-BTCUSDT --dir btc-data
           cp btc-data/BTCUSDT_4h.csv btc-data/BTCUSDT_4h_manifest.json replay-data/
-          gh run download 37623666317 --repo "$GITHUB_REPOSITORY" --name replay-XRP-30m --dir previous
+          gh run download 37607394740 --repo "$GITHUB_REPOSITORY" --name replay-XRP-30m --dir previous
           python3 - <<'PY'
           import pathlib, shutil
           matches=list(pathlib.Path('previous').rglob('kotlin_decisions.csv'))
@@ -60,11 +60,47 @@ jobs:
           assert model is not None, 'Model not evaluable: prospective capture remains blocked'
           print(manifest['status'],manifest['counts'])
           PY
+      - name: Descargar velas cerradas actuales para comprobar captura real
+        run: |
+          PYTHONPATH=evaluation python3 - <<'PY'
+          import json
+          from pathlib import Path
+          import download_long_history as history
+          from expanded_history import INTERVALS
+          from fetch_selected_data import collect
+          history.STEPS.update(INTERVALS)
+          collect(Path('xrp-current-data'), json.loads(Path('evaluation/xrp30m_validation_protocol.json').read_text()))
+          PY
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - run: python3 evaluation/prepare_expanded_adapter.py
+      - name: Calcular decisión real XRP30m sin velas futuras
+        run: bash ./gradlew --no-daemon testDebugUnitTest --tests com.domingales.criptoanalisis.multi.evaluation.SelectedProspectiveTest
+        env:
+          SELECTED_PAIRS: XRP:30m
+          SELECTED_DATA_DIR: ${{ github.workspace }}/xrp-current-data
+          SELECTED_OUTPUT_DIR: ${{ github.workspace }}/xrp-current-output
+          JAVA_TOOL_OPTIONS: '-Xmx4g'
+      - name: Comprobar registro propio respetando la fecha futura declarada
+        run: |
+          engine_sha=$(sha256sum app/src/main/java/com/domingales/criptoanalisis/multi/domain/*.kt | sha256sum | cut -d' ' -f1)
+          python3 evaluation/xrp_episode_validation.py capture --root xrp-ledger --data xrp-current-data --decisions xrp-current-output/decisions.tsv --models xrp-model --version "$GITHUB_SHA" --engine-sha256 "$engine_sha"
+          cat xrp-ledger/summary.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: xrp-prospective-preparation-${{ github.run_id }}
           path: |
             xrp-model/
+            xrp-current-output/
+            xrp-current-data/manifest.json
+            xrp-ledger/
+            app/build/test-results/testDebugUnitTest/
             replay-data/*_native_repair_sources.json
           retention-days: 90
