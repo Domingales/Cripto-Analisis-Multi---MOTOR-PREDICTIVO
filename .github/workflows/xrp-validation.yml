@@ -1,0 +1,62 @@
+name: Preparar validación independiente XRP30m
+on:
+  pull_request:
+    paths:
+      - 'evaluation/xrp*'
+      - 'evaluation/test_xrp_episode_validation.py'
+      - '.github/workflows/xrp-validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: xrp-validation-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - run: python3 -m unittest discover -s evaluation -p 'test_*.py'
+      - name: Recuperar histórico y decisiones existentes sin repetir el examen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-XRPUSDT --dir replay-data
+          gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-BTCUSDT --dir btc-data
+          cp btc-data/BTCUSDT_4h.csv btc-data/BTCUSDT_4h_manifest.json replay-data/
+          gh run download 37623666317 --repo "$GITHUB_REPOSITORY" --name replay-XRP-30m --dir previous
+          python3 - <<'PY'
+          import pathlib, shutil
+          matches=list(pathlib.Path('previous').rglob('kotlin_decisions.csv'))
+          assert len(matches)==1, 'Expected exactly one existing chronological Kotlin decision file'
+          pathlib.Path('replay-kotlin').mkdir()
+          shutil.copyfile(matches[0], 'replay-kotlin/kotlin_decisions.csv')
+          PY
+      - run: python3 evaluation/repair_native_context.py --data replay-data --symbol XRP
+      - run: python3 evaluation/repair_native_context.py --data replay-data --symbol BTC --interval 4h
+      - name: Preparar exclusivamente el modelo prospectivo propio
+        run: python3 evaluation/xrp_episode_validation.py prepare --data replay-data --kotlin replay-kotlin --output xrp-model/XRP-30m --version "$GITHUB_SHA"
+      - name: Comprobar modelo y límites antes de cualquier captura
+        run: |
+          PYTHONPATH=evaluation python3 - <<'PY'
+          import hashlib, pathlib
+          from selected_validation import checked_model
+          p=pathlib.Path('evaluation/xrp30m_validation_protocol.json')
+          model,manifest=checked_model(pathlib.Path('xrp-model/XRP-30m'),hashlib.sha256(p.read_bytes()).hexdigest())
+          assert model is not None, 'Model not evaluable: prospective capture remains blocked'
+          print(manifest['status'],manifest['counts'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: xrp-prospective-preparation-${{ github.run_id }}
+          path: |
+            xrp-model/
+            replay-data/*_native_repair_sources.json
+          retention-days: 90
