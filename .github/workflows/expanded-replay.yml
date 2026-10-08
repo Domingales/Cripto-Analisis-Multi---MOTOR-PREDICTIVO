@@ -28,6 +28,8 @@ concurrency:
   cancel-in-progress: true
 jobs:
   verify:
+    # The complete 150 matrix is archived; rerun only by explicit manual dispatch.
+    if: github.event_name == 'workflow_dispatch'
     permissions:
       contents: read
       actions: write

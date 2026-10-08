@@ -8,15 +8,19 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-  actions: read
+  actions: write
 concurrency:
   group: xrp-validation-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   prepare:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
+      - name: Detener repetición redundante de la matriz ya completada
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh run cancel 37744338397 --repo "$GITHUB_REPOSITORY"
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
