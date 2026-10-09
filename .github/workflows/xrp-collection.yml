@@ -1,0 +1,51 @@
+name: Recogida periódica XRP30m en investigación
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/xrp-collection.yml']
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: xrp30m-durable-collection
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      # Only this launcher lives on main. Tools and all state remain on research.
+      - uses: actions/checkout@v4
+        with:
+          ref: research/expanded-replay-150
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - run: python3 -m unittest discover -s evaluation -p 'test_*.py'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Recuperar modelo y registro, capturar y persistir sin reentrenar
+        run: bash evaluation/run_xrp_collection.sh
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: xrp-durable-collection-${{ github.run_id }}
+          path: |
+            evaluation/prospective-xrp/
+            xrp-current-data/manifest.json
+            xrp-current-output/
+            app/build/test-results/testDebugUnitTest/
+          retention-days: 90
