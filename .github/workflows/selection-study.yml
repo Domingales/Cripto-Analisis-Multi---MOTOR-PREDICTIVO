@@ -1,0 +1,28 @@
+name: Estudio del filtro estadístico
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths: ['evaluation/selection_filter.py', 'evaluation/test_selection_filter.py', '.github/workflows/selection-study.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  study:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Comprobar aislamiento temporal y muestras
+        run: python3 -m unittest discover -s evaluation -p 'test_selection_filter.py'
+      - name: Recuperar referencia original
+        run: python3 -m zipfile -e evaluation/reference_501819f.zip evaluation/reference
+      - name: Evaluar filtro experimental
+        run: python3 evaluation/selection_filter.py --cases evaluation/reference/output/ada_1h_casos.csv --output evaluation/selection-output
+      - uses: actions/upload-artifact@v4
+        with:
+          name: estudio-filtro-estadistico
+          path: evaluation/selection-output/
+          retention-days: 90
