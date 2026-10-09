@@ -1,0 +1,243 @@
+name: Comparación cronológica 150 combinaciones
+on:
+  pull_request:
+    paths:
+      - 'evaluation/prepare_selected_models.py'
+      - 'evaluation/selected_validation_protocol.json'
+      - 'evaluation/repair_native_context.py'
+      - 'evaluation/reconcile_official_history.py'
+      - 'evaluation/test_reconcile_official_history.py'
+      - 'evaluation/test_repair_native_context.py'
+      - 'evaluation/expanded_replay.py'
+      - 'evaluation/test_expanded_replay.py'
+      - 'evaluation/test_generated_expanded_adapter.py'
+      - 'evaluation/resume_expanded_replay.py'
+      - 'evaluation/test_resume_expanded_replay.py'
+      - 'evaluation/prepare_expanded_adapter.py'
+      - 'app/src/test/java/com/domingales/criptoanalisis/multi/evaluation/ExpandedReplayTest.kt'
+      - '.github/workflows/expanded-replay.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+env:
+  REPLAY_ENGINE_VERSION: '68b0335ca0c1a8aed44b1f20393c84bb25c42543'
+  REPLAY_SOURCE_RUN: '37607394740'
+concurrency:
+  group: expanded-replay-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    # The complete 150 matrix is archived; rerun only by explicit manual dispatch.
+    if: github.event_name == 'workflow_dispatch'
+    permissions:
+      contents: read
+      actions: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    outputs:
+      matrix: ${{ steps.catalog.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Detener sólo repeticiones obsoletas de este experimento y rama
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/actions/workflows/375769353/runs?per_page=50" > own-runs.json
+          python3 - <<'PY' > obsolete-runs.txt
+          import json,os
+          for r in json.load(open('own-runs.json'))['workflow_runs']:
+              if r['head_branch']==os.environ['GITHUB_HEAD_REF'] and r['id']<int(os.environ['GITHUB_RUN_ID']) and r['status'] in ('queued','in_progress','pending'):
+                  print(r['id'])
+          PY
+          while read -r run_id; do
+            gh run cancel "$run_id" --repo "$GITHUB_REPOSITORY" || true
+          done < obsolete-runs.txt
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - run: python3 -m unittest discover -s evaluation -p 'test_*.py'
+      - name: Comprobar contraste oficial previo
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 37275087288 --repo "$GITHUB_REPOSITORY" --name auditoria-historico-ampliado-37275087288 --dir parity
+          python3 - <<'PY'
+          import json
+          r=json.load(open('parity/expanded-coverage-parity.json'))
+          assert r['assets']==30
+          p=[x for a in r['reports'] for x in a['official_interval_parity']]
+          assert len(p)==300
+          assert sum(x['status']=='MATCH_ON_ALL_DERIVED_CANDLES' for x in p)==295
+          assert all(x['status']=='MATCH_ON_ALL_DERIVED_CANDLES' or (x['symbol']=='MKRUSDT' and x['date']=='2026-09-01' and x['status']=='NO_DERIVED_DATA_FOR_FIXED_DAY') for x in p)
+          PY
+      - name: Comprobar reparación nativa real antes de lanzar la matriz
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-BTCUSDT --dir probe-data
+          python3 evaluation/reconcile_official_history.py --data probe-data --symbol BTC
+          python3 evaluation/repair_native_context.py --data probe-data --symbol BTC
+          gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-SOLUSDT --dir probe-sol
+          python3 evaluation/reconcile_official_history.py --data probe-sol --symbol SOL
+          python3 evaluation/repair_native_context.py --data probe-sol --symbol SOL
+          gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-ADAUSDT --dir probe-ada
+          python3 evaluation/reconcile_official_history.py --data probe-ada --symbol ADA
+          python3 evaluation/repair_native_context.py --data probe-ada --symbol ADA
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - run: python3 evaluation/prepare_expanded_adapter.py
+      - name: Compilar y comprobar paridad con motor original y ausencia de futuro
+        run: bash ./gradlew --no-daemon testDebugUnitTest --tests com.domingales.criptoanalisis.multi.evaluation.ExpandedReplayTest.optimizedAdapterMatchesUntouchedEngine
+      - name: Recuperar informes válidos de la misma versión predictiva
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download "$REPLAY_SOURCE_RUN" --repo "$GITHUB_REPOSITORY" --name "resumen-150-combinaciones-${REPLAY_SOURCE_RUN}" --dir prior-summary
+          python3 evaluation/resume_expanded_replay.py --repository "$GITHUB_REPOSITORY" --source-summary prior-summary/summary_150.json --output prior-validation > recovery-matrix.json
+      - name: Probar reparación real de todas las monedas que deben repetirse
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY' > recovery-symbols.txt
+          import json
+          print('\n'.join(sorted({x['symbol'] for x in json.load(open('recovery-matrix.json'))['include']})))
+          PY
+          while read -r symbol; do
+            [ -n "$symbol" ] || continue
+            gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name "historico-ampliado-${symbol}USDT" --dir "probe-recovery-${symbol}"
+            python3 evaluation/reconcile_official_history.py --data "probe-recovery-${symbol}" --symbol "$symbol"
+            python3 evaluation/repair_native_context.py --data "probe-recovery-${symbol}" --symbol "$symbol"
+          done < recovery-symbols.txt
+      - id: catalog
+        run: echo "matrix=$(cat recovery-matrix.json)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verificacion-adaptador-150
+          path: |
+            app/build/test-results/testDebugUnitTest/
+            prior-validation/
+            probe-*/*_reconciliation.json
+            probe-*/*_native_repair_sources.json
+            probe-*/*_manifest.json
+  replay:
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix: ${{ fromJSON(needs.verify.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - name: Recuperar datos del corte fijo ya auditado
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SYMBOL: ${{ matrix.symbol }}
+        run: |
+          gh run download "$REPLAY_SOURCE_RUN" --repo "$GITHUB_REPOSITORY" --name "resumen-150-combinaciones-${REPLAY_SOURCE_RUN}" --dir prior-summary
+          python3 evaluation/resume_expanded_replay.py --repository "$GITHUB_REPOSITORY" --source-summary prior-summary/summary_150.json --output prior-validation > recovery-matrix.json
+          gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name "historico-ampliado-${SYMBOL}USDT" --dir replay-data
+          if [ "$SYMBOL" != BTC ]; then
+            gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-BTCUSDT --dir btc-data
+            python3 evaluation/reconcile_official_history.py --data btc-data --symbol BTC
+            python3 evaluation/repair_native_context.py --data btc-data --symbol BTC --interval 4h
+            cp btc-data/BTCUSDT_4h.csv btc-data/BTCUSDT_4h_manifest.json replay-data/
+            cp btc-data/BTCUSDT_reconciliation.json btc-data/BTCUSDT_4h_native_repair_sources.json replay-data/
+          fi
+      - name: Reparar contexto con velas nativas oficiales; conservar huecos 5m
+        env:
+          SYMBOL: ${{ matrix.symbol }}
+        run: |
+          python3 evaluation/reconcile_official_history.py --data replay-data --symbol "$SYMBOL"
+          python3 evaluation/repair_native_context.py --data replay-data --symbol "$SYMBOL"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - run: python3 evaluation/prepare_expanded_adapter.py
+      - name: Registrar decisiones originales con reloj cronológico
+        run: bash ./gradlew --no-daemon testDebugUnitTest --tests com.domingales.criptoanalisis.multi.evaluation.ExpandedReplayTest.chronologicalExpandedDecisions
+        env:
+          EXPANDED_SYMBOL: ${{ matrix.symbol }}
+          EXPANDED_TF: ${{ matrix.timeframe }}
+          EXPANDED_DATA_DIR: ${{ github.workspace }}/replay-data
+          EXPANDED_KOTLIN_DIR: ${{ github.workspace }}/replay-kotlin
+          JAVA_TOOL_OPTIONS: '-Xmx4g'
+      - name: Congelar alternativo anterior al examen y resolver ambos motores
+        env:
+          SYMBOL: ${{ matrix.symbol }}
+          TF: ${{ matrix.timeframe }}
+        run: |
+          python3 evaluation/expanded_replay.py --data replay-data --kotlin replay-kotlin --output replay-output --symbol "$SYMBOL" --timeframe "$TF" --version "$REPLAY_ENGINE_VERSION"
+          python3 evaluation/resume_expanded_replay.py --output replay-output --stamp
+      - name: Congelar modelos para validación futura, separados del examen 2023
+        env:
+          SYMBOL: ${{ matrix.symbol }}
+          TF: ${{ matrix.timeframe }}
+        run: python3 evaluation/prepare_selected_models.py --data replay-data --kotlin replay-kotlin --output prospective-model --symbol "$SYMBOL" --timeframe "$TF" --version "$GITHUB_SHA"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prospective-frozen-${{ matrix.symbol }}-${{ matrix.timeframe }}
+          path: prospective-model/
+          if-no-files-found: ignore
+          retention-days: 90
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: replay-${{ matrix.symbol }}-${{ matrix.timeframe }}
+          path: |
+            replay-kotlin/
+            replay-output/
+            replay-data/*_manifest.json
+            replay-data/*_native_repair_sources.json
+            replay-data/*_reconciliation.json
+            app/build/test-results/testDebugUnitTest/
+          retention-days: 90
+  summarize:
+    needs: [verify, replay]
+    if: always() && needs.verify.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - name: Materializar informes válidos sin modificar resultados ni hashes de modelos
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download "$REPLAY_SOURCE_RUN" --repo "$GITHUB_REPOSITORY" --name "resumen-150-combinaciones-${REPLAY_SOURCE_RUN}" --dir prior-summary
+          python3 evaluation/resume_expanded_replay.py --repository "$GITHUB_REPOSITORY" --source-summary prior-summary/summary_150.json --output results --materialize > recovery-matrix.json
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: replay-*
+          path: results
+      - name: Verificar 150 informes únicos y guardar resumen completo o parcial
+        run: python3 evaluation/expanded_replay.py --aggregate results --output summary
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: resumen-150-combinaciones-${{ github.run_id }}
+          path: |
+            summary/
+            results/recovery-provenance.json
+          retention-days: 90

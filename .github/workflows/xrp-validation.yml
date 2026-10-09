@@ -1,0 +1,106 @@
+name: Preparar validación independiente XRP30m
+on:
+  pull_request:
+    paths:
+      - 'evaluation/xrp*'
+      - 'evaluation/test_xrp_episode_validation.py'
+      - '.github/workflows/xrp-validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: xrp-validation-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Detener repetición redundante de la matriz ya completada
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          status=$(gh run view 37744338397 --repo "$GITHUB_REPOSITORY" --json status --jq .status)
+          if [ "$status" != completed ]; then
+            gh run cancel 37744338397 --repo "$GITHUB_REPOSITORY"
+          fi
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - run: python3 -m unittest discover -s evaluation -p 'test_*.py'
+      - name: Recuperar histórico y decisiones existentes sin repetir el examen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-XRPUSDT --dir replay-data
+          gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-BTCUSDT --dir btc-data
+          cp btc-data/BTCUSDT_4h.csv btc-data/BTCUSDT_4h_manifest.json replay-data/
+          gh run download 37607394740 --repo "$GITHUB_REPOSITORY" --name replay-XRP-30m --dir previous
+          python3 - <<'PY'
+          import pathlib, shutil
+          matches=list(pathlib.Path('previous').rglob('kotlin_decisions.csv'))
+          assert len(matches)==1, 'Expected exactly one existing chronological Kotlin decision file'
+          pathlib.Path('replay-kotlin').mkdir()
+          shutil.copyfile(matches[0], 'replay-kotlin/kotlin_decisions.csv')
+          PY
+      - run: python3 evaluation/repair_native_context.py --data replay-data --symbol XRP
+      - run: python3 evaluation/repair_native_context.py --data replay-data --symbol BTC --interval 4h
+      - name: Preparar exclusivamente el modelo prospectivo propio
+        run: python3 evaluation/xrp_episode_validation.py prepare --data replay-data --kotlin replay-kotlin --output xrp-model/XRP-30m --version "$GITHUB_SHA"
+      - name: Comprobar modelo y límites antes de cualquier captura
+        run: |
+          PYTHONPATH=evaluation python3 - <<'PY'
+          import hashlib, pathlib
+          from selected_validation import checked_model
+          p=pathlib.Path('evaluation/xrp30m_validation_protocol.json')
+          model,manifest=checked_model(pathlib.Path('xrp-model/XRP-30m'),hashlib.sha256(p.read_bytes()).hexdigest())
+          assert model is not None, 'Model not evaluable: prospective capture remains blocked'
+          print(manifest['status'],manifest['counts'])
+          PY
+      - name: Descargar velas cerradas actuales para comprobar captura real
+        run: |
+          PYTHONPATH=evaluation python3 - <<'PY'
+          import json
+          from pathlib import Path
+          import download_long_history as history
+          from expanded_history import INTERVALS
+          from fetch_selected_data import collect
+          history.STEPS.update(INTERVALS)
+          collect(Path('xrp-current-data'), json.loads(Path('evaluation/xrp30m_validation_protocol.json').read_text()))
+          PY
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - run: python3 evaluation/prepare_expanded_adapter.py
+      - name: Calcular decisión real XRP30m sin velas futuras
+        run: bash ./gradlew --no-daemon testDebugUnitTest --tests com.domingales.criptoanalisis.multi.evaluation.SelectedProspectiveTest
+        env:
+          SELECTED_PAIRS: XRP:30m
+          SELECTED_DATA_DIR: ${{ github.workspace }}/xrp-current-data
+          SELECTED_OUTPUT_DIR: ${{ github.workspace }}/xrp-current-output
+          JAVA_TOOL_OPTIONS: '-Xmx4g'
+      - name: Comprobar registro propio respetando la fecha futura declarada
+        run: |
+          engine_sha=$(sha256sum app/src/main/java/com/domingales/criptoanalisis/multi/domain/*.kt | sha256sum | cut -d' ' -f1)
+          python3 evaluation/xrp_episode_validation.py capture --root xrp-ledger --data xrp-current-data --decisions xrp-current-output/decisions.tsv --models xrp-model --version "$GITHUB_SHA" --engine-sha256 "$engine_sha"
+          cat xrp-ledger/summary.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: xrp-prospective-preparation-${{ github.run_id }}
+          path: |
+            xrp-model/
+            xrp-current-output/
+            xrp-current-data/manifest.json
+            xrp-ledger/
+            app/build/test-results/testDebugUnitTest/
+            replay-data/*_native_repair_sources.json
+          retention-days: 90

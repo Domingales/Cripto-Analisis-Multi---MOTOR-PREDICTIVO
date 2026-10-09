@@ -1,0 +1,2327 @@
+{
+  "status": "PARTIAL_NOT_COMPLETE",
+  "completed": 24,
+  "expected": 150,
+  "missing": [
+    [
+      "AAVE",
+      "15m"
+    ],
+    [
+      "AAVE",
+      "1d"
+    ],
+    [
+      "AAVE",
+      "1h"
+    ],
+    [
+      "AAVE",
+      "30m"
+    ],
+    [
+      "AAVE",
+      "4h"
+    ],
+    [
+      "ADA",
+      "15m"
+    ],
+    [
+      "ADA",
+      "1d"
+    ],
+    [
+      "ADA",
+      "1h"
+    ],
+    [
+      "ADA",
+      "30m"
+    ],
+    [
+      "ADA",
+      "4h"
+    ],
+    [
+      "ALGO",
+      "15m"
+    ],
+    [
+      "ALGO",
+      "1d"
+    ],
+    [
+      "ALGO",
+      "1h"
+    ],
+    [
+      "ALGO",
+      "30m"
+    ],
+    [
+      "ALGO",
+      "4h"
+    ],
+    [
+      "APT",
+      "15m"
+    ],
+    [
+      "APT",
+      "1d"
+    ],
+    [
+      "APT",
+      "1h"
+    ],
+    [
+      "APT",
+      "30m"
+    ],
+    [
+      "APT",
+      "4h"
+    ],
+    [
+      "ARB",
+      "15m"
+    ],
+    [
+      "ARB",
+      "1d"
+    ],
+    [
+      "ARB",
+      "1h"
+    ],
+    [
+      "ARB",
+      "30m"
+    ],
+    [
+      "ARB",
+      "4h"
+    ],
+    [
+      "ATOM",
+      "15m"
+    ],
+    [
+      "ATOM",
+      "1d"
+    ],
+    [
+      "ATOM",
+      "1h"
+    ],
+    [
+      "ATOM",
+      "30m"
+    ],
+    [
+      "ATOM",
+      "4h"
+    ],
+    [
+      "AVAX",
+      "15m"
+    ],
+    [
+      "AVAX",
+      "1d"
+    ],
+    [
+      "AVAX",
+      "1h"
+    ],
+    [
+      "AVAX",
+      "30m"
+    ],
+    [
+      "AVAX",
+      "4h"
+    ],
+    [
+      "BCH",
+      "15m"
+    ],
+    [
+      "BCH",
+      "1d"
+    ],
+    [
+      "BCH",
+      "1h"
+    ],
+    [
+      "BCH",
+      "30m"
+    ],
+    [
+      "BCH",
+      "4h"
+    ],
+    [
+      "DOGE",
+      "15m"
+    ],
+    [
+      "DOGE",
+      "1d"
+    ],
+    [
+      "DOGE",
+      "1h"
+    ],
+    [
+      "DOGE",
+      "30m"
+    ],
+    [
+      "DOGE",
+      "4h"
+    ],
+    [
+      "DOT",
+      "15m"
+    ],
+    [
+      "DOT",
+      "1d"
+    ],
+    [
+      "DOT",
+      "1h"
+    ],
+    [
+      "DOT",
+      "30m"
+    ],
+    [
+      "DOT",
+      "4h"
+    ],
+    [
+      "ETC",
+      "15m"
+    ],
+    [
+      "ETC",
+      "1d"
+    ],
+    [
+      "ETC",
+      "1h"
+    ],
+    [
+      "ETC",
+      "30m"
+    ],
+    [
+      "ETC",
+      "4h"
+    ],
+    [
+      "FIL",
+      "15m"
+    ],
+    [
+      "FIL",
+      "1d"
+    ],
+    [
+      "FIL",
+      "1h"
+    ],
+    [
+      "FIL",
+      "30m"
+    ],
+    [
+      "FIL",
+      "4h"
+    ],
+    [
+      "GRT",
+      "15m"
+    ],
+    [
+      "GRT",
+      "1d"
+    ],
+    [
+      "GRT",
+      "1h"
+    ],
+    [
+      "GRT",
+      "30m"
+    ],
+    [
+      "GRT",
+      "4h"
+    ],
+    [
+      "ICP",
+      "15m"
+    ],
+    [
+      "ICP",
+      "1d"
+    ],
+    [
+      "ICP",
+      "1h"
+    ],
+    [
+      "ICP",
+      "30m"
+    ],
+    [
+      "ICP",
+      "4h"
+    ],
+    [
+      "INJ",
+      "15m"
+    ],
+    [
+      "INJ",
+      "1d"
+    ],
+    [
+      "INJ",
+      "1h"
+    ],
+    [
+      "INJ",
+      "30m"
+    ],
+    [
+      "INJ",
+      "4h"
+    ],
+    [
+      "LINK",
+      "15m"
+    ],
+    [
+      "LINK",
+      "1d"
+    ],
+    [
+      "LINK",
+      "1h"
+    ],
+    [
+      "LINK",
+      "30m"
+    ],
+    [
+      "LINK",
+      "4h"
+    ],
+    [
+      "LTC",
+      "15m"
+    ],
+    [
+      "LTC",
+      "1d"
+    ],
+    [
+      "LTC",
+      "1h"
+    ],
+    [
+      "LTC",
+      "30m"
+    ],
+    [
+      "LTC",
+      "4h"
+    ],
+    [
+      "MKR",
+      "15m"
+    ],
+    [
+      "MKR",
+      "1d"
+    ],
+    [
+      "MKR",
+      "1h"
+    ],
+    [
+      "MKR",
+      "30m"
+    ],
+    [
+      "MKR",
+      "4h"
+    ],
+    [
+      "NEAR",
+      "15m"
+    ],
+    [
+      "NEAR",
+      "1d"
+    ],
+    [
+      "NEAR",
+      "1h"
+    ],
+    [
+      "NEAR",
+      "30m"
+    ],
+    [
+      "NEAR",
+      "4h"
+    ],
+    [
+      "OP",
+      "15m"
+    ],
+    [
+      "OP",
+      "1d"
+    ],
+    [
+      "OP",
+      "1h"
+    ],
+    [
+      "OP",
+      "30m"
+    ],
+    [
+      "OP",
+      "4h"
+    ],
+    [
+      "RUNE",
+      "15m"
+    ],
+    [
+      "RUNE",
+      "1d"
+    ],
+    [
+      "RUNE",
+      "1h"
+    ],
+    [
+      "RUNE",
+      "30m"
+    ],
+    [
+      "RUNE",
+      "4h"
+    ],
+    [
+      "SOL",
+      "15m"
+    ],
+    [
+      "SOL",
+      "1d"
+    ],
+    [
+      "SOL",
+      "1h"
+    ],
+    [
+      "SOL",
+      "30m"
+    ],
+    [
+      "SOL",
+      "4h"
+    ],
+    [
+      "SUI",
+      "15m"
+    ],
+    [
+      "SUI",
+      "1d"
+    ],
+    [
+      "SUI",
+      "1h"
+    ],
+    [
+      "SUI",
+      "30m"
+    ],
+    [
+      "SUI",
+      "4h"
+    ],
+    [
+      "TRX",
+      "1d"
+    ],
+    [
+      "UNI",
+      "15m"
+    ],
+    [
+      "UNI",
+      "1d"
+    ],
+    [
+      "UNI",
+      "1h"
+    ],
+    [
+      "UNI",
+      "30m"
+    ],
+    [
+      "UNI",
+      "4h"
+    ],
+    [
+      "VET",
+      "15m"
+    ],
+    [
+      "VET",
+      "1d"
+    ],
+    [
+      "VET",
+      "1h"
+    ],
+    [
+      "VET",
+      "30m"
+    ],
+    [
+      "VET",
+      "4h"
+    ]
+  ],
+  "fixed_alternative_evaluable": 24,
+  "reports": [
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "BNB",
+      "timeframe": "15m",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 86400000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1696118400000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 52466,
+            "calibration": 17279,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          },
+          "SELL": {
+            "train": 52466,
+            "calibration": 17279,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          }
+        },
+        "features": [
+          "BNBUSDT_15m",
+          "BNBUSDT_4h",
+          "BNBUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "BNBUSDT_15m": "a26b3c29e01637ab3d99dae3c25262684c5c3fc9dfbef1bbb18dd9569c2a1ae3",
+          "BNBUSDT_4h": "cbec4ea84b36a51d4296b7f43065ec1e203ee36f43068bee02ba6f2c37dce824",
+          "BNBUSDT_1d": "835c8a7b3c7f732c979c871f144d203e346cc0db5a7276d882d21dadf25df70f",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "BNBUSDT_5m": "82d9d33cf74ac53ec9cbc8aab93f5f2817e3905ed9885d4d2b48dfcde1a98d66"
+        },
+        "model_sha256": "a809f34f04161c4d346984dc83a8fad0031dbef8653be3072ce8972aa69d7856",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 105276,
+        "signals": 6322,
+        "HIT": 3128,
+        "FAIL": 3172,
+        "NEUTRAL": 10,
+        "PENDING": 12,
+        "accuracy": 0.4965079365079365
+      },
+      "alternative": {
+        "decisions": 105276,
+        "signals": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null
+      },
+      "coverage": {
+        "first_decision": 1696205699999,
+        "last_decision": 1790953199999,
+        "decisions_with_context": 105276,
+        "input_primary_candles": 210297
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "BNB",
+      "timeframe": "1d",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 1209600000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1694995200000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 506,
+            "calibration": 156,
+            "latest_train_label": 1679615999999,
+            "latest_calibration_label": 1694995199999
+          },
+          "SELL": {
+            "train": 506,
+            "calibration": 156,
+            "latest_train_label": 1679615999999,
+            "latest_calibration_label": 1694995199999
+          }
+        },
+        "features": [
+          "BNBUSDT_15m",
+          "BNBUSDT_1d",
+          "BNBUSDT_4h",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "BNBUSDT_15m": "a26b3c29e01637ab3d99dae3c25262684c5c3fc9dfbef1bbb18dd9569c2a1ae3",
+          "BNBUSDT_1d": "835c8a7b3c7f732c979c871f144d203e346cc0db5a7276d882d21dadf25df70f",
+          "BNBUSDT_4h": "cbec4ea84b36a51d4296b7f43065ec1e203ee36f43068bee02ba6f2c37dce824",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "BNBUSDT_5m": "82d9d33cf74ac53ec9cbc8aab93f5f2817e3905ed9885d4d2b48dfcde1a98d66"
+        },
+        "model_sha256": "b24e398b8e58f0d5ee8217fe13f7b9233509341562b35018d71361f9dcb62676",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 1096,
+        "signals": 196,
+        "HIT": 101,
+        "FAIL": 91,
+        "NEUTRAL": 0,
+        "PENDING": 4,
+        "accuracy": 0.5260416666666666
+      },
+      "alternative": {
+        "decisions": 1096,
+        "signals": 1,
+        "HIT": 1,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 1.0
+      },
+      "coverage": {
+        "first_decision": 1696291199999,
+        "last_decision": 1790899199999,
+        "decisions_with_context": 1096,
+        "input_primary_candles": 2191
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "BNB",
+      "timeframe": "1h",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 86400000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1696118400000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 12824,
+            "calibration": 4202,
+            "latest_train_label": 1679659199999,
+            "latest_calibration_label": 1696118399999
+          },
+          "SELL": {
+            "train": 12824,
+            "calibration": 4202,
+            "latest_train_label": 1679659199999,
+            "latest_calibration_label": 1696118399999
+          }
+        },
+        "features": [
+          "BNBUSDT_15m",
+          "BNBUSDT_1h",
+          "BNBUSDT_4h",
+          "BNBUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "BNBUSDT_15m": "a26b3c29e01637ab3d99dae3c25262684c5c3fc9dfbef1bbb18dd9569c2a1ae3",
+          "BNBUSDT_1h": "32c7b2b54c11437bdac1622ff07ae99da7917d1029a119bf971bfe606cf0389b",
+          "BNBUSDT_4h": "cbec4ea84b36a51d4296b7f43065ec1e203ee36f43068bee02ba6f2c37dce824",
+          "BNBUSDT_1d": "835c8a7b3c7f732c979c871f144d203e346cc0db5a7276d882d21dadf25df70f",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "BNBUSDT_5m": "82d9d33cf74ac53ec9cbc8aab93f5f2817e3905ed9885d4d2b48dfcde1a98d66"
+        },
+        "model_sha256": "bf9d5b08afbb0d7d3f74bc0f7a631b659f468abc0fe00854051f42fc772c87c5",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 26319,
+        "signals": 4884,
+        "HIT": 2434,
+        "FAIL": 2437,
+        "NEUTRAL": 3,
+        "PENDING": 10,
+        "accuracy": 0.4996920550195032
+      },
+      "alternative": {
+        "decisions": 26319,
+        "signals": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null
+      },
+      "coverage": {
+        "first_decision": 1696208399999,
+        "last_decision": 1790953199999,
+        "decisions_with_context": 26319,
+        "input_primary_candles": 52574
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "BNB",
+      "timeframe": "30m",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 86400000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1696118400000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 25940,
+            "calibration": 8639,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          },
+          "SELL": {
+            "train": 25940,
+            "calibration": 8639,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          }
+        },
+        "features": [
+          "BNBUSDT_15m",
+          "BNBUSDT_30m",
+          "BNBUSDT_4h",
+          "BNBUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "BNBUSDT_15m": "a26b3c29e01637ab3d99dae3c25262684c5c3fc9dfbef1bbb18dd9569c2a1ae3",
+          "BNBUSDT_30m": "5517d3c6df36c16b015c4edeb13da8389665f48c0d912a7920788908676f17e9",
+          "BNBUSDT_4h": "cbec4ea84b36a51d4296b7f43065ec1e203ee36f43068bee02ba6f2c37dce824",
+          "BNBUSDT_1d": "835c8a7b3c7f732c979c871f144d203e346cc0db5a7276d882d21dadf25df70f",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "BNBUSDT_5m": "82d9d33cf74ac53ec9cbc8aab93f5f2817e3905ed9885d4d2b48dfcde1a98d66"
+        },
+        "model_sha256": "e39578920293ac82bf3862ebdd31494e5cff7c265692324da04b7f05937b1ac2",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 52638,
+        "signals": 5682,
+        "HIT": 2839,
+        "FAIL": 2826,
+        "NEUTRAL": 6,
+        "PENDING": 11,
+        "accuracy": 0.5011473962930274
+      },
+      "alternative": {
+        "decisions": 52638,
+        "signals": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null
+      },
+      "coverage": {
+        "first_decision": 1696206599999,
+        "last_decision": 1790953199999,
+        "decisions_with_context": 52638,
+        "input_primary_candles": 105148
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "BNB",
+      "timeframe": "4h",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 259200000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1695945600000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 3243,
+            "calibration": 1066,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1695945599999
+          },
+          "SELL": {
+            "train": 3243,
+            "calibration": 1066,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1695945599999
+          }
+        },
+        "features": [
+          "BNBUSDT_15m",
+          "BNBUSDT_4h",
+          "BNBUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "BNBUSDT_15m": "a26b3c29e01637ab3d99dae3c25262684c5c3fc9dfbef1bbb18dd9569c2a1ae3",
+          "BNBUSDT_4h": "cbec4ea84b36a51d4296b7f43065ec1e203ee36f43068bee02ba6f2c37dce824",
+          "BNBUSDT_1d": "835c8a7b3c7f732c979c871f144d203e346cc0db5a7276d882d21dadf25df70f",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "BNBUSDT_5m": "82d9d33cf74ac53ec9cbc8aab93f5f2817e3905ed9885d4d2b48dfcde1a98d66"
+        },
+        "model_sha256": "9f011c91e05d833ba5ab6c0825690c4bf454270af9e6abc8ba830c36d9558be3",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 6579,
+        "signals": 1464,
+        "HIT": 698,
+        "FAIL": 761,
+        "NEUTRAL": 0,
+        "PENDING": 5,
+        "accuracy": 0.47840986977381766
+      },
+      "alternative": {
+        "decisions": 6579,
+        "signals": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null
+      },
+      "coverage": {
+        "first_decision": 1696219199999,
+        "last_decision": 1790942399999,
+        "decisions_with_context": 6579,
+        "input_primary_candles": 13143
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "BTC",
+      "timeframe": "15m",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 86400000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1696118400000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 52190,
+            "calibration": 16851,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          },
+          "SELL": {
+            "train": 52190,
+            "calibration": 16851,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          }
+        },
+        "features": [
+          "BTCUSDT_15m",
+          "BTCUSDT_4h",
+          "BTCUSDT_1d"
+        ],
+        "inputs": {
+          "BTCUSDT_15m": "1ed4b23745d4bb564ef164299599c9de314ef9afba791cdf1d4ad589341b31f1",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "BTCUSDT_1d": "f7c3216580666b2677b5b9b79c36479eb0d104318990f8699b25545cd3cf40fb",
+          "BTCUSDT_5m": "0a35fa84ebe7ca81cc96862d5aa25161a0e5544f7b9ec053d3a9d9fdb57babd2"
+        },
+        "model_sha256": "e3e2dbf60720ef803a535560a29675feaa52376b4d7bedbe4dcec58c404187fd",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 105276,
+        "signals": 6182,
+        "HIT": 3078,
+        "FAIL": 3064,
+        "NEUTRAL": 25,
+        "PENDING": 15,
+        "accuracy": 0.5011396939107783
+      },
+      "alternative": {
+        "decisions": 105276,
+        "signals": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null
+      },
+      "coverage": {
+        "first_decision": 1696205699999,
+        "last_decision": 1790953199999,
+        "decisions_with_context": 105276,
+        "input_primary_candles": 210297
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "BTC",
+      "timeframe": "1d",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 1209600000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1694995200000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 506,
+            "calibration": 156,
+            "latest_train_label": 1679615999999,
+            "latest_calibration_label": 1694995199999
+          },
+          "SELL": {
+            "train": 506,
+            "calibration": 156,
+            "latest_train_label": 1679615999999,
+            "latest_calibration_label": 1694995199999
+          }
+        },
+        "features": [
+          "BTCUSDT_15m",
+          "BTCUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "BTCUSDT_15m": "1ed4b23745d4bb564ef164299599c9de314ef9afba791cdf1d4ad589341b31f1",
+          "BTCUSDT_1d": "f7c3216580666b2677b5b9b79c36479eb0d104318990f8699b25545cd3cf40fb",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "BTCUSDT_5m": "0a35fa84ebe7ca81cc96862d5aa25161a0e5544f7b9ec053d3a9d9fdb57babd2"
+        },
+        "model_sha256": "1fcf61bae2de41d830f788389c7049d6d72a8d521ec8693de7c9ceba00d01e45",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 1096,
+        "signals": 238,
+        "HIT": 123,
+        "FAIL": 106,
+        "NEUTRAL": 0,
+        "PENDING": 9,
+        "accuracy": 0.537117903930131
+      },
+      "alternative": {
+        "decisions": 1096,
+        "signals": 5,
+        "HIT": 5,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 1.0
+      },
+      "coverage": {
+        "first_decision": 1696291199999,
+        "last_decision": 1790899199999,
+        "decisions_with_context": 1096,
+        "input_primary_candles": 2191
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "BTC",
+      "timeframe": "1h",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 86400000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1696118400000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 12748,
+            "calibration": 4091,
+            "latest_train_label": 1679659199999,
+            "latest_calibration_label": 1696118399999
+          },
+          "SELL": {
+            "train": 12748,
+            "calibration": 4091,
+            "latest_train_label": 1679659199999,
+            "latest_calibration_label": 1696118399999
+          }
+        },
+        "features": [
+          "BTCUSDT_15m",
+          "BTCUSDT_1h",
+          "BTCUSDT_4h",
+          "BTCUSDT_1d"
+        ],
+        "inputs": {
+          "BTCUSDT_15m": "1ed4b23745d4bb564ef164299599c9de314ef9afba791cdf1d4ad589341b31f1",
+          "BTCUSDT_1h": "b2ec193ad831fca2611bb9c719bbb9bd7d9b779149b61f95be9ea62a8a5ca970",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "BTCUSDT_1d": "f7c3216580666b2677b5b9b79c36479eb0d104318990f8699b25545cd3cf40fb",
+          "BTCUSDT_5m": "0a35fa84ebe7ca81cc96862d5aa25161a0e5544f7b9ec053d3a9d9fdb57babd2"
+        },
+        "model_sha256": "81fb9d965bbc6d547b68696128829d6436ef6f10597e1337986b97a203b1fdbf",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 26319,
+        "signals": 4811,
+        "HIT": 2393,
+        "FAIL": 2393,
+        "NEUTRAL": 16,
+        "PENDING": 9,
+        "accuracy": 0.5
+      },
+      "alternative": {
+        "decisions": 26319,
+        "signals": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null
+      },
+      "coverage": {
+        "first_decision": 1696208399999,
+        "last_decision": 1790953199999,
+        "decisions_with_context": 26319,
+        "input_primary_candles": 52574
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "BTC",
+      "timeframe": "30m",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 86400000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1696118400000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 25803,
+            "calibration": 8423,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          },
+          "SELL": {
+            "train": 25803,
+            "calibration": 8423,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          }
+        },
+        "features": [
+          "BTCUSDT_15m",
+          "BTCUSDT_30m",
+          "BTCUSDT_4h",
+          "BTCUSDT_1d"
+        ],
+        "inputs": {
+          "BTCUSDT_15m": "1ed4b23745d4bb564ef164299599c9de314ef9afba791cdf1d4ad589341b31f1",
+          "BTCUSDT_30m": "bcacd762f6dab46867c7f8ee59d5d87e12b99f45d091b0fbcacaf6c5c600658f",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "BTCUSDT_1d": "f7c3216580666b2677b5b9b79c36479eb0d104318990f8699b25545cd3cf40fb",
+          "BTCUSDT_5m": "0a35fa84ebe7ca81cc96862d5aa25161a0e5544f7b9ec053d3a9d9fdb57babd2"
+        },
+        "model_sha256": "c141723074ab58dcaebc9e661edbdc52187d008083a612b1575f76bd54fb3d57",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 52638,
+        "signals": 5540,
+        "HIT": 2802,
+        "FAIL": 2700,
+        "NEUTRAL": 22,
+        "PENDING": 16,
+        "accuracy": 0.5092693565976009
+      },
+      "alternative": {
+        "decisions": 52638,
+        "signals": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null
+      },
+      "coverage": {
+        "first_decision": 1696206599999,
+        "last_decision": 1790953199999,
+        "decisions_with_context": 52638,
+        "input_primary_candles": 105148
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "BTC",
+      "timeframe": "4h",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 259200000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1695945600000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 3235,
+            "calibration": 1065,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1695945599999
+          },
+          "SELL": {
+            "train": 3235,
+            "calibration": 1065,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1695945599999
+          }
+        },
+        "features": [
+          "BTCUSDT_15m",
+          "BTCUSDT_4h",
+          "BTCUSDT_1d"
+        ],
+        "inputs": {
+          "BTCUSDT_15m": "1ed4b23745d4bb564ef164299599c9de314ef9afba791cdf1d4ad589341b31f1",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "BTCUSDT_1d": "f7c3216580666b2677b5b9b79c36479eb0d104318990f8699b25545cd3cf40fb",
+          "BTCUSDT_5m": "0a35fa84ebe7ca81cc96862d5aa25161a0e5544f7b9ec053d3a9d9fdb57babd2"
+        },
+        "model_sha256": "84357ebf4e4c2aed2a3422e72f424702da7b5343be0f91c6ba408315d738f12a",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 6579,
+        "signals": 1498,
+        "HIT": 755,
+        "FAIL": 737,
+        "NEUTRAL": 1,
+        "PENDING": 5,
+        "accuracy": 0.5060321715817694
+      },
+      "alternative": {
+        "decisions": 6579,
+        "signals": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null
+      },
+      "coverage": {
+        "first_decision": 1696219199999,
+        "last_decision": 1790942399999,
+        "decisions_with_context": 6579,
+        "input_primary_candles": 13143
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "ETH",
+      "timeframe": "15m",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 86400000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1696118400000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 52378,
+            "calibration": 17173,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          },
+          "SELL": {
+            "train": 52378,
+            "calibration": 17173,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          }
+        },
+        "features": [
+          "ETHUSDT_15m",
+          "ETHUSDT_4h",
+          "ETHUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "ETHUSDT_15m": "c4e119484fc4211fa42ca2b82c10ecca30808144b04868594a819d8b7c1ccafe",
+          "ETHUSDT_4h": "c1e45f98417dbc202a5c9c82b21481b07870e5234d41db25ef66e2abd5de925a",
+          "ETHUSDT_1d": "ba72a092b039e683a2d6c740901b42ed75cb833127493cb1f29491578bc23080",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "ETHUSDT_5m": "6ddceffa7a5ecdfe6971e3faa75b1f3fda3788e6cf4ea9c48ff8a17058c516c1"
+        },
+        "model_sha256": "018d45affcf9f9a25b1e7f0b4429f0b10b1bbdcb2df17de0dcf51d7657869dc1",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 105276,
+        "signals": 6027,
+        "HIT": 3046,
+        "FAIL": 2941,
+        "NEUTRAL": 31,
+        "PENDING": 9,
+        "accuracy": 0.5087689994989143
+      },
+      "alternative": {
+        "decisions": 105276,
+        "signals": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null
+      },
+      "coverage": {
+        "first_decision": 1696205699999,
+        "last_decision": 1790953199999,
+        "decisions_with_context": 105276,
+        "input_primary_candles": 210297
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "ETH",
+      "timeframe": "1d",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 1209600000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1694995200000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 506,
+            "calibration": 156,
+            "latest_train_label": 1679615999999,
+            "latest_calibration_label": 1694995199999
+          },
+          "SELL": {
+            "train": 506,
+            "calibration": 156,
+            "latest_train_label": 1679615999999,
+            "latest_calibration_label": 1694995199999
+          }
+        },
+        "features": [
+          "ETHUSDT_15m",
+          "ETHUSDT_1d",
+          "ETHUSDT_4h",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "ETHUSDT_15m": "c4e119484fc4211fa42ca2b82c10ecca30808144b04868594a819d8b7c1ccafe",
+          "ETHUSDT_1d": "ba72a092b039e683a2d6c740901b42ed75cb833127493cb1f29491578bc23080",
+          "ETHUSDT_4h": "c1e45f98417dbc202a5c9c82b21481b07870e5234d41db25ef66e2abd5de925a",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "ETHUSDT_5m": "6ddceffa7a5ecdfe6971e3faa75b1f3fda3788e6cf4ea9c48ff8a17058c516c1"
+        },
+        "model_sha256": "9be5d57fa0982ebf33346366de834c7365dfe2378cc8d722e8196d5d358b4c4c",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 1096,
+        "signals": 163,
+        "HIT": 95,
+        "FAIL": 64,
+        "NEUTRAL": 0,
+        "PENDING": 4,
+        "accuracy": 0.5974842767295597
+      },
+      "alternative": {
+        "decisions": 1096,
+        "signals": 1,
+        "HIT": 1,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 1.0
+      },
+      "coverage": {
+        "first_decision": 1696291199999,
+        "last_decision": 1790899199999,
+        "decisions_with_context": 1096,
+        "input_primary_candles": 2191
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "ETH",
+      "timeframe": "1h",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 86400000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1696118400000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 12810,
+            "calibration": 4169,
+            "latest_train_label": 1679659199999,
+            "latest_calibration_label": 1696118399999
+          },
+          "SELL": {
+            "train": 12810,
+            "calibration": 4169,
+            "latest_train_label": 1679659199999,
+            "latest_calibration_label": 1696118399999
+          }
+        },
+        "features": [
+          "ETHUSDT_15m",
+          "ETHUSDT_1h",
+          "ETHUSDT_4h",
+          "ETHUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "ETHUSDT_15m": "c4e119484fc4211fa42ca2b82c10ecca30808144b04868594a819d8b7c1ccafe",
+          "ETHUSDT_1h": "089575731e8811f25dea92c13d068a9c2de518ed43a1f7fa6d07e6f9f37b21f0",
+          "ETHUSDT_4h": "c1e45f98417dbc202a5c9c82b21481b07870e5234d41db25ef66e2abd5de925a",
+          "ETHUSDT_1d": "ba72a092b039e683a2d6c740901b42ed75cb833127493cb1f29491578bc23080",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "ETHUSDT_5m": "6ddceffa7a5ecdfe6971e3faa75b1f3fda3788e6cf4ea9c48ff8a17058c516c1"
+        },
+        "model_sha256": "ca69d805178f8d60f32829ff7e6b911fee2edb55b16199d313ad9ec6e4ac9425",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 26319,
+        "signals": 4583,
+        "HIT": 2355,
+        "FAIL": 2207,
+        "NEUTRAL": 10,
+        "PENDING": 11,
+        "accuracy": 0.5162209557211749
+      },
+      "alternative": {
+        "decisions": 26319,
+        "signals": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null
+      },
+      "coverage": {
+        "first_decision": 1696208399999,
+        "last_decision": 1790953199999,
+        "decisions_with_context": 26319,
+        "input_primary_candles": 52574
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "ETH",
+      "timeframe": "30m",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 86400000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1696118400000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 25914,
+            "calibration": 8585,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          },
+          "SELL": {
+            "train": 25914,
+            "calibration": 8585,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          }
+        },
+        "features": [
+          "ETHUSDT_15m",
+          "ETHUSDT_30m",
+          "ETHUSDT_4h",
+          "ETHUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "ETHUSDT_15m": "c4e119484fc4211fa42ca2b82c10ecca30808144b04868594a819d8b7c1ccafe",
+          "ETHUSDT_30m": "928e017a5e43b2a44ada4232d585ed811779cfb8a776556542d9bc89ec91007a",
+          "ETHUSDT_4h": "c1e45f98417dbc202a5c9c82b21481b07870e5234d41db25ef66e2abd5de925a",
+          "ETHUSDT_1d": "ba72a092b039e683a2d6c740901b42ed75cb833127493cb1f29491578bc23080",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "ETHUSDT_5m": "6ddceffa7a5ecdfe6971e3faa75b1f3fda3788e6cf4ea9c48ff8a17058c516c1"
+        },
+        "model_sha256": "72d63cd853a6b6d6e2890688b23c4697d9c28ac57a89306dcb578c95ff4ea648",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 52638,
+        "signals": 5515,
+        "HIT": 2831,
+        "FAIL": 2650,
+        "NEUTRAL": 23,
+        "PENDING": 11,
+        "accuracy": 0.5165115854771027
+      },
+      "alternative": {
+        "decisions": 52638,
+        "signals": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null
+      },
+      "coverage": {
+        "first_decision": 1696206599999,
+        "last_decision": 1790953199999,
+        "decisions_with_context": 52638,
+        "input_primary_candles": 105148
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "ETH",
+      "timeframe": "4h",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 259200000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1695945600000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 3239,
+            "calibration": 1068,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1695945599999
+          },
+          "SELL": {
+            "train": 3239,
+            "calibration": 1068,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1695945599999
+          }
+        },
+        "features": [
+          "ETHUSDT_15m",
+          "ETHUSDT_4h",
+          "ETHUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "ETHUSDT_15m": "c4e119484fc4211fa42ca2b82c10ecca30808144b04868594a819d8b7c1ccafe",
+          "ETHUSDT_4h": "c1e45f98417dbc202a5c9c82b21481b07870e5234d41db25ef66e2abd5de925a",
+          "ETHUSDT_1d": "ba72a092b039e683a2d6c740901b42ed75cb833127493cb1f29491578bc23080",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "ETHUSDT_5m": "6ddceffa7a5ecdfe6971e3faa75b1f3fda3788e6cf4ea9c48ff8a17058c516c1"
+        },
+        "model_sha256": "7ab248d73ffd59c2a3b2d59f6f73e6f9c0656a5140d72ea98faf7771d4e5e71c",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 6579,
+        "signals": 1366,
+        "HIT": 692,
+        "FAIL": 671,
+        "NEUTRAL": 0,
+        "PENDING": 3,
+        "accuracy": 0.5077035950110051
+      },
+      "alternative": {
+        "decisions": 6579,
+        "signals": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null
+      },
+      "coverage": {
+        "first_decision": 1696219199999,
+        "last_decision": 1790942399999,
+        "decisions_with_context": 6579,
+        "input_primary_candles": 13143
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "TRX",
+      "timeframe": "15m",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 86400000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1696118400000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 52918,
+            "calibration": 17254,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          },
+          "SELL": {
+            "train": 52918,
+            "calibration": 17254,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          }
+        },
+        "features": [
+          "TRXUSDT_15m",
+          "TRXUSDT_4h",
+          "TRXUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "TRXUSDT_15m": "32e8fc1d51d304f4b64db53768808429706cf0b6460f2cb12e2dbb1620f22ea4",
+          "TRXUSDT_4h": "5a987975e13cfd29d292f76c6f04bbe0c67c83a49119a3aac5f5e41072c1a768",
+          "TRXUSDT_1d": "1ac900770be927f9715a0dc4cc07e45ca202ab5ff514f9905870a330386ae6b7",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "TRXUSDT_5m": "d479c68b73b1cd5003d7a89377ff49c2f1a5914a6b7b9ef4cf90a29cc86caf6b"
+        },
+        "model_sha256": "181fab35820306fd1ec5c3ace907afa81492617df38040f6fed270e345754bd0",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 105276,
+        "signals": 6293,
+        "HIT": 3413,
+        "FAIL": 2813,
+        "NEUTRAL": 65,
+        "PENDING": 2,
+        "accuracy": 0.548185030517186
+      },
+      "alternative": {
+        "decisions": 105276,
+        "signals": 151,
+        "HIT": 52,
+        "FAIL": 95,
+        "NEUTRAL": 4,
+        "PENDING": 0,
+        "accuracy": 0.35374149659863946
+      },
+      "coverage": {
+        "first_decision": 1696205699999,
+        "last_decision": 1790953199999,
+        "decisions_with_context": 105276,
+        "input_primary_candles": 210298
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "TRX",
+      "timeframe": "1h",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 86400000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1696118400000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 13164,
+            "calibration": 4196,
+            "latest_train_label": 1679659199999,
+            "latest_calibration_label": 1696118399999
+          },
+          "SELL": {
+            "train": 13164,
+            "calibration": 4196,
+            "latest_train_label": 1679659199999,
+            "latest_calibration_label": 1696118399999
+          }
+        },
+        "features": [
+          "TRXUSDT_15m",
+          "TRXUSDT_1h",
+          "TRXUSDT_4h",
+          "TRXUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "TRXUSDT_15m": "32e8fc1d51d304f4b64db53768808429706cf0b6460f2cb12e2dbb1620f22ea4",
+          "TRXUSDT_1h": "1e7ad64fb066b983826f5bbad38a55440c45191323e9ef0f160b7e35c7ba83ea",
+          "TRXUSDT_4h": "5a987975e13cfd29d292f76c6f04bbe0c67c83a49119a3aac5f5e41072c1a768",
+          "TRXUSDT_1d": "1ac900770be927f9715a0dc4cc07e45ca202ab5ff514f9905870a330386ae6b7",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "TRXUSDT_5m": "d479c68b73b1cd5003d7a89377ff49c2f1a5914a6b7b9ef4cf90a29cc86caf6b"
+        },
+        "model_sha256": "ea5c53269d5dc6d94168343662454405029e7b8f6cd256cb9d5d8cf64727e256",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 26319,
+        "signals": 5015,
+        "HIT": 2667,
+        "FAIL": 2294,
+        "NEUTRAL": 54,
+        "PENDING": 0,
+        "accuracy": 0.5375932271719411
+      },
+      "alternative": {
+        "decisions": 26319,
+        "signals": 2387,
+        "HIT": 868,
+        "FAIL": 1408,
+        "NEUTRAL": 111,
+        "PENDING": 0,
+        "accuracy": 0.38137082601054484
+      },
+      "coverage": {
+        "first_decision": 1696208399999,
+        "last_decision": 1790953199999,
+        "decisions_with_context": 26319,
+        "input_primary_candles": 52575
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "TRX",
+      "timeframe": "30m",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 86400000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1696118400000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 26325,
+            "calibration": 8630,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          },
+          "SELL": {
+            "train": 26325,
+            "calibration": 8630,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          }
+        },
+        "features": [
+          "TRXUSDT_15m",
+          "TRXUSDT_30m",
+          "TRXUSDT_4h",
+          "TRXUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "TRXUSDT_15m": "32e8fc1d51d304f4b64db53768808429706cf0b6460f2cb12e2dbb1620f22ea4",
+          "TRXUSDT_30m": "b47fb0b9ef84cfcfc52977d988ff13c446a85c59919812f88d7e2dc8b68c3aa4",
+          "TRXUSDT_4h": "5a987975e13cfd29d292f76c6f04bbe0c67c83a49119a3aac5f5e41072c1a768",
+          "TRXUSDT_1d": "1ac900770be927f9715a0dc4cc07e45ca202ab5ff514f9905870a330386ae6b7",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "TRXUSDT_5m": "d479c68b73b1cd5003d7a89377ff49c2f1a5914a6b7b9ef4cf90a29cc86caf6b"
+        },
+        "model_sha256": "9621115896b9ab4f3e15866f974bb2b2bdc92aff728c6cbb0bbdbdc0703fc9d4",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 52638,
+        "signals": 5650,
+        "HIT": 3042,
+        "FAIL": 2550,
+        "NEUTRAL": 57,
+        "PENDING": 1,
+        "accuracy": 0.5439914163090128
+      },
+      "alternative": {
+        "decisions": 52638,
+        "signals": 726,
+        "HIT": 264,
+        "FAIL": 411,
+        "NEUTRAL": 51,
+        "PENDING": 0,
+        "accuracy": 0.39111111111111113
+      },
+      "coverage": {
+        "first_decision": 1696206599999,
+        "last_decision": 1790953199999,
+        "decisions_with_context": 52638,
+        "input_primary_candles": 105149
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "TRX",
+      "timeframe": "4h",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 259200000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1695945600000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 3277,
+            "calibration": 1067,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1695945599999
+          },
+          "SELL": {
+            "train": 3277,
+            "calibration": 1067,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1695945599999
+          }
+        },
+        "features": [
+          "TRXUSDT_15m",
+          "TRXUSDT_4h",
+          "TRXUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "TRXUSDT_15m": "32e8fc1d51d304f4b64db53768808429706cf0b6460f2cb12e2dbb1620f22ea4",
+          "TRXUSDT_4h": "5a987975e13cfd29d292f76c6f04bbe0c67c83a49119a3aac5f5e41072c1a768",
+          "TRXUSDT_1d": "1ac900770be927f9715a0dc4cc07e45ca202ab5ff514f9905870a330386ae6b7",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "TRXUSDT_5m": "d479c68b73b1cd5003d7a89377ff49c2f1a5914a6b7b9ef4cf90a29cc86caf6b"
+        },
+        "model_sha256": "66e004b7fdeaa312f6ddf46e6932e3df8cb32ef497027c7110e3478e1178abae",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 6579,
+        "signals": 1566,
+        "HIT": 843,
+        "FAIL": 720,
+        "NEUTRAL": 2,
+        "PENDING": 1,
+        "accuracy": 0.5393474088291746
+      },
+      "alternative": {
+        "decisions": 6579,
+        "signals": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null
+      },
+      "coverage": {
+        "first_decision": 1696219199999,
+        "last_decision": 1790942399999,
+        "decisions_with_context": 6579,
+        "input_primary_candles": 13143
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "XRP",
+      "timeframe": "15m",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 86400000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1696118400000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 52839,
+            "calibration": 17440,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          },
+          "SELL": {
+            "train": 52839,
+            "calibration": 17440,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          }
+        },
+        "features": [
+          "XRPUSDT_15m",
+          "XRPUSDT_4h",
+          "XRPUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "XRPUSDT_15m": "cca0d1ab981eb46bbb4904b6d5a3770890fa2b9d321c30ee88d701350ddf4346",
+          "XRPUSDT_4h": "2fd0b3937c0081b86bb483882eac5dbd04cb6dddb7a5a9a7e35da5264695a3d6",
+          "XRPUSDT_1d": "077b9bcbb9b37e90d36e83a076633c6b618d4684d822fa6fbcce4a3e3f051bc5",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "XRPUSDT_5m": "d911af72df0aa575f62c2765fa466a7cbc3418a948337ddaff496b52851a7cc3"
+        },
+        "model_sha256": "cc9427b284a926b68d16809609b28e9eb58248e0737c4b673bebc95e2d87bdbb",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 105276,
+        "signals": 6479,
+        "HIT": 3119,
+        "FAIL": 3312,
+        "NEUTRAL": 36,
+        "PENDING": 12,
+        "accuracy": 0.48499455761156895
+      },
+      "alternative": {
+        "decisions": 105276,
+        "signals": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null
+      },
+      "coverage": {
+        "first_decision": 1696205699999,
+        "last_decision": 1790953199999,
+        "decisions_with_context": 105276,
+        "input_primary_candles": 210298
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "XRP",
+      "timeframe": "1d",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 1209600000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1694995200000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 523,
+            "calibration": 156,
+            "latest_train_label": 1679615999999,
+            "latest_calibration_label": 1694995199999
+          },
+          "SELL": {
+            "train": 523,
+            "calibration": 156,
+            "latest_train_label": 1679615999999,
+            "latest_calibration_label": 1694995199999
+          }
+        },
+        "features": [
+          "XRPUSDT_15m",
+          "XRPUSDT_1d",
+          "XRPUSDT_4h",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "XRPUSDT_15m": "cca0d1ab981eb46bbb4904b6d5a3770890fa2b9d321c30ee88d701350ddf4346",
+          "XRPUSDT_1d": "077b9bcbb9b37e90d36e83a076633c6b618d4684d822fa6fbcce4a3e3f051bc5",
+          "XRPUSDT_4h": "2fd0b3937c0081b86bb483882eac5dbd04cb6dddb7a5a9a7e35da5264695a3d6",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "XRPUSDT_5m": "d911af72df0aa575f62c2765fa466a7cbc3418a948337ddaff496b52851a7cc3"
+        },
+        "model_sha256": "1039ee96cb5cdadc524e07c4da48a743c861f4ebedded0b0bf8d2cebfd042352",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 1096,
+        "signals": 126,
+        "HIT": 66,
+        "FAIL": 58,
+        "NEUTRAL": 0,
+        "PENDING": 2,
+        "accuracy": 0.532258064516129
+      },
+      "alternative": {
+        "decisions": 1096,
+        "signals": 11,
+        "HIT": 5,
+        "FAIL": 6,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.45454545454545453
+      },
+      "coverage": {
+        "first_decision": 1696291199999,
+        "last_decision": 1790899199999,
+        "decisions_with_context": 1096,
+        "input_primary_candles": 2191
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "XRP",
+      "timeframe": "1h",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 86400000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1696118400000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 13155,
+            "calibration": 4242,
+            "latest_train_label": 1679659199999,
+            "latest_calibration_label": 1696118399999
+          },
+          "SELL": {
+            "train": 13155,
+            "calibration": 4242,
+            "latest_train_label": 1679659199999,
+            "latest_calibration_label": 1696118399999
+          }
+        },
+        "features": [
+          "XRPUSDT_15m",
+          "XRPUSDT_1h",
+          "XRPUSDT_4h",
+          "XRPUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "XRPUSDT_15m": "cca0d1ab981eb46bbb4904b6d5a3770890fa2b9d321c30ee88d701350ddf4346",
+          "XRPUSDT_1h": "5d89fc72c65c382584f62d8e54b0c2ba2a50cf49bfaff15880093abf2cc914e0",
+          "XRPUSDT_4h": "2fd0b3937c0081b86bb483882eac5dbd04cb6dddb7a5a9a7e35da5264695a3d6",
+          "XRPUSDT_1d": "077b9bcbb9b37e90d36e83a076633c6b618d4684d822fa6fbcce4a3e3f051bc5",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "XRPUSDT_5m": "d911af72df0aa575f62c2765fa466a7cbc3418a948337ddaff496b52851a7cc3"
+        },
+        "model_sha256": "a18e0826f6c85acc76e2c7d7df4004dab60aa33a6709be06bcf64cac80452e48",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 26319,
+        "signals": 4983,
+        "HIT": 2512,
+        "FAIL": 2460,
+        "NEUTRAL": 5,
+        "PENDING": 6,
+        "accuracy": 0.505229283990346
+      },
+      "alternative": {
+        "decisions": 26319,
+        "signals": 46,
+        "HIT": 25,
+        "FAIL": 21,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.5434782608695652
+      },
+      "coverage": {
+        "first_decision": 1696208399999,
+        "last_decision": 1790953199999,
+        "decisions_with_context": 26319,
+        "input_primary_candles": 52575
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "XRP",
+      "timeframe": "30m",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 86400000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1696118400000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 26301,
+            "calibration": 8721,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          },
+          "SELL": {
+            "train": 26301,
+            "calibration": 8721,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1696118399999
+          }
+        },
+        "features": [
+          "XRPUSDT_15m",
+          "XRPUSDT_30m",
+          "XRPUSDT_4h",
+          "XRPUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "XRPUSDT_15m": "cca0d1ab981eb46bbb4904b6d5a3770890fa2b9d321c30ee88d701350ddf4346",
+          "XRPUSDT_30m": "4ff496bc9c32aed66cd6e112d6b3dba5efe863283fa95171f55b6c6246f8aa1f",
+          "XRPUSDT_4h": "2fd0b3937c0081b86bb483882eac5dbd04cb6dddb7a5a9a7e35da5264695a3d6",
+          "XRPUSDT_1d": "077b9bcbb9b37e90d36e83a076633c6b618d4684d822fa6fbcce4a3e3f051bc5",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "XRPUSDT_5m": "d911af72df0aa575f62c2765fa466a7cbc3418a948337ddaff496b52851a7cc3"
+        },
+        "model_sha256": "5900b8e48c28471a1c89a2e09fcac658aaa7f6328536a1a7c13ed25fefa33613",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 52638,
+        "signals": 5735,
+        "HIT": 2885,
+        "FAIL": 2824,
+        "NEUTRAL": 16,
+        "PENDING": 10,
+        "accuracy": 0.5053424417586267
+      },
+      "alternative": {
+        "decisions": 52638,
+        "signals": 53,
+        "HIT": 44,
+        "FAIL": 9,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": 0.8301886792452831
+      },
+      "coverage": {
+        "first_decision": 1696206599999,
+        "last_decision": 1790953199999,
+        "decisions_with_context": 52638,
+        "input_primary_candles": 105149
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    },
+    {
+      "status": "EXPLORATORY_CHRONOLOGICAL_RECONSTRUCTION_COMPLETE",
+      "symbol": "XRP",
+      "timeframe": "4h",
+      "freeze": {
+        "version": "a0079daadc1d1158335070f81a16b823a2fd94da",
+        "threshold": 0.65,
+        "horizon_ms": 259200000,
+        "train_end": 1680307200000,
+        "calibration_label_end": 1695945600000,
+        "examination_start": 1696204800000,
+        "cutoff": 1790953200000,
+        "counts": {
+          "BUY": {
+            "train": 3277,
+            "calibration": 1068,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1695945599999
+          },
+          "SELL": {
+            "train": 3277,
+            "calibration": 1068,
+            "latest_train_label": 1680307199999,
+            "latest_calibration_label": 1695945599999
+          }
+        },
+        "features": [
+          "XRPUSDT_15m",
+          "XRPUSDT_4h",
+          "XRPUSDT_1d",
+          "BTCUSDT_4h"
+        ],
+        "inputs": {
+          "XRPUSDT_15m": "cca0d1ab981eb46bbb4904b6d5a3770890fa2b9d321c30ee88d701350ddf4346",
+          "XRPUSDT_4h": "2fd0b3937c0081b86bb483882eac5dbd04cb6dddb7a5a9a7e35da5264695a3d6",
+          "XRPUSDT_1d": "077b9bcbb9b37e90d36e83a076633c6b618d4684d822fa6fbcce4a3e3f051bc5",
+          "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+          "XRPUSDT_5m": "d911af72df0aa575f62c2765fa466a7cbc3418a948337ddaff496b52851a7cc3"
+        },
+        "model_sha256": "74ce1ac64cf4ecddf60000d24c1e9c4eedeeef2652306e1d772b65463a63e291",
+        "status": "FROZEN_BEFORE_EXAMINATION"
+      },
+      "kotlin": {
+        "decisions": 6579,
+        "signals": 1390,
+        "HIT": 737,
+        "FAIL": 649,
+        "NEUTRAL": 2,
+        "PENDING": 2,
+        "accuracy": 0.5317460317460317
+      },
+      "alternative": {
+        "decisions": 6579,
+        "signals": 0,
+        "HIT": 0,
+        "FAIL": 0,
+        "NEUTRAL": 0,
+        "PENDING": 0,
+        "accuracy": null
+      },
+      "coverage": {
+        "first_decision": 1696219199999,
+        "last_decision": 1790942399999,
+        "decisions_with_context": 6579,
+        "input_primary_candles": 13143
+      },
+      "limitations": [
+        "Reconstruction with code designed after 2023; not independent prospective evidence.",
+        "Production MTF set 15m/primary/4h/1d; differs from previous ADA1h experiment.",
+        "Original backtest uses a 300-candle calculation; online app can use incremental cache.",
+        "Overlapping horizons are dependent; no winner declared across 150 comparisons.",
+        "Barrier cost sensitivity is not an execution/profitability simulation.",
+        "No historical news; gaps and shorter listings excluded without substitutions."
+      ]
+    }
+  ],
+  "winner": null,
+  "source_artifact_id": 11420307324,
+  "source_run_id": 37475805091
+}

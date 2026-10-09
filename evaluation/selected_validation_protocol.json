@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "registered_on": "2026-10-06",
+  "start_utc": "2026-10-07T00:00:00+00:00",
+  "review_after_days": 180,
+  "threshold_original": 81,
+  "threshold_alternative": 0.65,
+  "alternative_train_end": 1775001600000,
+  "alternative_calibration_label_end": 1790953200000,
+  "historical_cutoff": 1790953200000,
+  "selections": [
+    ["SOL", "1d"], ["ETH", "1d"], ["ARB", "1d"],
+    ["ATOM", "1d"], ["VET", "1d"],
+    ["TRX", "15m"], ["TRX", "30m"], ["TRX", "1h"], ["TRX", "4h"],
+    ["RUNE", "15m"], ["RUNE", "30m"], ["RUNE", "1h"],
+    ["RUNE", "4h"], ["RUNE", "1d"], ["ADA", "4h"]
+  ],
+  "sampling": "latest newly closed candle at each hourly collection; omitted candles are not backfilled",
+  "primary_intraday_days": 45,
+  "daily_context_days": 350,
+  "four_hour_context_days": 120,
+  "outcome_five_minute_days": 120,
+  "cohort": "delayed_recorded_predictions_closed_candles_sampled_hourly_v1",
+  "price_reference": "last closed 5m price known at registration; differs from historical primary-close entry",
+  "first_outcome_candle": "first complete 5m candle opening after recorded_at",
+  "rules": "symmetric ATR target/stop first touch; both touched in same 5m bar neutral; gaps pending",
+  "learning_during_validation": false,
+  "multiple_comparisons": "15 prespecified combinations; no winner from raw maximum; temporal block uncertainty and multiple-testing correction required",
+  "limits": "Historical selection is exploratory. These future observations are a separate research cohort, not mobile surveillance or a profitability simulation. Daily windows overlap and may remain statistically inconclusive after 180 days."
+}

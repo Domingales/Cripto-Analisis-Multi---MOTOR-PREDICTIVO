@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "registered_on": "2026-10-08",
+  "start_utc": "2026-10-09T00:00:00+00:00",
+  "review_after_days": 180,
+  "threshold_original": 81,
+  "threshold_alternative": 0.65,
+  "alternative_train_end": 1775001600000,
+  "alternative_calibration_label_end": 1790953200000,
+  "historical_cutoff": 1790953200000,
+  "selections": [
+    [
+      "XRP",
+      "30m"
+    ]
+  ],
+  "sampling": "latest newly closed candle at each hourly collection; omitted candles are not backfilled",
+  "primary_intraday_days": 45,
+  "daily_context_days": 350,
+  "four_hour_context_days": 120,
+  "outcome_five_minute_days": 120,
+  "cohort": "xrp30m_separate_prospective_v1",
+  "price_reference": "last closed 5m price known at registration; differs from historical primary-close entry",
+  "first_outcome_candle": "first complete 5m candle opening after recorded_at",
+  "rules": "symmetric ATR target/stop first touch; both touched in same 5m bar neutral; gaps pending",
+  "learning_during_validation": false,
+  "multiple_comparisons": "One exploratory XRP30m follow-up; selected after 150 historical tests; cannot establish generalization to other assets",
+  "limits": "Not active until frozen model and capture are verified. No retroactive forecasts. Nonoverlapping episodes need not be independent. No profitability claim. Original and alternative protocols remain frozen. Historical 83.02% is exploratory.",
+  "episode_rule": "Merge all accepted overlapping 24h windows transitively per engine; primary outcome is earliest registered signal per episode, independent of its result; all directions included"
+}
