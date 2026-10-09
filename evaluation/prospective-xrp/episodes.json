@@ -1,11 +1,19 @@
 {
   "original": {
-    "episodes": [],
+    "episodes": [
+      {
+        "first_id": "XRP-30m-1791554399999",
+        "first_open": 1791556200000,
+        "horizon_end": 1791642599999,
+        "signals": 1,
+        "status": "PENDING"
+      }
+    ],
     "counts": {
       "HIT": 0,
       "FAIL": 0,
       "NEUTRAL": 0,
-      "PENDING": 0
+      "PENDING": 1
     },
     "accuracy": null,
     "interpretation": "Nonoverlapping windows do not establish statistical independence"
