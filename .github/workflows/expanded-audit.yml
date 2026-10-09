@@ -1,0 +1,43 @@
+name: Verificar cobertura y paridad del histórico ampliado
+on:
+  pull_request:
+    paths:
+      - 'evaluation/audit_expanded_history.py'
+      - 'evaluation/test_audit_expanded_history.py'
+      - '.github/workflows/expanded-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy
+      - name: Probar integridad y rechazo de huecos
+        run: python3 -m unittest discover -s evaluation -p 'test_*history.py'
+      - name: Recuperar archivos del corte fijo sin volver a descargar el mercado
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/37224269151/artifacts?per_page=100" --jq '.artifacts[] | [.id,.name] | @tsv' > archives.tsv
+          mkdir archives
+          while IFS=$'\t' read -r id name; do
+            gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$id/zip" > "archives/$name.zip"
+          done < archives.tsv
+          test "$(find archives -name '*.zip' | wc -l)" -eq 30
+      - name: Auditar todas las series y muestras oficiales de cada intervalo
+        run: python3 evaluation/audit_expanded_history.py --archives archives/*.zip --official-parity --output expanded-coverage-parity.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: auditoria-historico-ampliado-${{ github.run_id }}
+          path: |
+            expanded-coverage-parity.json
+            archives.tsv
+          retention-days: 90
