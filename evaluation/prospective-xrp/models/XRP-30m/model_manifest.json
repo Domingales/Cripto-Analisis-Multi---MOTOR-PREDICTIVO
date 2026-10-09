@@ -1,0 +1,45 @@
+{
+  "version": "8a772cba24d3416f03acb740bc4ed8ced23e5a0d",
+  "threshold": 0.65,
+  "horizon_ms": 86400000,
+  "train_end": 1775001600000,
+  "calibration_label_end": 1790953200000,
+  "examination_start": 1791331200000,
+  "cutoff": 1790953200000,
+  "counts": {
+    "BUY": {
+      "train": 78828,
+      "calibration": 8805,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790953199999
+    },
+    "SELL": {
+      "train": 78828,
+      "calibration": 8805,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790953199999
+    }
+  },
+  "features": [
+    "XRPUSDT_15m",
+    "XRPUSDT_30m",
+    "XRPUSDT_4h",
+    "XRPUSDT_1d",
+    "BTCUSDT_4h"
+  ],
+  "inputs": {
+    "XRPUSDT_15m": "cca0d1ab981eb46bbb4904b6d5a3770890fa2b9d321c30ee88d701350ddf4346",
+    "XRPUSDT_30m": "4ff496bc9c32aed66cd6e112d6b3dba5efe863283fa95171f55b6c6246f8aa1f",
+    "XRPUSDT_4h": "2fd0b3937c0081b86bb483882eac5dbd04cb6dddb7a5a9a7e35da5264695a3d6",
+    "XRPUSDT_1d": "077b9bcbb9b37e90d36e83a076633c6b618d4684d822fa6fbcce4a3e3f051bc5",
+    "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+    "XRPUSDT_5m": "d911af72df0aa575f62c2765fa466a7cbc3418a948337ddaff496b52851a7cc3"
+  },
+  "model_sha256": "009e602aef903ce3ff3b6ce8000f07ad5c38fbd6c0d4839d14167f8acfaa21d3",
+  "status": "FROZEN_FOR_NEW_PROSPECTIVE_VALIDATION",
+  "symbol": "XRP",
+  "timeframe": "30m",
+  "protocol_sha256": "998eab68bd77ad35dbf57676c1ec39c38d0a991436676d01de7fdfe6b3102ebd",
+  "cohort": "xrp30m_separate_prospective_v1",
+  "prepared_for": "NEW_PROSPECTIVE_ONLY_NOT_2023_EXAMINATION"
+}
