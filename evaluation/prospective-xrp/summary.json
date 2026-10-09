@@ -1,15 +1,15 @@
 {
   "status": "COLLECTING_NO_CONFIRMED_IMPROVEMENT",
   "protocol_sha256": "998eab68bd77ad35dbf57676c1ec39c38d0a991436676d01de7fdfe6b3102ebd",
-  "updated_at": 1791556051882,
+  "updated_at": 1791576640663,
   "combinations": [
     {
       "symbol": "XRP",
       "timeframe": "30m",
       "engine": "original",
-      "decisions": 2,
-      "signals": 1,
-      "pending": 1,
+      "decisions": 3,
+      "signals": 2,
+      "pending": 2,
       "accuracy": null,
       "HIT": 0,
       "FAIL": 0,
@@ -19,7 +19,7 @@
       "symbol": "XRP",
       "timeframe": "30m",
       "engine": "alternative",
-      "decisions": 2,
+      "decisions": 3,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
