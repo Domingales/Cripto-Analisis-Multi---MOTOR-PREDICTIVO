@@ -1,10 +1,5 @@
 name: Preparar validación independiente XRP30m
 on:
-  pull_request:
-    paths:
-      - 'evaluation/xrp*'
-      - 'evaluation/test_xrp_episode_validation.py'
-      - '.github/workflows/xrp-validation.yml'
   workflow_dispatch:
 permissions:
   contents: read
