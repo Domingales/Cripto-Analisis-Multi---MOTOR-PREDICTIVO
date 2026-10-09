@@ -66,7 +66,7 @@ def is_fresh(close,recorded,now,tf):
     return 0<=recorded-close<=INTERVALS[tf]+15*60000 and 0<=now-recorded<=15*60000
 
 
-def capture(root,data,decision_file,model_root,version,engine_sha,now=None):
+def capture(root,data,decision_file,model_root,version,engine_sha,now=None,durable_sink=None):
     injected_clock=now is not None
     now=now if injected_clock else int(time.time()*1000)
     protocol=json.loads(PROTOCOL.read_text()); phash=hashlib.sha256(PROTOCOL.read_bytes()).hexdigest()
@@ -116,6 +116,12 @@ def capture(root,data,decision_file,model_root,version,engine_sha,now=None):
         # The durable journal time is later than Kotlin computation. Outcomes must
         # start AFTER this append, never after an earlier buffered computation.
         computed_at=recorded
+        if durable_sink is not None and not injected_clock:
+            # Leave a full minute for the remote write; never move the outcome
+            # boundary away from the registered first-complete-5m rule.
+            remaining=300000-int(time.time()*1000)%300000
+            if remaining<60000:
+                time.sleep(remaining/1000+.05)
         recorded=now if injected_clock else int(time.time()*1000)
         first=(recorded//300000+1)*300000
         if first-recorded<1000: first+=300000
@@ -126,7 +132,10 @@ def capture(root,data,decision_file,model_root,version,engine_sha,now=None):
             entry_price_time=price_time,context_snapshot_base64=snapshot,
             original=dict(accepted=accepted=='true',direction=side),alternative=alt,
             data_hashes={k:v['sha256'] for k,v in manifest['inputs'].items() if k.startswith(symbol+'USDT_') or k=='BTCUSDT_4h.csv'})
-        append(root,event);history.append(event);known.add(identifier)
+        append(root,event)
+        if durable_sink is not None:
+            durable_sink(event)
+        history.append(event);known.add(identifier)
     resolved={(e['id'],e['engine']) for e in history if e['type']=='OUTCOME'}
     def needs_outcome(event,engine):
         return event[engine]['accepted'] or (engine=='alternative' and event[engine].get('model_sha256') is not None)
