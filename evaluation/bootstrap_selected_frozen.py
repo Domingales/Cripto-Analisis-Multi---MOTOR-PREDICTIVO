@@ -31,8 +31,8 @@ def bootstrap():
         if model is not None: models[symbol+'-'+tf]=manifest['model_sha256']
         shutil.copytree(folder,ROOT/'models'/(symbol+'-'+tf))
     unavailable=sorted(k for k,v in statuses.items() if v!='FROZEN_FOR_NEW_PROSPECTIVE_VALIDATION')
-    if unavailable!=['ARB-1d']:
-        raise ValueError('Unexpected model availability: '+json.dumps(unavailable))
+    if unavailable:
+        raise ValueError('Unexpected prospectively unavailable models: '+json.dumps(unavailable))
     engine=subprocess.check_output('sha256sum app/src/main/java/com/domingales/criptoanalisis/multi/domain/*.kt | sha256sum',shell=True,text=True).split()[0]
     (ROOT/'freeze-lock.json').write_text(json.dumps(dict(protocol_sha256=phash,engine_sha256=engine,
         models=models,statuses=statuses,source='REGISTERED_EXPANDED_REPLAY_ARTIFACTS_NO_RETRAINING'),indent=2)+'\n')
