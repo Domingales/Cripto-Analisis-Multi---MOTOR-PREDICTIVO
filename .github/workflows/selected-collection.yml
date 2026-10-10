@@ -1,0 +1,50 @@
+name: Recogida periódica de 15 combinaciones en investigación
+on:
+  schedule:
+    - cron: '37 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/selected-collection.yml']
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: selected-15-durable-collection
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/expanded-replay-150
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - run: python3 -m unittest discover -s evaluation -p 'test_*.py'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Recuperar modelos congelados y registrar sin reentrenar
+        run: bash evaluation/run_selected_collection.sh
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: selected-15-durable-${{ github.run_id }}
+          path: |
+            evaluation/selected-prospective/
+            selected-data/manifest.json
+            selected-output/
+            app/build/test-results/testDebugUnitTest/
+          retention-days: 90
