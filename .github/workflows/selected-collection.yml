@@ -10,7 +10,7 @@ permissions:
   contents: write
   actions: read
 concurrency:
-  group: selected-15-durable-collection
+  group: research-prospective-durable-writes
   cancel-in-progress: false
 jobs:
   collect:
