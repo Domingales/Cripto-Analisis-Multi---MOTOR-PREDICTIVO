@@ -1,7 +1,7 @@
 import hashlib
 import json
 import unittest
-from xrp_periodic_capture import verify_receipts
+from xrp_periodic_capture import retry_is_safe, verify_receipts
 
 
 class DurabilityTests(unittest.TestCase):
@@ -26,3 +26,8 @@ class DurabilityTests(unittest.TestCase):
 
     def test_outcomes_do_not_require_forecast_receipts(self):
         verify_receipts([dict(type='OUTCOME',id='one')],{})
+
+    def test_push_retry_never_overwrites_another_writer(self):
+        self.assertTrue(retry_is_safe('parent','parent','ours'))
+        self.assertTrue(retry_is_safe('ours','parent','ours'))
+        self.assertFalse(retry_is_safe('concurrent','parent','ours'))

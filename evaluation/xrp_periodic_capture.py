@@ -16,12 +16,34 @@ def git(*args):
     return subprocess.check_output(['git',*args],text=True).strip()
 
 
+def retry_is_safe(remote, parent, head):
+    """Retry only our unchanged fast-forward; never reconcile another writer."""
+    return remote in (parent, head)
+
+
+def push_fast_forward():
+    head=git('rev-parse','HEAD')
+    parent=git('rev-parse','HEAD^')
+    for attempt in range(3):
+        try:
+            git('push','origin','HEAD:'+BRANCH)
+            return
+        except subprocess.CalledProcessError:
+            git('fetch','origin',BRANCH)
+            remote=git('rev-parse','FETCH_HEAD')
+            if remote==head:
+                return
+            if not retry_is_safe(remote,parent,head) or attempt==2:
+                raise
+            time.sleep(attempt+1)
+
+
 def persist(message):
     git('add',str(ROOT))
     if subprocess.run(['git','diff','--cached','--quiet']).returncode:
         git('commit','-m',message)
         # No force, rebase or overwrite: concurrent edits stop this collection.
-        git('push','origin','HEAD:'+BRANCH)
+        push_fast_forward()
     return git('rev-parse','HEAD')
 
 
