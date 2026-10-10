@@ -1,0 +1,43 @@
+{
+  "version": "68b0335ca0c1a8aed44b1f20393c84bb25c42543",
+  "threshold": 0.65,
+  "horizon_ms": 1209600000,
+  "train_end": 1775001600000,
+  "calibration_label_end": 1790953200000,
+  "examination_start": 1791331200000,
+  "cutoff": 1790953200000,
+  "counts": {
+    "BUY": {
+      "train": 869,
+      "calibration": 170,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790899199999
+    },
+    "SELL": {
+      "train": 869,
+      "calibration": 170,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790899199999
+    }
+  },
+  "features": [
+    "ARBUSDT_15m",
+    "ARBUSDT_1d",
+    "ARBUSDT_4h",
+    "BTCUSDT_4h"
+  ],
+  "inputs": {
+    "ARBUSDT_15m": "e15092f976a60e0fd0ec27024ef1ec9df62e5b7af25e19dd794b7cdb36ed6bb9",
+    "ARBUSDT_1d": "053fc16ff60c279b72f783e80294406898ecc721988bf0950c0eadc05c785ebe",
+    "ARBUSDT_4h": "9225c26c5feea25eb6fdff66b03b07e37b96c28cf36d50de29b9fb11f56feb4f",
+    "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+    "ARBUSDT_5m": "6d4a9ca7d0824b4d60cce3d3c608d2ead501186ddee495130ac16e3a75524017"
+  },
+  "model_sha256": "71eb9893079a5313cb841b06b1af68fc57bc2e8cadda7ca33b9559a45ee84418",
+  "status": "FROZEN_FOR_NEW_PROSPECTIVE_VALIDATION",
+  "symbol": "ARB",
+  "timeframe": "1d",
+  "protocol_sha256": "e0a5fe96c1cab432a39ebbcca95ecbdc167d287a714043b4e04f1a4e95fd47dc",
+  "cohort": "delayed_recorded_predictions_closed_candles_sampled_hourly_v1",
+  "prepared_for": "NEW_PROSPECTIVE_ONLY_NOT_2023_EXAMINATION"
+}

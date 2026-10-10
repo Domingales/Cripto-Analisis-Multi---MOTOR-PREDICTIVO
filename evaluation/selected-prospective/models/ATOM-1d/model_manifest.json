@@ -1,0 +1,43 @@
+{
+  "version": "68b0335ca0c1a8aed44b1f20393c84bb25c42543",
+  "threshold": 0.65,
+  "horizon_ms": 1209600000,
+  "train_end": 1775001600000,
+  "calibration_label_end": 1790953200000,
+  "examination_start": 1791331200000,
+  "cutoff": 1790953200000,
+  "counts": {
+    "BUY": {
+      "train": 1591,
+      "calibration": 170,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790899199999
+    },
+    "SELL": {
+      "train": 1591,
+      "calibration": 170,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790899199999
+    }
+  },
+  "features": [
+    "ATOMUSDT_15m",
+    "ATOMUSDT_1d",
+    "ATOMUSDT_4h",
+    "BTCUSDT_4h"
+  ],
+  "inputs": {
+    "ATOMUSDT_15m": "863c327524dd34ef9f77f45cc6c28bd0be1481898f46daa6c7183bc7e8926aa1",
+    "ATOMUSDT_1d": "9e2433390c75ef34ffe23370f8c79d734b84e99d78afe1bc7cdc52bff49f4ebf",
+    "ATOMUSDT_4h": "a01d0913bc26b3ada214cb56c498de2a00ac15095ba1b38757dfd98d26476fa2",
+    "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+    "ATOMUSDT_5m": "ee1adc9c1047e2964bb5b00fb7ec5094fb3a7f759e33a75bad1ca3cd1583e733"
+  },
+  "model_sha256": "f17d08489c7d8e021b0b5fa45178d4b6b26c183c7fefe7d12039c57223bc3d20",
+  "status": "FROZEN_FOR_NEW_PROSPECTIVE_VALIDATION",
+  "symbol": "ATOM",
+  "timeframe": "1d",
+  "protocol_sha256": "e0a5fe96c1cab432a39ebbcca95ecbdc167d287a714043b4e04f1a4e95fd47dc",
+  "cohort": "delayed_recorded_predictions_closed_candles_sampled_hourly_v1",
+  "prepared_for": "NEW_PROSPECTIVE_ONLY_NOT_2023_EXAMINATION"
+}

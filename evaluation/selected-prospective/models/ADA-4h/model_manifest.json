@@ -1,0 +1,43 @@
+{
+  "version": "68b0335ca0c1a8aed44b1f20393c84bb25c42543",
+  "threshold": 0.65,
+  "horizon_ms": 259200000,
+  "train_end": 1775001600000,
+  "calibration_label_end": 1790953200000,
+  "examination_start": 1791331200000,
+  "cutoff": 1790953200000,
+  "counts": {
+    "BUY": {
+      "train": 9816,
+      "calibration": 1089,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790942399999
+    },
+    "SELL": {
+      "train": 9816,
+      "calibration": 1089,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790942399999
+    }
+  },
+  "features": [
+    "ADAUSDT_15m",
+    "ADAUSDT_4h",
+    "ADAUSDT_1d",
+    "BTCUSDT_4h"
+  ],
+  "inputs": {
+    "ADAUSDT_15m": "a7c3f63bf65779da505d13aead221deb413c88416b4bc497f944f1186d2da5f6",
+    "ADAUSDT_4h": "5de2f7eed53572eb9721104cecd0bdbc534d8528c2470c2c6b3db7ca82fe48b1",
+    "ADAUSDT_1d": "6a8acc798f4797c67d3d90c8a7fb104d4d6fbefbab47fffd4d1c7b7529062c9f",
+    "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+    "ADAUSDT_5m": "175dd303ab74561229c144d356e0f33a4f106b4e1280d32188883e57572c7d55"
+  },
+  "model_sha256": "cd3ce807181748d8d65220078a8d4f5fca1aacddd5ee282b1bc3b28048f0d59d",
+  "status": "FROZEN_FOR_NEW_PROSPECTIVE_VALIDATION",
+  "symbol": "ADA",
+  "timeframe": "4h",
+  "protocol_sha256": "e0a5fe96c1cab432a39ebbcca95ecbdc167d287a714043b4e04f1a4e95fd47dc",
+  "cohort": "delayed_recorded_predictions_closed_candles_sampled_hourly_v1",
+  "prepared_for": "NEW_PROSPECTIVE_ONLY_NOT_2023_EXAMINATION"
+}

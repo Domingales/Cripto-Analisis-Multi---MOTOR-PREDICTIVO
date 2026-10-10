@@ -1,0 +1,43 @@
+{
+  "version": "68b0335ca0c1a8aed44b1f20393c84bb25c42543",
+  "threshold": 0.65,
+  "horizon_ms": 1209600000,
+  "train_end": 1775001600000,
+  "calibration_label_end": 1790953200000,
+  "examination_start": 1791331200000,
+  "cutoff": 1790953200000,
+  "counts": {
+    "BUY": {
+      "train": 1593,
+      "calibration": 170,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790899199999
+    },
+    "SELL": {
+      "train": 1593,
+      "calibration": 170,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790899199999
+    }
+  },
+  "features": [
+    "ETHUSDT_15m",
+    "ETHUSDT_1d",
+    "ETHUSDT_4h",
+    "BTCUSDT_4h"
+  ],
+  "inputs": {
+    "ETHUSDT_15m": "c4e119484fc4211fa42ca2b82c10ecca30808144b04868594a819d8b7c1ccafe",
+    "ETHUSDT_1d": "ba72a092b039e683a2d6c740901b42ed75cb833127493cb1f29491578bc23080",
+    "ETHUSDT_4h": "c1e45f98417dbc202a5c9c82b21481b07870e5234d41db25ef66e2abd5de925a",
+    "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+    "ETHUSDT_5m": "6ddceffa7a5ecdfe6971e3faa75b1f3fda3788e6cf4ea9c48ff8a17058c516c1"
+  },
+  "model_sha256": "e797e992cadbaf8e60b990ff1fc9d9a98ea205f3cf0a1ffbb6aaab4c805def1b",
+  "status": "FROZEN_FOR_NEW_PROSPECTIVE_VALIDATION",
+  "symbol": "ETH",
+  "timeframe": "1d",
+  "protocol_sha256": "e0a5fe96c1cab432a39ebbcca95ecbdc167d287a714043b4e04f1a4e95fd47dc",
+  "cohort": "delayed_recorded_predictions_closed_candles_sampled_hourly_v1",
+  "prepared_for": "NEW_PROSPECTIVE_ONLY_NOT_2023_EXAMINATION"
+}

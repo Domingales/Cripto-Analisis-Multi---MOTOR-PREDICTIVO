@@ -1,0 +1,43 @@
+{
+  "version": "68b0335ca0c1a8aed44b1f20393c84bb25c42543",
+  "threshold": 0.65,
+  "horizon_ms": 1209600000,
+  "train_end": 1775001600000,
+  "calibration_label_end": 1790953200000,
+  "examination_start": 1791331200000,
+  "cutoff": 1790953200000,
+  "counts": {
+    "BUY": {
+      "train": 1592,
+      "calibration": 170,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790899199999
+    },
+    "SELL": {
+      "train": 1592,
+      "calibration": 170,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790899199999
+    }
+  },
+  "features": [
+    "RUNEUSDT_15m",
+    "RUNEUSDT_1d",
+    "RUNEUSDT_4h",
+    "BTCUSDT_4h"
+  ],
+  "inputs": {
+    "RUNEUSDT_15m": "127325fc4210d501bbe266cdda7197614842eb87bb5574df6c8053fb30bbab9e",
+    "RUNEUSDT_1d": "41262c4e022fac5e402024ff9250c74273cc9084b98c2af01a7a738506d2d68a",
+    "RUNEUSDT_4h": "3c1d297c9365b3ae849f5d96fb10de9853fba1541c9c550f0dd8639fd79660f9",
+    "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+    "RUNEUSDT_5m": "a47a76ff8a90d5e74cf8713431b5e7ab72a754a1ec144014cb13ea11b6a70e01"
+  },
+  "model_sha256": "a27c3291310ec352fc37b3eb533e4bc428644e240d6b07132c61ad4cddcb4ccc",
+  "status": "FROZEN_FOR_NEW_PROSPECTIVE_VALIDATION",
+  "symbol": "RUNE",
+  "timeframe": "1d",
+  "protocol_sha256": "e0a5fe96c1cab432a39ebbcca95ecbdc167d287a714043b4e04f1a4e95fd47dc",
+  "cohort": "delayed_recorded_predictions_closed_candles_sampled_hourly_v1",
+  "prepared_for": "NEW_PROSPECTIVE_ONLY_NOT_2023_EXAMINATION"
+}

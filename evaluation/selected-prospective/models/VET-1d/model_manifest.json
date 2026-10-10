@@ -1,0 +1,43 @@
+{
+  "version": "68b0335ca0c1a8aed44b1f20393c84bb25c42543",
+  "threshold": 0.65,
+  "horizon_ms": 1209600000,
+  "train_end": 1775001600000,
+  "calibration_label_end": 1790953200000,
+  "examination_start": 1791331200000,
+  "cutoff": 1790953200000,
+  "counts": {
+    "BUY": {
+      "train": 1610,
+      "calibration": 170,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790899199999
+    },
+    "SELL": {
+      "train": 1610,
+      "calibration": 170,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790899199999
+    }
+  },
+  "features": [
+    "VETUSDT_15m",
+    "VETUSDT_1d",
+    "VETUSDT_4h",
+    "BTCUSDT_4h"
+  ],
+  "inputs": {
+    "VETUSDT_15m": "32589a470832f88903b62841fcc59e9c92cafbf72f9f8e5b9ff170ebc6b73f04",
+    "VETUSDT_1d": "aaa67864f7362593f11edf526e460a815b7a80e7f59c8e1ecf5111056751191f",
+    "VETUSDT_4h": "8002076e9a62a839e9cb20672abec154c2b61a80ed5dd2bac4c0182b70b52eb1",
+    "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+    "VETUSDT_5m": "0a9b9eceb348752eb2e5d80f0c61d541303a25f9fd0d92424c86f89563971ab5"
+  },
+  "model_sha256": "9ec90340ad2c5ec34c340b5d689a525469693e86a402dee46259ba7971d933c1",
+  "status": "FROZEN_FOR_NEW_PROSPECTIVE_VALIDATION",
+  "symbol": "VET",
+  "timeframe": "1d",
+  "protocol_sha256": "e0a5fe96c1cab432a39ebbcca95ecbdc167d287a714043b4e04f1a4e95fd47dc",
+  "cohort": "delayed_recorded_predictions_closed_candles_sampled_hourly_v1",
+  "prepared_for": "NEW_PROSPECTIVE_ONLY_NOT_2023_EXAMINATION"
+}

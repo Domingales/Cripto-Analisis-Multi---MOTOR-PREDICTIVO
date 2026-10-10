@@ -1,0 +1,43 @@
+{
+  "version": "68b0335ca0c1a8aed44b1f20393c84bb25c42543",
+  "threshold": 0.65,
+  "horizon_ms": 1209600000,
+  "train_end": 1775001600000,
+  "calibration_label_end": 1790953200000,
+  "examination_start": 1791331200000,
+  "cutoff": 1790953200000,
+  "counts": {
+    "BUY": {
+      "train": 1607,
+      "calibration": 170,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790899199999
+    },
+    "SELL": {
+      "train": 1607,
+      "calibration": 170,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790899199999
+    }
+  },
+  "features": [
+    "SOLUSDT_15m",
+    "SOLUSDT_1d",
+    "SOLUSDT_4h",
+    "BTCUSDT_4h"
+  ],
+  "inputs": {
+    "SOLUSDT_15m": "f4e4a1a73bf17edee438af9724ff530291990619cad011b55d5bcab478405fbb",
+    "SOLUSDT_1d": "6ec637ab9224a9adefba52a6c90e0ada275dadc79eeb08da1cc6c4245ce98412",
+    "SOLUSDT_4h": "28fc2b80a18f78b900a411c01c3dfe8d82bea52a0b338bebb70ff0b2f4c7ac00",
+    "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+    "SOLUSDT_5m": "708139f6f90689f98f0864a1c22a4f8b5dd6e877190cd68e421b51003475c40f"
+  },
+  "model_sha256": "c26e60b79d07cd920ae6b923d16c23fa96440aada38052e5845bf9d0fcf2226b",
+  "status": "FROZEN_FOR_NEW_PROSPECTIVE_VALIDATION",
+  "symbol": "SOL",
+  "timeframe": "1d",
+  "protocol_sha256": "e0a5fe96c1cab432a39ebbcca95ecbdc167d287a714043b4e04f1a4e95fd47dc",
+  "cohort": "delayed_recorded_predictions_closed_candles_sampled_hourly_v1",
+  "prepared_for": "NEW_PROSPECTIVE_ONLY_NOT_2023_EXAMINATION"
+}

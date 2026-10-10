@@ -1,0 +1,43 @@
+{
+  "version": "68b0335ca0c1a8aed44b1f20393c84bb25c42543",
+  "threshold": 0.65,
+  "horizon_ms": 86400000,
+  "train_end": 1775001600000,
+  "calibration_label_end": 1790953200000,
+  "examination_start": 1791331200000,
+  "cutoff": 1790953200000,
+  "counts": {
+    "BUY": {
+      "train": 157323,
+      "calibration": 16587,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790953199999
+    },
+    "SELL": {
+      "train": 157323,
+      "calibration": 16587,
+      "latest_train_label": 1775001599999,
+      "latest_calibration_label": 1790953199999
+    }
+  },
+  "features": [
+    "TRXUSDT_15m",
+    "TRXUSDT_4h",
+    "TRXUSDT_1d",
+    "BTCUSDT_4h"
+  ],
+  "inputs": {
+    "TRXUSDT_15m": "32e8fc1d51d304f4b64db53768808429706cf0b6460f2cb12e2dbb1620f22ea4",
+    "TRXUSDT_4h": "5a987975e13cfd29d292f76c6f04bbe0c67c83a49119a3aac5f5e41072c1a768",
+    "TRXUSDT_1d": "1ac900770be927f9715a0dc4cc07e45ca202ab5ff514f9905870a330386ae6b7",
+    "BTCUSDT_4h": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+    "TRXUSDT_5m": "d479c68b73b1cd5003d7a89377ff49c2f1a5914a6b7b9ef4cf90a29cc86caf6b"
+  },
+  "model_sha256": "e8c2f26e4e850bc3a354a46ebde33766601c1561e8de8b00386505091d6e01e1",
+  "status": "FROZEN_FOR_NEW_PROSPECTIVE_VALIDATION",
+  "symbol": "TRX",
+  "timeframe": "15m",
+  "protocol_sha256": "e0a5fe96c1cab432a39ebbcca95ecbdc167d287a714043b4e04f1a4e95fd47dc",
+  "cohort": "delayed_recorded_predictions_closed_candles_sampled_hourly_v1",
+  "prepared_for": "NEW_PROSPECTIVE_ONLY_NOT_2023_EXAMINATION"
+}
