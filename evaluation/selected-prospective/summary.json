@@ -1,7 +1,7 @@
 {
   "status": "COLLECTING_NO_CONFIRMED_IMPROVEMENT",
   "protocol_sha256": "e0a5fe96c1cab432a39ebbcca95ecbdc167d287a714043b4e04f1a4e95fd47dc",
-  "updated_at": 1791681562763,
+  "updated_at": 1791705210352,
   "combinations": [
     {
       "symbol": "SOL",
@@ -512,7 +512,7 @@
       "symbol": "TRX",
       "timeframe": "15m",
       "engine": "original",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -524,7 +524,7 @@
       "symbol": "TRX",
       "timeframe": "15m",
       "engine": "alternative",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -613,7 +613,7 @@
       "symbol": "TRX",
       "timeframe": "30m",
       "engine": "original",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 1,
       "pending": 1,
       "accuracy": null,
@@ -625,7 +625,7 @@
       "symbol": "TRX",
       "timeframe": "30m",
       "engine": "alternative",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -714,9 +714,9 @@
       "symbol": "TRX",
       "timeframe": "1h",
       "engine": "original",
-      "decisions": 5,
-      "signals": 1,
-      "pending": 1,
+      "decisions": 6,
+      "signals": 2,
+      "pending": 2,
       "accuracy": null,
       "HIT": 0,
       "FAIL": 0,
@@ -726,7 +726,7 @@
       "symbol": "TRX",
       "timeframe": "1h",
       "engine": "alternative",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -815,7 +815,7 @@
       "symbol": "TRX",
       "timeframe": "4h",
       "engine": "original",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -827,7 +827,7 @@
       "symbol": "TRX",
       "timeframe": "4h",
       "engine": "alternative",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -916,7 +916,7 @@
       "symbol": "RUNE",
       "timeframe": "15m",
       "engine": "original",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -928,7 +928,7 @@
       "symbol": "RUNE",
       "timeframe": "15m",
       "engine": "alternative",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -936,8 +936,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 0,
-        "brier": null,
+        "scored_resolved": 1,
+        "brier": 0.2536288072295855,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -977,9 +977,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 0,
-            "mean_probability": null,
-            "observed_hit_rate": null
+            "cases": 1,
+            "mean_probability": 0.5036157336994005,
+            "observed_hit_rate": 0.0
           },
           {
             "low": 0.6,
@@ -1017,7 +1017,7 @@
       "symbol": "RUNE",
       "timeframe": "30m",
       "engine": "original",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -1029,7 +1029,7 @@
       "symbol": "RUNE",
       "timeframe": "30m",
       "engine": "alternative",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -1037,8 +1037,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 0,
-        "brier": null,
+        "scored_resolved": 1,
+        "brier": 0.2454564738671505,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -1078,9 +1078,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 0,
-            "mean_probability": null,
-            "observed_hit_rate": null
+            "cases": 1,
+            "mean_probability": 0.5045643595105914,
+            "observed_hit_rate": 1.0
           },
           {
             "low": 0.6,
@@ -1118,7 +1118,7 @@
       "symbol": "RUNE",
       "timeframe": "1h",
       "engine": "original",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 1,
       "pending": 1,
       "accuracy": null,
@@ -1130,7 +1130,7 @@
       "symbol": "RUNE",
       "timeframe": "1h",
       "engine": "alternative",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -1138,8 +1138,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 0,
-        "brier": null,
+        "scored_resolved": 1,
+        "brier": 0.24718871440126025,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -1179,9 +1179,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 0,
-            "mean_probability": null,
-            "observed_hit_rate": null
+            "cases": 1,
+            "mean_probability": 0.5028192336772668,
+            "observed_hit_rate": 1.0
           },
           {
             "low": 0.6,
@@ -1219,7 +1219,7 @@
       "symbol": "RUNE",
       "timeframe": "4h",
       "engine": "original",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -1231,7 +1231,7 @@
       "symbol": "RUNE",
       "timeframe": "4h",
       "engine": "alternative",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -1421,7 +1421,7 @@
       "symbol": "ADA",
       "timeframe": "4h",
       "engine": "original",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -1433,7 +1433,7 @@
       "symbol": "ADA",
       "timeframe": "4h",
       "engine": "alternative",
-      "decisions": 5,
+      "decisions": 6,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
