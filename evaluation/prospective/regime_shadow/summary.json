@@ -4,19 +4,22 @@
   "by_regime": {
     "RANGE_OR_MIXED": {
       "baseline": {
-        "decisions": 15,
-        "signals": 1,
-        "resolved": 0,
+        "decisions": 16,
+        "signals": 2,
+        "resolved": 1,
         "HIT": 0,
-        "FAIL": 0,
+        "FAIL": 1,
         "NEUTRAL": 0,
         "PENDING": 1,
-        "accuracy": null,
-        "descriptive_wilson_interval": null,
-        "coverage": 0.06666666666666667
+        "accuracy": 0.0,
+        "descriptive_wilson_interval": [
+          0.0,
+          0.7934567085261071
+        ],
+        "coverage": 0.125
       },
       "rejected_filter_shadow": {
-        "decisions": 15,
+        "decisions": 16,
         "signals": 0,
         "resolved": 0,
         "HIT": 0,
