@@ -62,3 +62,9 @@ La clonación local volvió a fallar por conectividad del proxy; el acceso GitHu
 Se publicó [un protocolo adicional de ejecución y costes](2026-10-15-execution-costs-preregistration.md), commit e185044ae5f2d2887ed4518d6a67cf2a1a676c9b, reservado a decisiones desde 2026-10-16T00:00:00Z. Define entrada posterior a registro durable, costes/sensibilidades fijos, gaps, ambigüedad intravela y bloqueo por activo. Es un diseño registrado; su implementación, pruebas y resultados todavía están pendientes. No es una rentabilidad demostrada.
 
 Siguiente trabajo: implementar esa herramienta aislada y probarla antes de usarla; continuar resolviendo ventanas vencidas, incluyendo el resto TRX4h, sin cambiar la selección ni optimizar con resultados vistos. No trasladar a producción el alternativo por un único episodio favorable.
+
+## Incidencia posterior al corte — 08:29 Madrid
+
+La ejecución 38691837238 terminó failure a las 08:28:09 Madrid. Pasaron Python y compilación/pruebas Kotlin, pero la escritura durable rechazó un push porque esta revisión publicó e185044 mientras la recogida partía de 3451b0f. La protección fast-forward abortó al detectar trabajo remoto nuevo, conservándolo. Es una colisión causada por la publicación de esta revisión; no un fallo predictivo ni rechazo de revisión automática.
+
+Las 243 decisiones calculadas localmente por ese intento NO cuentan como registradas: no se importarán desde el artefacto ni se retrofecharán. La tabla anterior conserva 234 decisiones durables válidas. Se solicitará reintento sólo del job fallido desde el estado remoto actual, manteniendo modelo/protocolo y dejando finalizar la recogida sin más publicaciones concurrentes. La siguiente recogida debe registrar el mercado actual, no rellenar el intento perdido.
