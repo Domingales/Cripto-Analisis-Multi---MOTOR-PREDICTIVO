@@ -1,0 +1,22 @@
+name: Verificar simulación aislada de costes
+on:
+  push:
+    branches: [research/expanded-replay-150]
+    paths:
+      - 'evaluation/execution_costs.py'
+      - 'evaluation/test_execution_costs.py'
+      - '.github/workflows/research-execution-costs.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - run: python3 -m unittest discover -s evaluation -p 'test_*.py'
