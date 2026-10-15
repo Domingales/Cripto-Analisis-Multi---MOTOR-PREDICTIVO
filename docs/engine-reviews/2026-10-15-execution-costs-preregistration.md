@@ -25,3 +25,21 @@ No desplegar en Android un motor/filtro por esta simulación sin ventaja prospec
 
 ## Siguiente trabajo
 Implementar la transformación como herramienta independiente de investigación, probar entradas posteriores al recibo, gaps, saltos, doble toque, costes y bloqueo por activo. Verificarla en Actions antes de publicar cualquier resultado. No repetir la matriz150 ni reentrenar modelos.
+
+## Implementación comprobada — 15/10/2026 08:40 Madrid
+
+El núcleo evaluation/execution_costs.py y sus 15 pruebas ya están publicados en c864a9b07979c60ff7b9bfd6844dd969ac732fe1. Actions 38693622444 supera las 85 pruebas del conjunto. Las secciones anteriores conservan el diseño registrado antes de implementar: no se han cambiado la reserva futura, costes, selección ni criterios.
+
+Uso para la cohorte seleccionada (los mismos argumentos admiten journal/recibos/lock XRP por separado):
+
+```bash
+python3 evaluation/execution_costs.py \\
+  --events evaluation/selected-prospective/events-2026-10.jsonl \\
+  --receipts evaluation/selected-prospective/durability-receipts.json \\
+  --freeze-lock evaluation/selected-prospective/freeze-lock.json \\
+  --data selected-data --output execution-costs.json
+```
+
+La ejecución exige manifest.json del recolector nativo oficial y verifica los CSV5m por checksum. Devuelve estados explícitos, sensibilidades por operación, comparaciones estrictamente pareadas sólo entre operaciones admitidas del mismo id, régimen del snapshot cuando existe y MFE/MAE direccionales originales claramente separados de PnL. No altera diarios ni modelos ni emite órdenes.
+
+No está conectada a un cálculo periódico de resultados de costes y todavía no existe una muestra de mercado posterior al inicio reservado. Los informes estadísticos por bloque/regímenes y la operación periódica de esta simulación siguen pendientes. La validación actual comprueba la herramienta, no una ventaja predictiva o rentabilidad ejecutable.
