@@ -189,13 +189,15 @@ def evaluate(events, receipts, barsets, now):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    for name in ('events', 'receipts', 'freeze-lock', 'data', 'output'):
+    parser.add_argument('--events', type=Path, nargs='+', required=True)
+    for name in ('receipts', 'freeze-lock', 'data', 'output'):
         parser.add_argument('--' + name, type=Path, required=True)
     args = parser.parse_args()
     manifest = json.loads((args.data / 'manifest.json').read_text())
     if manifest.get('source') != 'OFFICIAL_BINANCE_NATIVE_API':
         raise ValueError('Require the official native collector manifest')
-    events = [json.loads(line) for line in args.events.read_text().splitlines() if line.strip()]
+    events = [json.loads(line) for path in args.events
+              for line in path.read_text().splitlines() if line.strip()]
     verify_frozen(events, json.loads(args.freeze_lock.read_text()))
     receipts = json.loads(args.receipts.read_text())
     barsets = {}
@@ -203,7 +205,13 @@ def main():
         name = symbol + 'USDT_5m.csv'
         if name in manifest['inputs']:
             barsets[symbol] = prices(args.data / name, manifest['inputs'][name]['sha256'])
-    result = evaluate(events, receipts, barsets, int(time.time() * 1000))
+    now = int(time.time() * 1000)
+    result = evaluate(events, receipts, barsets, now)
+    result['evaluated_at'] = now
+    result['market_cutoff'] = manifest['cutoff']
+    result['event_journals'] = {path.name: hashlib.sha256(path.read_bytes()).hexdigest()
+                                for path in args.events}
+    result['receipts_sha256'] = hashlib.sha256(args.receipts.read_bytes()).hexdigest()
     result['official_manifest_sha256'] = hashlib.sha256((args.data / 'manifest.json').read_bytes()).hexdigest()
     result['freeze_lock_sha256'] = hashlib.sha256(args.freeze_lock.read_bytes()).hexdigest()
     args.output.write_text(json.dumps(result, indent=2) + '\n')
@@ -211,3 +219,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

@@ -1,0 +1,20 @@
+{
+  "status": "RESEARCH_SIMULATION_NOT_EXECUTABLE_PROFITABILITY",
+  "registered_start": 1792108800000,
+  "fee_per_side": 0.001,
+  "rows": [],
+  "eligible_decisions": 15,
+  "counts": {
+    "original": {},
+    "alternative": {}
+  },
+  "strictly_paired_admitted": [],
+  "evaluation_mode": "JOURNAL_ONLY_NO_ACCEPTED_SIGNALS_NO_MARKET_PRICE_USED",
+  "audited_decisions": 291,
+  "evaluated_at": 1792131025789,
+  "event_journals": {
+    "events-2026-10.jsonl": "8c8f82ff4f25e064c23ec781098ee5462813fc763ee773708c79a383dae3b021"
+  },
+  "receipts_sha256": "4ac52338e798d67e62a72d37c0a6b0db8047606d003a9816360d162b28505923",
+  "freeze_lock_sha256": "9c836a5da6dfed6d5e86f4a2eae44fd49586707aa37f04f051c6e6ddcd4c53e0"
+}

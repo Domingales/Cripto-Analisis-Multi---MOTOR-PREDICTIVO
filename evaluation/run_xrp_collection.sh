@@ -19,3 +19,10 @@ SELECTED_OUTPUT_DIR="$PWD/xrp-current-output" \
 JAVA_TOOL_OPTIONS=-Xmx4g \
 bash ./gradlew --no-daemon testDebugUnitTest --tests com.domingales.criptoanalisis.multi.evaluation.SelectedProspectiveTest
 python3 evaluation/xrp_periodic_capture.py
+python3 evaluation/execution_costs.py \
+  --events evaluation/prospective-xrp/events-*.jsonl \
+  --receipts evaluation/prospective-xrp/durability-receipts.json \
+  --freeze-lock evaluation/prospective-xrp/freeze-lock.json \
+  --data xrp-current-data --output evaluation/prospective-xrp/execution-costs.json
+python3 -c "from sys import path; path.insert(0, 'evaluation'); from xrp_periodic_capture import persist; persist('Conservar simulación prospectiva de costes XRP30m')"
+

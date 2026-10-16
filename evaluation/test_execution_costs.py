@@ -1,11 +1,13 @@
 import copy
 import csv
 import hashlib
+import json
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
-from execution_costs import START, STEP, digest, evaluate, net_return, prices, simulate, verify_frozen
+from execution_costs import START, STEP, digest, evaluate, net_return, prices, simulate, verify_frozen, main
 
 
 class ExecutionCostsTests(unittest.TestCase):
@@ -114,6 +116,37 @@ class ExecutionCostsTests(unittest.TestCase):
         event['alternative']['model_sha256'] = 'm'
         verify_frozen([event], dict(engine_sha256='e', protocol_sha256='p', model_sha256='m'))
 
+    def test_cli_combines_months_and_records_input_hashes(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            older = dict(self.event, recorded_at=START - 1)
+            first, second = root / 'events-09.jsonl', root / 'events-10.jsonl'
+            first.write_text(json.dumps(older) + '\n')
+            second.write_text('')
+            receipts, lock, output = root / 'receipts.json', root / 'lock.json', root / 'out.json'
+            receipts.write_text('{}')
+            lock.write_text('{}')
+            (root / 'manifest.json').write_text(json.dumps(dict(
+                source='OFFICIAL_BINANCE_NATIVE_API', inputs={}, cutoff=START)))
+            argv = ['execution_costs', '--events', str(first), str(second),
+                    '--receipts', str(receipts), '--freeze-lock', str(lock),
+                    '--data', str(root), '--output', str(output)]
+            with patch('sys.argv', argv):
+                main()
+            result = json.loads(output.read_text())
+            self.assertEqual(result['eligible_decisions'], 0)
+            self.assertEqual(result['rows'], [])
+            self.assertEqual(len(result['event_journals']), 2)
+            self.assertEqual(result['market_cutoff'], START)
+            self.assertEqual(result['receipts_sha256'], hashlib.sha256(b'{}').hexdigest())
+
+    def test_collection_hooks_preserve_registration_before_costs(self):
+        for cohort in ('selected', 'xrp'):
+            script = Path(__file__).with_name('run_' + cohort + '_collection.sh').read_text()
+            self.assertLess(script.index('periodic_capture.py'), script.index('execution_costs.py'))
+            self.assertIn('events-*.jsonl', script)
+            self.assertLess(script.index('execution_costs.py'), script.index('from ' + cohort + '_periodic_capture import persist'))
+
     def test_comparison_pairs_same_id_and_retains_original_outcome(self):
         self.bars[START + STEP]['high'] = 102.
         source = dict(type='OUTCOME', id=self.event['id'], engine='original',
@@ -147,3 +180,4 @@ class ExecutionCostsTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+

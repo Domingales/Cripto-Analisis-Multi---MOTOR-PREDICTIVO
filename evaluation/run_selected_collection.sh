@@ -12,3 +12,10 @@ SELECTED_OUTPUT_DIR="$PWD/selected-output" \
 JAVA_TOOL_OPTIONS=-Xmx4g \
 bash ./gradlew --no-daemon testDebugUnitTest --tests com.domingales.criptoanalisis.multi.evaluation.SelectedProspectiveTest
 python3 evaluation/selected_periodic_capture.py
+python3 evaluation/execution_costs.py \
+  --events evaluation/selected-prospective/events-*.jsonl \
+  --receipts evaluation/selected-prospective/durability-receipts.json \
+  --freeze-lock evaluation/selected-prospective/freeze-lock.json \
+  --data selected-data --output evaluation/selected-prospective/execution-costs.json
+python3 -c "from sys import path; path.insert(0, 'evaluation'); from selected_periodic_capture import persist; persist('Conservar simulación prospectiva de costes de las 15 combinaciones')"
+
