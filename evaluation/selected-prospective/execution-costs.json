@@ -3,18 +3,18 @@
   "registered_start": 1792108800000,
   "fee_per_side": 0.001,
   "rows": [],
-  "eligible_decisions": 15,
+  "eligible_decisions": 24,
   "counts": {
     "original": {},
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluation_mode": "JOURNAL_ONLY_NO_ACCEPTED_SIGNALS_NO_MARKET_PRICE_USED",
-  "audited_decisions": 291,
-  "evaluated_at": 1792131025789,
+  "evaluated_at": 1792132096723,
+  "market_cutoff": 1792131300000,
   "event_journals": {
-    "events-2026-10.jsonl": "8c8f82ff4f25e064c23ec781098ee5462813fc763ee773708c79a383dae3b021"
+    "events-2026-10.jsonl": "3a7ebf1618157e2e6c11b568e49bec8b068a376ade3404aa5237f88cdfd872cb"
   },
-  "receipts_sha256": "4ac52338e798d67e62a72d37c0a6b0db8047606d003a9816360d162b28505923",
+  "receipts_sha256": "c95db64f5fdcb32c13b565312947b6044a00d09cba584c30af0b55c416ebe191",
+  "official_manifest_sha256": "221f5abc3f6c95422fc9c1e780a3691648655adc8e4c7edaa0105d6fbdc8ec82",
   "freeze_lock_sha256": "9c836a5da6dfed6d5e86f4a2eae44fd49586707aa37f04f051c6e6ddcd4c53e0"
 }
