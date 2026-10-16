@@ -36,23 +36,30 @@
       "timeframe": "1h",
       "engine": "original",
       "status": "OMITTED_ACTIVE_WINDOW"
+    },
+    {
+      "id": "RUNE-1h-1792187999999",
+      "symbol": "RUNE",
+      "timeframe": "1h",
+      "engine": "original",
+      "status": "OMITTED_ACTIVE_WINDOW"
     }
   ],
-  "eligible_decisions": 51,
+  "eligible_decisions": 57,
   "counts": {
     "original": {
       "PENDING_DATA": 1,
-      "OMITTED_ACTIVE_WINDOW": 3
+      "OMITTED_ACTIVE_WINDOW": 4
     },
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792181406234,
-  "market_cutoff": 1792180800000,
+  "evaluated_at": 1792192062251,
+  "market_cutoff": 1792191300000,
   "event_journals": {
-    "events-2026-10.jsonl": "ce04635bde2dba96f97fcff2f9d19df2cbb3244f7279c5b34e831b6d89daa22f"
+    "events-2026-10.jsonl": "138ac12a1114c4b1c0658468f15f57cde78af4763dec6c7eaa0152b2630eecb1"
   },
-  "receipts_sha256": "a1daf7e4fcc9c60a54cde3b9a24766dd9a945cae2d7382dae37cc25ba2412400",
-  "official_manifest_sha256": "0eb32920d60c8bd972f2925091eba2b9a294c687a68bb84c6451406a6fec2108",
+  "receipts_sha256": "e631ca2c1364e622739e6baedb783a7abb33061566fe9d2d7b0c4194aec45d6b",
+  "official_manifest_sha256": "986ff915b49835dc673b760122bfef13372613eab2110f79444c7809cb5657ba",
   "freeze_lock_sha256": "9c836a5da6dfed6d5e86f4a2eae44fd49586707aa37f04f051c6e6ddcd4c53e0"
 }
