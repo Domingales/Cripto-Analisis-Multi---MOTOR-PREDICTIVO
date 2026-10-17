@@ -10,10 +10,14 @@
       "engine": "original",
       "event_sha256": "7dc2b223815df6330b7b0ab9badd12e9be5eb50d3f40c1b4eeab38af415aee0d",
       "receipt_commit": "7d248d61aa4e3e9975d244e638416c3a3f5eee89",
-      "status": "PENDING_DATA",
-      "reason": "WINDOW_NOT_CLOSED",
+      "status": "NOT_EXECUTABLE_AT_REGISTERED_LEVELS",
       "regime_at_registration": "TREND_DOWN",
-      "source_directional_outcome": null,
+      "source_directional_outcome": {
+        "status": "HIT",
+        "mfe": 1.5625000000000013,
+        "mae": -0.6250000000000006,
+        "window_candle_sha256": "11261c15ebba685606be8589e28c9984d902d779095a58138d4e05f3f634adb5"
+      },
       "mfe_mae_scope": "SOURCE_FULL_WINDOW_AT_REGISTERED_REFERENCE_NOT_EXECUTED_PNL"
     },
     {
@@ -91,23 +95,50 @@
       "timeframe": "1h",
       "engine": "original",
       "status": "OMITTED_ACTIVE_WINDOW"
+    },
+    {
+      "id": "RUNE-1h-1792256399999",
+      "symbol": "RUNE",
+      "timeframe": "1h",
+      "engine": "original",
+      "event_sha256": "b9c0f9ff4c4e59eccb607bb8c5da938b8925eca0fdbfd1b4c9b97b73d9b1be87",
+      "receipt_commit": "4c75328e5229742f1ec6e963ea073cb4d68637d2",
+      "status": "PENDING_DATA",
+      "reason": "WINDOW_NOT_CLOSED",
+      "regime_at_registration": "BREAKOUT",
+      "source_directional_outcome": null,
+      "mfe_mae_scope": "SOURCE_FULL_WINDOW_AT_REGISTERED_REFERENCE_NOT_EXECUTED_PNL"
+    },
+    {
+      "id": "ADA-4h-1792252799999",
+      "symbol": "ADA",
+      "timeframe": "4h",
+      "engine": "original",
+      "event_sha256": "7d96500e8ad8a02ff4489b8f3674049b17a972c591dab9a7669758b963d2b1f8",
+      "receipt_commit": "4c75328e5229742f1ec6e963ea073cb4d68637d2",
+      "status": "PENDING_DATA",
+      "reason": "WINDOW_NOT_CLOSED",
+      "regime_at_registration": "POSSIBLE_REVERSAL",
+      "source_directional_outcome": null,
+      "mfe_mae_scope": "SOURCE_FULL_WINDOW_AT_REGISTERED_REFERENCE_NOT_EXECUTED_PNL"
     }
   ],
-  "eligible_decisions": 99,
+  "eligible_decisions": 108,
   "counts": {
     "original": {
-      "PENDING_DATA": 2,
-      "OMITTED_ACTIVE_WINDOW": 9
+      "NOT_EXECUTABLE_AT_REGISTERED_LEVELS": 1,
+      "OMITTED_ACTIVE_WINDOW": 9,
+      "PENDING_DATA": 3
     },
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792247343800,
-  "market_cutoff": 1792246800000,
+  "evaluated_at": 1792258739229,
+  "market_cutoff": 1792258200000,
   "event_journals": {
-    "events-2026-10.jsonl": "02f5c9f75870c26bbda919f0f4e45abba5cb6afdabfaeb4a03e825688c702047"
+    "events-2026-10.jsonl": "84ef62d237a858abd7e26d2a7effa67adc65105cf59ac786de87c5c0806cc468"
   },
-  "receipts_sha256": "44adb5645a91120576c462d2354cac98444ff873eff3be3f583c585b98338a7b",
-  "official_manifest_sha256": "c0ca9fa5bf668711e9bcdc4be45bc756ebd55233cce56180f8acd2e7d32be815",
+  "receipts_sha256": "6b169d531bbd80c8e53538e3789ab15e3af60d2c6c8e369331f4a066cce5cde1",
+  "official_manifest_sha256": "0488e5e731c0c58a48b16ff32c8a9f806b4b5de7c6e820aded335a264b31b1b8",
   "freeze_lock_sha256": "9c836a5da6dfed6d5e86f4a2eae44fd49586707aa37f04f051c6e6ddcd4c53e0"
 }
