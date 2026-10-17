@@ -43,23 +43,43 @@
       "timeframe": "1h",
       "engine": "original",
       "status": "OMITTED_ACTIVE_WINDOW"
+    },
+    {
+      "id": "TRX-30m-1792198799999",
+      "symbol": "TRX",
+      "timeframe": "30m",
+      "engine": "original",
+      "event_sha256": "726047b854b352ffed4e3174ac388bab7c652603d319f1f00b5188eaef386fb5",
+      "receipt_commit": "187cd6e57fe2cb77cb68c4dc3436789b3509db42",
+      "status": "PENDING_DATA",
+      "reason": "WINDOW_NOT_CLOSED",
+      "regime_at_registration": "TREND_UP",
+      "source_directional_outcome": null,
+      "mfe_mae_scope": "SOURCE_FULL_WINDOW_AT_REGISTERED_REFERENCE_NOT_EXECUTED_PNL"
+    },
+    {
+      "id": "TRX-1h-1792198799999",
+      "symbol": "TRX",
+      "timeframe": "1h",
+      "engine": "original",
+      "status": "OMITTED_ACTIVE_WINDOW"
     }
   ],
-  "eligible_decisions": 57,
+  "eligible_decisions": 72,
   "counts": {
     "original": {
-      "PENDING_DATA": 1,
-      "OMITTED_ACTIVE_WINDOW": 4
+      "PENDING_DATA": 2,
+      "OMITTED_ACTIVE_WINDOW": 5
     },
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792192062251,
-  "market_cutoff": 1792191300000,
+  "evaluated_at": 1792200924041,
+  "market_cutoff": 1792200300000,
   "event_journals": {
-    "events-2026-10.jsonl": "138ac12a1114c4b1c0658468f15f57cde78af4763dec6c7eaa0152b2630eecb1"
+    "events-2026-10.jsonl": "c09885774fd6d3b2fa7d44895cb81f08636e4d85ba135278ce98b529dd3ec33f"
   },
-  "receipts_sha256": "e631ca2c1364e622739e6baedb783a7abb33061566fe9d2d7b0c4194aec45d6b",
-  "official_manifest_sha256": "986ff915b49835dc673b760122bfef13372613eab2110f79444c7809cb5657ba",
+  "receipts_sha256": "45c45e8681d7462abffab3ee72a7001fa7c232e14a29b74af20d3febc3b51ceb",
+  "official_manifest_sha256": "f0ca31d908b01a7812377ab0444e5a312e4042c8ed9817536a4a8cdcdcb72229",
   "freeze_lock_sha256": "9c836a5da6dfed6d5e86f4a2eae44fd49586707aa37f04f051c6e6ddcd4c53e0"
 }
