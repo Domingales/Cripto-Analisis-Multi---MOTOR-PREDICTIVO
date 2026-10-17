@@ -121,24 +121,31 @@
       "regime_at_registration": "POSSIBLE_REVERSAL",
       "source_directional_outcome": null,
       "mfe_mae_scope": "SOURCE_FULL_WINDOW_AT_REGISTERED_REFERENCE_NOT_EXECUTED_PNL"
+    },
+    {
+      "id": "RUNE-1h-1792263599999",
+      "symbol": "RUNE",
+      "timeframe": "1h",
+      "engine": "original",
+      "status": "OMITTED_ACTIVE_WINDOW"
     }
   ],
-  "eligible_decisions": 108,
+  "eligible_decisions": 114,
   "counts": {
     "original": {
       "NOT_EXECUTABLE_AT_REGISTERED_LEVELS": 1,
-      "OMITTED_ACTIVE_WINDOW": 9,
+      "OMITTED_ACTIVE_WINDOW": 10,
       "PENDING_DATA": 3
     },
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792258739229,
-  "market_cutoff": 1792258200000,
+  "evaluated_at": 1792266484020,
+  "market_cutoff": 1792266000000,
   "event_journals": {
-    "events-2026-10.jsonl": "84ef62d237a858abd7e26d2a7effa67adc65105cf59ac786de87c5c0806cc468"
+    "events-2026-10.jsonl": "3143684838fc3a7b1c9ec749ffdddc833ac0eb92842875119743e335b9ecce5c"
   },
-  "receipts_sha256": "6b169d531bbd80c8e53538e3789ab15e3af60d2c6c8e369331f4a066cce5cde1",
-  "official_manifest_sha256": "0488e5e731c0c58a48b16ff32c8a9f806b4b5de7c6e820aded335a264b31b1b8",
+  "receipts_sha256": "2a9d2c234b3767c2bca577b7da9f8703a02c501a7bf31f412f2e2d87757bfb2d",
+  "official_manifest_sha256": "1dde738f5bd37ecc0ca415dca69aed9e35944b40bb6aa2d4773b1c0dda3b2c6e",
   "freeze_lock_sha256": "9c836a5da6dfed6d5e86f4a2eae44fd49586707aa37f04f051c6e6ddcd4c53e0"
 }
