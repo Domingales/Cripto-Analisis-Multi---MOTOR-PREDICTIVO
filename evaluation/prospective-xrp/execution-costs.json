@@ -2,19 +2,35 @@
   "status": "RESEARCH_SIMULATION_NOT_EXECUTABLE_PROFITABILITY",
   "registered_start": 1792108800000,
   "fee_per_side": 0.001,
-  "rows": [],
-  "eligible_decisions": 9,
+  "rows": [
+    {
+      "id": "XRP-30m-1792256399999",
+      "symbol": "XRP",
+      "timeframe": "30m",
+      "engine": "original",
+      "event_sha256": "6e658cc45e1294d6e8ae6357c851ca63862a184f91c5f0608ea861ee57514af1",
+      "receipt_commit": "5306ba187b84b14d608f5bec1a6954d415b43199",
+      "status": "PENDING_DATA",
+      "reason": "WINDOW_NOT_CLOSED",
+      "regime_at_registration": "TREND_DOWN",
+      "source_directional_outcome": null,
+      "mfe_mae_scope": "SOURCE_FULL_WINDOW_AT_REGISTERED_REFERENCE_NOT_EXECUTED_PNL"
+    }
+  ],
+  "eligible_decisions": 10,
   "counts": {
-    "original": {},
+    "original": {
+      "PENDING_DATA": 1
+    },
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792246632712,
-  "market_cutoff": 1792246500000,
+  "evaluated_at": 1792257721428,
+  "market_cutoff": 1792257600000,
   "event_journals": {
-    "events-2026-10.jsonl": "f55a1afdb3a70cbfb2aba77ab118f36de08c5f18e9f15cca302a4d73770aab07"
+    "events-2026-10.jsonl": "211b03f76548cbd1b77c5d73b6c1072205a47f99676b5926ad9769692b4f702f"
   },
-  "receipts_sha256": "ab7b482f8188c06037e954f177bbbf6b41f9bb5441680b2037539628dbcae265",
-  "official_manifest_sha256": "ffce392fec3c456dfb5bf69e1e26b89bdb7c9e4285e99376972cf5d32bbc10d1",
+  "receipts_sha256": "c7a0f7b313147920e4b24ee534a254a39d33a98e1778a2aafb1bab647b029e16",
+  "official_manifest_sha256": "68762e76fbb8fc009a3be9ff27bc14460bcf6eeb77b5988c7d1322cf07ce044b",
   "freeze_lock_sha256": "86866303da108976fffaa7afcebbca53d0fb6cacd79c5d18edb5dfd5aeb7c7a8"
 }
