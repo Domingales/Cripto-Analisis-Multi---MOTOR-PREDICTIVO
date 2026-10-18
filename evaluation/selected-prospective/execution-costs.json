@@ -22,7 +22,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "11ecee531fa0a2289fc0a34e92b28ef13bc9e1d6816a04ba3e4f9ac5eda3c5fc",
+        "source_file_sha256": "21ada01efef9ea253be0df18e53df41fc838b0aa65fd5cd8e0f43344a0d99059",
         "first_open": 1792170300000,
         "horizon_end": 1792256699999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -2415,7 +2415,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "TRXUSDT_5m.csv",
-        "source_file_sha256": "6c26c82fd64651ab1465cd13958f3a4a0719092a61665c07d44538c75c23e237",
+        "source_file_sha256": "fe7e5d009b9b30441d2bdb557f2f861a2591b8b261291f3f1bee6dddb2b3560d",
         "first_open": 1792201200000,
         "horizon_end": 1792287599999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -4823,25 +4823,32 @@
       "timeframe": "30m",
       "engine": "original",
       "status": "OMITTED_ACTIVE_WINDOW"
+    },
+    {
+      "id": "ADA-4h-1792339199999",
+      "symbol": "ADA",
+      "timeframe": "4h",
+      "engine": "original",
+      "status": "OMITTED_ACTIVE_WINDOW"
     }
   ],
-  "eligible_decisions": 165,
+  "eligible_decisions": 174,
   "counts": {
     "original": {
       "NOT_EXECUTABLE_AT_REGISTERED_LEVELS": 1,
-      "OMITTED_ACTIVE_WINDOW": 14,
+      "OMITTED_ACTIVE_WINDOW": 15,
       "SIMULATED": 1,
       "PENDING_DATA": 2
     },
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792332906385,
-  "market_cutoff": 1792332300000,
+  "evaluated_at": 1792345017125,
+  "market_cutoff": 1792344600000,
   "event_journals": {
-    "events-2026-10.jsonl": "2e29271d88b94d8b08b2f7e36595767d08fe28a5a22b0a49dcf9420c97595c0d"
+    "events-2026-10.jsonl": "4c3f28a908f7a32a0dbef29f09f9764dfd98de157ffc0d3f485eb05545d092c9"
   },
-  "receipts_sha256": "081fe28cb3c1b42ba2eb061ed2b01d7559d4f47380282202f3637543a5067d96",
-  "official_manifest_sha256": "1d546ca9143b24a1d5655903c07b2e37244f93175cb9cbf052e37bc01fe517e0",
+  "receipts_sha256": "0655cf550ed890ce9da872065d5169b47fb43cce9a435b01866428cce2efd439",
+  "official_manifest_sha256": "1fd999616939c58a5f1d1e5170af07453e5592df99dc06be232714fe3f139a51",
   "freeze_lock_sha256": "9c836a5da6dfed6d5e86f4a2eae44fd49586707aa37f04f051c6e6ddcd4c53e0"
 }
