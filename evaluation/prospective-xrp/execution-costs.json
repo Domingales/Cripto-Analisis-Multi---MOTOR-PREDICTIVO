@@ -55,7 +55,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "0b00c48d737afe6e32ff5c891ebebbc38e5a9b945d440f37b002e54085ca6ba2",
+        "source_file_sha256": "fb900699d9f41d9fe0e1e287759ae564d2d1b3c0291f0b176216861b336da427",
         "first_open": 1792257900000,
         "horizon_end": 1792344299999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -2367,22 +2367,36 @@
           }
         ]
       }
+    },
+    {
+      "id": "XRP-30m-1792358999999",
+      "symbol": "XRP",
+      "timeframe": "30m",
+      "engine": "original",
+      "event_sha256": "37686276669e7ab36fc82eeaf07194174c380f69bc876918db5bde1bdbc535f3",
+      "receipt_commit": "dab32f3c8b95f9e79f811c374b3b6fdca852c79b",
+      "status": "PENDING_DATA",
+      "reason": "WINDOW_NOT_CLOSED",
+      "regime_at_registration": "TREND_DOWN",
+      "source_directional_outcome": null,
+      "mfe_mae_scope": "SOURCE_FULL_WINDOW_AT_REGISTERED_REFERENCE_NOT_EXECUTED_PNL"
     }
   ],
-  "eligible_decisions": 17,
+  "eligible_decisions": 18,
   "counts": {
     "original": {
-      "SIMULATED": 1
+      "SIMULATED": 1,
+      "PENDING_DATA": 1
     },
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792349020410,
-  "market_cutoff": 1792348800000,
+  "evaluated_at": 1792359371273,
+  "market_cutoff": 1792359000000,
   "event_journals": {
-    "events-2026-10.jsonl": "f7eeab16d26b79c4f790242943f2bb04e62a66c53c2642833e675e8084cde064"
+    "events-2026-10.jsonl": "70d81188eb102af5e9115cc6ca19704d515a5f0aa0aaf12b5ea4a9c4b3676865"
   },
-  "receipts_sha256": "b04be8983c940641c735deca063fff6ffa5e69147421608cc615872b0a38efb6",
-  "official_manifest_sha256": "61b7ff735cb340e3db162fd0d48c03df3672edc377927170cee465df13a1db04",
+  "receipts_sha256": "3cde3dbac89db160cd0c4ea42a2466abdb1901317f7297a517451c8254675116",
+  "official_manifest_sha256": "1fb12b257b4a880470869833b2000e5b4f20dbe155999db8fce33de5454e9cd4",
   "freeze_lock_sha256": "86866303da108976fffaa7afcebbca53d0fb6cacd79c5d18edb5dfd5aeb7c7a8"
 }
