@@ -55,10 +55,47 @@
       "engine": "original",
       "event_sha256": "726047b854b352ffed4e3174ac388bab7c652603d319f1f00b5188eaef386fb5",
       "receipt_commit": "187cd6e57fe2cb77cb68c4dc3436789b3509db42",
-      "status": "PENDING_DATA",
-      "reason": "WINDOW_NOT_CLOSED",
+      "direction": "BUY",
+      "entry": 0.3355,
+      "first_open": 1792201200000,
+      "horizon_end": 1792287599999,
+      "short_hypothetical": false,
+      "status": "SIMULATED",
+      "exit_prices": [
+        0.33711019999999997
+      ],
+      "reason": "TARGET",
+      "exit_time": 1792238699999,
+      "scenarios": [
+        {
+          "fee_per_side": 0.001,
+          "slippage_per_side": 0.0,
+          "main": false,
+          "return_low": 0.0027946044709387494,
+          "return_high": 0.0027946044709387494
+        },
+        {
+          "fee_per_side": 0.001,
+          "slippage_per_side": 0.001,
+          "main": true,
+          "return_low": 0.0007890208456222516,
+          "return_high": 0.0007890208456222516
+        },
+        {
+          "fee_per_side": 0.001,
+          "slippage_per_side": 0.002,
+          "main": false,
+          "return_low": -0.0012125596187654718,
+          "return_high": -0.0012125596187654718
+        }
+      ],
       "regime_at_registration": "TREND_UP",
-      "source_directional_outcome": null,
+      "source_directional_outcome": {
+        "status": "HIT",
+        "mfe": 0.47675804529201143,
+        "mae": -0.6555423122765301,
+        "window_candle_sha256": "26412251e1556ba73c3f78ae698a68c77e4ede0a0620e352ee330f54cbb991cf"
+      },
       "mfe_mae_scope": "SOURCE_FULL_WINDOW_AT_REGISTERED_REFERENCE_NOT_EXECUTED_PNL"
     },
     {
@@ -151,22 +188,23 @@
       "status": "OMITTED_ACTIVE_WINDOW"
     }
   ],
-  "eligible_decisions": 138,
+  "eligible_decisions": 147,
   "counts": {
     "original": {
       "NOT_EXECUTABLE_AT_REGISTERED_LEVELS": 1,
       "OMITTED_ACTIVE_WINDOW": 13,
-      "PENDING_DATA": 3
+      "SIMULATED": 1,
+      "PENDING_DATA": 2
     },
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792282885210,
-  "market_cutoff": 1792282200000,
+  "evaluated_at": 1792300208252,
+  "market_cutoff": 1792299600000,
   "event_journals": {
-    "events-2026-10.jsonl": "794fdedcc132fa3c40558a3d8b1ec0b9096c767e02881ab77f15bacdc7c1e3eb"
+    "events-2026-10.jsonl": "3756ed407b823321a76b920f3a36bdd8fef4620022f06ac6b4a3fc45b43c9f8f"
   },
-  "receipts_sha256": "f971ef48a7985b8b896dddd9d566989bbe8a459336088190d6dfe109e8c34151",
-  "official_manifest_sha256": "fbd8c10f8b68460c4ec145c31921d63aed022f7ecf7785cef19a2c0f9a4132c2",
+  "receipts_sha256": "c9ce8504fff8d5a9f43d96c3a89b049d9340552eb70042152446da4686fe6da1",
+  "official_manifest_sha256": "b21db6eea116e4eb46a342fc0f078d27cd9f6b65a23c62ae6d2264d0279c08d6",
   "freeze_lock_sha256": "9c836a5da6dfed6d5e86f4a2eae44fd49586707aa37f04f051c6e6ddcd4c53e0"
 }
