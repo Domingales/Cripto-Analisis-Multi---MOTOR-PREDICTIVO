@@ -7,7 +7,7 @@ import unittest
 from unittest.mock import patch
 from pathlib import Path
 
-from execution_costs import START, STEP, digest, evaluate, net_return, prices, simulate, verify_frozen, main
+from execution_costs import START, STEP, digest, evaluate, net_return, prices, simulate, verify_frozen, main, attach_price_evidence
 
 
 class ExecutionCostsTests(unittest.TestCase):
@@ -96,6 +96,38 @@ class ExecutionCostsTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             evaluate([self.event, self.event], {}, {}, self.now)
 
+    def test_evidence_replays_resolved_result_without_changing_it(self):
+        self.bars[START + STEP]['high'] = 102.
+        original = self.run_case()
+        result = dict(rows=[copy.deepcopy(original)])
+        manifest = dict(inputs={'TRXUSDT_5m.csv': dict(sha256='source-fixture')})
+        attach_price_evidence(result, [self.event], {'TRX': self.bars}, manifest)
+        row = result['rows'][0]
+        evidence = row.pop('price_evidence')
+        self.assertEqual(row, original)
+        self.assertEqual(len(evidence['bars']), 2)
+        normalized = json.dumps(evidence['bars'], sort_keys=True, separators=(',', ':'))
+        self.assertEqual(evidence['normalized_window_sha256'], hashlib.sha256(normalized.encode()).hexdigest())
+        reconstructed = {bar['openTime']: bar for bar in evidence['bars']}
+        self.assertEqual(self.run_case(bars=reconstructed), original)
+
+    def test_not_executable_evidence_includes_actual_open_and_complete_horizon(self):
+        self.bars[START + STEP]['open'] = 102.
+        result = dict(rows=[self.run_case()])
+        manifest = dict(inputs={'TRXUSDT_5m.csv': dict(sha256='fixture')})
+        attach_price_evidence(result, [self.event], {'TRX': self.bars}, manifest)
+        self.assertEqual(result['rows'][0]['status'], 'NOT_EXECUTABLE_AT_REGISTERED_LEVELS')
+        self.assertEqual(result['rows'][0]['price_evidence']['bars'][0]['open'], 102.)
+
+    def test_evidence_never_fills_gaps_or_adds_prices_to_pending_rows(self):
+        pending = dict(rows=[self.run_case(now=self.event['horizon_end'])])
+        attach_price_evidence(pending, [self.event], {}, {})
+        self.assertNotIn('price_evidence', pending['rows'][0])
+        resolved = dict(rows=[self.run_case()])
+        del self.bars[START + 2 * STEP]
+        with self.assertRaises(ValueError):
+            attach_price_evidence(resolved, [self.event], {'TRX': self.bars}, {})
+
     def test_freeze_rejects_changed_engine_protocol_or_model(self):
         event = copy.deepcopy(self.event)
         event.update(timeframe='4h', engine_sha256='engine', protocol_sha256='protocol')
@@ -180,4 +212,3 @@ class ExecutionCostsTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-

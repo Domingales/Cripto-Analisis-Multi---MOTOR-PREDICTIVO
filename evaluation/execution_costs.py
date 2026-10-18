@@ -187,6 +187,34 @@ def evaluate(events, receipts, barsets, now):
                 counts=counts, strictly_paired_admitted=paired)
 
 
+def attach_price_evidence(result, events, barsets, manifest):
+    """Retain the normalized OHLC inputs used by every resolved admission.
+
+    Evidence is additive: it never changes admission, outcome or cost policy.
+    The complete horizon is retained even when a first touch occurred earlier.
+    """
+    decisions = {e['id']: e for e in events if e['type'] == 'DECISION'}
+    for row in result['rows']:
+        if row['status'] not in ('SIMULATED', 'SIMULATED_INTERVAL',
+                                 'NOT_EXECUTABLE_AT_REGISTERED_LEVELS'):
+            continue
+        event = decisions[row['id']]
+        opens = range(event['first_open'], event['horizon_end'] + 1, STEP)
+        bars = barsets.get(event['symbol'], {})
+        if any(t not in bars for t in opens):
+            raise ValueError('Resolved result lacks complete price evidence')
+        window = [dict(bars[t]) for t in opens]
+        canonical = json.dumps(window, sort_keys=True, separators=(',', ':'), allow_nan=False)
+        source = event['symbol'] + 'USDT_5m.csv'
+        row['price_evidence'] = dict(
+            schema=1, source_file=source,
+            source_file_sha256=manifest['inputs'][source]['sha256'],
+            first_open=event['first_open'], horizon_end=event['horizon_end'],
+            normalization='PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1',
+            normalized_window_sha256=hashlib.sha256(canonical.encode()).hexdigest(),
+            bars=window)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--events', type=Path, nargs='+', required=True)
@@ -207,6 +235,7 @@ def main():
             barsets[symbol] = prices(args.data / name, manifest['inputs'][name]['sha256'])
     now = int(time.time() * 1000)
     result = evaluate(events, receipts, barsets, now)
+    attach_price_evidence(result, events, barsets, manifest)
     result['evaluated_at'] = now
     result['market_cutoff'] = manifest['cutoff']
     result['event_journals'] = {path.name: hashlib.sha256(path.read_bytes()).hexdigest()
@@ -219,4 +248,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
