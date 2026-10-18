@@ -17,7 +17,7 @@
       "mfe_mae_scope": "SOURCE_FULL_WINDOW_AT_REGISTERED_REFERENCE_NOT_EXECUTED_PNL"
     }
   ],
-  "eligible_decisions": 13,
+  "eligible_decisions": 14,
   "counts": {
     "original": {
       "PENDING_DATA": 1
@@ -25,12 +25,12 @@
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792285910943,
-  "market_cutoff": 1792285800000,
+  "evaluated_at": 1792303409569,
+  "market_cutoff": 1792303200000,
   "event_journals": {
-    "events-2026-10.jsonl": "474b01e30f267d7ace69b117bc8d8fd7d0d86c019edc2a1a29f74fb473ba59af"
+    "events-2026-10.jsonl": "d84fcd8821d2ae5b0306800e4fdb8594a4210637f66c3f1e874bd5369baf96d4"
   },
-  "receipts_sha256": "9f35e9ea8a434a4040e33b09583e2c3caf429d8e15d98f66d403bd6dcdc37ef1",
-  "official_manifest_sha256": "754c8b6d3a31126630e6d94c2a8f4e8f546f749088b1218202fbd181bf664740",
+  "receipts_sha256": "4d254259484ca6b2507cbbba4a454aa4d49c535e98c2d92756085e4f138e4456",
+  "official_manifest_sha256": "e6fca626c152a6a7a4213bb7e15d4b949b46efb86676693c99e7de698c3cb713",
   "freeze_lock_sha256": "86866303da108976fffaa7afcebbca53d0fb6cacd79c5d18edb5dfd5aeb7c7a8"
 }
