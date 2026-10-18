@@ -27,16 +27,16 @@
         "first_open": 1792257900000,
         "horizon_end": 1792344299999,
         "signals": 1,
-        "status": "PENDING"
+        "status": "FAIL"
       }
     ],
     "counts": {
       "HIT": 3,
-      "FAIL": 0,
+      "FAIL": 1,
       "NEUTRAL": 0,
-      "PENDING": 1
+      "PENDING": 0
     },
-    "accuracy": 1.0,
+    "accuracy": 0.75,
     "interpretation": "Nonoverlapping windows do not establish statistical independence"
   },
   "alternative": {
