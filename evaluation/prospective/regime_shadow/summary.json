@@ -33,34 +33,34 @@
     },
     "TREND_DOWN": {
       "baseline": {
-        "decisions": 25,
+        "decisions": 26,
         "signals": 9,
-        "resolved": 7,
-        "HIT": 5,
-        "FAIL": 2,
+        "resolved": 9,
+        "HIT": 6,
+        "FAIL": 3,
         "NEUTRAL": 0,
-        "PENDING": 2,
-        "accuracy": 0.7142857142857143,
+        "PENDING": 0,
+        "accuracy": 0.6666666666666666,
         "descriptive_wilson_interval": [
-          0.35892909014821267,
-          0.9177828342909844
+          0.35419734749908977,
+          0.879418401317257
         ],
-        "coverage": 0.36
+        "coverage": 0.34615384615384615
       },
       "rejected_filter_shadow": {
-        "decisions": 25,
+        "decisions": 26,
         "signals": 6,
-        "resolved": 5,
+        "resolved": 6,
         "HIT": 3,
-        "FAIL": 2,
+        "FAIL": 3,
         "NEUTRAL": 0,
-        "PENDING": 1,
-        "accuracy": 0.6,
+        "PENDING": 0,
+        "accuracy": 0.5,
         "descriptive_wilson_interval": [
-          0.23071993220883708,
-          0.8823817688407467
+          0.18761280689940868,
+          0.8123871931005913
         ],
-        "coverage": 0.24
+        "coverage": 0.23076923076923078
       }
     },
     "TREND_UP": {
