@@ -75,6 +75,8 @@ class CryptoDetailActivity : Activity() {
             val forecastLow = m["forecast_low"]?.toDoubleOrNull()?.takeIf { it > 0.0 }
             val forecastHigh = m["forecast_high"]?.toDoubleOrNull()?.takeIf { it > 0.0 }
             val invalidation = m["invalidation"]?.toDoubleOrNull()?.takeIf { it > 0.0 }
+            val criterionRows = com.domingales.criptoanalisis.multi.data.ForecastCriterionStore(db).report(symbol, 1)
+            if (criterionRows.isNotEmpty()) card("Magnitud y plazo V1 • experimental", criterionRows.last(), "Contrato independiente del resultado operativo. No cambia la probabilidad mostrada. Consulta Rendimiento para comparar.")
             card("Predicción y plan", "Rango esperado: ${if (forecastLow != null && forecastHigh != null) "${"%.2f".format(forecastLow)}% a ${"%.2f".format(forecastHigh)}%" else "N/D"}", "Invalidación: ${invalidation?.let { if (it >= 1000) "%.2f".format(it) else "%.6f".format(it) } ?: "N/D"}", "La invalidación combina estructura y volatilidad, limitada entre 1,15 y 3 ATR.", "La predicción expresa rango/probabilidad, no un precio exacto garantizado.")
             card("Tendencia / momentum / volatilidad",
                 "EMA20 ${m["ema20"]} • EMA50 ${m["ema50"]} • EMA200 ${m["ema200"]}",
@@ -226,3 +228,4 @@ class CryptoDetailActivity : Activity() {
         private const val REQUEST_SAVE_RTF = 4103
     }
 }
+

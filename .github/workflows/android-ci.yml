@@ -2,7 +2,7 @@ name: Android - compilacion y pruebas
 
 on:
   push:
-    branches: [main]
+    branches: [main, research/magnitude-time-v1]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   verificar:
-    name: Verificar Android 3.8.0
+    name: Verificar Android 3.8.1
     runs-on: ubuntu-latest
     timeout-minutes: 35
 
@@ -37,6 +37,9 @@ jobs:
       - name: Compilar y ejecutar pruebas unitarias
         run: bash ./gradlew --no-daemon --stacktrace testDebugUnitTest assembleDebug
 
+      - name: Verificar esquema adicional de magnitud y plazo
+        run: python3 -m unittest discover -s evaluation -p test_forecast_criterion_schema.py -v
+
       - name: Guardar informes de pruebas
         if: always()
         uses: actions/upload-artifact@v4
@@ -56,3 +59,4 @@ jobs:
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
           retention-days: 7
+

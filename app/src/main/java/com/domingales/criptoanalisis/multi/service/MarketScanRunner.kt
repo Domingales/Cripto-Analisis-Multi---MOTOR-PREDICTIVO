@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.PowerManager
 import com.domingales.criptoanalisis.multi.data.AppDatabase
 import com.domingales.criptoanalisis.multi.data.MarketRepository
+import com.domingales.criptoanalisis.multi.data.ForecastCriterionStore
 import com.domingales.criptoanalisis.multi.domain.Regime
 import com.domingales.criptoanalisis.multi.util.Prefs
 import java.util.concurrent.Executors
@@ -140,6 +141,9 @@ object MarketScanRunner {
         val now = System.currentTimeMillis()
         val histories = mutableMapOf<String, List<com.domingales.criptoanalisis.multi.domain.Candle>>()
         val followupStarts = db.pendingFollowupStarts().toMutableMap()
+        ForecastCriterionStore(db).pendingStarts().forEach { (symbol, start) ->
+            followupStarts[symbol] = minOf(followupStarts[symbol] ?: start, start)
+        }
         explosionStarts.forEach { (symbol, start) -> followupStarts[symbol] = minOf(followupStarts[symbol] ?: start, start) }
         followupStarts.forEach { (symbol, start) ->
             try { histories[symbol] = repo.followupCandles(symbol, start, now) }
@@ -147,6 +151,8 @@ object MarketScanRunner {
         }
         try { db.updateFollowups(prices, histories, now) }
         catch (t: Throwable) { db.log("SYSTEM", "FOLLOWUP", t.message ?: "Error en seguimiento") }
+        try { ForecastCriterionStore(db).update(histories, now) }
+        catch (t: Throwable) { db.log("SYSTEM", "FORECAST_CRITERION", t.message ?: "Error en criterio de magnitud y plazo") }
         try { db.updateExplosionOutcomes(prices, histories, now) }
         catch (t: Throwable) { db.log("SYSTEM", "EXPLOSION_FOLLOWUP", t.message ?: "Error en seguimiento de explosiones") }
         try {
@@ -184,3 +190,4 @@ object MarketScanRunner {
 
     private fun tfOrder(tf: String) = when (tf) { "15m" -> 1; "30m" -> 2; "1h" -> 3; "4h" -> 4; "1d" -> 5; else -> 9 }
 }
+

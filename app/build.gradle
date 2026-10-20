@@ -17,8 +17,8 @@ android {
         applicationId 'com.domingales.criptoanalisis.multi'
         minSdk 26
         targetSdk 35
-        versionCode 20
-        versionName '3.8.0-resultados-predictivos-v2'
+        versionCode 21
+        versionName '3.8.1-magnitud-plazo-v1'
     }
 
     buildTypes {
@@ -41,3 +41,4 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging'
     testImplementation 'junit:junit:4.13.2'
 }
+

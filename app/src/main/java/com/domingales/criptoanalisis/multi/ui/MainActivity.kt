@@ -39,7 +39,7 @@ class MainActivity : Activity() {
         val scroll = ScrollView(this); val root = Ui.root(this); scroll.addView(root)
         val db = AppDatabase.get(this); val active = Prefs.watching(this); val items = db.dashboard(); val stats = db.diagnosticStats()
 
-        root.addView(Ui.title(this, "CriptoAnálisis Multi 3.8.0"))
+        root.addView(Ui.title(this, "CriptoAnálisis Multi 3.8.1"))
         root.addView(Ui.subtitle(this, "Central de vigilancia, análisis, predicción y auditoría multcripto"))
 
         val service = Ui.card(this)
@@ -141,3 +141,4 @@ class MainActivity : Activity() {
     private fun traffic(d: String, state: String, activeFollowups: Int) = when { activeFollowups > 0 -> "🟣"; state == "SIGNAL" && d.contains("BUY") -> "🟢"; state == "SIGNAL" && d.contains("SELL") -> "🔴"; state == "PRESIGNAL" -> "🟡"; else -> "⚪" }
     private fun formatPrice(v: Double) = if (v >= 1000) "%.2f".format(v) else "%.6f".format(v)
 }
+
