@@ -22,7 +22,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "c310470d37bab72e71874989eb6b4d5e9722e8af38654252281d04d93280f057",
+        "source_file_sha256": "3afe2c91531683925eb6365c425a334f35fa72b496efd2eb234be74e278a0e59",
         "first_open": 1792170300000,
         "horizon_end": 1792256699999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -2415,7 +2415,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "TRXUSDT_5m.csv",
-        "source_file_sha256": "02eb3103d519de7a0adbcf8205668b75304e484d9c37b8a6ba1a602b55969128",
+        "source_file_sha256": "7e6a8ad24ab4945861a7460b678fc6976279dcb1cfe6ce1c279874aaebd286a1",
         "first_open": 1792201200000,
         "horizon_end": 1792287599999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -4815,7 +4815,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "c310470d37bab72e71874989eb6b4d5e9722e8af38654252281d04d93280f057",
+        "source_file_sha256": "3afe2c91531683925eb6365c425a334f35fa72b496efd2eb234be74e278a0e59",
         "first_open": 1792258800000,
         "horizon_end": 1792345199999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -7235,7 +7235,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "c310470d37bab72e71874989eb6b4d5e9722e8af38654252281d04d93280f057",
+        "source_file_sha256": "3afe2c91531683925eb6365c425a334f35fa72b496efd2eb234be74e278a0e59",
         "first_open": 1792352700000,
         "horizon_end": 1792439099999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -9615,25 +9615,32 @@
       "regime_at_registration": "MIXED",
       "source_directional_outcome": null,
       "mfe_mae_scope": "SOURCE_FULL_WINDOW_AT_REGISTERED_REFERENCE_NOT_EXECUTED_PNL"
+    },
+    {
+      "id": "TRX-4h-1792468799999",
+      "symbol": "TRX",
+      "timeframe": "4h",
+      "engine": "original",
+      "status": "OMITTED_ACTIVE_WINDOW"
     }
   ],
-  "eligible_decisions": 255,
+  "eligible_decisions": 264,
   "counts": {
     "original": {
       "NOT_EXECUTABLE_AT_REGISTERED_LEVELS": 1,
-      "OMITTED_ACTIVE_WINDOW": 21,
+      "OMITTED_ACTIVE_WINDOW": 22,
       "SIMULATED": 3,
       "PENDING_DATA": 3
     },
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792459261525,
-  "market_cutoff": 1792458600000,
+  "evaluated_at": 1792478218636,
+  "market_cutoff": 1792477800000,
   "event_journals": {
-    "events-2026-10.jsonl": "d7a36108939b1cc76d7aa0bf8bcb0ed97a9ce1bc2d65bdf36c04a546711fddad"
+    "events-2026-10.jsonl": "514f981618b8ceb77cfdf0851ffcd137cfe5b6892232e64132f76e54aea65ce0"
   },
-  "receipts_sha256": "89dd8bdbf12de00bbe721eabf6dd5e58b785b75e450c60ccb50f33b4c57ff579",
-  "official_manifest_sha256": "502e1eac9e2aa9e9a10474d9b6829cb22d71bc02abf66a2ba467f4e9eccdab37",
+  "receipts_sha256": "63e1274df9033b39c1f73f65906fb7991d8f681fcf5456deffb4f5d952d113f0",
+  "official_manifest_sha256": "803f2aed137c70e11248e65d16d10467c1481459a0e3a4880f24101769d3243e",
   "freeze_lock_sha256": "9c836a5da6dfed6d5e86f4a2eae44fd49586707aa37f04f051c6e6ddcd4c53e0"
 }
