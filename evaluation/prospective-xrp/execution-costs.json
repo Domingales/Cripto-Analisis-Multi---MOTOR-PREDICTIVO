@@ -55,7 +55,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "d311960f03e907cc12e99a3b40cb4d0584f2a8d27acbaada7152fbc8313ebe1e",
+        "source_file_sha256": "adb1fae350d67040f58023751ceef4105e8fae7504481f6a2413f120b6606e6f",
         "first_open": 1792257900000,
         "horizon_end": 1792344299999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -2420,7 +2420,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "d311960f03e907cc12e99a3b40cb4d0584f2a8d27acbaada7152fbc8313ebe1e",
+        "source_file_sha256": "adb1fae350d67040f58023751ceef4105e8fae7504481f6a2413f120b6606e6f",
         "first_open": 1792359600000,
         "horizon_end": 1792445999999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -4739,23 +4739,37 @@
       "timeframe": "30m",
       "engine": "original",
       "status": "OMITTED_ACTIVE_WINDOW"
+    },
+    {
+      "id": "XRP-30m-1792459799999",
+      "symbol": "XRP",
+      "timeframe": "30m",
+      "engine": "original",
+      "event_sha256": "992f8003d8a34aa12321d10f0ee201e49d9530ce8b32ed1701187fe047f23d36",
+      "receipt_commit": "7d8e79be763fc2b55cb99feebf7b13b404d3a7eb",
+      "status": "PENDING_DATA",
+      "reason": "WINDOW_NOT_CLOSED",
+      "regime_at_registration": "BREAKOUT",
+      "source_directional_outcome": null,
+      "mfe_mae_scope": "SOURCE_FULL_WINDOW_AT_REGISTERED_REFERENCE_NOT_EXECUTED_PNL"
     }
   ],
-  "eligible_decisions": 23,
+  "eligible_decisions": 24,
   "counts": {
     "original": {
       "SIMULATED": 2,
-      "OMITTED_ACTIVE_WINDOW": 1
+      "OMITTED_ACTIVE_WINDOW": 1,
+      "PENDING_DATA": 1
     },
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792449003926,
-  "market_cutoff": 1792448700000,
+  "evaluated_at": 1792461369488,
+  "market_cutoff": 1792461000000,
   "event_journals": {
-    "events-2026-10.jsonl": "58a6fc62464de1cd7b93d8e2720e887aca17249ff35786d1e2b9478b7c4aa9b7"
+    "events-2026-10.jsonl": "be0ddd4b40565c3df5160eb18eb518517149259906fe6f0bfd26044d848e8436"
   },
-  "receipts_sha256": "0edc7bcecd3ba00b64028087a605f9845ca9f0eeabbf235b4c9b669b8344d4a7",
-  "official_manifest_sha256": "a7d1fda36d95a7630fc04c5dee9a90970bbcbfa1ccee0b1c0e759b32eca8936d",
+  "receipts_sha256": "6b806b337012a6ebe941e5b1a5780c5da0ab7f5ab3a832a77a6f4055c3ab29f3",
+  "official_manifest_sha256": "7c0a108eb87ef492ce66badc52a76cf6cb674c6d440eee0da31b29a2e7c1983d",
   "freeze_lock_sha256": "86866303da108976fffaa7afcebbca53d0fb6cacd79c5d18edb5dfd5aeb7c7a8"
 }
