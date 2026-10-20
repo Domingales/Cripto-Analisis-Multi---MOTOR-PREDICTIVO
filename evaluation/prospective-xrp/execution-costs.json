@@ -55,7 +55,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "b35d18e433a4cff8b99100177faa048dab9e8b65e751d00ab20ee9c84fd8ce84",
+        "source_file_sha256": "81cfb3bb13c5ec37469d1ffeb779b1458fb4d440524b805bcfde6231f8e5f1bf",
         "first_open": 1792257900000,
         "horizon_end": 1792344299999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -2420,7 +2420,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "b35d18e433a4cff8b99100177faa048dab9e8b65e751d00ab20ee9c84fd8ce84",
+        "source_file_sha256": "81cfb3bb13c5ec37469d1ffeb779b1458fb4d440524b805bcfde6231f8e5f1bf",
         "first_open": 1792359600000,
         "horizon_end": 1792445999999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -4754,7 +4754,7 @@
       "mfe_mae_scope": "SOURCE_FULL_WINDOW_AT_REGISTERED_REFERENCE_NOT_EXECUTED_PNL"
     }
   ],
-  "eligible_decisions": 26,
+  "eligible_decisions": 27,
   "counts": {
     "original": {
       "SIMULATED": 2,
@@ -4764,12 +4764,12 @@
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792503667716,
-  "market_cutoff": 1792503300000,
+  "evaluated_at": 1792521213859,
+  "market_cutoff": 1792521000000,
   "event_journals": {
-    "events-2026-10.jsonl": "11ed08bd34aff5fefe60f5de2fc04ed424c59ff0621a215de2e5b9b9c3e4e02a"
+    "events-2026-10.jsonl": "ca1baf1739762654685864acfd015e227ed196d518cb8eb9a5924778b2fb998d"
   },
-  "receipts_sha256": "6d8407205a446ba6be507e7f858213534d1c3825537d7ff0f774742216ae297e",
-  "official_manifest_sha256": "b3ba6d357c7b8741f59723f4078c077de1a3fa55039fbcae68f8aad5b44704e2",
+  "receipts_sha256": "a10f8f753d8bdf18ffa97651912076bb5e3fefef41884100091b6695a1b933b4",
+  "official_manifest_sha256": "bf41b7d5460f382f9f083533157dcda6f7c007e1640442f96108e73903c07ce8",
   "freeze_lock_sha256": "86866303da108976fffaa7afcebbca53d0fb6cacd79c5d18edb5dfd5aeb7c7a8"
 }
