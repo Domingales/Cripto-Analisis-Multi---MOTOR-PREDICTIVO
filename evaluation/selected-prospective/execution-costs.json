@@ -22,7 +22,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "3afe2c91531683925eb6365c425a334f35fa72b496efd2eb234be74e278a0e59",
+        "source_file_sha256": "fc7f2f54fd2de98d705cd305b2f1c6b9c3c666ae34d8bb3bef8cd1963822dc8c",
         "first_open": 1792170300000,
         "horizon_end": 1792256699999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -2415,7 +2415,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "TRXUSDT_5m.csv",
-        "source_file_sha256": "7e6a8ad24ab4945861a7460b678fc6976279dcb1cfe6ce1c279874aaebd286a1",
+        "source_file_sha256": "5384ae50806def4691a99d388fde62b43d718bb73dc9e6844f0d891491f3d518",
         "first_open": 1792201200000,
         "horizon_end": 1792287599999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -4815,7 +4815,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "3afe2c91531683925eb6365c425a334f35fa72b496efd2eb234be74e278a0e59",
+        "source_file_sha256": "fc7f2f54fd2de98d705cd305b2f1c6b9c3c666ae34d8bb3bef8cd1963822dc8c",
         "first_open": 1792258800000,
         "horizon_end": 1792345199999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -7235,7 +7235,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "3afe2c91531683925eb6365c425a334f35fa72b496efd2eb234be74e278a0e59",
+        "source_file_sha256": "fc7f2f54fd2de98d705cd305b2f1c6b9c3c666ae34d8bb3bef8cd1963822dc8c",
         "first_open": 1792352700000,
         "horizon_end": 1792439099999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -9624,7 +9624,7 @@
       "status": "OMITTED_ACTIVE_WINDOW"
     }
   ],
-  "eligible_decisions": 264,
+  "eligible_decisions": 273,
   "counts": {
     "original": {
       "NOT_EXECUTABLE_AT_REGISTERED_LEVELS": 1,
@@ -9635,12 +9635,12 @@
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792478218636,
-  "market_cutoff": 1792477800000,
+  "evaluated_at": 1792498070624,
+  "market_cutoff": 1792497600000,
   "event_journals": {
-    "events-2026-10.jsonl": "514f981618b8ceb77cfdf0851ffcd137cfe5b6892232e64132f76e54aea65ce0"
+    "events-2026-10.jsonl": "83536b7add9a8dfc97a07b79761377bfcc7bde3b22fbed65cf7c91edf88371fd"
   },
-  "receipts_sha256": "63e1274df9033b39c1f73f65906fb7991d8f681fcf5456deffb4f5d952d113f0",
-  "official_manifest_sha256": "803f2aed137c70e11248e65d16d10467c1481459a0e3a4880f24101769d3243e",
+  "receipts_sha256": "858988efcd6d88ed5394d3a2cb0969c2acbe5f7784d9f39c173e52897249244f",
+  "official_manifest_sha256": "803dddee51f4b98ce47380f71b8d1ab7203ac74c5a7af945a7a32b294b4f5d18",
   "freeze_lock_sha256": "9c836a5da6dfed6d5e86f4a2eae44fd49586707aa37f04f051c6e6ddcd4c53e0"
 }
