@@ -14,10 +14,11 @@ import java.util.Date
 import java.util.Locale
 import java.util.UUID
 
-class AppDatabase private constructor(context: Context) : SQLiteOpenHelper(context, "crypto_multi.db", null, 10) {
+class AppDatabase private constructor(context: Context) : SQLiteOpenHelper(context, "crypto_multi.db", null, 11) {
     override fun onCreate(db: SQLiteDatabase) = createSchema(db)
 
     private fun createSchema(db: SQLiteDatabase) {
+        ForecastCriterionStore.createSchema(db)
         db.execSQL("""CREATE TABLE IF NOT EXISTS analysis(id INTEGER PRIMARY KEY AUTOINCREMENT,symbol TEXT,timeframe TEXT,ts INTEGER,candle_close INTEGER,price REAL,change_pct REAL,direction TEXT,score INTEGER,confidence INTEGER,probability INTEGER,presignal INTEGER,signal INTEGER,state TEXT,rejection TEXT,explanation TEXT,rsi REAL,adx REAL,plus_di REAL,minus_di REAL,atr REAL,atr_pct REAL,ema20 REAL,ema50 REAL,ema200 REAL,ema20_slope REAL,ema50_slope REAL,volume_ratio REAL,volume_expansion INTEGER DEFAULT 0,support REAL,resistance REAL,support_low REAL,support_high REAL,resistance_low REAL,resistance_high REAL,regime TEXT,structure TEXT,mtf_score INTEGER,mtf_summary TEXT,risk TEXT,forecast_low REAL,forecast_high REAL,invalidation REAL,trend_score INTEGER,momentum_score INTEGER,volume_score INTEGER,structure_score INTEGER,sr_score INTEGER,mtf_component INTEGER,volatility_score INTEGER,historical_score INTEGER,btc_score INTEGER,fundamental_score INTEGER,comparable_cases INTEGER,hist_probability INTEGER,stat_confidence TEXT,data_quality TEXT DEFAULT 'COMPLETE',missing_data TEXT DEFAULT '')""")
         db.execSQL("""CREATE TABLE IF NOT EXISTS signal(id INTEGER PRIMARY KEY AUTOINCREMENT,uid TEXT UNIQUE,symbol TEXT,timeframe TEXT,ts INTEGER,candle_close INTEGER,price REAL,direction TEXT,score INTEGER,confidence INTEGER,probability INTEGER,atr REAL,risk TEXT,status TEXT DEFAULT 'PENDING',outcome_quality TEXT DEFAULT 'EXACT_FIRST_TOUCH_5M_V2',outcome_reason TEXT DEFAULT '',outcome_resolved_ts INTEGER,outcome_window_min INTEGER DEFAULT 1440,threshold_pct REAL DEFAULT 0,target_price REAL,stop_price REAL,persistence_status TEXT DEFAULT 'PENDING',persistence_quality TEXT DEFAULT 'ADAPTIVE_V2',legacy_status TEXT,mfe REAL DEFAULT 0,mae REAL DEFAULT 0,last_price REAL,updated_ts INTEGER)""")
         db.execSQL("""CREATE TABLE IF NOT EXISTS followup(id INTEGER PRIMARY KEY AUTOINCREMENT,signal_uid TEXT,horizon_min INTEGER,due_ts INTEGER,checked_ts INTEGER,market_ts INTEGER,price REAL,move_pct REAL,status TEXT DEFAULT 'PENDING',UNIQUE(signal_uid,horizon_min))""")
@@ -176,6 +177,7 @@ class AppDatabase private constructor(context: Context) : SQLiteOpenHelper(conte
                 db.setTransactionSuccessful()
             } finally { db.endTransaction() }
         }
+        if (oldVersion < 11) ForecastCriterionStore.createSchema(db)
     }
 
     private fun insertAdaptivePersistenceRows(db: SQLiteDatabase, signalWhere: String) {
@@ -267,6 +269,7 @@ class AppDatabase private constructor(context: Context) : SQLiteOpenHelper(conte
             val id = db.insertWithOnConflict("signal", null, v, SQLiteDatabase.CONFLICT_IGNORE)
             if (id == -1L) return SignalInsertResult(false, uid)
             db.insertOrThrow("signal_snapshot", null, signalSnapshotValues(uid, a))
+            ForecastCriterionStore.register(db, uid, a)
             OutcomeTracker.persistenceHorizonsMinutes(a.timeframe).forEach { horizon ->
                 ContentValues().also { fv ->
                     fv.put("signal_uid", uid); fv.put("horizon_min", horizon); fv.put("due_ts", a.candleCloseTime + horizon * 60_000L)
@@ -1126,6 +1129,7 @@ class AppDatabase private constructor(context: Context) : SQLiteOpenHelper(conte
         "SEÑALES" to "SELECT * FROM signal ORDER BY ts DESC",
         "SNAPSHOTS EXACTOS" to "SELECT * FROM signal_snapshot ORDER BY ts DESC",
         "SEGUIMIENTOS ANTERIORES V1 CONSERVADOS" to "SELECT * FROM followup ORDER BY due_ts DESC",
+        "CRITERIO MAGNITUD Y PLAZO V1" to "SELECT * FROM forecast_criterion ORDER BY issued_ts DESC",
         "PERSISTENCIA ADAPTADA V2" to "SELECT * FROM persistence_followup ORDER BY due_ts DESC",
         "EVENTOS DE ALERTA" to "SELECT * FROM alert_event ORDER BY ts DESC",
         "OUTBOX DE ALERTAS" to "SELECT * FROM alert_outbox ORDER BY created_ts DESC",
