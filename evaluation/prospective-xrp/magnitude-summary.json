@@ -1,0 +1,34 @@
+{
+  "profile": "MAGNITUDE_TIME_V1",
+  "updated_at": 1792569006925,
+  "combinations": [
+    {
+      "engine": "original",
+      "signals": 0,
+      "pending": 0,
+      "HIT": 0,
+      "APPROXIMATE": 0,
+      "LATE": 0,
+      "FAIL": 0,
+      "exact_rate": null,
+      "approximate_or_exact_rate": null,
+      "first_nonoverlap_ids": []
+    },
+    {
+      "engine": "alternative",
+      "signals": 0,
+      "pending": 0,
+      "HIT": 0,
+      "APPROXIMATE": 0,
+      "LATE": 0,
+      "FAIL": 0,
+      "exact_rate": null,
+      "approximate_or_exact_rate": null,
+      "first_nonoverlap_ids": []
+    }
+  ],
+  "status": "COLLECTING_NO_CONFIRMED_IMPROVEMENT",
+  "registered_decisions": 1,
+  "limits": "New contracts only; different directions/selection frequencies. Shared target from original range. Rates are descriptive, not independent-trial evidence or profitability.",
+  "winner": null
+}
