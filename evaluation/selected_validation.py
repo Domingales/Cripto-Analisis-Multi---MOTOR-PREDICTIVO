@@ -12,6 +12,7 @@ import numpy as np
 import expanded_replay as replay
 from expanded_history import INTERVALS
 from prospective_ledger import resolve
+from magnitude_live import new_contract
 
 PROTOCOL = Path(__file__).with_name('selected_validation_protocol.json')
 
@@ -132,6 +133,9 @@ def capture(root,data,decision_file,model_root,version,engine_sha,now=None,durab
             entry_price_time=price_time,context_snapshot_base64=snapshot,
             original=dict(accepted=accepted=='true',direction=side),alternative=alt,
             data_hashes={k:v['sha256'] for k,v in manifest['inputs'].items() if k.startswith(symbol+'USDT_') or k=='BTCUSDT_4h.csv'})
+        contract = new_contract(snapshot, recorded)
+        if contract is not None:
+            event['magnitude_time'] = contract
         append(root,event)
         if durable_sink is not None:
             durable_sink(event)

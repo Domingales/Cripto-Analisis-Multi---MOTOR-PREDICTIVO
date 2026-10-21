@@ -18,4 +18,5 @@ python3 evaluation/execution_costs.py \
   --freeze-lock evaluation/selected-prospective/freeze-lock.json \
   --data selected-data --output evaluation/selected-prospective/execution-costs.json
 python3 -c "from sys import path; path.insert(0, 'evaluation'); from selected_periodic_capture import persist; persist('Conservar simulación prospectiva de costes de las 15 combinaciones')"
-
+bash evaluation/run_magnitude_outcomes.sh evaluation/selected-prospective selected-data magnitude-selected-work
+python3 -c "from sys import path; path.insert(0, 'evaluation'); from selected_periodic_capture import persist; persist('Conservar evaluación magnitud y plazo de contratos futuros')"

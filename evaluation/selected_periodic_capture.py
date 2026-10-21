@@ -1,3 +1,4 @@
+from frozen_engine_digest import engine_digest
 """Durable collection for the 15 prespecified pairs; research branch only."""
 import hashlib
 import json
@@ -53,7 +54,7 @@ def capture():
     phash=hashlib.sha256(validation.PROTOCOL.read_bytes()).hexdigest()
     lock=json.loads((ROOT/'freeze-lock.json').read_text())
     if lock['protocol_sha256']!=phash: raise ValueError('Frozen protocol changed')
-    engine=subprocess.check_output('sha256sum app/src/main/java/com/domingales/criptoanalisis/multi/domain/*.kt | sha256sum',shell=True,text=True).split()[0]
+    engine=engine_digest()
     if lock['engine_sha256']!=engine: raise ValueError('Frozen Kotlin engine changed')
     for symbol,tf in protocol['selections']:
         folder=ROOT/'models'/(symbol+'-'+tf)

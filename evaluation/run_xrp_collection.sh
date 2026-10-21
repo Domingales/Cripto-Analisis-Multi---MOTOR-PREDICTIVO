@@ -25,4 +25,5 @@ python3 evaluation/execution_costs.py \
   --freeze-lock evaluation/prospective-xrp/freeze-lock.json \
   --data xrp-current-data --output evaluation/prospective-xrp/execution-costs.json
 python3 -c "from sys import path; path.insert(0, 'evaluation'); from xrp_periodic_capture import persist; persist('Conservar simulación prospectiva de costes XRP30m')"
-
+bash evaluation/run_magnitude_outcomes.sh evaluation/prospective-xrp xrp-current-data magnitude-xrp-work
+python3 -c "from sys import path; path.insert(0, 'evaluation'); from xrp_periodic_capture import persist; persist('Conservar evaluación magnitud y plazo de XRP futuro')"

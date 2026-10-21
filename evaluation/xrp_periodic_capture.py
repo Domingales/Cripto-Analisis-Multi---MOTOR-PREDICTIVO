@@ -1,3 +1,4 @@
+from frozen_engine_digest import engine_digest
 """Collect only with the existing frozen model and remotely durable predictions."""
 import hashlib
 import json
@@ -66,7 +67,7 @@ def capture():
     if model is None: raise ValueError('Frozen model is not evaluable')
     if lock['protocol_sha256']!=phash: raise ValueError('Frozen protocol changed')
     # Use the identical engine digest construction as the verified preparation.
-    engine=subprocess.check_output('sha256sum app/src/main/java/com/domingales/criptoanalisis/multi/domain/*.kt | sha256sum',shell=True,text=True).split()[0]
+    engine=engine_digest()
     if engine!=lock['engine_sha256']: raise ValueError('Frozen Kotlin engine changed')
     receipts_path=ROOT/'durability-receipts.json'
     receipts=json.loads(receipts_path.read_text()) if receipts_path.exists() else {}

@@ -1,3 +1,4 @@
+from frozen_engine_digest import engine_digest
 """Persist the already checked preparation artifact once; never retrain."""
 import hashlib
 import json
@@ -33,7 +34,7 @@ def bootstrap():
     phash=hashlib.sha256(xrp.PROTOCOL.read_bytes()).hexdigest()
     model,manifest=validation.checked_model(folder,phash)
     if model is None: raise ValueError('Frozen model not evaluable')
-    engine=subprocess.check_output('sha256sum app/src/main/java/com/domingales/criptoanalisis/multi/domain/*.kt | sha256sum',shell=True,text=True).split()[0]
+    engine=engine_digest()
     for path in Path('app/src/main/java/com/domingales/criptoanalisis/multi/domain').glob('*.kt'):
         old=subprocess.check_output(['git','show',PREPARATION_SHA+':'+str(path)])
         if path.read_bytes()!=old: raise ValueError('Production engine differs from verified preparation')

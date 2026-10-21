@@ -1,3 +1,4 @@
+from frozen_engine_digest import engine_digest
 """Persist the already prepared 15-pair artifacts once; never retrain."""
 import hashlib
 import json
@@ -33,7 +34,7 @@ def bootstrap():
     unavailable=sorted(k for k,v in statuses.items() if v!='FROZEN_FOR_NEW_PROSPECTIVE_VALIDATION')
     if unavailable:
         raise ValueError('Unexpected prospectively unavailable models: '+json.dumps(unavailable))
-    engine=subprocess.check_output('sha256sum app/src/main/java/com/domingales/criptoanalisis/multi/domain/*.kt | sha256sum',shell=True,text=True).split()[0]
+    engine=engine_digest()
     (ROOT/'freeze-lock.json').write_text(json.dumps(dict(protocol_sha256=phash,engine_sha256=engine,
         models=models,statuses=statuses,source='REGISTERED_EXPANDED_REPLAY_ARTIFACTS_NO_RETRAINING'),indent=2)+'\n')
     persist('Conservar modelos congelados de las 15 combinaciones sin reentrenar')
