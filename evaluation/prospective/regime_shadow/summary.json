@@ -4,7 +4,7 @@
   "by_regime": {
     "RANGE_OR_MIXED": {
       "baseline": {
-        "decisions": 21,
+        "decisions": 22,
         "signals": 2,
         "resolved": 2,
         "HIT": 0,
@@ -16,10 +16,10 @@
           0.0,
           0.6576280471103807
         ],
-        "coverage": 0.09523809523809523
+        "coverage": 0.09090909090909091
       },
       "rejected_filter_shadow": {
-        "decisions": 21,
+        "decisions": 22,
         "signals": 0,
         "resolved": 0,
         "HIT": 0,
@@ -35,15 +35,15 @@
       "baseline": {
         "decisions": 31,
         "signals": 10,
-        "resolved": 9,
-        "HIT": 6,
+        "resolved": 10,
+        "HIT": 7,
         "FAIL": 3,
         "NEUTRAL": 0,
-        "PENDING": 1,
-        "accuracy": 0.6666666666666666,
+        "PENDING": 0,
+        "accuracy": 0.7,
         "descriptive_wilson_interval": [
-          0.35419734749908977,
-          0.879418401317257
+          0.39677321997956516,
+          0.892210712513788
         ],
         "coverage": 0.3225806451612903
       },
