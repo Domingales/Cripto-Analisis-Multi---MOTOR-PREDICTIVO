@@ -4,7 +4,7 @@
   "by_regime": {
     "RANGE_OR_MIXED": {
       "baseline": {
-        "decisions": 20,
+        "decisions": 21,
         "signals": 2,
         "resolved": 2,
         "HIT": 0,
@@ -16,10 +16,10 @@
           0.0,
           0.6576280471103807
         ],
-        "coverage": 0.1
+        "coverage": 0.09523809523809523
       },
       "rejected_filter_shadow": {
-        "decisions": 20,
+        "decisions": 21,
         "signals": 0,
         "resolved": 0,
         "HIT": 0,
