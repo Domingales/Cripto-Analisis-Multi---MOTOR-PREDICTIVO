@@ -22,7 +22,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "fb1bdf184aa882c1d9eb507f3392ded38a67c3ba5b12152bbcea8650ba711460",
+        "source_file_sha256": "ceea30d9074ce3f398a98bd514a5a3cfbebf40dc2797ca9f579d8fd53d76284d",
         "first_open": 1792170300000,
         "horizon_end": 1792256699999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -2415,7 +2415,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "TRXUSDT_5m.csv",
-        "source_file_sha256": "b0c65839df4e6e1d2dcdc7792cdb2d866afe90fa1b2fda2eb25b1d55d1d9bdb6",
+        "source_file_sha256": "9bd20a1e45f499f913d61d21770e2dd0b3c4b698f80ec33ceae90bef17db0c2c",
         "first_open": 1792201200000,
         "horizon_end": 1792287599999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -4815,7 +4815,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "fb1bdf184aa882c1d9eb507f3392ded38a67c3ba5b12152bbcea8650ba711460",
+        "source_file_sha256": "ceea30d9074ce3f398a98bd514a5a3cfbebf40dc2797ca9f579d8fd53d76284d",
         "first_open": 1792258800000,
         "horizon_end": 1792345199999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -7180,7 +7180,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "ADAUSDT_5m.csv",
-        "source_file_sha256": "8a3f8c7d6441d38132887d40223baaadab71e0268de17946649a6d0510a4bcc7",
+        "source_file_sha256": "6b09094c13ee6097ded8c5b443f8438263604f162f5169f3022f879020fa1715",
         "first_open": 1792258800000,
         "horizon_end": 1792517999999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -14195,7 +14195,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "fb1bdf184aa882c1d9eb507f3392ded38a67c3ba5b12152bbcea8650ba711460",
+        "source_file_sha256": "ceea30d9074ce3f398a98bd514a5a3cfbebf40dc2797ca9f579d8fd53d76284d",
         "first_open": 1792352700000,
         "horizon_end": 1792439099999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -16615,7 +16615,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "fb1bdf184aa882c1d9eb507f3392ded38a67c3ba5b12152bbcea8650ba711460",
+        "source_file_sha256": "ceea30d9074ce3f398a98bd514a5a3cfbebf40dc2797ca9f579d8fd53d76284d",
         "first_open": 1792459500000,
         "horizon_end": 1792545899999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -18981,13 +18981,27 @@
       "timeframe": "1h",
       "engine": "original",
       "status": "OMITTED_ACTIVE_WINDOW"
+    },
+    {
+      "id": "RUNE-30m-1792610999999",
+      "symbol": "RUNE",
+      "timeframe": "30m",
+      "engine": "original",
+      "status": "OMITTED_ACTIVE_WINDOW"
+    },
+    {
+      "id": "RUNE-4h-1792598399999",
+      "symbol": "RUNE",
+      "timeframe": "4h",
+      "engine": "original",
+      "status": "OMITTED_ACTIVE_WINDOW"
     }
   ],
-  "eligible_decisions": 333,
+  "eligible_decisions": 342,
   "counts": {
     "original": {
       "NOT_EXECUTABLE_AT_REGISTERED_LEVELS": 1,
-      "OMITTED_ACTIVE_WINDOW": 25,
+      "OMITTED_ACTIVE_WINDOW": 27,
       "SIMULATED": 5,
       "PENDING_DATA": 2
     },
@@ -18996,12 +19010,12 @@
     }
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792597208864,
-  "market_cutoff": 1792596600000,
+  "evaluated_at": 1792611607098,
+  "market_cutoff": 1792611000000,
   "event_journals": {
-    "events-2026-10.jsonl": "dcbcc7130338b7280b052accce97b8d1c8011e4ca061eab7c4eebdef45989fe8"
+    "events-2026-10.jsonl": "9d557ad66373a51d692cd4e0a85b335c2b44799d30b294247b98d58a31a2f363"
   },
-  "receipts_sha256": "2cd241f30b3151784be7a7318d2c4447b132f2c5458c7e194cce775348deca53",
-  "official_manifest_sha256": "857200b80de249060b9c879b86ab9e585a3bc0d6bc6c2b6bee6d975fe75b04d9",
+  "receipts_sha256": "292e8c16d240c64a252c8550c52cd4b4982ffa51c15e39b1153770d3eb5071a7",
+  "official_manifest_sha256": "7d2cc50c43e4ae847ddd9cd84ed0a54b1cae06e61b8f1716f791d09d0753dc61",
   "freeze_lock_sha256": "9c836a5da6dfed6d5e86f4a2eae44fd49586707aa37f04f051c6e6ddcd4c53e0"
 }
