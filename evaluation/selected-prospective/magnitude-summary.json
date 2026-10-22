@@ -1,11 +1,11 @@
 {
   "profile": "MAGNITUDE_TIME_V1",
-  "updated_at": 1792695311121,
+  "updated_at": 1792709215400,
   "combinations": [
     {
       "engine": "original",
-      "signals": 11,
-      "pending": 2,
+      "signals": 13,
+      "pending": 4,
       "HIT": 9,
       "APPROXIMATE": 0,
       "LATE": 0,
@@ -17,7 +17,8 @@
         "RUNE-30m-1792578599999",
         "RUNE-1h-1792594799999",
         "RUNE-4h-1792598399999",
-        "ADA-4h-1792684799999"
+        "ADA-4h-1792684799999",
+        "TRX-4h-1792699199999"
       ]
     },
     {
@@ -36,7 +37,7 @@
     }
   ],
   "status": "COLLECTING_NO_CONFIRMED_IMPROVEMENT",
-  "registered_decisions": 87,
+  "registered_decisions": 96,
   "limits": "New contracts only; different directions/selection frequencies. Shared target from original range. Rates are descriptive, not independent-trial evidence or profitability.",
   "winner": null
 }
