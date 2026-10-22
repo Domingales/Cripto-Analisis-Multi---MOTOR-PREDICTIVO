@@ -55,7 +55,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "7dfc883dc194d993f0f026576d134ab3b5c102268d118560c5bf51f419d55fe8",
+        "source_file_sha256": "6a536c9b203dcaa196c0c56b7ec55d38643e67496045e27f0626c4edfe091154",
         "first_open": 1792257900000,
         "horizon_end": 1792344299999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -2420,7 +2420,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "7dfc883dc194d993f0f026576d134ab3b5c102268d118560c5bf51f419d55fe8",
+        "source_file_sha256": "6a536c9b203dcaa196c0c56b7ec55d38643e67496045e27f0626c4edfe091154",
         "first_open": 1792359600000,
         "horizon_end": 1792445999999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -4792,7 +4792,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "7dfc883dc194d993f0f026576d134ab3b5c102268d118560c5bf51f419d55fe8",
+        "source_file_sha256": "6a536c9b203dcaa196c0c56b7ec55d38643e67496045e27f0626c4edfe091154",
         "first_open": 1792461600000,
         "horizon_end": 1792547999999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -7106,7 +7106,7 @@
       }
     }
   ],
-  "eligible_decisions": 35,
+  "eligible_decisions": 36,
   "counts": {
     "original": {
       "SIMULATED": 3,
@@ -7115,12 +7115,12 @@
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792655104206,
-  "market_cutoff": 1792654800000,
+  "evaluated_at": 1792677330093,
+  "market_cutoff": 1792677000000,
   "event_journals": {
-    "events-2026-10.jsonl": "d30b26bbea8388379c10290804e8af68c0ef9cdf2f326234a046b4600e03e7a7"
+    "events-2026-10.jsonl": "7ac4250b74df499e6cdc622497c6aec1cb00c6a2c15a621f78e04995ed52a192"
   },
-  "receipts_sha256": "2d5395daae8df98237430b135e0370e7bf5a5152562474bc975fc3c1cf8973f5",
-  "official_manifest_sha256": "93059da7b6351821a07b0eea75906c983fe753c3ccd44c9766b4b597db66db94",
+  "receipts_sha256": "4341bcee5b124fee58286e3aa478e802f3d9e4e29c414153763cf9d4f631ef2b",
+  "official_manifest_sha256": "ba13277400fd8dacff631fadd18bfb9a069e9894859b610b1c9ef746cb0d4d8b",
   "freeze_lock_sha256": "86866303da108976fffaa7afcebbca53d0fb6cacd79c5d18edb5dfd5aeb7c7a8"
 }
