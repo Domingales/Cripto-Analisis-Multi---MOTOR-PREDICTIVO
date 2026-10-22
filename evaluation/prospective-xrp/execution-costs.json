@@ -55,7 +55,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "4b1ae758dc3487fcd2e429dacc4d31f9f3179723b4d62c98b5a862c8fb677209",
+        "source_file_sha256": "2800bb515987b63f42f98676555f5126ef49473eed8b4021c04530c094ac5413",
         "first_open": 1792257900000,
         "horizon_end": 1792344299999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -2420,7 +2420,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "4b1ae758dc3487fcd2e429dacc4d31f9f3179723b4d62c98b5a862c8fb677209",
+        "source_file_sha256": "2800bb515987b63f42f98676555f5126ef49473eed8b4021c04530c094ac5413",
         "first_open": 1792359600000,
         "horizon_end": 1792445999999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -4792,7 +4792,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "4b1ae758dc3487fcd2e429dacc4d31f9f3179723b4d62c98b5a862c8fb677209",
+        "source_file_sha256": "2800bb515987b63f42f98676555f5126ef49473eed8b4021c04530c094ac5413",
         "first_open": 1792461600000,
         "horizon_end": 1792547999999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -7106,7 +7106,7 @@
       }
     }
   ],
-  "eligible_decisions": 33,
+  "eligible_decisions": 34,
   "counts": {
     "original": {
       "SIMULATED": 3,
@@ -7115,12 +7115,12 @@
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792621722176,
-  "market_cutoff": 1792621500000,
+  "evaluated_at": 1792633073881,
+  "market_cutoff": 1792632900000,
   "event_journals": {
-    "events-2026-10.jsonl": "c6f91e2bcc093e63cb22f52751458592d448f91d3b6bdac992c3f86766c8a3dd"
+    "events-2026-10.jsonl": "966fc8c7f989acc4becdc9bdf543bcf43a09fe11cb7fb267d16da069b7d417e4"
   },
-  "receipts_sha256": "bb0c3ee30be167f8765b01720e3f00ff70ebe153fcd6bbd8ab745b7aae4a96c2",
-  "official_manifest_sha256": "004b1768381b86e0f9fe5cbbf2bc85530d364d0e8f11cab43a9c70adfbb88584",
+  "receipts_sha256": "3bd155072fa9e78878ec08858d85e3d27c0afcacd5d3fcde1c1486f750fe40c5",
+  "official_manifest_sha256": "70bf12fc759329e91ba8bf20881d531b22ae392075ee5e7bbb4936bbf7ea6ce5",
   "freeze_lock_sha256": "86866303da108976fffaa7afcebbca53d0fb6cacd79c5d18edb5dfd5aeb7c7a8"
 }
