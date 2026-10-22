@@ -1,18 +1,20 @@
 {
   "profile": "MAGNITUDE_TIME_V1",
-  "updated_at": 1792677332417,
+  "updated_at": 1792694409149,
   "combinations": [
     {
       "engine": "original",
-      "signals": 0,
-      "pending": 0,
+      "signals": 1,
+      "pending": 1,
       "HIT": 0,
       "APPROXIMATE": 0,
       "LATE": 0,
       "FAIL": 0,
       "exact_rate": null,
       "approximate_or_exact_rate": null,
-      "first_nonoverlap_ids": []
+      "first_nonoverlap_ids": [
+        "XRP-30m-1792693799999"
+      ]
     },
     {
       "engine": "alternative",
@@ -28,7 +30,7 @@
     }
   ],
   "status": "COLLECTING_NO_CONFIRMED_IMPROVEMENT",
-  "registered_decisions": 7,
+  "registered_decisions": 8,
   "limits": "New contracts only; different directions/selection frequencies. Shared target from original range. Rates are descriptive, not independent-trial evidence or profitability.",
   "winner": null
 }
