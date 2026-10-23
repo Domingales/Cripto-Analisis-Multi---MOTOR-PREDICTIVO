@@ -55,7 +55,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "6382f6b69b22f1eebe391eebd95f2845bf9e1dba15198f8b060a1111f14c78bc",
+        "source_file_sha256": "cb35ce120d887ccdb658022c5478ff16f4c43154c9a3d23bb7c9e42734983a54",
         "first_open": 1792257900000,
         "horizon_end": 1792344299999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -2420,7 +2420,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "6382f6b69b22f1eebe391eebd95f2845bf9e1dba15198f8b060a1111f14c78bc",
+        "source_file_sha256": "cb35ce120d887ccdb658022c5478ff16f4c43154c9a3d23bb7c9e42734983a54",
         "first_open": 1792359600000,
         "horizon_end": 1792445999999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -4792,7 +4792,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "6382f6b69b22f1eebe391eebd95f2845bf9e1dba15198f8b060a1111f14c78bc",
+        "source_file_sha256": "cb35ce120d887ccdb658022c5478ff16f4c43154c9a3d23bb7c9e42734983a54",
         "first_open": 1792461600000,
         "horizon_end": 1792547999999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -7117,24 +7117,31 @@
       "regime_at_registration": "BREAKOUT",
       "source_directional_outcome": null,
       "mfe_mae_scope": "SOURCE_FULL_WINDOW_AT_REGISTERED_REFERENCE_NOT_EXECUTED_PNL"
+    },
+    {
+      "id": "XRP-30m-1792762199999",
+      "symbol": "XRP",
+      "timeframe": "30m",
+      "engine": "original",
+      "status": "OMITTED_ACTIVE_WINDOW"
     }
   ],
-  "eligible_decisions": 40,
+  "eligible_decisions": 41,
   "counts": {
     "original": {
       "SIMULATED": 3,
-      "OMITTED_ACTIVE_WINDOW": 1,
+      "OMITTED_ACTIVE_WINDOW": 2,
       "PENDING_DATA": 1
     },
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1792741327234,
-  "market_cutoff": 1792741200000,
+  "evaluated_at": 1792762511944,
+  "market_cutoff": 1792762200000,
   "event_journals": {
-    "events-2026-10.jsonl": "fea978bc990049ba2ed75c3083947a850481408e60050dd52b0c884ab85aba51"
+    "events-2026-10.jsonl": "c02fdbab41500bd2bcf5ff45ad07b57a48933d14f55ce998be4d879e289d4004"
   },
-  "receipts_sha256": "6f11d91ef1d531d91e1bfe677002c4fe07fc0cdad0792b472d322facf32ecdbd",
-  "official_manifest_sha256": "688ae41edd995e167e5e051dda0929b5f0230fc28f3beae128f043437d1a62b8",
+  "receipts_sha256": "505f550d97d46cbb636d38fd3ea34292ed345229463c18d61fa1eae5035945d8",
+  "official_manifest_sha256": "004ffdbc0e6f8dddabdc23e271db3ce12eaacbff7693979cdbcdd7d730e861ab",
   "freeze_lock_sha256": "86866303da108976fffaa7afcebbca53d0fb6cacd79c5d18edb5dfd5aeb7c7a8"
 }
