@@ -1,0 +1,39 @@
+name: Histórico completo 30 criptos y 5 intervalos
+on:
+  pull_request:
+    paths:
+      - 'evaluation/expanded_history.py'
+      - 'evaluation/test_expanded_history.py'
+      - '.github/workflows/expanded-history.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.catalog.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verificar agregación y catálogo real
+        run: python3 -m unittest discover -s evaluation -p 'test_expanded_history.py'
+      - id: catalog
+        run: echo "matrix=$(python3 evaluation/expanded_history.py --matrix)" >> "$GITHUB_OUTPUT"
+  collect:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Descargar, verificar y derivar intervalos completos
+        run: python3 evaluation/expanded_history.py --symbol '${{ matrix.symbol }}' --output expanded-history
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: historico-ampliado-${{ matrix.symbol }}
+          path: expanded-history/
+          retention-days: 30
