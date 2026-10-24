@@ -42,13 +42,20 @@
         "horizon_end": 1792849199999,
         "signals": 2,
         "status": "FAIL"
+      },
+      {
+        "first_id": "XRP-30m-1792859399999",
+        "first_open": 1792860300000,
+        "horizon_end": 1792946699999,
+        "signals": 1,
+        "status": "PENDING"
       }
     ],
     "counts": {
       "HIT": 3,
       "FAIL": 3,
       "NEUTRAL": 0,
-      "PENDING": 0
+      "PENDING": 1
     },
     "accuracy": 0.5,
     "interpretation": "Nonoverlapping windows do not establish statistical independence"
