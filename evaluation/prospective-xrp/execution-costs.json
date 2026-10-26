@@ -55,7 +55,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "e9d2d928c3b5e9cdfe0405eb5ff8d698730b1b233326fc0e15826c3ecbd9def5",
+        "source_file_sha256": "7e3e44839ff6fbd119b395510459fd14828179d48992cf394d55e607cdd5f908",
         "first_open": 1792257900000,
         "horizon_end": 1792344299999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -2420,7 +2420,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "e9d2d928c3b5e9cdfe0405eb5ff8d698730b1b233326fc0e15826c3ecbd9def5",
+        "source_file_sha256": "7e3e44839ff6fbd119b395510459fd14828179d48992cf394d55e607cdd5f908",
         "first_open": 1792359600000,
         "horizon_end": 1792445999999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -4792,7 +4792,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "e9d2d928c3b5e9cdfe0405eb5ff8d698730b1b233326fc0e15826c3ecbd9def5",
+        "source_file_sha256": "7e3e44839ff6fbd119b395510459fd14828179d48992cf394d55e607cdd5f908",
         "first_open": 1792461600000,
         "horizon_end": 1792547999999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -7157,7 +7157,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "e9d2d928c3b5e9cdfe0405eb5ff8d698730b1b233326fc0e15826c3ecbd9def5",
+        "source_file_sha256": "7e3e44839ff6fbd119b395510459fd14828179d48992cf394d55e607cdd5f908",
         "first_open": 1792694700000,
         "horizon_end": 1792781099999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -9529,7 +9529,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "e9d2d928c3b5e9cdfe0405eb5ff8d698730b1b233326fc0e15826c3ecbd9def5",
+        "source_file_sha256": "7e3e44839ff6fbd119b395510459fd14828179d48992cf394d55e607cdd5f908",
         "first_open": 1792860300000,
         "horizon_end": 1792946699999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -11850,7 +11850,7 @@
       "status": "OMITTED_ACTIVE_WINDOW"
     }
   ],
-  "eligible_decisions": 57,
+  "eligible_decisions": 58,
   "counts": {
     "original": {
       "SIMULATED": 5,
@@ -11859,12 +11859,12 @@
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1793001335770,
-  "market_cutoff": 1793001000000,
+  "evaluated_at": 1793027930441,
+  "market_cutoff": 1793027700000,
   "event_journals": {
-    "events-2026-10.jsonl": "e35ffb09d93046556a614870da8bd2e58cb3afd5d3ed608a98287c66d2031548"
+    "events-2026-10.jsonl": "63f3409db44a0c1fa9496ff47ec7a6713047b59671820e021435634fc382db2c"
   },
-  "receipts_sha256": "0756df775f950cbf890d7a706f55924b5dc4ad0ea1a148be7dcf38320955295c",
-  "official_manifest_sha256": "933052079d7b32a54545baf7d48fafa8c863518b5908bf739fc71ea5210ecfad",
+  "receipts_sha256": "0cd2b8ca71e7aae3ea3aac754dde96a2ae0e54d4e5c0cbaac3a18fc9fded953f",
+  "official_manifest_sha256": "b53c76cb20d9f1065b6f392efdc46eaf712260c98ae55166eb48337921b2146a",
   "freeze_lock_sha256": "86866303da108976fffaa7afcebbca53d0fb6cacd79c5d18edb5dfd5aeb7c7a8"
 }
