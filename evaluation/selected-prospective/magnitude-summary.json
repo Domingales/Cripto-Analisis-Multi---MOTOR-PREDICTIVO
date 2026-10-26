@@ -1,6 +1,6 @@
 {
   "profile": "MAGNITUDE_TIME_V1",
-  "updated_at": 1793025616614,
+  "updated_at": 1793045605752,
   "combinations": [
     {
       "engine": "original",
@@ -25,8 +25,8 @@
     },
     {
       "engine": "alternative",
-      "signals": 5,
-      "pending": 2,
+      "signals": 6,
+      "pending": 3,
       "HIT": 2,
       "APPROXIMATE": 0,
       "LATE": 1,
@@ -34,12 +34,13 @@
       "exact_rate": 0.6666666666666666,
       "approximate_or_exact_rate": 0.6666666666666666,
       "first_nonoverlap_ids": [
-        "TRX-4h-1792583999999"
+        "TRX-4h-1792583999999",
+        "TRX-1h-1793044799999"
       ]
     }
   ],
   "status": "COLLECTING_NO_CONFIRMED_IMPROVEMENT",
-  "registered_decisions": 303,
+  "registered_decisions": 312,
   "limits": "New contracts only; different directions/selection frequencies. Shared target from original range. Rates are descriptive, not independent-trial evidence or profitability.",
   "winner": null
 }
