@@ -1,0 +1,87 @@
+{
+  "status": "EXPLORATORY_ALREADY_INSPECTED_HISTORY",
+  "rule": {
+    "id": "alternative-selective-090-v1",
+    "threshold": 0.9,
+    "label": "ARCHIVED_SYMMETRIC_FIRST_TOUCH_NOT_MAGNITUDE",
+    "production_enabled": false
+  },
+  "combination": [
+    "XRP",
+    "30m"
+  ],
+  "decisions": 52638,
+  "model_sha256": "5900b8e48c28471a1c89a2e09fcac658aaa7f6328536a1a7c13ed25fefa33613",
+  "input_sha256": {
+    "decisions.jsonl": "c0cfe26399c121fb5786ef8fa67e798ef8724fcd6b9e6fb1086a5d0930fdf9c7",
+    "outcomes.jsonl": "d582b38da3c7625acef6b374d28b9f24006b3a3dc3d00c4710ca7726735e531e",
+    "model_manifest.json": "efefd742814a9a36925a5d02bb96cfe20cfe49c455a58256417590edef5f3f39"
+  },
+  "evaluable_scores": 52638,
+  "candidate": {
+    "signals": 0,
+    "HIT": 0,
+    "FAIL": 0,
+    "NEUTRAL": 0,
+    "PENDING": 0,
+    "resolved_accuracy": null,
+    "hit_fraction_all_mature": null
+  },
+  "candidate_first_episode": {
+    "signals": 0,
+    "HIT": 0,
+    "FAIL": 0,
+    "NEUTRAL": 0,
+    "PENDING": 0,
+    "resolved_accuracy": null,
+    "hit_fraction_all_mature": null
+  },
+  "episode_first_times": [],
+  "coverage": 0,
+  "baseline": {
+    "kotlin": {
+      "signals": 5735,
+      "HIT": 2885,
+      "FAIL": 2824,
+      "NEUTRAL": 16,
+      "PENDING": 10,
+      "resolved_accuracy": 0.5053424417586267,
+      "hit_fraction_all_mature": 0.5039301310043668
+    },
+    "alternative": {
+      "signals": 53,
+      "HIT": 44,
+      "FAIL": 9,
+      "NEUTRAL": 0,
+      "PENDING": 0,
+      "resolved_accuracy": 0.8301886792452831,
+      "hit_fraction_all_mature": 0.8301886792452831
+    }
+  },
+  "same_windows_original": {
+    "signals": 0,
+    "HIT": 0,
+    "FAIL": 0,
+    "NEUTRAL": 0,
+    "PENDING": 0,
+    "resolved_accuracy": null,
+    "hit_fraction_all_mature": null
+  },
+  "certified_probability": null,
+  "winner": null,
+  "production_changed": false,
+  "limitations": [
+    "Archived decisions, not a fresh raw-price replay or independent test.",
+    "Training used earlier official history; scored examination begins in 2023, not 2020.",
+    "No model retraining or change to frozen prospective collection.",
+    "0.90 is a score selection threshold, NOT certified 90% accuracy.",
+    "Transitive episode grouping does not establish statistical independence.",
+    "Same-window original labels may have a different direction; not paired trades.",
+    "First-touch outcomes are not MAGNITUDE_TIME_V1 or net profitability."
+  ],
+  "archive_sha256": "f5415e61059a6179f9b7bb3e2727a9a274f3e8364ef16ccea69435560a104f98",
+  "source_run": 37607394740,
+  "artifact_id": 11477512333,
+  "max_probability": 0.6716506511456559,
+  "conclusion": "REJECTED_AS_UNUSABLE_ZERO_COVERAGE"
+}
