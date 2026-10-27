@@ -1,0 +1,48 @@
+name: Ensayo selectivo cronologico aislado
+on:
+  push:
+    branches: [research/expanded-replay-150]
+    paths:
+      - 'evaluation/selective_replay.py'
+      - 'evaluation/test_selective_replay.py'
+      - '.github/workflows/selective-replay.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - run: python3 -m unittest discover -s evaluation -p 'test_*.py'
+      - name: Recuperar decisiones reales archivadas sin repetir matriz150
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh run download 37607394740 --repo "$GITHUB_REPOSITORY" --name replay-XRP-30m --dir archived
+      - name: Comparar selector fijado sin consultar resultados
+        run: python3 evaluation/selective_replay.py --root archived/replay-output --output selective-output
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Compilar APK y pruebas Android sin cambiar predictor
+        run: bash ./gradlew --no-daemon testDebugUnitTest assembleDebug
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: selective-replay-${{ github.run_id }}
+          path: |
+            selective-output/
+            app/build/test-results/testDebugUnitTest/
+            app/build/outputs/apk/debug/*.apk
+          retention-days: 90
