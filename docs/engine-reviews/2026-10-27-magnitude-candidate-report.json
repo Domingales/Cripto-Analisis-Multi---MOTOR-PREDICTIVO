@@ -1,0 +1,92 @@
+{
+  "status": "EXPLORATORY_NEW_MAGNITUDE_CANDIDATE_NOT_CERTIFIED",
+  "decisions": 52638,
+  "candidate": {
+    "signals": 0,
+    "HIT": 0,
+    "APPROXIMATE": 0,
+    "LATE": 0,
+    "FAIL": 0,
+    "PENDING": 0,
+    "exact_rate": null
+  },
+  "baseline": {
+    "signals": 5735,
+    "HIT": 4415,
+    "APPROXIMATE": 537,
+    "LATE": 247,
+    "FAIL": 535,
+    "PENDING": 1,
+    "exact_rate": 0.7699686083013603
+  },
+  "candidate_first_transitive_episode": {
+    "signals": 0,
+    "HIT": 0,
+    "APPROXIMATE": 0,
+    "LATE": 0,
+    "FAIL": 0,
+    "PENDING": 0,
+    "exact_rate": null
+  },
+  "coverage": 0,
+  "max_estimated_probability": 0.8449390287857037,
+  "probability_quality_all_directions": {
+    "BUY": {
+      "n": 52631,
+      "brier": 0.1899886115810487
+    },
+    "SELL": {
+      "n": 52599,
+      "brier": 0.17484162257657856
+    }
+  },
+  "freeze": {
+    "model_sha256": "781f093ff8b87cb733fab9dfe906b124772ccd7be2afcef5ba09b21782d2a10e",
+    "threshold": 0.9,
+    "counts": {
+      "BUY": {
+        "TRAIN": 26345,
+        "CALIBRATION": 4128
+      },
+      "SELL": {
+        "TRAIN": 26328,
+        "CALIBRATION": 4128
+      }
+    },
+    "objective": "EXACT_HIT_MAGNITUDE_TIME_V1",
+    "features": "45 market-only as-of features plus shared original target",
+    "train_end": 1680307200000,
+    "calibration_end": 1688169600000,
+    "examination_start": 1696204800000,
+    "production_enabled": false,
+    "code_sha256": "0634718b8aca21c6d88bd84c8bb9acb91a868dc3506fe7b6246d87ec2f50c904"
+  },
+  "target_range_pct": [
+    0.15689089417555718,
+    12.207837948249654
+  ],
+  "first_examination": 1696206599999,
+  "last_examination": 1790953199999,
+  "certified_probability": null,
+  "winner": null,
+  "production_changed": false,
+  "limits": [
+    "Original range midpoint, identical target and entry for both engines; different directions possible.",
+    "Exact HIT only is positive training label; APPROXIMATE is separately reported.",
+    "Code and method designed after inspecting this historical period: exploratory, not pristine holdout.",
+    "Archived official history; absent historical news remain neutral.",
+    "Overlapping labels and episodes are dependent; no binomial certification.",
+    "No execution/cost simulation; a magnitude HIT can still lose at a stop.",
+    "No retraining or replacement of the active prospective models."
+  ],
+  "execution": {
+    "run_id": 40580602201,
+    "commit": "1f51814710499bab4c364ea592d0bb35d34e26cb",
+    "artifact_id": 12768818184,
+    "conclusion": "success",
+    "python_tests": 107,
+    "reconstructed_rows": 87971,
+    "excluded": 2
+  },
+  "conclusion": "CANDIDATE_NOT_USABLE_AT_REGISTERED_090_THRESHOLD_ZERO_SIGNALS"
+}
