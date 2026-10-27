@@ -1,0 +1,78 @@
+name: Candidato magnitud y plazo con replay cronologico
+on:
+  push:
+    branches: [research/expanded-replay-150]
+    paths:
+      - 'evaluation/magnitude_candidate.py'
+      - 'evaluation/test_magnitude_candidate.py'
+      - 'app/src/test/java/com/domingales/criptoanalisis/multi/evaluation/MagnitudeHistoricalTest.kt'
+      - '.github/workflows/magnitude-candidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - run: python3 -m unittest discover -s evaluation -p 'test_*.py'
+      - name: Recuperar datos oficiales sin repetir matriz150
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-XRPUSDT --dir replay-data
+          gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-BTCUSDT --dir btc-data
+          python3 evaluation/reconcile_official_history.py --data replay-data --symbol XRP
+          python3 evaluation/repair_native_context.py --data replay-data --symbol XRP
+          python3 evaluation/reconcile_official_history.py --data btc-data --symbol BTC
+          python3 evaluation/repair_native_context.py --data btc-data --symbol BTC --interval 4h
+          cp btc-data/BTCUSDT_4h.csv btc-data/BTCUSDT_4h_manifest.json replay-data/
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - run: python3 evaluation/prepare_expanded_adapter.py
+      - name: Reconstruir decisiones y rangos originales antes de etiquetas nuevas
+        run: bash ./gradlew --no-daemon testDebugUnitTest --tests com.domingales.criptoanalisis.multi.evaluation.ExpandedReplayTest
+        env:
+          EXPANDED_SYMBOL: XRP
+          EXPANDED_TF: 30m
+          EXPANDED_DATA_DIR: ${{ github.workspace }}/replay-data
+          EXPANDED_KOTLIN_DIR: ${{ github.workspace }}/replay-kotlin
+          JAVA_TOOL_OPTIONS: '-Xmx4g'
+      - name: Preparar variables sólo conocidas y contratos históricos
+        run: python3 evaluation/magnitude_candidate.py prepare --data replay-data --kotlin replay-kotlin --output magnitude-output
+      - name: Etiquetar rangos con ForecastCriterion de Android
+        run: bash ./gradlew --no-daemon testDebugUnitTest --tests com.domingales.criptoanalisis.multi.evaluation.MagnitudeHistoricalTest
+        env:
+          MAG_HISTORY_WORK: ${{ github.workspace }}/magnitude-output
+          MAG_HISTORY_DATA: ${{ github.workspace }}/replay-data
+          JAVA_TOOL_OPTIONS: '-Xmx4g'
+      - name: Entrenar calibrar congelar y examinar sin futuro
+        run: python3 evaluation/magnitude_candidate.py fit --output magnitude-output
+      - name: Compilar APK sin cambiar producción
+        run: bash ./gradlew --no-daemon testDebugUnitTest assembleDebug
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: magnitude-candidate-${{ github.run_id }}
+          path: |
+            magnitude-output/
+            replay-kotlin/
+            replay-data/*manifest.json
+            replay-data/*reconciliation.json
+            replay-data/*native_repair_sources.json
+            btc-data/*reconciliation.json
+            app/build/test-results/testDebugUnitTest/
+            app/build/outputs/apk/debug/*.apk
+          retention-days: 90

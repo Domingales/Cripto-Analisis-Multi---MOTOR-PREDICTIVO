@@ -80,6 +80,8 @@ class ExpandedReplayTest {
         val validTimes=all.mapValues { (k,c) -> valid(c,steps.getValue(k)) }
         val btcValid=valid(btc,steps.getValue("4h"))
         var excluded=0
+        val magnitudeTargets=File(out,"magnitude_targets.csv").printWriter()
+        magnitudeTargets.println("time,entry,forecastLowPct,forecastHighPct")
         File(out,"kotlin_decisions.csv").printWriter().use { decisions ->
             File(out,"kotlin_accepted.csv").printWriter().use { accepted ->
                 decisions.println("signalCloseTime,direction,entry,targetPct,confidence,probability,isSignal,regime,atrPct,volumeRatio,adx,rsi,mtfScore,comparableCases,rejectionReason")
@@ -95,6 +97,7 @@ class ExpandedReplayTest {
                         if(!ok) excluded++
                         ok
                     },onEvaluation={ a ->
+                        magnitudeTargets.println(listOf(a.candleCloseTime,a.indicators.price,a.forecastLowPct,a.forecastHighPct).joinToString(","))
                         decisions.println(listOf(a.candleCloseTime,a.direction,a.indicators.price,max(.45,a.indicators.atrPct*.55),
                             a.confidence,a.probability ?: "",a.isSignal,a.indicators.regime,a.indicators.atrPct,a.indicators.volumeRatio,
                             a.indicators.adx14,a.indicators.rsi14,a.mtf.alignmentScore,a.calibration.comparableCases).joinToString(",")+
@@ -105,5 +108,6 @@ class ExpandedReplayTest {
                 println("EXPANDED $symbol $tf evaluated=${result.evaluatedWindows} excluded=$excluded")
             }
         }
+        magnitudeTargets.close()
     }
 }
