@@ -1,13 +1,13 @@
 {
   "status": "COLLECTING_NO_CONFIRMED_IMPROVEMENT",
   "protocol_sha256": "998eab68bd77ad35dbf57676c1ec39c38d0a991436676d01de7fdfe6b3102ebd",
-  "updated_at": 1793213822119,
+  "updated_at": 1793229624162,
   "combinations": [
     {
       "symbol": "XRP",
       "timeframe": "30m",
       "engine": "original",
-      "decisions": 97,
+      "decisions": 98,
       "signals": 12,
       "pending": 0,
       "accuracy": 0.3333333333333333,
@@ -19,7 +19,7 @@
       "symbol": "XRP",
       "timeframe": "30m",
       "engine": "alternative",
-      "decisions": 97,
+      "decisions": 98,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -27,8 +27,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 92,
-        "brier": 0.2471816280432762,
+        "scored_resolved": 93,
+        "brier": 0.24735884829256602,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -68,9 +68,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 92,
-            "mean_probability": 0.5154292265257892,
-            "observed_hit_rate": 0.5978260869565217
+            "cases": 93,
+            "mean_probability": 0.515408281767991,
+            "observed_hit_rate": 0.5913978494623656
           },
           {
             "low": 0.6,
