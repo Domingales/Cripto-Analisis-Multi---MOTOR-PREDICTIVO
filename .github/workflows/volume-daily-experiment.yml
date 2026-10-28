@@ -1,0 +1,86 @@
+name: Experimento diario precio y volumen
+on:
+  push:
+    branches: [research/expanded-replay-150]
+    paths:
+      - 'evaluation/volume_daily.py'
+      - 'evaluation/test_volume_daily.py'
+      - 'app/src/test/java/com/domingales/criptoanalisis/multi/evaluation/VolumeDailyTest.kt'
+      - '.github/workflows/volume-daily-experiment.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        symbol: [BTC, ETH, XRP]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - run: python3 -m unittest discover -s evaluation -p 'test_*.py'
+      - name: Recuperar y reconciliar series oficiales
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SYMBOL: ${{ matrix.symbol }}
+        run: |
+          gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name "historico-ampliado-${SYMBOL}USDT" --dir replay-data
+          python3 evaluation/reconcile_official_history.py --data replay-data --symbol "$SYMBOL"
+          python3 evaluation/repair_native_context.py --data replay-data --symbol "$SYMBOL"
+          if [ "$SYMBOL" != BTC ]; then
+            gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-BTCUSDT --dir btc-data
+            python3 evaluation/reconcile_official_history.py --data btc-data --symbol BTC
+            python3 evaluation/repair_native_context.py --data btc-data --symbol BTC --interval 4h
+            cp btc-data/BTCUSDT_4h.csv btc-data/BTCUSDT_4h_manifest.json replay-data/
+          fi
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - run: python3 evaluation/prepare_expanded_adapter.py
+      - name: Reconstruir original diario con rangos y paridad sin futuro
+        run: bash ./gradlew --no-daemon testDebugUnitTest --tests com.domingales.criptoanalisis.multi.evaluation.ExpandedReplayTest
+        env:
+          EXPANDED_SYMBOL: ${{ matrix.symbol }}
+          EXPANDED_TF: 1d
+          EXPANDED_DATA_DIR: ${{ github.workspace }}/replay-data
+          EXPANDED_KOTLIN_DIR: ${{ github.workspace }}/replay-kotlin
+          JAVA_TOOL_OPTIONS: '-Xmx4g'
+      - name: Registrar firmas y rechazos antes de etiquetas
+        run: python3 evaluation/volume_daily.py prepare --data replay-data --kotlin replay-kotlin --output volume-output --symbol "${{ matrix.symbol }}"
+      - name: Etiquetar magnitud con Kotlin original
+        run: bash ./gradlew --no-daemon testDebugUnitTest --tests com.domingales.criptoanalisis.multi.evaluation.VolumeDailyTest
+        env:
+          VOLUME_WORK: ${{ github.workspace }}/volume-output
+          VOLUME_DATA: ${{ github.workspace }}/replay-data
+          VOLUME_SYMBOL: ${{ matrix.symbol }}
+          JAVA_TOOL_OPTIONS: '-Xmx4g'
+      - name: Comparar firmas original costes y episodios
+        run: python3 evaluation/volume_daily.py finish --data replay-data --output volume-output --symbol "${{ matrix.symbol }}"
+      - name: Compilar APK y ejecutar regresiones Android
+        run: bash ./gradlew --no-daemon testDebugUnitTest assembleDebug
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: volume-daily-${{ matrix.symbol }}-${{ github.run_id }}
+          path: |
+            volume-output/
+            replay-kotlin/
+            replay-data/*manifest.json
+            replay-data/*reconciliation.json
+            replay-data/*native_repair_sources.json
+            app/build/test-results/testDebugUnitTest/
+            app/build/outputs/apk/debug/*.apk
+          retention-days: 90
