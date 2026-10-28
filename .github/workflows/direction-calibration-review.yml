@@ -1,0 +1,52 @@
+name: Diagnostico calibracion BUY SELL sin examen
+on:
+  push:
+    branches: [research/expanded-replay-150]
+    paths:
+      - 'evaluation/direction_calibration_review.py'
+      - 'evaluation/test_direction_calibration_review.py'
+      - '.github/workflows/direction-calibration-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - run: python3 -m unittest discover -s evaluation -p 'test_*.py'
+      - name: Recuperar artefacto congelado y comprobar digest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/12768818184/zip" > magnitude-source.zip
+          python3 -c "from pathlib import Path;import hashlib;assert hashlib.sha256(Path('magnitude-source.zip').read_bytes()).hexdigest()=='4738051e6fd0538d1c45b3c0a409c55d03f9c62ff3ffd355a7540bfc303e0184'"
+          unzip -q magnitude-source.zip 'magnitude-output/candidate.pkl' 'magnitude-output/candidate-freeze.json' 'magnitude-output/features.jsonl' 'magnitude-output/labels.tsv' 'replay-kotlin/kotlin_decisions.csv' -d source
+      - name: Diagnosticar modelo sin fit y sin usar etiquetas del examen
+        run: python3 evaluation/direction_calibration_review.py --source source --output calibration-output
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - run: python3 evaluation/prepare_expanded_adapter.py
+      - name: Compilar APK y comprobar regresiones Android
+        run: bash ./gradlew --no-daemon testDebugUnitTest assembleDebug
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: direction-calibration-${{ github.run_id }}
+          path: |
+            calibration-output/
+            app/build/test-results/testDebugUnitTest/
+            app/build/outputs/apk/debug/*.apk
+          retention-days: 90
