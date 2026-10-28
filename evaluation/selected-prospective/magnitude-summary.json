@@ -1,11 +1,11 @@
 {
   "profile": "MAGNITUDE_TIME_V1",
-  "updated_at": 1793148608614,
+  "updated_at": 1793178695362,
   "combinations": [
     {
       "engine": "original",
-      "signals": 33,
-      "pending": 8,
+      "signals": 34,
+      "pending": 9,
       "HIT": 19,
       "APPROXIMATE": 4,
       "LATE": 0,
@@ -43,7 +43,7 @@
     }
   ],
   "status": "COLLECTING_NO_CONFIRMED_IMPROVEMENT",
-  "registered_decisions": 378,
+  "registered_decisions": 387,
   "limits": "New contracts only; different directions/selection frequencies. Shared target from original range. Rates are descriptive, not independent-trial evidence or profitability.",
   "winner": null
 }
