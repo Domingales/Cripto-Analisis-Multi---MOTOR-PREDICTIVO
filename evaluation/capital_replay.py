@@ -123,6 +123,9 @@ def run(data, source, output):
         raise ValueError('Missing accepted decisions')
     scenarios = {}
     for name, kwargs in [('main_25pct',{}), ('no_loss_25pct',dict(no_loss=True)),
+                         ('alerts_100pct',dict(fraction=1)),
+                         ('no_loss_100pct',dict(no_loss=True,fraction=1)),
+                         ('cost_stress_100pct',dict(fee=.002,slip=.002,fraction=1)),
                          ('cash',None), ('buy_hold_25pct',dict(buy_hold=True)),
                          ('buy_hold_100pct',dict(buy_hold=True, fraction=1)),
                          ('cost_stress_25pct',dict(fee=.002,slip=.002))]:
@@ -138,7 +141,8 @@ def run(data, source, output):
     report = dict(start=START,end=END,symbol='XRPUSDT',timeframe='30m',
                   unit='NORMALIZED_USDT_NOT_ACTUAL_EUR', predictor_sha256=digest,
                   prices_sha256=expected, scenarios=compact, production_changed=False,
-                  assumptions=dict(fee_per_side=FEE,slippage_per_side=SLIP,fraction=.25,
+                  assumptions=dict(fee_per_side=FEE,slippage_per_side=SLIP,default_fraction=.25,
+                    all_in_scenarios=['alerts_100pct','no_loss_100pct','cost_stress_100pct'],
                     execution_latency='first full 5m open strictly after alert plus processing margin',
                     minimum_order=5, leverage=False, margin=False, tax=False),
                   limits=['Not current date: verified archive ends2026-10-02.',

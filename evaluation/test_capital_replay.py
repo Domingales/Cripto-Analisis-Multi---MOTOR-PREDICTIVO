@@ -7,6 +7,22 @@ def bars(values):
 
 
 class CapitalReplayTest(unittest.TestCase):
+    def test_all_in_reinvests_entire_proceeds(self):
+        s=[dict(time=t*STEP-1,direction=side) for t,side in
+           [(1,'BUY'),(3,'SELL'),(5,'BUY'),(7,'SELL')]]
+        r=simulate(s,bars([10,10,10,11,11,10,10,11,11]),start=0,end=9*STEP,
+                   fraction=1,fee=0,slip=0)
+        self.assertAlmostEqual(r['final_marked_value'],121)
+        self.assertAlmostEqual(r['trades'][2]['units'],11)
+        self.assertEqual(r['trades'][0]['cash'],0)
+
+    def test_all_in_budget_includes_fee(self):
+        r=simulate([dict(time=STEP-1,direction='BUY')],bars([10]*4),start=0,
+                   end=4*STEP,fraction=1)
+        t=r['trades'][0]
+        self.assertAlmostEqual(t['fill']*t['units']+t['fee'],100)
+        self.assertAlmostEqual(r['cash'],0)
+
     def test_cash_without_alerts(self):
         self.assertEqual(simulate([],bars([10,20]),start=0,end=2*STEP)['final_marked_value'],100)
 
