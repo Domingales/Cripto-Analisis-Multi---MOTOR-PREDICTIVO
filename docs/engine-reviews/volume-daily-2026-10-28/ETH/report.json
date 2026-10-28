@@ -1,0 +1,1167 @@
+{
+  "status": "EXPLORATORY_VOLUME_DAILY_NOT_CERTIFIED",
+  "symbol": "ETH",
+  "manifest": {
+    "symbol": "ETH",
+    "rules": {
+      "UD50": {
+        "lookback": 50,
+        "threshold": 1,
+        "include_current": true
+      },
+      "PP10_VOLUME": {
+        "lookback": 10,
+        "strict_maximum": true,
+        "exclude_current": true
+      }
+    },
+    "rule_sha256": "af5bdc4493d8ea8134df88c45b198ef856fefc198045dacf9bcf8dc64f6230e8",
+    "daily_sha256": "ba72a092b039e683a2d6c740901b42ed75cb833127493cb1f29491578bc23080",
+    "code_sha256": "d354f66a1da969d55611e8022ccb040d60e2d79bc1fe721a03805ef333c04794",
+    "evaluator_sha256": "a966a47244c2a99a7bf5b1d433fc7f4ab9c627a39e8f59537682864c2be7dd7b",
+    "excluded_ranges": 0,
+    "decisions": 1096,
+    "daily_opportunities": 1096
+  },
+  "fine_sha256": "6ddceffa7a5ecdfe6971e3faa75b1f3fda3788e6cf4ea9c48ff8a17058c516c1",
+  "decisions": 1096,
+  "not_evaluable": {
+    "UD50": 0,
+    "PP10_VOLUME": 0
+  },
+  "target_range_pct": [
+    2.5301161983397034,
+    15.365489786070448
+  ],
+  "strategies": {
+    "BUY_ALL": {
+      "signals": 1096,
+      "HIT": 85,
+      "APPROXIMATE": 201,
+      "LATE": 233,
+      "FAIL": 573,
+      "PENDING": 4,
+      "exact_rate": 0.07783882783882784,
+      "exact_or_approximate_rate": 0.2619047619047619,
+      "mean_mfe": 6.016973993553163,
+      "mean_mae": -5.77204445985088,
+      "coverage": 1.0,
+      "first_transitive_episode": {
+        "signals": 1,
+        "HIT": 0,
+        "APPROXIMATE": 0,
+        "LATE": 0,
+        "FAIL": 1,
+        "PENDING": 0,
+        "exact_rate": 0.0,
+        "exact_or_approximate_rate": 0.0,
+        "mean_mfe": 0.4962704523580366,
+        "mean_mae": -3.3487728585178096
+      },
+      "by_year": {
+        "2023": {
+          "signals": 91,
+          "HIT": 10,
+          "APPROXIMATE": 24,
+          "LATE": 27,
+          "FAIL": 30,
+          "PENDING": 0,
+          "exact_rate": 0.10989010989010989,
+          "exact_or_approximate_rate": 0.37362637362637363,
+          "mean_mfe": 5.6486086464316285,
+          "mean_mae": -3.447345134968429
+        },
+        "2024": {
+          "signals": 366,
+          "HIT": 27,
+          "APPROXIMATE": 71,
+          "LATE": 80,
+          "FAIL": 188,
+          "PENDING": 0,
+          "exact_rate": 0.07377049180327869,
+          "exact_or_approximate_rate": 0.2677595628415301,
+          "mean_mfe": 6.044591524266809,
+          "mean_mae": -5.732872755939229
+        },
+        "2025": {
+          "signals": 365,
+          "HIT": 26,
+          "APPROXIMATE": 58,
+          "LATE": 77,
+          "FAIL": 204,
+          "PENDING": 0,
+          "exact_rate": 0.07123287671232877,
+          "exact_or_approximate_rate": 0.23013698630136986,
+          "mean_mfe": 6.635041187513667,
+          "mean_mae": -6.93662298017462
+        },
+        "2026": {
+          "signals": 274,
+          "HIT": 22,
+          "APPROXIMATE": 48,
+          "LATE": 49,
+          "FAIL": 151,
+          "PENDING": 4,
+          "exact_rate": 0.08148148148148149,
+          "exact_or_approximate_rate": 0.25925925925925924,
+          "mean_mfe": 5.279086053959301,
+          "mean_mae": -5.045085782032639
+        }
+      },
+      "by_regime": {
+        "BREAKOUT": {
+          "signals": 86,
+          "HIT": 15,
+          "APPROXIMATE": 19,
+          "LATE": 12,
+          "FAIL": 40,
+          "PENDING": 0,
+          "exact_rate": 0.1744186046511628,
+          "exact_or_approximate_rate": 0.3953488372093023,
+          "mean_mfe": 6.323124211570216,
+          "mean_mae": -7.02439737318149
+        },
+        "HIGH_VOLATILITY": {
+          "signals": 748,
+          "HIT": 45,
+          "APPROXIMATE": 127,
+          "LATE": 166,
+          "FAIL": 410,
+          "PENDING": 0,
+          "exact_rate": 0.06016042780748663,
+          "exact_or_approximate_rate": 0.22994652406417113,
+          "mean_mfe": 6.163129411124183,
+          "mean_mae": -6.089752652393454
+        },
+        "MIXED": {
+          "signals": 130,
+          "HIT": 11,
+          "APPROXIMATE": 30,
+          "LATE": 34,
+          "FAIL": 55,
+          "PENDING": 0,
+          "exact_rate": 0.08461538461538462,
+          "exact_or_approximate_rate": 0.3153846153846154,
+          "mean_mfe": 5.818908815152858,
+          "mean_mae": -3.9667828702380437
+        },
+        "POSSIBLE_REVERSAL": {
+          "signals": 28,
+          "HIT": 2,
+          "APPROXIMATE": 5,
+          "LATE": 3,
+          "FAIL": 18,
+          "PENDING": 0,
+          "exact_rate": 0.07142857142857142,
+          "exact_or_approximate_rate": 0.25,
+          "mean_mfe": 3.9283306161767975,
+          "mean_mae": -5.265572290000856
+        },
+        "RANGE": {
+          "signals": 9,
+          "HIT": 0,
+          "APPROXIMATE": 3,
+          "LATE": 2,
+          "FAIL": 4,
+          "PENDING": 0,
+          "exact_rate": 0.0,
+          "exact_or_approximate_rate": 0.3333333333333333,
+          "mean_mfe": 14.365228714561706,
+          "mean_mae": -1.0852935869631741
+        },
+        "TREND_DOWN": {
+          "signals": 29,
+          "HIT": 2,
+          "APPROXIMATE": 5,
+          "LATE": 5,
+          "FAIL": 17,
+          "PENDING": 0,
+          "exact_rate": 0.06896551724137931,
+          "exact_or_approximate_rate": 0.2413793103448276,
+          "mean_mfe": 3.9954284004554745,
+          "mean_mae": -6.333945381418511
+        },
+        "TREND_UP": {
+          "signals": 66,
+          "HIT": 10,
+          "APPROXIMATE": 12,
+          "LATE": 11,
+          "FAIL": 29,
+          "PENDING": 4,
+          "exact_rate": 0.16129032258064516,
+          "exact_or_approximate_rate": 0.3548387096774194,
+          "mean_mfe": 4.987698938655346,
+          "mean_mae": -4.702389610876947
+        }
+      },
+      "execution": {
+        "counts": {
+          "SIMULATED": 219,
+          "AMBIGUOUS": 0,
+          "PENDING": 1,
+          "NOT_EXECUTABLE": 0,
+          "OMITTED_ACTIVE_WINDOW": 876
+        },
+        "mean_return_low": 0.0016572415621878187,
+        "mean_return_high": 0.0016572415621878187,
+        "definitely_positive": 115,
+        "definitely_negative": 104,
+        "scope": "Mean per admitted fixed-notional case, not portfolio return or independent evidence"
+      }
+    },
+    "ORIGINAL_BUY": {
+      "signals": 104,
+      "HIT": 15,
+      "APPROXIMATE": 28,
+      "LATE": 14,
+      "FAIL": 47,
+      "PENDING": 0,
+      "exact_rate": 0.14423076923076922,
+      "exact_or_approximate_rate": 0.41346153846153844,
+      "mean_mfe": 6.1250560806246535,
+      "mean_mae": -5.01731696450653,
+      "coverage": 0.0948905109489051,
+      "first_transitive_episode": {
+        "signals": 26,
+        "HIT": 5,
+        "APPROXIMATE": 7,
+        "LATE": 3,
+        "FAIL": 11,
+        "PENDING": 0,
+        "exact_rate": 0.19230769230769232,
+        "exact_or_approximate_rate": 0.46153846153846156,
+        "mean_mfe": 6.565384922041598,
+        "mean_mae": -4.145412677238155
+      },
+      "by_year": {
+        "2023": {
+          "signals": 20,
+          "HIT": 3,
+          "APPROXIMATE": 4,
+          "LATE": 4,
+          "FAIL": 9,
+          "PENDING": 0,
+          "exact_rate": 0.15,
+          "exact_or_approximate_rate": 0.35,
+          "mean_mfe": 5.077915956782201,
+          "mean_mae": -4.578842403304032
+        },
+        "2024": {
+          "signals": 39,
+          "HIT": 7,
+          "APPROXIMATE": 17,
+          "LATE": 6,
+          "FAIL": 9,
+          "PENDING": 0,
+          "exact_rate": 0.1794871794871795,
+          "exact_or_approximate_rate": 0.6153846153846154,
+          "mean_mfe": 7.351775616233959,
+          "mean_mae": -4.022823638418664
+        },
+        "2025": {
+          "signals": 23,
+          "HIT": 4,
+          "APPROXIMATE": 6,
+          "LATE": 2,
+          "FAIL": 11,
+          "PENDING": 0,
+          "exact_rate": 0.17391304347826086,
+          "exact_or_approximate_rate": 0.43478260869565216,
+          "mean_mfe": 8.067110238141838,
+          "mean_mae": -6.924999883123929
+        },
+        "2026": {
+          "signals": 22,
+          "HIT": 1,
+          "APPROXIMATE": 1,
+          "LATE": 2,
+          "FAIL": 18,
+          "PENDING": 0,
+          "exact_rate": 0.045454545454545456,
+          "exact_or_approximate_rate": 0.09090909090909091,
+          "mean_mfe": 2.8720331244969617,
+          "mean_mae": -5.184499865110005
+        }
+      },
+      "by_regime": {
+        "BREAKOUT": {
+          "signals": 45,
+          "HIT": 10,
+          "APPROXIMATE": 13,
+          "LATE": 5,
+          "FAIL": 17,
+          "PENDING": 0,
+          "exact_rate": 0.2222222222222222,
+          "exact_or_approximate_rate": 0.5111111111111111,
+          "mean_mfe": 6.916869381183098,
+          "mean_mae": -4.611467211882068
+        },
+        "HIGH_VOLATILITY": {
+          "signals": 23,
+          "HIT": 1,
+          "APPROXIMATE": 6,
+          "LATE": 5,
+          "FAIL": 11,
+          "PENDING": 0,
+          "exact_rate": 0.043478260869565216,
+          "exact_or_approximate_rate": 0.30434782608695654,
+          "mean_mfe": 6.927314945087843,
+          "mean_mae": -6.132221995255088
+        },
+        "MIXED": {
+          "signals": 8,
+          "HIT": 0,
+          "APPROXIMATE": 3,
+          "LATE": 2,
+          "FAIL": 3,
+          "PENDING": 0,
+          "exact_rate": 0.0,
+          "exact_or_approximate_rate": 0.375,
+          "mean_mfe": 5.029507058868306,
+          "mean_mae": -5.634660621568405
+        },
+        "POSSIBLE_REVERSAL": {
+          "signals": 9,
+          "HIT": 1,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 8,
+          "PENDING": 0,
+          "exact_rate": 0.1111111111111111,
+          "exact_or_approximate_rate": 0.1111111111111111,
+          "mean_mfe": 2.6309070270251875,
+          "mean_mae": -5.132409771022247
+        },
+        "TREND_UP": {
+          "signals": 19,
+          "HIT": 3,
+          "APPROXIMATE": 6,
+          "LATE": 2,
+          "FAIL": 8,
+          "PENDING": 0,
+          "exact_rate": 0.15789473684210525,
+          "exact_or_approximate_rate": 0.47368421052631576,
+          "mean_mfe": 5.394960356870041,
+          "mean_mae": -4.314466366914289
+        }
+      },
+      "execution": {
+        "counts": {
+          "SIMULATED": 42,
+          "AMBIGUOUS": 0,
+          "PENDING": 0,
+          "NOT_EXECUTABLE": 0,
+          "OMITTED_ACTIVE_WINDOW": 62
+        },
+        "mean_return_low": 0.0017989790275573982,
+        "mean_return_high": 0.0017989790275573982,
+        "definitely_positive": 23,
+        "definitely_negative": 19,
+        "scope": "Mean per admitted fixed-notional case, not portfolio return or independent evidence"
+      }
+    },
+    "ORIGINAL_ALL": {
+      "signals": 163,
+      "HIT": 24,
+      "APPROXIMATE": 36,
+      "LATE": 29,
+      "FAIL": 74,
+      "PENDING": 0,
+      "exact_rate": 0.147239263803681,
+      "exact_or_approximate_rate": 0.36809815950920244,
+      "mean_mfe": 7.2397035964311,
+      "mean_mae": -4.94671472955323,
+      "coverage": 0.14872262773722628,
+      "first_transitive_episode": {
+        "signals": 42,
+        "HIT": 8,
+        "APPROXIMATE": 9,
+        "LATE": 4,
+        "FAIL": 21,
+        "PENDING": 0,
+        "exact_rate": 0.19047619047619047,
+        "exact_or_approximate_rate": 0.40476190476190477,
+        "mean_mfe": 7.269171830657611,
+        "mean_mae": -4.57143756503289
+      },
+      "by_year": {
+        "2023": {
+          "signals": 22,
+          "HIT": 3,
+          "APPROXIMATE": 4,
+          "LATE": 4,
+          "FAIL": 11,
+          "PENDING": 0,
+          "exact_rate": 0.13636363636363635,
+          "exact_or_approximate_rate": 0.3181818181818182,
+          "mean_mfe": 4.644034724669623,
+          "mean_mae": -4.7128543425251825
+        },
+        "2024": {
+          "signals": 56,
+          "HIT": 10,
+          "APPROXIMATE": 18,
+          "LATE": 10,
+          "FAIL": 18,
+          "PENDING": 0,
+          "exact_rate": 0.17857142857142858,
+          "exact_or_approximate_rate": 0.5,
+          "mean_mfe": 7.370421983018629,
+          "mean_mae": -4.509717795556201
+        },
+        "2025": {
+          "signals": 43,
+          "HIT": 7,
+          "APPROXIMATE": 8,
+          "LATE": 6,
+          "FAIL": 22,
+          "PENDING": 0,
+          "exact_rate": 0.16279069767441862,
+          "exact_or_approximate_rate": 0.3488372093023256,
+          "mean_mfe": 9.514995981838705,
+          "mean_mae": -6.170767609691095
+        },
+        "2026": {
+          "signals": 42,
+          "HIT": 4,
+          "APPROXIMATE": 6,
+          "LATE": 9,
+          "FAIL": 23,
+          "PENDING": 0,
+          "exact_rate": 0.09523809523809523,
+          "exact_or_approximate_rate": 0.23809523809523808,
+          "mean_mfe": 6.095582476367381,
+          "mean_mae": -4.398678609851385
+        }
+      },
+      "by_regime": {
+        "BREAKOUT": {
+          "signals": 68,
+          "HIT": 17,
+          "APPROXIMATE": 17,
+          "LATE": 8,
+          "FAIL": 26,
+          "PENDING": 0,
+          "exact_rate": 0.25,
+          "exact_or_approximate_rate": 0.5,
+          "mean_mfe": 8.450523618942483,
+          "mean_mae": -4.793734501440861
+        },
+        "HIGH_VOLATILITY": {
+          "signals": 49,
+          "HIT": 2,
+          "APPROXIMATE": 7,
+          "LATE": 14,
+          "FAIL": 26,
+          "PENDING": 0,
+          "exact_rate": 0.04081632653061224,
+          "exact_or_approximate_rate": 0.1836734693877551,
+          "mean_mfe": 7.484959314037442,
+          "mean_mae": -5.804773624324965
+        },
+        "MIXED": {
+          "signals": 9,
+          "HIT": 0,
+          "APPROXIMATE": 3,
+          "LATE": 2,
+          "FAIL": 4,
+          "PENDING": 0,
+          "exact_rate": 0.0,
+          "exact_or_approximate_rate": 0.3333333333333333,
+          "mean_mfe": 4.484024085698028,
+          "mean_mae": -5.728971674398313
+        },
+        "POSSIBLE_REVERSAL": {
+          "signals": 10,
+          "HIT": 1,
+          "APPROXIMATE": 1,
+          "LATE": 0,
+          "FAIL": 8,
+          "PENDING": 0,
+          "exact_rate": 0.1,
+          "exact_or_approximate_rate": 0.2,
+          "mean_mfe": 3.0305243336364507,
+          "mean_mae": -4.649960015949458
+        },
+        "TREND_DOWN": {
+          "signals": 8,
+          "HIT": 1,
+          "APPROXIMATE": 2,
+          "LATE": 3,
+          "FAIL": 2,
+          "PENDING": 0,
+          "exact_rate": 0.125,
+          "exact_or_approximate_rate": 0.375,
+          "mean_mfe": 8.188420856771058,
+          "mean_mae": -1.9839301283529776
+        },
+        "TREND_UP": {
+          "signals": 19,
+          "HIT": 3,
+          "APPROXIMATE": 6,
+          "LATE": 2,
+          "FAIL": 8,
+          "PENDING": 0,
+          "exact_rate": 0.15789473684210525,
+          "exact_or_approximate_rate": 0.47368421052631576,
+          "mean_mfe": 5.394960356870041,
+          "mean_mae": -4.314466366914289
+        }
+      },
+      "execution": {
+        "counts": {
+          "SIMULATED": 69,
+          "AMBIGUOUS": 0,
+          "PENDING": 0,
+          "NOT_EXECUTABLE": 0,
+          "OMITTED_ACTIVE_WINDOW": 94
+        },
+        "mean_return_low": 0.0024889920647142585,
+        "mean_return_high": 0.0024889920647142585,
+        "definitely_positive": 38,
+        "definitely_negative": 31,
+        "scope": "Mean per admitted fixed-notional case, not portfolio return or independent evidence"
+      }
+    },
+    "UD50": {
+      "signals": 575,
+      "HIT": 49,
+      "APPROXIMATE": 120,
+      "LATE": 121,
+      "FAIL": 281,
+      "PENDING": 4,
+      "exact_rate": 0.08581436077057793,
+      "exact_or_approximate_rate": 0.29597197898423816,
+      "mean_mfe": 5.9821558569619455,
+      "mean_mae": -5.0385553392656774,
+      "coverage": 0.5246350364963503,
+      "first_transitive_episode": {
+        "signals": 12,
+        "HIT": 1,
+        "APPROXIMATE": 1,
+        "LATE": 5,
+        "FAIL": 5,
+        "PENDING": 0,
+        "exact_rate": 0.08333333333333333,
+        "exact_or_approximate_rate": 0.16666666666666666,
+        "mean_mfe": 6.010701512593855,
+        "mean_mae": -4.662590764402643
+      },
+      "by_year": {
+        "2023": {
+          "signals": 72,
+          "HIT": 8,
+          "APPROXIMATE": 20,
+          "LATE": 22,
+          "FAIL": 22,
+          "PENDING": 0,
+          "exact_rate": 0.1111111111111111,
+          "exact_or_approximate_rate": 0.3888888888888889,
+          "mean_mfe": 5.844244927784883,
+          "mean_mae": -3.5772084804151154
+        },
+        "2024": {
+          "signals": 230,
+          "HIT": 19,
+          "APPROXIMATE": 50,
+          "LATE": 48,
+          "FAIL": 113,
+          "PENDING": 0,
+          "exact_rate": 0.08260869565217391,
+          "exact_or_approximate_rate": 0.3,
+          "mean_mfe": 6.191932289093755,
+          "mean_mae": -5.681493414458415
+        },
+        "2025": {
+          "signals": 135,
+          "HIT": 11,
+          "APPROXIMATE": 25,
+          "LATE": 23,
+          "FAIL": 76,
+          "PENDING": 0,
+          "exact_rate": 0.08148148148148149,
+          "exact_or_approximate_rate": 0.26666666666666666,
+          "mean_mfe": 6.399662249631627,
+          "mean_mae": -6.569059000623326
+        },
+        "2026": {
+          "signals": 138,
+          "HIT": 11,
+          "APPROXIMATE": 25,
+          "LATE": 28,
+          "FAIL": 70,
+          "PENDING": 4,
+          "exact_rate": 0.08208955223880597,
+          "exact_or_approximate_rate": 0.26865671641791045,
+          "mean_mfe": 5.29605183159981,
+          "mean_mae": -3.2322018773789236
+        }
+      },
+      "by_regime": {
+        "BREAKOUT": {
+          "signals": 49,
+          "HIT": 12,
+          "APPROXIMATE": 11,
+          "LATE": 5,
+          "FAIL": 21,
+          "PENDING": 0,
+          "exact_rate": 0.24489795918367346,
+          "exact_or_approximate_rate": 0.46938775510204084,
+          "mean_mfe": 6.607753344939753,
+          "mean_mae": -5.023486772884712
+        },
+        "HIGH_VOLATILITY": {
+          "signals": 331,
+          "HIT": 20,
+          "APPROXIMATE": 67,
+          "LATE": 78,
+          "FAIL": 166,
+          "PENDING": 0,
+          "exact_rate": 0.06042296072507553,
+          "exact_or_approximate_rate": 0.2628398791540785,
+          "mean_mfe": 6.460851754253131,
+          "mean_mae": -5.452050829503578
+        },
+        "MIXED": {
+          "signals": 95,
+          "HIT": 5,
+          "APPROXIMATE": 23,
+          "LATE": 23,
+          "FAIL": 44,
+          "PENDING": 0,
+          "exact_rate": 0.05263157894736842,
+          "exact_or_approximate_rate": 0.29473684210526313,
+          "mean_mfe": 4.426662557470063,
+          "mean_mae": -4.352669014599258
+        },
+        "POSSIBLE_REVERSAL": {
+          "signals": 19,
+          "HIT": 2,
+          "APPROXIMATE": 5,
+          "LATE": 2,
+          "FAIL": 10,
+          "PENDING": 0,
+          "exact_rate": 0.10526315789473684,
+          "exact_or_approximate_rate": 0.3684210526315789,
+          "mean_mfe": 4.884142792593886,
+          "mean_mae": -3.8150460611726853
+        },
+        "RANGE": {
+          "signals": 9,
+          "HIT": 0,
+          "APPROXIMATE": 3,
+          "LATE": 2,
+          "FAIL": 4,
+          "PENDING": 0,
+          "exact_rate": 0.0,
+          "exact_or_approximate_rate": 0.3333333333333333,
+          "mean_mfe": 14.365228714561706,
+          "mean_mae": -1.0852935869631741
+        },
+        "TREND_DOWN": {
+          "signals": 8,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 1,
+          "FAIL": 7,
+          "PENDING": 0,
+          "exact_rate": 0.0,
+          "exact_or_approximate_rate": 0.0,
+          "mean_mfe": 2.570955590976754,
+          "mean_mae": -5.2354164198602895
+        },
+        "TREND_UP": {
+          "signals": 64,
+          "HIT": 10,
+          "APPROXIMATE": 11,
+          "LATE": 10,
+          "FAIL": 29,
+          "PENDING": 4,
+          "exact_rate": 0.16666666666666666,
+          "exact_or_approximate_rate": 0.35,
+          "mean_mfe": 4.909865843991792,
+          "mean_mae": -4.824206850780747
+        }
+      },
+      "execution": {
+        "counts": {
+          "SIMULATED": 123,
+          "AMBIGUOUS": 0,
+          "PENDING": 1,
+          "NOT_EXECUTABLE": 0,
+          "OMITTED_ACTIVE_WINDOW": 451
+        },
+        "mean_return_low": 0.002087397191789719,
+        "mean_return_high": 0.002087397191789719,
+        "definitely_positive": 68,
+        "definitely_negative": 55,
+        "scope": "Mean per admitted fixed-notional case, not portfolio return or independent evidence"
+      }
+    },
+    "PP10_VOLUME": {
+      "signals": 100,
+      "HIT": 14,
+      "APPROXIMATE": 17,
+      "LATE": 19,
+      "FAIL": 50,
+      "PENDING": 0,
+      "exact_rate": 0.14,
+      "exact_or_approximate_rate": 0.31,
+      "mean_mfe": 6.082356750696267,
+      "mean_mae": -5.1922033699101044,
+      "coverage": 0.09124087591240876,
+      "first_transitive_episode": {
+        "signals": 44,
+        "HIT": 5,
+        "APPROXIMATE": 4,
+        "LATE": 9,
+        "FAIL": 26,
+        "PENDING": 0,
+        "exact_rate": 0.11363636363636363,
+        "exact_or_approximate_rate": 0.20454545454545456,
+        "mean_mfe": 5.125309002019951,
+        "mean_mae": -6.106523094087055
+      },
+      "by_year": {
+        "2023": {
+          "signals": 15,
+          "HIT": 2,
+          "APPROXIMATE": 3,
+          "LATE": 5,
+          "FAIL": 5,
+          "PENDING": 0,
+          "exact_rate": 0.13333333333333333,
+          "exact_or_approximate_rate": 0.3333333333333333,
+          "mean_mfe": 5.008423955227331,
+          "mean_mae": -3.6938727775728997
+        },
+        "2024": {
+          "signals": 31,
+          "HIT": 4,
+          "APPROXIMATE": 9,
+          "LATE": 7,
+          "FAIL": 11,
+          "PENDING": 0,
+          "exact_rate": 0.12903225806451613,
+          "exact_or_approximate_rate": 0.41935483870967744,
+          "mean_mfe": 7.225246454113969,
+          "mean_mae": -4.854898061525974
+        },
+        "2025": {
+          "signals": 27,
+          "HIT": 6,
+          "APPROXIMATE": 3,
+          "LATE": 3,
+          "FAIL": 15,
+          "PENDING": 0,
+          "exact_rate": 0.2222222222222222,
+          "exact_or_approximate_rate": 0.3333333333333333,
+          "mean_mfe": 7.503463030372599,
+          "mean_mae": -5.901983183688616
+        },
+        "2026": {
+          "signals": 27,
+          "HIT": 2,
+          "APPROXIMATE": 2,
+          "LATE": 4,
+          "FAIL": 19,
+          "PENDING": 0,
+          "exact_rate": 0.07407407407407407,
+          "exact_or_approximate_rate": 0.14814814814814814,
+          "mean_mfe": 3.945673105319394,
+          "mean_mae": -5.702105905945149
+        }
+      },
+      "by_regime": {
+        "BREAKOUT": {
+          "signals": 43,
+          "HIT": 10,
+          "APPROXIMATE": 11,
+          "LATE": 5,
+          "FAIL": 17,
+          "PENDING": 0,
+          "exact_rate": 0.23255813953488372,
+          "exact_or_approximate_rate": 0.4883720930232558,
+          "mean_mfe": 7.028382891288845,
+          "mean_mae": -4.62764955229118
+        },
+        "HIGH_VOLATILITY": {
+          "signals": 38,
+          "HIT": 2,
+          "APPROXIMATE": 3,
+          "LATE": 7,
+          "FAIL": 26,
+          "PENDING": 0,
+          "exact_rate": 0.05263157894736842,
+          "exact_or_approximate_rate": 0.13157894736842105,
+          "mean_mfe": 5.333535404191733,
+          "mean_mae": -5.8766865913907615
+        },
+        "MIXED": {
+          "signals": 8,
+          "HIT": 1,
+          "APPROXIMATE": 2,
+          "LATE": 4,
+          "FAIL": 1,
+          "PENDING": 0,
+          "exact_rate": 0.125,
+          "exact_or_approximate_rate": 0.375,
+          "mean_mfe": 7.220878065345804,
+          "mean_mae": -3.5636960472329835
+        },
+        "POSSIBLE_REVERSAL": {
+          "signals": 5,
+          "HIT": 1,
+          "APPROXIMATE": 1,
+          "LATE": 0,
+          "FAIL": 3,
+          "PENDING": 0,
+          "exact_rate": 0.2,
+          "exact_or_approximate_rate": 0.4,
+          "mean_mfe": 3.6474307852546657,
+          "mean_mae": -3.098344915507626
+        },
+        "TREND_UP": {
+          "signals": 6,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 3,
+          "FAIL": 3,
+          "PENDING": 0,
+          "exact_rate": 0.0,
+          "exact_or_approximate_rate": 0.0,
+          "mean_mfe": 4.556114489313472,
+          "mean_mae": -8.819337135706437
+        }
+      },
+      "execution": {
+        "counts": {
+          "SIMULATED": 58,
+          "AMBIGUOUS": 0,
+          "PENDING": 0,
+          "NOT_EXECUTABLE": 0,
+          "OMITTED_ACTIVE_WINDOW": 42
+        },
+        "mean_return_low": -0.009571441837958716,
+        "mean_return_high": -0.009571441837958716,
+        "definitely_positive": 25,
+        "definitely_negative": 33,
+        "scope": "Mean per admitted fixed-notional case, not portfolio return or independent evidence"
+      }
+    },
+    "ORIGINAL_BUY_AND_UD50": {
+      "signals": 89,
+      "HIT": 14,
+      "APPROXIMATE": 25,
+      "LATE": 12,
+      "FAIL": 38,
+      "PENDING": 0,
+      "exact_rate": 0.15730337078651685,
+      "exact_or_approximate_rate": 0.43820224719101125,
+      "mean_mfe": 6.520180941135246,
+      "mean_mae": -4.856113133420378,
+      "coverage": 0.0812043795620438,
+      "first_transitive_episode": {
+        "signals": 24,
+        "HIT": 5,
+        "APPROXIMATE": 6,
+        "LATE": 4,
+        "FAIL": 9,
+        "PENDING": 0,
+        "exact_rate": 0.20833333333333334,
+        "exact_or_approximate_rate": 0.4583333333333333,
+        "mean_mfe": 6.579083094452263,
+        "mean_mae": -4.151178365048107
+      },
+      "by_year": {
+        "2023": {
+          "signals": 20,
+          "HIT": 3,
+          "APPROXIMATE": 4,
+          "LATE": 4,
+          "FAIL": 9,
+          "PENDING": 0,
+          "exact_rate": 0.15,
+          "exact_or_approximate_rate": 0.35,
+          "mean_mfe": 5.077915956782201,
+          "mean_mae": -4.578842403304032
+        },
+        "2024": {
+          "signals": 31,
+          "HIT": 6,
+          "APPROXIMATE": 14,
+          "LATE": 5,
+          "FAIL": 6,
+          "PENDING": 0,
+          "exact_rate": 0.1935483870967742,
+          "exact_or_approximate_rate": 0.6451612903225806,
+          "mean_mfe": 8.08629659229589,
+          "mean_mae": -3.7794443842769585
+        },
+        "2025": {
+          "signals": 21,
+          "HIT": 4,
+          "APPROXIMATE": 6,
+          "LATE": 1,
+          "FAIL": 10,
+          "PENDING": 0,
+          "exact_rate": 0.19047619047619047,
+          "exact_or_approximate_rate": 0.47619047619047616,
+          "mean_mfe": 8.338533907759368,
+          "mean_mae": -7.086617488817207
+        },
+        "2026": {
+          "signals": 17,
+          "HIT": 1,
+          "APPROXIMATE": 1,
+          "LATE": 2,
+          "FAIL": 13,
+          "PENDING": 0,
+          "exact_rate": 0.058823529411764705,
+          "exact_or_approximate_rate": 0.11764705882352941,
+          "mean_mfe": 3.1149046000749068,
+          "mean_mae": -4.390322213563879
+        }
+      },
+      "by_regime": {
+        "BREAKOUT": {
+          "signals": 40,
+          "HIT": 10,
+          "APPROXIMATE": 11,
+          "LATE": 4,
+          "FAIL": 15,
+          "PENDING": 0,
+          "exact_rate": 0.25,
+          "exact_or_approximate_rate": 0.525,
+          "mean_mfe": 7.153965584894806,
+          "mean_mae": -4.4902671497555815
+        },
+        "HIGH_VOLATILITY": {
+          "signals": 18,
+          "HIT": 0,
+          "APPROXIMATE": 5,
+          "LATE": 4,
+          "FAIL": 9,
+          "PENDING": 0,
+          "exact_rate": 0.0,
+          "exact_or_approximate_rate": 0.2777777777777778,
+          "mean_mfe": 7.527900690023456,
+          "mean_mae": -6.9346117283094015
+        },
+        "MIXED": {
+          "signals": 6,
+          "HIT": 0,
+          "APPROXIMATE": 3,
+          "LATE": 2,
+          "FAIL": 1,
+          "PENDING": 0,
+          "exact_rate": 0.0,
+          "exact_or_approximate_rate": 0.5,
+          "mean_mfe": 6.428840742670772,
+          "mean_mae": -3.620331704386041
+        },
+        "POSSIBLE_REVERSAL": {
+          "signals": 6,
+          "HIT": 1,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 5,
+          "PENDING": 0,
+          "exact_rate": 0.16666666666666666,
+          "exact_or_approximate_rate": 0.16666666666666666,
+          "mean_mfe": 2.9263294513778306,
+          "mean_mae": -4.0105867628222365
+        },
+        "TREND_UP": {
+          "signals": 19,
+          "HIT": 3,
+          "APPROXIMATE": 6,
+          "LATE": 2,
+          "FAIL": 8,
+          "PENDING": 0,
+          "exact_rate": 0.15789473684210525,
+          "exact_or_approximate_rate": 0.47368421052631576,
+          "mean_mfe": 5.394960356870041,
+          "mean_mae": -4.314466366914289
+        }
+      },
+      "execution": {
+        "counts": {
+          "SIMULATED": 37,
+          "AMBIGUOUS": 0,
+          "PENDING": 0,
+          "NOT_EXECUTABLE": 0,
+          "OMITTED_ACTIVE_WINDOW": 52
+        },
+        "mean_return_low": 0.0036970497318473744,
+        "mean_return_high": 0.0036970497318473744,
+        "definitely_positive": 21,
+        "definitely_negative": 16,
+        "scope": "Mean per admitted fixed-notional case, not portfolio return or independent evidence"
+      }
+    },
+    "ORIGINAL_BUY_AND_PP10_VOLUME": {
+      "signals": 43,
+      "HIT": 8,
+      "APPROXIMATE": 11,
+      "LATE": 8,
+      "FAIL": 16,
+      "PENDING": 0,
+      "exact_rate": 0.18604651162790697,
+      "exact_or_approximate_rate": 0.4418604651162791,
+      "mean_mfe": 6.56114656717584,
+      "mean_mae": -4.417634685591456,
+      "coverage": 0.03923357664233577,
+      "first_transitive_episode": {
+        "signals": 23,
+        "HIT": 4,
+        "APPROXIMATE": 4,
+        "LATE": 6,
+        "FAIL": 9,
+        "PENDING": 0,
+        "exact_rate": 0.17391304347826086,
+        "exact_or_approximate_rate": 0.34782608695652173,
+        "mean_mfe": 6.4152380274980585,
+        "mean_mae": -4.363069052469861
+      },
+      "by_year": {
+        "2023": {
+          "signals": 7,
+          "HIT": 1,
+          "APPROXIMATE": 1,
+          "LATE": 2,
+          "FAIL": 3,
+          "PENDING": 0,
+          "exact_rate": 0.14285714285714285,
+          "exact_or_approximate_rate": 0.2857142857142857,
+          "mean_mfe": 5.159124954294997,
+          "mean_mae": -4.478447431081576
+        },
+        "2024": {
+          "signals": 16,
+          "HIT": 3,
+          "APPROXIMATE": 8,
+          "LATE": 4,
+          "FAIL": 1,
+          "PENDING": 0,
+          "exact_rate": 0.1875,
+          "exact_or_approximate_rate": 0.6875,
+          "mean_mfe": 7.98348640448978,
+          "mean_mae": -4.114576858422609
+        },
+        "2025": {
+          "signals": 12,
+          "HIT": 3,
+          "APPROXIMATE": 2,
+          "LATE": 1,
+          "FAIL": 6,
+          "PENDING": 0,
+          "exact_rate": 0.25,
+          "exact_or_approximate_rate": 0.4166666666666667,
+          "mean_mfe": 7.333363297275112,
+          "mean_mae": -4.996917362558034
+        },
+        "2026": {
+          "signals": 8,
+          "HIT": 1,
+          "APPROXIMATE": 0,
+          "LATE": 1,
+          "FAIL": 6,
+          "PENDING": 0,
+          "exact_rate": 0.125,
+          "exact_or_approximate_rate": 0.125,
+          "mean_mfe": 3.7849107086697957,
+          "mean_mae": -4.10161517217543
+        }
+      },
+      "by_regime": {
+        "BREAKOUT": {
+          "signals": 35,
+          "HIT": 8,
+          "APPROXIMATE": 11,
+          "LATE": 4,
+          "FAIL": 12,
+          "PENDING": 0,
+          "exact_rate": 0.22857142857142856,
+          "exact_or_approximate_rate": 0.5428571428571428,
+          "mean_mfe": 7.019497150691971,
+          "mean_mae": -4.375327211811118
+        },
+        "HIGH_VOLATILITY": {
+          "signals": 3,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 2,
+          "FAIL": 1,
+          "PENDING": 0,
+          "exact_rate": 0.0,
+          "exact_or_approximate_rate": 0.0,
+          "mean_mfe": 4.544802488725024,
+          "mean_mae": -4.142823162669403
+        },
+        "MIXED": {
+          "signals": 1,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 1,
+          "PENDING": 0,
+          "exact_rate": 0.0,
+          "exact_or_approximate_rate": 0.0,
+          "mean_mfe": 0.15247623122402937,
+          "mean_mae": -11.341819549692607
+        },
+        "POSSIBLE_REVERSAL": {
+          "signals": 1,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 1,
+          "PENDING": 0,
+          "exact_rate": 0.0,
+          "exact_or_approximate_rate": 0.0,
+          "mean_mfe": 1.930998036360998,
+          "mean_mae": -4.248506546326855
+        },
+        "TREND_UP": {
+          "signals": 3,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 2,
+          "FAIL": 1,
+          "PENDING": 0,
+          "exact_rate": 0.0,
+          "exact_or_approximate_rate": 0.0,
+          "mean_mfe": 6.909673460194024,
+          "mean_mae": -2.9343478276719392
+        }
+      },
+      "execution": {
+        "counts": {
+          "SIMULATED": 25,
+          "AMBIGUOUS": 0,
+          "PENDING": 0,
+          "NOT_EXECUTABLE": 0,
+          "OMITTED_ACTIVE_WINDOW": 18
+        },
+        "mean_return_low": -0.0027146737355148586,
+        "mean_return_high": -0.0027146737355148586,
+        "definitely_positive": 12,
+        "definitely_negative": 13,
+        "scope": "Mean per admitted fixed-notional case, not portfolio return or independent evidence"
+      }
+    }
+  },
+  "winner": null,
+  "certified_probability": null,
+  "production_changed": false,
+  "limits": [
+    "Two primary BUY volume signatures, three prespecified assets: six comparisons; no winner from raw maxima.",
+    "UD50 is not capital inflow. PP10_VOLUME is not the full pocket pivot method or institutional detection.",
+    "Original range and targets unchanged. Exact/approximate/late/fail separate, not operational V2.",
+    "Historical code reconstruction with neutral absent news; previously inspected history is exploratory.",
+    "Transitive episodes and nonoverlap cost admissions do not establish independence.",
+    "Costs hypothetical; symmetrical stop is not original invalidation. No leverage; shorts lack borrowing costs.",
+    "No probability score produced: calibration/Brier not applicable. No 90% claim."
+  ]
+}
