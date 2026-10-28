@@ -1,0 +1,21 @@
+{
+  "model_sha256": "781f093ff8b87cb733fab9dfe906b124772ccd7be2afcef5ba09b21782d2a10e",
+  "threshold": 0.9,
+  "counts": {
+    "BUY": {
+      "TRAIN": 26345,
+      "CALIBRATION": 4128
+    },
+    "SELL": {
+      "TRAIN": 26328,
+      "CALIBRATION": 4128
+    }
+  },
+  "objective": "EXACT_HIT_MAGNITUDE_TIME_V1",
+  "features": "45 market-only as-of features plus shared original target",
+  "train_end": 1680307200000,
+  "calibration_end": 1688169600000,
+  "examination_start": 1696204800000,
+  "production_enabled": false,
+  "code_sha256": "0634718b8aca21c6d88bd84c8bb9acb91a868dc3506fe7b6246d87ec2f50c904"
+}
