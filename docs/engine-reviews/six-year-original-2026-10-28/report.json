@@ -1,0 +1,522 @@
+{
+  "scope": "ORIGINAL_XRP_30m_ONLY",
+  "production_changed": false,
+  "predictor_sha256": "f8fda6db64703e3b7fbfd1edc25aa8f20a544ed2a4b6a965970c9ec6e691d5e7",
+  "criterion_sha256": "a966a47244c2a99a7bf5b1d433fc7f4ab9c627a39e8f59537682864c2be7dd7b",
+  "trained_or_recalibrated": false,
+  "reused_chronological_source_run": 40580602201,
+  "criterion": "MAGNITUDE_TIME_V1",
+  "overall": {
+    "signals": 9548,
+    "resolved": 9538,
+    "HIT": 7206,
+    "APPROXIMATE": 975,
+    "LATE": 483,
+    "FAIL": 874,
+    "PENDING": 10,
+    "exact_rate": 0.7555042985950933,
+    "exact_or_approximate_rate": 0.8577269867896834
+  },
+  "by_year": {
+    "2020": {
+      "evaluable_decisions": 0,
+      "signals": 0,
+      "resolved": 0,
+      "HIT": 0,
+      "APPROXIMATE": 0,
+      "LATE": 0,
+      "FAIL": 0,
+      "PENDING": 0,
+      "exact_rate": null,
+      "exact_or_approximate_rate": null
+    },
+    "2021": {
+      "evaluable_decisions": 4965,
+      "signals": 585,
+      "resolved": 583,
+      "HIT": 458,
+      "APPROXIMATE": 58,
+      "LATE": 28,
+      "FAIL": 39,
+      "PENDING": 2,
+      "exact_rate": 0.7855917667238422,
+      "exact_or_approximate_rate": 0.8850771869639794
+    },
+    "2022": {
+      "evaluable_decisions": 17520,
+      "signals": 1901,
+      "resolved": 1901,
+      "HIT": 1392,
+      "APPROXIMATE": 218,
+      "LATE": 106,
+      "FAIL": 185,
+      "PENDING": 0,
+      "exact_rate": 0.7322461862177801,
+      "exact_or_approximate_rate": 0.8469226722777485
+    },
+    "2023": {
+      "evaluable_decisions": 17216,
+      "signals": 1772,
+      "resolved": 1765,
+      "HIT": 1273,
+      "APPROXIMATE": 208,
+      "LATE": 130,
+      "FAIL": 154,
+      "PENDING": 7,
+      "exact_rate": 0.7212464589235128,
+      "exact_or_approximate_rate": 0.8390934844192635
+    },
+    "2024": {
+      "evaluable_decisions": 17568,
+      "signals": 1950,
+      "resolved": 1950,
+      "HIT": 1487,
+      "APPROXIMATE": 178,
+      "LATE": 102,
+      "FAIL": 183,
+      "PENDING": 0,
+      "exact_rate": 0.7625641025641026,
+      "exact_or_approximate_rate": 0.8538461538461538
+    },
+    "2025": {
+      "evaluable_decisions": 17520,
+      "signals": 1883,
+      "resolved": 1883,
+      "HIT": 1453,
+      "APPROXIMATE": 178,
+      "LATE": 63,
+      "FAIL": 189,
+      "PENDING": 0,
+      "exact_rate": 0.7716409984067977,
+      "exact_or_approximate_rate": 0.8661710037174721
+    },
+    "2026": {
+      "evaluable_decisions": 13182,
+      "signals": 1457,
+      "resolved": 1456,
+      "HIT": 1143,
+      "APPROXIMATE": 135,
+      "LATE": 54,
+      "FAIL": 124,
+      "PENDING": 1,
+      "exact_rate": 0.7850274725274725,
+      "exact_or_approximate_rate": 0.8777472527472527
+    }
+  },
+  "by_direction": {
+    "BUY": {
+      "signals": 3811,
+      "resolved": 3801,
+      "HIT": 2785,
+      "APPROXIMATE": 422,
+      "LATE": 186,
+      "FAIL": 408,
+      "PENDING": 10,
+      "exact_rate": 0.7327019205472244,
+      "exact_or_approximate_rate": 0.8437253354380426
+    },
+    "SELL": {
+      "signals": 5737,
+      "resolved": 5737,
+      "HIT": 4421,
+      "APPROXIMATE": 553,
+      "LATE": 297,
+      "FAIL": 466,
+      "PENDING": 0,
+      "exact_rate": 0.7706118180233572,
+      "exact_or_approximate_rate": 0.8670036604497124
+    }
+  },
+  "by_phase": {
+    "CALIBRATION": {
+      "signals": 409,
+      "resolved": 409,
+      "HIT": 288,
+      "APPROXIMATE": 49,
+      "LATE": 41,
+      "FAIL": 31,
+      "PENDING": 0,
+      "exact_rate": 0.7041564792176039,
+      "exact_or_approximate_rate": 0.823960880195599
+    },
+    "DEVELOPMENT_CHECK": {
+      "signals": 427,
+      "resolved": 427,
+      "HIT": 322,
+      "APPROXIMATE": 39,
+      "LATE": 23,
+      "FAIL": 43,
+      "PENDING": 0,
+      "exact_rate": 0.7540983606557377,
+      "exact_or_approximate_rate": 0.8454332552693209
+    },
+    "EMBARGO": {
+      "signals": 79,
+      "resolved": 79,
+      "HIT": 58,
+      "APPROXIMATE": 13,
+      "LATE": 1,
+      "FAIL": 7,
+      "PENDING": 0,
+      "exact_rate": 0.7341772151898734,
+      "exact_or_approximate_rate": 0.8987341772151899
+    },
+    "EXAMINATION": {
+      "signals": 5735,
+      "resolved": 5734,
+      "HIT": 4415,
+      "APPROXIMATE": 537,
+      "LATE": 247,
+      "FAIL": 535,
+      "PENDING": 1,
+      "exact_rate": 0.7699686083013603,
+      "exact_or_approximate_rate": 0.8636205092431113
+    },
+    "TRAIN": {
+      "signals": 2898,
+      "resolved": 2889,
+      "HIT": 2123,
+      "APPROXIMATE": 337,
+      "LATE": 171,
+      "FAIL": 258,
+      "PENDING": 9,
+      "exact_rate": 0.7348563516787816,
+      "exact_or_approximate_rate": 0.8515057113187954
+    }
+  },
+  "first_transitive_episode_by_direction": {
+    "signals": 123,
+    "resolved": 123,
+    "HIT": 94,
+    "APPROXIMATE": 10,
+    "LATE": 5,
+    "FAIL": 14,
+    "PENDING": 0,
+    "exact_rate": 0.7642276422764228,
+    "exact_or_approximate_rate": 0.8455284552845529
+  },
+  "first_evaluable_time": 1623657599999,
+  "last_evaluable_time": 1790953199999,
+  "archived_data_start": 1601596800000,
+  "archived_data_end": 1790953200000,
+  "accepted_without_features": 0,
+  "inputs": {
+    "XRPUSDT_15m": {
+      "symbol": "XRPUSDT",
+      "interval": "15m",
+      "start": 1601596800000,
+      "end": 1790953200000,
+      "first": 1601596800000,
+      "last": 1790952300000,
+      "count": 210298,
+      "missing_ranges": [
+        [
+          1606716000000,
+          1606719600000
+        ],
+        [
+          1608559200000,
+          1608573600000
+        ],
+        [
+          1608861600000,
+          1608865200000
+        ],
+        [
+          1613014200000,
+          1613019600000
+        ],
+        [
+          1614996000000,
+          1615001400000
+        ],
+        [
+          1618884000000,
+          1618893000000
+        ],
+        [
+          1619323200000,
+          1619340300000
+        ],
+        [
+          1628819100000,
+          1628836200000
+        ],
+        [
+          1632898800000,
+          1632906000000
+        ],
+        [
+          1679661000000,
+          1679666400000
+        ]
+      ],
+      "missing_candles": 98,
+      "csv_sha256": "cca0d1ab981eb46bbb4904b6d5a3770890fa2b9d321c30ee88d701350ddf4346",
+      "origin": {
+        "type": "COMPLETE_5M_BUCKETS_WITH_VERIFIED_NATIVE_GAP_REPAIR",
+        "original_derived_sha256": "cca0d1ab981eb46bbb4904b6d5a3770890fa2b9d321c30ee88d701350ddf4346",
+        "repair_sources_sha256": "732b33bbb0776a64cdfd64e076bef28d6fa3aaf0fc552ff8fabc48735891c819"
+      },
+      "status": "GAPS_OR_SHORTER_HISTORY_REQUIRES_REVIEW",
+      "native_repair_count": 0,
+      "native_volume_discrepancy_count": 6,
+      "verified_carry_price_convention_count": 0,
+      "verified_source_reconciliation_count": 0
+    },
+    "XRPUSDT_30m": {
+      "symbol": "XRPUSDT",
+      "interval": "30m",
+      "start": 1601596800000,
+      "end": 1790953200000,
+      "first": 1601596800000,
+      "last": 1790951400000,
+      "count": 105149,
+      "missing_ranges": [
+        [
+          1606716000000,
+          1606719600000
+        ],
+        [
+          1608559200000,
+          1608573600000
+        ],
+        [
+          1608861600000,
+          1608865200000
+        ],
+        [
+          1613014200000,
+          1613019600000
+        ],
+        [
+          1614996000000,
+          1615001400000
+        ],
+        [
+          1618884000000,
+          1618893000000
+        ],
+        [
+          1619323200000,
+          1619339400000
+        ],
+        [
+          1628818200000,
+          1628836200000
+        ],
+        [
+          1632898800000,
+          1632906000000
+        ],
+        [
+          1679661000000,
+          1679666400000
+        ]
+      ],
+      "missing_candles": 49,
+      "csv_sha256": "4ff496bc9c32aed66cd6e112d6b3dba5efe863283fa95171f55b6c6246f8aa1f",
+      "origin": {
+        "type": "COMPLETE_5M_BUCKETS_WITH_VERIFIED_NATIVE_GAP_REPAIR",
+        "original_derived_sha256": "c0ad0b51eb2cbdaa33700027b810d066af86101257ce2adb34340c28e18bf3b0",
+        "repair_sources_sha256": "cf3004abd44cd3a4ffdc21285e79b104835a5c1a6c88c8dab735e3c60ad10126"
+      },
+      "status": "GAPS_OR_SHORTER_HISTORY_REQUIRES_REVIEW",
+      "native_repair_count": 1,
+      "native_volume_discrepancy_count": 4,
+      "verified_carry_price_convention_count": 0,
+      "verified_source_reconciliation_count": 0
+    },
+    "XRPUSDT_4h": {
+      "symbol": "XRPUSDT",
+      "interval": "4h",
+      "start": 1601596800000,
+      "end": 1790953200000,
+      "first": 1601596800000,
+      "last": 1790928000000,
+      "count": 13143,
+      "missing_ranges": [
+        [
+          1608552000000,
+          1608566400000
+        ],
+        [
+          1613001600000,
+          1613016000000
+        ],
+        [
+          1618876800000,
+          1618891200000
+        ],
+        [
+          1619323200000,
+          1619337600000
+        ],
+        [
+          1628812800000,
+          1628827200000
+        ],
+        [
+          1632888000000,
+          1632902400000
+        ]
+      ],
+      "missing_candles": 6,
+      "csv_sha256": "2fd0b3937c0081b86bb483882eac5dbd04cb6dddb7a5a9a7e35da5264695a3d6",
+      "origin": {
+        "type": "COMPLETE_5M_BUCKETS_WITH_VERIFIED_NATIVE_GAP_REPAIR",
+        "original_derived_sha256": "54eedfa87462533d0e4384a6957f218a3a5c69051e45bc36a46e7a9b5dd6df90",
+        "repair_sources_sha256": "1101a68e9e2f08bb5cd7358c3598412418c825e88a053e7c073e9ddfa6a11648"
+      },
+      "status": "GAPS_OR_SHORTER_HISTORY_REQUIRES_REVIEW",
+      "native_repair_count": 10,
+      "native_volume_discrepancy_count": 2,
+      "verified_carry_price_convention_count": 0,
+      "verified_source_reconciliation_count": 0
+    },
+    "XRPUSDT_1d": {
+      "symbol": "XRPUSDT",
+      "interval": "1d",
+      "start": 1601596800000,
+      "end": 1790953200000,
+      "first": 1601596800000,
+      "last": 1790812800000,
+      "count": 2191,
+      "missing_ranges": [],
+      "missing_candles": 0,
+      "csv_sha256": "077b9bcbb9b37e90d36e83a076633c6b618d4684d822fa6fbcce4a3e3f051bc5",
+      "origin": {
+        "type": "COMPLETE_5M_BUCKETS_WITH_VERIFIED_NATIVE_GAP_REPAIR",
+        "original_derived_sha256": "a4581ef2c2b8a8eb74ed98409acd3a8c2dcaa1d7ea483add8e6ae7dc05cdbab8",
+        "repair_sources_sha256": "7ce6474f18e4476d55deb4e57b5f08264b30d4c87af7ed2ac8cf6dadedb202d1"
+      },
+      "status": "COMPLETE",
+      "native_repair_count": 10,
+      "native_volume_discrepancy_count": 2,
+      "verified_carry_price_convention_count": 0,
+      "verified_source_reconciliation_count": 0
+    },
+    "BTCUSDT_4h": {
+      "symbol": "BTCUSDT",
+      "interval": "4h",
+      "start": 1601596800000,
+      "end": 1790953200000,
+      "first": 1601596800000,
+      "last": 1790928000000,
+      "count": 13143,
+      "missing_ranges": [
+        [
+          1608552000000,
+          1608566400000
+        ],
+        [
+          1613001600000,
+          1613016000000
+        ],
+        [
+          1618876800000,
+          1618891200000
+        ],
+        [
+          1619323200000,
+          1619337600000
+        ],
+        [
+          1628812800000,
+          1628827200000
+        ],
+        [
+          1632888000000,
+          1632902400000
+        ]
+      ],
+      "missing_candles": 6,
+      "csv_sha256": "06f70e6407ffdefdd4cdaa37927df1dbff02bdfff192bd6c3538d234184ff15b",
+      "origin": {
+        "type": "COMPLETE_5M_BUCKETS_WITH_VERIFIED_NATIVE_GAP_REPAIR",
+        "original_derived_sha256": "86adbe026ffbd8625c4cb5a5feab9659f1d0593ab27d45c9077bb8749e7474a4",
+        "repair_sources_sha256": "47f6d35f28b80ebeff4a86dcd01e53b5c903c4f439d614a5169d4ca5a28b12df"
+      },
+      "status": "GAPS_OR_SHORTER_HISTORY_REQUIRES_REVIEW",
+      "native_repair_count": 11,
+      "native_volume_discrepancy_count": 3,
+      "verified_carry_price_convention_count": 0,
+      "verified_source_reconciliation_count": 0
+    },
+    "XRPUSDT_5m": {
+      "symbol": "XRPUSDT",
+      "interval": "5m",
+      "start": 1601596800000,
+      "end": 1790953200000,
+      "first": 1601596800000,
+      "last": 1790952900000,
+      "count": 630900,
+      "missing_ranges": [
+        [
+          1606716000000,
+          1606719600000
+        ],
+        [
+          1608559500000,
+          1608573600000
+        ],
+        [
+          1608861600000,
+          1608865200000
+        ],
+        [
+          1613014800000,
+          1613019600000
+        ],
+        [
+          1614996000000,
+          1615001400000
+        ],
+        [
+          1618884000000,
+          1618893000000
+        ],
+        [
+          1619323200000,
+          1619340300000
+        ],
+        [
+          1628819700000,
+          1628836200000
+        ],
+        [
+          1632898800000,
+          1632906000000
+        ],
+        [
+          1679661300000,
+          1679666400000
+        ]
+      ],
+      "missing_candles": 288,
+      "csv_sha256": "d911af72df0aa575f62c2765fa466a7cbc3418a948337ddaff496b52851a7cc3",
+      "origin": {
+        "type": "CORROBORATED_OFFICIAL_VARIANTS",
+        "original_csv_sha256": "d911af72df0aa575f62c2765fa466a7cbc3418a948337ddaff496b52851a7cc3",
+        "reconciliation_sha256": "cb1375b4db3b94273d753739606c5247bf4d026da1082ab4ee15024f957995ba"
+      },
+      "status": "GAPS_OR_SHORTER_HISTORY_REQUIRES_REVIEW"
+    }
+  },
+  "evidence_sha256": {
+    "magnitude-output/features.jsonl": "7a6a3ee0f0d7e85b48b97f3b6f8c656248959040011b4cb2240ee353e1d6e159",
+    "magnitude-output/labels.tsv": "1b4573123b638f20e55fcafab55f35798f7e8686f61204530a00f16153f77bcd",
+    "magnitude-output/prelabel-manifest.json": "3fa44223e48c3ed3dbaf2c6709cd9da3fce09c88e4fd7b3c2c276413cfab7eda",
+    "replay-kotlin/kotlin_accepted.csv": "e144be2a364057b68e34142a411e59a660818f11b2d2941f2f670cc307db2cf9"
+  },
+  "limits": [
+    "Existing as-of chronological decisions reused, not a fresh independent experiment.",
+    "2020 and early 2021 are indicator/context warm-up, not zero-accuracy predictions.",
+    "No frozen 2023-trained candidate applied to earlier dates.",
+    "Original engine threshold81, closed candles, neutral absent historical news.",
+    "Magnitude-time HIT is not first-touch operational HIT or profitability.",
+    "Overlapping windows and episode outcomes remain dependent.",
+    "Historical data ends 2026-10-02, not today; no fabricated later candles.",
+    "Only XRP30m; does not certify all assets or the Android live cohort."
+  ]
+}
