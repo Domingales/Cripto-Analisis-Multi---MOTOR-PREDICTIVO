@@ -1,0 +1,416 @@
+{
+  "status": "EXPLORATORY_STRICT_ABSTENTION_NOT_CERTIFIED",
+  "symbol": "XRP",
+  "timeframe": "30m",
+  "exam_start": 1698537600000,
+  "cutoff": 1790953200000,
+  "first_archived_decision": 1623657599999,
+  "predictor_sha256": "f8fda6db64703e3b7fbfd1edc25aa8f20a544ed2a4b6a965970c9ec6e691d5e7",
+  "filter_sha256": "1e4c2eeadda86f86f3f13ce29b72ce0d84ed99c192ddb7562d581ccfa801837c",
+  "original": {
+    "overall": {
+      "signals": 5619,
+      "resolved": 5618,
+      "HIT": 4325,
+      "APPROXIMATE": 524,
+      "LATE": 245,
+      "FAIL": 524,
+      "PENDING": 1,
+      "exact_rate": 0.7698469206123175,
+      "exact_or_approximate_rate": 0.8631185475258099
+    },
+    "first_episodes_by_direction": {
+      "signals": 76,
+      "resolved": 76,
+      "HIT": 64,
+      "APPROXIMATE": 3,
+      "LATE": 1,
+      "FAIL": 8,
+      "PENDING": 0,
+      "exact_rate": 0.8421052631578947,
+      "exact_or_approximate_rate": 0.881578947368421
+    },
+    "by_direction": {
+      "BUY": {
+        "signals": 2348,
+        "resolved": 2347,
+        "HIT": 1753,
+        "APPROXIMATE": 230,
+        "LATE": 112,
+        "FAIL": 252,
+        "PENDING": 1,
+        "exact_rate": 0.7469109501491266,
+        "exact_or_approximate_rate": 0.8449083936940776
+      },
+      "SELL": {
+        "signals": 3271,
+        "resolved": 3271,
+        "HIT": 2572,
+        "APPROXIMATE": 294,
+        "LATE": 133,
+        "FAIL": 272,
+        "PENDING": 0,
+        "exact_rate": 0.7863038826047081,
+        "exact_or_approximate_rate": 0.8761846530113115
+      }
+    },
+    "by_year": {
+      "2023": {
+        "signals": 329,
+        "resolved": 329,
+        "HIT": 242,
+        "APPROXIMATE": 33,
+        "LATE": 26,
+        "FAIL": 28,
+        "PENDING": 0,
+        "exact_rate": 0.7355623100303952,
+        "exact_or_approximate_rate": 0.8358662613981763
+      },
+      "2024": {
+        "signals": 1950,
+        "resolved": 1950,
+        "HIT": 1487,
+        "APPROXIMATE": 178,
+        "LATE": 102,
+        "FAIL": 183,
+        "PENDING": 0,
+        "exact_rate": 0.7625641025641026,
+        "exact_or_approximate_rate": 0.8538461538461538
+      },
+      "2025": {
+        "signals": 1883,
+        "resolved": 1883,
+        "HIT": 1453,
+        "APPROXIMATE": 178,
+        "LATE": 63,
+        "FAIL": 189,
+        "PENDING": 0,
+        "exact_rate": 0.7716409984067977,
+        "exact_or_approximate_rate": 0.8661710037174721
+      },
+      "2026": {
+        "signals": 1457,
+        "resolved": 1456,
+        "HIT": 1143,
+        "APPROXIMATE": 135,
+        "LATE": 54,
+        "FAIL": 124,
+        "PENDING": 1,
+        "exact_rate": 0.7850274725274725,
+        "exact_or_approximate_rate": 0.8777472527472527
+      }
+    }
+  },
+  "families": {
+    "direction": {
+      "overall": {
+        "signals": 0,
+        "resolved": 0,
+        "HIT": 0,
+        "APPROXIMATE": 0,
+        "LATE": 0,
+        "FAIL": 0,
+        "PENDING": 0,
+        "exact_rate": null,
+        "exact_or_approximate_rate": null
+      },
+      "first_episodes_by_direction": {
+        "signals": 0,
+        "resolved": 0,
+        "HIT": 0,
+        "APPROXIMATE": 0,
+        "LATE": 0,
+        "FAIL": 0,
+        "PENDING": 0,
+        "exact_rate": null,
+        "exact_or_approximate_rate": null
+      },
+      "by_direction": {
+        "BUY": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        },
+        "SELL": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        }
+      },
+      "by_year": {
+        "2023": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        },
+        "2024": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        },
+        "2025": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        },
+        "2026": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        }
+      },
+      "coverage": 0,
+      "screen_groups": 0,
+      "admitted_groups": 0
+    },
+    "regime": {
+      "overall": {
+        "signals": 0,
+        "resolved": 0,
+        "HIT": 0,
+        "APPROXIMATE": 0,
+        "LATE": 0,
+        "FAIL": 0,
+        "PENDING": 0,
+        "exact_rate": null,
+        "exact_or_approximate_rate": null
+      },
+      "first_episodes_by_direction": {
+        "signals": 0,
+        "resolved": 0,
+        "HIT": 0,
+        "APPROXIMATE": 0,
+        "LATE": 0,
+        "FAIL": 0,
+        "PENDING": 0,
+        "exact_rate": null,
+        "exact_or_approximate_rate": null
+      },
+      "by_direction": {
+        "BUY": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        },
+        "SELL": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        }
+      },
+      "by_year": {
+        "2023": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        },
+        "2024": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        },
+        "2025": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        },
+        "2026": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        }
+      },
+      "coverage": 0,
+      "screen_groups": 0,
+      "admitted_groups": 0
+    },
+    "regime_target": {
+      "overall": {
+        "signals": 0,
+        "resolved": 0,
+        "HIT": 0,
+        "APPROXIMATE": 0,
+        "LATE": 0,
+        "FAIL": 0,
+        "PENDING": 0,
+        "exact_rate": null,
+        "exact_or_approximate_rate": null
+      },
+      "first_episodes_by_direction": {
+        "signals": 0,
+        "resolved": 0,
+        "HIT": 0,
+        "APPROXIMATE": 0,
+        "LATE": 0,
+        "FAIL": 0,
+        "PENDING": 0,
+        "exact_rate": null,
+        "exact_or_approximate_rate": null
+      },
+      "by_direction": {
+        "BUY": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        },
+        "SELL": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        }
+      },
+      "by_year": {
+        "2023": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        },
+        "2024": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        },
+        "2025": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        },
+        "2026": {
+          "signals": 0,
+          "resolved": 0,
+          "HIT": 0,
+          "APPROXIMATE": 0,
+          "LATE": 0,
+          "FAIL": 0,
+          "PENDING": 0,
+          "exact_rate": null,
+          "exact_or_approximate_rate": null
+        }
+      },
+      "coverage": 0,
+      "screen_groups": 0,
+      "admitted_groups": 0
+    }
+  },
+  "development_rejections": {
+    "EXACT_RATE_BELOW_95": 74,
+    "FIRST_EPISODE_RATE_BELOW_90": 70,
+    "ADJUSTED_WILSON_LOWER_BELOW_90": 78,
+    "FEWER_THAN_10_MATURE_FIRST_EPISODES": 47,
+    "FEWER_THAN_100_MATURE_SIGNALS": 48,
+    "FEWER_THAN_6_BLOCKS": 22
+  },
+  "frozen_groups": 39,
+  "production_changed": false,
+  "certified_probability": null,
+  "limits": [
+    "No alerts means undefined precision, not100%.",
+    "Previously inspected historical period; not independent prospective evidence.",
+    "Binomial Wilson is descriptive sensitivity: episode independence unproven.",
+    "Original targets/times unchanged; no execution-cost/profit claim.",
+    "Scope XRP30m only;2020-context warmup;archive ends2026-10-02.",
+    "All three fixed families disclosed; no post-exam tuning or winner selection."
+  ]
+}
