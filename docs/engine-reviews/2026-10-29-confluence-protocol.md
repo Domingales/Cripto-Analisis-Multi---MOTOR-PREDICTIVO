@@ -1,0 +1,15 @@
+# Combinaciones anteriores al movimiento: protocolo previo
+
+Experimento separado solicitado por José Domingo. XRP30m, archivo oficial2020–02/10/2026, ventanas evaluables desde2021; fecha simulada de examen29/10/2023. Histórico ya inspeccionado: resultado exploratorio, no nueva reserva independiente. Reutilizar replay as-of/etiquetas ForecastCriterion verificadas; no repetir matriz150 ni alterar motor/modelos prospectivos.
+
+Estudiar TODAS las ventanas evaluables y ambas direcciones, incluidas las que no originaron alerta original. Eventos positivos=objetivo medio del rango original alcanzado24h; aproximados/tardíos/fallos separados, pendientes nunca negativos. Mismo precio/objetivo por ventana. No afirmar detección del inicio de una subida: se pronostica movimiento posterior a la emisión con condiciones ya cerradas.
+
+Ocho condiciones conocidas al emitir, con umbrales fijados: volumen>=1,5media;ADX>=25;alineaciónMTF>=8en dirección;precio30m sobre/bajo media50en dirección;retorno4velas30m en dirección;RSI50–70BUY/30–50SELL;régimenTREND_UP/TREND_DOWN en dirección;ATR%entre0,5y2. ATR moderado no es expansiónATR;ADXalto no es ADXcreciente;no se inventan rupturasSR porque no están en el archivo seleccionado.
+
+Combinaciones exhaustivas de2y3condiciones:28+56=84por dirección,168en total. No añadir condiciones al ver resultados. Desarrollo termina con etiquetas120h maduras antes01/04/2023;validación emisiones desde01/04/2023 con120h maduras antes29/10/2023;embargo restante. Examen desde29/10/2023 hasta corte archivado.
+
+Para cada dirección, desarrollo exige200señales maduras,6bloques14d y10primeras señales elegidas espaciadas>=120h (selección sin resultados),y mejora exacta>=3puntos frente todas las ventanas de la misma dirección. Ordenar por límite inferiorWilson95%de primeras señales espaciadas, luego precisión, número de casos y nombre. Seleccionar como máximo3reglas por dirección usando SÓLO desarrollo.
+
+Esas reglas, no sustitutas después de verlas, pasan validación si100maduras,4bloques14d,5primeras señales espaciadas,>=90%exactas y>=3puntos de mejora frente todas las ventanas de la misma dirección. Congelar reglas admitidas y ORpor dirección;si ambas direcciones coinciden, abstenerse por conflicto. Persistir predicciones ANTES de leer resultados del examen. No elegir ganador en examen. Todas168reglas y top6se conservan con falsos positivos (noHIT),falsos negativos y precisión/cobertura.
+
+Reportar originales sin filtro, cada regla seleccionada (aunque falle validación),y candidato OR validado;misma ventana/entrada/objetivo y referencia de todas las ventanas por dirección, sin comparar porcentajes de muestras distintas como ventaja causal. Ventanas dependientes: primeras espaciadas y episodios transitivos por separado, sin afirmar independencia. Wilson descriptivo no certifica90%. Corrección descriptiva múltiple sobre168reglas,señalada junto al95%noajustado;validación y examen no retroalimentan búsqueda. No rentabilidad ni garantía100%. Sin cambios de producción.
