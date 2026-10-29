@@ -1,0 +1,167 @@
+{
+  "exam_labels_used": 0,
+  "exam_start": 1698537600000,
+  "feature_names": [
+    "volume_1_5",
+    "adx_25",
+    "mtf_8",
+    "ma50_aligned",
+    "momentum4_aligned",
+    "rsi_directional",
+    "regime_aligned",
+    "atr_moderate"
+  ],
+  "production_enabled": false,
+  "reference_pre_exam": {
+    "BUY": {
+      "DEVELOPMENT": {
+        "APPROXIMATE": 3075,
+        "FAIL": 2212,
+        "HIT": 19981,
+        "LATE": 1077,
+        "PENDING": 99,
+        "blocks14d": 41,
+        "exact_or_approximate_rate": 0.8751565762004175,
+        "exact_rate": 0.758436135889163,
+        "first_spaced": {
+          "APPROXIMATE": 17,
+          "FAIL": 7,
+          "HIT": 80,
+          "LATE": 6,
+          "PENDING": 0,
+          "exact_or_approximate_rate": 0.8818181818181818,
+          "exact_rate": 0.7272727272727273,
+          "resolved": 110,
+          "signals": 110
+        },
+        "first_transitive": {
+          "APPROXIMATE": 0,
+          "FAIL": 1,
+          "HIT": 1,
+          "LATE": 0,
+          "PENDING": 0,
+          "exact_or_approximate_rate": 0.5,
+          "exact_rate": 0.5,
+          "resolved": 2,
+          "signals": 2
+        },
+        "resolved": 26345,
+        "signals": 26444,
+        "wilson95_first_spaced": 0.6374341513147903,
+        "wilson_multiple_first_spaced": 0.5559029392477923
+      },
+      "VALIDATION": {
+        "APPROXIMATE": 1327,
+        "FAIL": 946,
+        "HIT": 7090,
+        "LATE": 525,
+        "PENDING": 0,
+        "blocks14d": 15,
+        "exact_or_approximate_rate": 0.8512338187702265,
+        "exact_rate": 0.7170307443365695,
+        "first_spaced": {
+          "APPROXIMATE": 8,
+          "FAIL": 5,
+          "HIT": 27,
+          "LATE": 2,
+          "PENDING": 0,
+          "exact_or_approximate_rate": 0.8333333333333334,
+          "exact_rate": 0.6428571428571429,
+          "resolved": 42,
+          "signals": 42
+        },
+        "first_transitive": {
+          "APPROXIMATE": 0,
+          "FAIL": 1,
+          "HIT": 0,
+          "LATE": 0,
+          "PENDING": 0,
+          "exact_or_approximate_rate": 0.0,
+          "exact_rate": 0.0,
+          "resolved": 1,
+          "signals": 1
+        },
+        "resolved": 9888,
+        "signals": 9888,
+        "wilson95_first_spaced": 0.4916636571945582,
+        "wilson_multiple_first_spaced": 0.372933990870243
+      }
+    },
+    "SELL": {
+      "DEVELOPMENT": {
+        "APPROXIMATE": 2817,
+        "FAIL": 1684,
+        "HIT": 20651,
+        "LATE": 1176,
+        "PENDING": 116,
+        "blocks14d": 41,
+        "exact_or_approximate_rate": 0.8913704041324825,
+        "exact_rate": 0.7843740504405956,
+        "first_spaced": {
+          "APPROXIMATE": 14,
+          "FAIL": 7,
+          "HIT": 88,
+          "LATE": 1,
+          "PENDING": 0,
+          "exact_or_approximate_rate": 0.9272727272727272,
+          "exact_rate": 0.8,
+          "resolved": 110,
+          "signals": 110
+        },
+        "first_transitive": {
+          "APPROXIMATE": 0,
+          "FAIL": 0,
+          "HIT": 2,
+          "LATE": 0,
+          "PENDING": 0,
+          "exact_or_approximate_rate": 1.0,
+          "exact_rate": 1.0,
+          "resolved": 2,
+          "signals": 2
+        },
+        "resolved": 26328,
+        "signals": 26444,
+        "wilson95_first_spaced": 0.7157046653839023,
+        "wilson_multiple_first_spaced": 0.6338422796235553
+      },
+      "VALIDATION": {
+        "APPROXIMATE": 995,
+        "FAIL": 593,
+        "HIT": 7823,
+        "LATE": 477,
+        "PENDING": 0,
+        "blocks14d": 15,
+        "exact_or_approximate_rate": 0.8917880258899676,
+        "exact_rate": 0.7911610032362459,
+        "first_spaced": {
+          "APPROXIMATE": 4,
+          "FAIL": 4,
+          "HIT": 31,
+          "LATE": 3,
+          "PENDING": 0,
+          "exact_or_approximate_rate": 0.8333333333333334,
+          "exact_rate": 0.7380952380952381,
+          "resolved": 42,
+          "signals": 42
+        },
+        "first_transitive": {
+          "APPROXIMATE": 0,
+          "FAIL": 0,
+          "HIT": 1,
+          "LATE": 0,
+          "PENDING": 0,
+          "exact_or_approximate_rate": 1.0,
+          "exact_rate": 1.0,
+          "resolved": 1,
+          "signals": 1
+        },
+        "resolved": 9888,
+        "signals": 9888,
+        "wilson95_first_spaced": 0.5893126929422804,
+        "wilson_multiple_first_spaced": 0.4599081999282052
+      }
+    }
+  },
+  "search_count": 168,
+  "selected": []
+}
