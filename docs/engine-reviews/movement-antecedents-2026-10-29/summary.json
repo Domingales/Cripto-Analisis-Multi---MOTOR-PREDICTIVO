@@ -1,0 +1,1134 @@
+{
+  "4pct_24h": {
+    "BUY": {
+      "volume_1_5": {
+        "TP": 2206,
+        "FP": 6652,
+        "FN": 9090,
+        "TN": 33346,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.22022068857956095,
+        "precision": 0.24904041544366673,
+        "antecedent_coverage": 0.19529036827195467,
+        "lift": 1.1308674813887607,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698591599999,
+            "entry": 0.556
+          },
+          {
+            "time": 1698593399999,
+            "entry": 0.5569
+          },
+          {
+            "time": 1698595199999,
+            "entry": 0.5565
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "adx_25": {
+        "TP": 8366,
+        "FP": 28705,
+        "FN": 2930,
+        "TN": 11293,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.22022068857956095,
+        "precision": 0.22567505597367216,
+        "antecedent_coverage": 0.7406161473087819,
+        "lift": 1.0247677338096264,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698625799999,
+            "entry": 0.5557
+          },
+          {
+            "time": 1698627599999,
+            "entry": 0.5545
+          },
+          {
+            "time": 1698629399999,
+            "entry": 0.5553
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "squeeze20": {
+        "TP": 2075,
+        "FP": 9923,
+        "FN": 9221,
+        "TN": 30075,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.22022068857956095,
+        "precision": 0.17294549091515252,
+        "antecedent_coverage": 0.18369334277620397,
+        "lift": 0.7853280817105023,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698587999999,
+            "entry": 0.5532
+          },
+          {
+            "time": 1698589799999,
+            "entry": 0.5542
+          },
+          {
+            "time": 1698591599999,
+            "entry": 0.556
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "breakout20": {
+        "TP": 661,
+        "FP": 1702,
+        "FN": 10635,
+        "TN": 38296,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.22022068857956095,
+        "precision": 0.2797291578501904,
+        "antecedent_coverage": 0.05851628895184136,
+        "lift": 1.2702219743951548,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698587999999,
+            "entry": 0.5532
+          },
+          {
+            "time": 1698589799999,
+            "entry": 0.5542
+          },
+          {
+            "time": 1698591599999,
+            "entry": 0.556
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "atr_sma_expansion": {
+        "TP": 2650,
+        "FP": 7879,
+        "FN": 8646,
+        "TN": 32119,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.22022068857956095,
+        "precision": 0.25168582011587043,
+        "antecedent_coverage": 0.23459631728045327,
+        "lift": 1.1428799979659576,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698591599999,
+            "entry": 0.556
+          },
+          {
+            "time": 1698593399999,
+            "entry": 0.5569
+          },
+          {
+            "time": 1698595199999,
+            "entry": 0.5565
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "adx_rising90m": {
+        "TP": 5136,
+        "FP": 17505,
+        "FN": 6160,
+        "TN": 22493,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.22022068857956095,
+        "precision": 0.22684510401484034,
+        "antecedent_coverage": 0.4546742209631728,
+        "lift": 1.0300808042968503,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698596999999,
+            "entry": 0.5563
+          },
+          {
+            "time": 1698598799999,
+            "entry": 0.5558
+          },
+          {
+            "time": 1698600599999,
+            "entry": 0.5581
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "mtf_aligned": {
+        "TP": 3039,
+        "FP": 6198,
+        "FN": 8257,
+        "TN": 33800,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.22022068857956095,
+        "precision": 0.32900292302695683,
+        "antecedent_coverage": 0.2690332861189802,
+        "lift": 1.493969186769186,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698623999999,
+            "entry": 0.5561
+          },
+          {
+            "time": 1698625799999,
+            "entry": 0.5557
+          },
+          {
+            "time": 1698627599999,
+            "entry": 0.5545
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "btc_momentum4h": {
+        "TP": 6080,
+        "FP": 20143,
+        "FN": 5216,
+        "TN": 19855,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.22022068857956095,
+        "precision": 0.23185752964954429,
+        "antecedent_coverage": 0.5382436260623229,
+        "lift": 1.0528417250215762,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698623999999,
+            "entry": 0.5561
+          },
+          {
+            "time": 1698625799999,
+            "entry": 0.5557
+          },
+          {
+            "time": 1698627599999,
+            "entry": 0.5545
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "momentum4_30m": {
+        "TP": 5905,
+        "FP": 19727,
+        "FN": 5391,
+        "TN": 20271,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.22022068857956095,
+        "precision": 0.23037609238451934,
+        "antecedent_coverage": 0.5227514164305949,
+        "lift": 1.0461146673841657,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698587999999,
+            "entry": 0.5532
+          },
+          {
+            "time": 1698589799999,
+            "entry": 0.5542
+          },
+          {
+            "time": 1698598799999,
+            "entry": 0.5558
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "close_pressure_volume": {
+        "TP": 492,
+        "FP": 1344,
+        "FN": 10804,
+        "TN": 38654,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.22022068857956095,
+        "precision": 0.2679738562091503,
+        "antecedent_coverage": 0.04355524079320113,
+        "lift": 1.2168423318335833,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698587999999,
+            "entry": 0.5532
+          },
+          {
+            "time": 1698591599999,
+            "entry": 0.556
+          },
+          {
+            "time": 1698593399999,
+            "entry": 0.5569
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      }
+    },
+    "SELL": {
+      "volume_1_5": {
+        "TP": 2150,
+        "FP": 6708,
+        "FN": 9788,
+        "TN": 32648,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.23273677233204662,
+        "precision": 0.24271844660194175,
+        "antecedent_coverage": 0.18009716870497572,
+        "lift": 1.042888255989278,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698870599999,
+            "entry": 0.6117
+          },
+          {
+            "time": 1698872399999,
+            "entry": 0.615
+          },
+          {
+            "time": 1698874199999,
+            "entry": 0.6118
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "adx_25": {
+        "TP": 8755,
+        "FP": 28316,
+        "FN": 3183,
+        "TN": 11040,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.23273677233204662,
+        "precision": 0.2361684335464379,
+        "antecedent_coverage": 0.7333724241916569,
+        "lift": 1.014744817417573,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698870599999,
+            "entry": 0.6117
+          },
+          {
+            "time": 1698872399999,
+            "entry": 0.615
+          },
+          {
+            "time": 1698874199999,
+            "entry": 0.6118
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "squeeze20": {
+        "TP": 2361,
+        "FP": 9637,
+        "FN": 9577,
+        "TN": 29719,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.23273677233204662,
+        "precision": 0.19678279713285549,
+        "antecedent_coverage": 0.19777182107555705,
+        "lift": 0.8455165686155712,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698755399999,
+            "entry": 0.6056
+          },
+          {
+            "time": 1698870599999,
+            "entry": 0.6117
+          },
+          {
+            "time": 1698872399999,
+            "entry": 0.615
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "breakout20": {
+        "TP": 565,
+        "FP": 1625,
+        "FN": 11373,
+        "TN": 37731,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.23273677233204662,
+        "precision": 0.2579908675799087,
+        "antecedent_coverage": 0.04732786061316804,
+        "lift": 1.1085092613204754,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698755399999,
+            "entry": 0.6056
+          },
+          {
+            "time": 1698870599999,
+            "entry": 0.6117
+          },
+          {
+            "time": 1698872399999,
+            "entry": 0.615
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "atr_sma_expansion": {
+        "TP": 2780,
+        "FP": 7749,
+        "FN": 9158,
+        "TN": 31607,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.23273677233204662,
+        "precision": 0.26403267166872446,
+        "antecedent_coverage": 0.23286982744178256,
+        "lift": 1.1344690786208371,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698870599999,
+            "entry": 0.6117
+          },
+          {
+            "time": 1698872399999,
+            "entry": 0.615
+          },
+          {
+            "time": 1698874199999,
+            "entry": 0.6118
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "adx_rising90m": {
+        "TP": 5277,
+        "FP": 17364,
+        "FN": 6661,
+        "TN": 21992,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.23273677233204662,
+        "precision": 0.2330727441367431,
+        "antecedent_coverage": 0.44203384151449154,
+        "lift": 1.0014435699237811,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698870599999,
+            "entry": 0.6117
+          },
+          {
+            "time": 1698872399999,
+            "entry": 0.615
+          },
+          {
+            "time": 1698874199999,
+            "entry": 0.6118
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "mtf_aligned": {
+        "TP": 3263,
+        "FP": 10382,
+        "FN": 8675,
+        "TN": 28974,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.23273677233204662,
+        "precision": 0.239135214364236,
+        "antecedent_coverage": 0.27332886580666776,
+        "lift": 1.0274921834142337,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698755399999,
+            "entry": 0.6056
+          },
+          {
+            "time": 1698870599999,
+            "entry": 0.6117
+          },
+          {
+            "time": 1698872399999,
+            "entry": 0.615
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "btc_momentum4h": {
+        "TP": 6129,
+        "FP": 18942,
+        "FN": 5809,
+        "TN": 20414,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.23273677233204662,
+        "precision": 0.24446571736268996,
+        "antecedent_coverage": 0.5134025799966494,
+        "lift": 1.0503957535937192,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698755399999,
+            "entry": 0.6056
+          },
+          {
+            "time": 1698870599999,
+            "entry": 0.6117
+          },
+          {
+            "time": 1698872399999,
+            "entry": 0.615
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "momentum4_30m": {
+        "TP": 5943,
+        "FP": 19393,
+        "FN": 5995,
+        "TN": 19963,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.23273677233204662,
+        "precision": 0.23456741395642564,
+        "antecedent_coverage": 0.49782208075054446,
+        "lift": 1.0078657171620788,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698755399999,
+            "entry": 0.6056
+          },
+          {
+            "time": 1698870599999,
+            "entry": 0.6117
+          },
+          {
+            "time": 1698872399999,
+            "entry": 0.615
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "close_pressure_volume": {
+        "TP": 416,
+        "FP": 1300,
+        "FN": 11522,
+        "TN": 38056,
+        "pending": 48,
+        "unknown": 0,
+        "base_event_rate": 0.23273677233204662,
+        "precision": 0.24242424242424243,
+        "antecedent_coverage": 0.03484670799128832,
+        "lift": 1.0416241490123213,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698755399999,
+            "entry": 0.6056
+          },
+          {
+            "time": 1698870599999,
+            "entry": 0.6117
+          },
+          {
+            "time": 1698872399999,
+            "entry": 0.615
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      }
+    }
+  },
+  "8pct_72h": {
+    "BUY": {
+      "volume_1_5": {
+        "TP": 1863,
+        "FP": 6979,
+        "FN": 8401,
+        "TN": 33955,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.20047658111644986,
+        "precision": 0.21069893689210586,
+        "antecedent_coverage": 0.18150818394388152,
+        "lift": 1.0509902738700347,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698539399999,
+            "entry": 0.5452
+          },
+          {
+            "time": 1698541199999,
+            "entry": 0.5441
+          },
+          {
+            "time": 1698544799999,
+            "entry": 0.5427
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "adx_25": {
+        "TP": 7557,
+        "FP": 29454,
+        "FN": 2707,
+        "TN": 11480,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.20047658111644986,
+        "precision": 0.20418254032584907,
+        "antecedent_coverage": 0.7362626656274357,
+        "lift": 1.0184857462590433,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698625799999,
+            "entry": 0.5557
+          },
+          {
+            "time": 1698627599999,
+            "entry": 0.5545
+          },
+          {
+            "time": 1698629399999,
+            "entry": 0.5553
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "squeeze20": {
+        "TP": 2106,
+        "FP": 9855,
+        "FN": 8158,
+        "TN": 31079,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.20047658111644986,
+        "precision": 0.17607223476297967,
+        "antecedent_coverage": 0.20518316445830087,
+        "lift": 0.8782683432769908,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698542999999,
+            "entry": 0.5416
+          },
+          {
+            "time": 1698544799999,
+            "entry": 0.5427
+          },
+          {
+            "time": 1698546599999,
+            "entry": 0.5429
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "breakout20": {
+        "TP": 558,
+        "FP": 1801,
+        "FN": 9706,
+        "TN": 39133,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.20047658111644986,
+        "precision": 0.23654090716405257,
+        "antecedent_coverage": 0.05436477007014809,
+        "lift": 1.1798929622939558,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698539399999,
+            "entry": 0.5452
+          },
+          {
+            "time": 1698541199999,
+            "entry": 0.5441
+          },
+          {
+            "time": 1698542999999,
+            "entry": 0.5416
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "atr_sma_expansion": {
+        "TP": 2240,
+        "FP": 8265,
+        "FN": 8024,
+        "TN": 32669,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.20047658111644986,
+        "precision": 0.21323179438362685,
+        "antecedent_coverage": 0.2182385035074045,
+        "lift": 1.0636244552662635,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698539399999,
+            "entry": 0.5452
+          },
+          {
+            "time": 1698541199999,
+            "entry": 0.5441
+          },
+          {
+            "time": 1698548399999,
+            "entry": 0.5434
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "adx_rising90m": {
+        "TP": 4626,
+        "FP": 17980,
+        "FN": 5638,
+        "TN": 22954,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.20047658111644986,
+        "precision": 0.20463593736176236,
+        "antecedent_coverage": 0.4507014809041309,
+        "lift": 1.020747342268853,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698560999999,
+            "entry": 0.546
+          },
+          {
+            "time": 1698562799999,
+            "entry": 0.5455
+          },
+          {
+            "time": 1698564599999,
+            "entry": 0.5464
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "mtf_aligned": {
+        "TP": 2716,
+        "FP": 6494,
+        "FN": 7548,
+        "TN": 34440,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.20047658111644986,
+        "precision": 0.2948968512486428,
+        "antecedent_coverage": 0.26461418550272797,
+        "lift": 1.4709790520487152,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698539399999,
+            "entry": 0.5452
+          },
+          {
+            "time": 1698541199999,
+            "entry": 0.5441
+          },
+          {
+            "time": 1698542999999,
+            "entry": 0.5416
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "btc_momentum4h": {
+        "TP": 5601,
+        "FP": 20558,
+        "FN": 4663,
+        "TN": 20376,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.20047658111644986,
+        "precision": 0.2141136893612141,
+        "antecedent_coverage": 0.5456936866718628,
+        "lift": 1.0680234477704054,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698539399999,
+            "entry": 0.5452
+          },
+          {
+            "time": 1698541199999,
+            "entry": 0.5441
+          },
+          {
+            "time": 1698542999999,
+            "entry": 0.5416
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "momentum4_30m": {
+        "TP": 5355,
+        "FP": 20232,
+        "FN": 4909,
+        "TN": 20702,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.20047658111644986,
+        "precision": 0.20928596552937037,
+        "antecedent_coverage": 0.521726422447389,
+        "lift": 1.043942211922516,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698539399999,
+            "entry": 0.5452
+          },
+          {
+            "time": 1698541199999,
+            "entry": 0.5441
+          },
+          {
+            "time": 1698542999999,
+            "entry": 0.5416
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "close_pressure_volume": {
+        "TP": 411,
+        "FP": 1424,
+        "FN": 9853,
+        "TN": 39510,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.20047658111644986,
+        "precision": 0.2239782016348774,
+        "antecedent_coverage": 0.04004286827747467,
+        "lift": 1.117228757531416,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1698539399999,
+            "entry": 0.5452
+          },
+          {
+            "time": 1698541199999,
+            "entry": 0.5441
+          },
+          {
+            "time": 1698542999999,
+            "entry": 0.5416
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      }
+    },
+    "SELL": {
+      "volume_1_5": {
+        "TP": 1654,
+        "FP": 7188,
+        "FN": 7601,
+        "TN": 34755,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.18076878003046995,
+        "precision": 0.1870617507351278,
+        "antecedent_coverage": 0.17871420853592654,
+        "lift": 1.0348122651687814,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1699282799999,
+            "entry": 0.7238
+          },
+          {
+            "time": 1699284599999,
+            "entry": 0.7241
+          },
+          {
+            "time": 1699286399999,
+            "entry": 0.717
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "adx_25": {
+        "TP": 6742,
+        "FP": 30269,
+        "FN": 2513,
+        "TN": 11674,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.18076878003046995,
+        "precision": 0.18216205992812948,
+        "antecedent_coverage": 0.7284710967044841,
+        "lift": 1.0077075250351564,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1699307999999,
+            "entry": 0.724
+          },
+          {
+            "time": 1699309799999,
+            "entry": 0.7188
+          },
+          {
+            "time": 1699311599999,
+            "entry": 0.7216
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "squeeze20": {
+        "TP": 1991,
+        "FP": 9970,
+        "FN": 7264,
+        "TN": 31973,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.18076878003046995,
+        "precision": 0.16645765404230414,
+        "antecedent_coverage": 0.2151269584008644,
+        "lift": 0.9208318715999878,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1699273799999,
+            "entry": 0.7136
+          },
+          {
+            "time": 1699275599999,
+            "entry": 0.7125
+          },
+          {
+            "time": 1699277399999,
+            "entry": 0.7092
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "breakout20": {
+        "TP": 450,
+        "FP": 1738,
+        "FN": 8805,
+        "TN": 40205,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.18076878003046995,
+        "precision": 0.2056672760511883,
+        "antecedent_coverage": 0.04862236628849271,
+        "lift": 1.1377367044050501,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1699273799999,
+            "entry": 0.7136
+          },
+          {
+            "time": 1699275599999,
+            "entry": 0.7125
+          },
+          {
+            "time": 1699277399999,
+            "entry": 0.7092
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "atr_sma_expansion": {
+        "TP": 2049,
+        "FP": 8456,
+        "FN": 7206,
+        "TN": 33487,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.18076878003046995,
+        "precision": 0.19504997620180867,
+        "antecedent_coverage": 0.22139384116693678,
+        "lift": 1.079002558787704,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1699291799999,
+            "entry": 0.7069
+          },
+          {
+            "time": 1699293599999,
+            "entry": 0.7106
+          },
+          {
+            "time": 1699295399999,
+            "entry": 0.7111
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "adx_rising90m": {
+        "TP": 4185,
+        "FP": 18421,
+        "FN": 5070,
+        "TN": 23522,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.18076878003046995,
+        "precision": 0.1851278421657967,
+        "antecedent_coverage": 0.4521880064829822,
+        "lift": 1.0241140208756843,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1699293599999,
+            "entry": 0.7106
+          },
+          {
+            "time": 1699295399999,
+            "entry": 0.7111
+          },
+          {
+            "time": 1699297199999,
+            "entry": 0.7119
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "mtf_aligned": {
+        "TP": 2317,
+        "FP": 11328,
+        "FN": 6938,
+        "TN": 30615,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.18076878003046995,
+        "precision": 0.16980578966654453,
+        "antecedent_coverage": 0.25035116153430576,
+        "lift": 0.9393535191083464,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1699273799999,
+            "entry": 0.7136
+          },
+          {
+            "time": 1699275599999,
+            "entry": 0.7125
+          },
+          {
+            "time": 1699277399999,
+            "entry": 0.7092
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "btc_momentum4h": {
+        "TP": 4654,
+        "FP": 20385,
+        "FN": 4601,
+        "TN": 21558,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.18076878003046995,
+        "precision": 0.185870042733336,
+        "antecedent_coverage": 0.502863317125878,
+        "lift": 1.0282198214869083,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1699273799999,
+            "entry": 0.7136
+          },
+          {
+            "time": 1699275599999,
+            "entry": 0.7125
+          },
+          {
+            "time": 1699277399999,
+            "entry": 0.7092
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "momentum4_30m": {
+        "TP": 4568,
+        "FP": 20717,
+        "FN": 4687,
+        "TN": 21226,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.18076878003046995,
+        "precision": 0.1806604706347637,
+        "antecedent_coverage": 0.49357104267963264,
+        "lift": 0.9994008401467998,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1699273799999,
+            "entry": 0.7136
+          },
+          {
+            "time": 1699275599999,
+            "entry": 0.7125
+          },
+          {
+            "time": 1699277399999,
+            "entry": 0.7092
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      },
+      "close_pressure_volume": {
+        "TP": 307,
+        "FP": 1404,
+        "FN": 8948,
+        "TN": 40539,
+        "pending": 144,
+        "unknown": 0,
+        "base_event_rate": 0.18076878003046995,
+        "precision": 0.179427235534775,
+        "antecedent_coverage": 0.03317125877903836,
+        "lift": 0.992578671519115,
+        "universal_refuted": true,
+        "counterexamples": [
+          {
+            "time": 1699273799999,
+            "entry": 0.7136
+          },
+          {
+            "time": 1699275599999,
+            "entry": 0.7125
+          },
+          {
+            "time": 1699277399999,
+            "entry": 0.7092
+          }
+        ],
+        "limits": "Overlapping windows; spaced variant not proven independent."
+      }
+    }
+  }
+}
