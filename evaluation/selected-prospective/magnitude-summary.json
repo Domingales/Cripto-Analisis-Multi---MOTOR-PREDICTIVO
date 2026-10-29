@@ -1,17 +1,17 @@
 {
   "profile": "MAGNITUDE_TIME_V1",
-  "updated_at": 1793301514242,
+  "updated_at": 1793317139442,
   "combinations": [
     {
       "engine": "original",
-      "signals": 40,
-      "pending": 8,
-      "HIT": 20,
+      "signals": 41,
+      "pending": 4,
+      "HIT": 25,
       "APPROXIMATE": 6,
       "LATE": 3,
       "FAIL": 3,
-      "exact_rate": 0.625,
-      "approximate_or_exact_rate": 0.8125,
+      "exact_rate": 0.6756756756756757,
+      "approximate_or_exact_rate": 0.8378378378378378,
       "first_nonoverlap_ids": [
         "TRX-1h-1792576799999",
         "RUNE-30m-1792578599999",
@@ -46,7 +46,7 @@
     }
   ],
   "status": "COLLECTING_NO_CONFIRMED_IMPROVEMENT",
-  "registered_decisions": 447,
+  "registered_decisions": 456,
   "limits": "New contracts only; different directions/selection frequencies. Shared target from original range. Rates are descriptive, not independent-trial evidence or profitability.",
   "winner": null
 }
