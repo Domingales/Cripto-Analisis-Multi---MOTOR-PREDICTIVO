@@ -1,0 +1,56 @@
+name: Antecedentes de4porciento24h y8porciento72h
+on:
+  push:
+    branches: [research/expanded-replay-150]
+    paths:
+      - 'evaluation/movement_antecedents.py'
+      - 'evaluation/test_movement_antecedents.py'
+      - '.github/workflows/movement-antecedents.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  antecedents:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r evaluation/requirements-replay.txt
+      - run: python3 -m unittest discover -s evaluation -p 'test_*.py'
+      - name: Recuperar historia oficial y contexto archivado
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/12768818184/zip" > magnitude-source.zip
+          python3 -c "from pathlib import Path;import hashlib;assert hashlib.sha256(Path('magnitude-source.zip').read_bytes()).hexdigest()=='4738051e6fd0538d1c45b3c0a409c55d03f9c62ff3ffd355a7540bfc303e0184'"
+          unzip -q magnitude-source.zip 'magnitude-output/features.jsonl' 'magnitude-output/prelabel-manifest.json' 'replay-kotlin/kotlin_decisions.csv' -d source
+          gh run download 37224269151 --repo "$GITHUB_REPOSITORY" --name historico-ampliado-XRPUSDT --dir replay-data
+          python3 evaluation/reconcile_official_history.py --data replay-data --symbol XRP
+          python3 evaluation/repair_native_context.py --data replay-data --symbol XRP --interval 30m
+      - name: Medir antecedentes y contraejemplos sin optimizar umbrales
+        run: python3 evaluation/movement_antecedents.py --data replay-data --source source --output antecedents-output
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - run: python3 evaluation/prepare_expanded_adapter.py
+      - run: bash ./gradlew --no-daemon testDebugUnitTest assembleDebug
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: antecedents-${{ github.run_id }}
+          path: |
+            antecedents-output/
+            replay-data/*manifest.json
+            replay-data/*reconciliation.json
+            replay-data/*native_repair_sources.json
+            app/build/test-results/testDebugUnitTest/
+          retention-days: 90
