@@ -682,5 +682,11 @@
     "commit": "c0d80e6ab80190f1d2d8f22ec5a200ef0debdac6",
     "confirmed_at": 1793562457367,
     "run_id": "41343309349"
+  },
+  "XRP-30m-1793575799999": {
+    "event_sha256": "8346c93dc6ca820963c69ce7337d7affd45cdc87ab266b50d3724293bec1954c",
+    "commit": "545f9eac07c4a8111913e87fb04b5bccc7accea0",
+    "confirmed_at": 1793576569904,
+    "run_id": "41363264205"
   }
 }
