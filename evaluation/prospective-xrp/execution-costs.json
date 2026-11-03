@@ -55,7 +55,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "721a0efb49cc687a750d2b6b3204d0adf53200b5f2991325648f3c4a90f30f82",
+        "source_file_sha256": "26ebbd2b41d1b13b72adbe7faebcb139b5e269ca4b5f8a1a01764bccf4c13ef8",
         "first_open": 1792257900000,
         "horizon_end": 1792344299999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -2420,7 +2420,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "721a0efb49cc687a750d2b6b3204d0adf53200b5f2991325648f3c4a90f30f82",
+        "source_file_sha256": "26ebbd2b41d1b13b72adbe7faebcb139b5e269ca4b5f8a1a01764bccf4c13ef8",
         "first_open": 1792359600000,
         "horizon_end": 1792445999999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -4792,7 +4792,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "721a0efb49cc687a750d2b6b3204d0adf53200b5f2991325648f3c4a90f30f82",
+        "source_file_sha256": "26ebbd2b41d1b13b72adbe7faebcb139b5e269ca4b5f8a1a01764bccf4c13ef8",
         "first_open": 1792461600000,
         "horizon_end": 1792547999999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -7157,7 +7157,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "721a0efb49cc687a750d2b6b3204d0adf53200b5f2991325648f3c4a90f30f82",
+        "source_file_sha256": "26ebbd2b41d1b13b72adbe7faebcb139b5e269ca4b5f8a1a01764bccf4c13ef8",
         "first_open": 1792694700000,
         "horizon_end": 1792781099999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -9529,7 +9529,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "721a0efb49cc687a750d2b6b3204d0adf53200b5f2991325648f3c4a90f30f82",
+        "source_file_sha256": "26ebbd2b41d1b13b72adbe7faebcb139b5e269ca4b5f8a1a01764bccf4c13ef8",
         "first_open": 1792860300000,
         "horizon_end": 1792946699999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -11901,7 +11901,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "721a0efb49cc687a750d2b6b3204d0adf53200b5f2991325648f3c4a90f30f82",
+        "source_file_sha256": "26ebbd2b41d1b13b72adbe7faebcb139b5e269ca4b5f8a1a01764bccf4c13ef8",
         "first_open": 1793440200000,
         "horizon_end": 1793526599999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -14266,7 +14266,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "XRPUSDT_5m.csv",
-        "source_file_sha256": "721a0efb49cc687a750d2b6b3204d0adf53200b5f2991325648f3c4a90f30f82",
+        "source_file_sha256": "26ebbd2b41d1b13b72adbe7faebcb139b5e269ca4b5f8a1a01764bccf4c13ef8",
         "first_open": 1793562600000,
         "horizon_end": 1793648999999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -16580,7 +16580,7 @@
       }
     }
   ],
-  "eligible_decisions": 88,
+  "eligible_decisions": 89,
   "counts": {
     "original": {
       "SIMULATED": 7,
@@ -16589,13 +16589,13 @@
     "alternative": {}
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1793663839499,
-  "market_cutoff": 1793663700000,
+  "evaluated_at": 1793689204384,
+  "market_cutoff": 1793688900000,
   "event_journals": {
     "events-2026-10.jsonl": "307720d1d46cb0a6df2fd36a00d1bee0b081188ca6c79656bba48d9a4600cdb3",
-    "events-2026-11.jsonl": "eb4f02f01cfb4b43f17121dac29911eef06de8123b4607335294d76048f58251"
+    "events-2026-11.jsonl": "c13f02d9770edb244f2f1c9671589c32c3f050c06a45d37ade56287fb4cd3cec"
   },
-  "receipts_sha256": "992ae71ff41f0267042fa064c633c3c8ff9817b4e031d1129df31b3e2568ad3d",
-  "official_manifest_sha256": "16c58fd6f6e489373928647a711eeaffacb328f64878d2cd3a7d6e4dfb14647c",
+  "receipts_sha256": "21062283011a4442c2e32a912cedf961036d28028161f8f28f95379c6b2f6bdd",
+  "official_manifest_sha256": "05028f8fc0e1b7c0e53cf1fdc76711dc948a424177f187e0ab01a8b239759547",
   "freeze_lock_sha256": "86866303da108976fffaa7afcebbca53d0fb6cacd79c5d18edb5dfd5aeb7c7a8"
 }
