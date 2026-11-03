@@ -966,5 +966,13 @@
     "total_decisions": 1221,
     "protocol_sha256": "e0a5fe96c1cab432a39ebbcca95ecbdc167d287a714043b4e04f1a4e95fd47dc",
     "completed_at": 1793670767695
+  },
+  {
+    "run_id": "41615090987",
+    "recovered_decisions": 1221,
+    "new_decisions": 9,
+    "total_decisions": 1230,
+    "protocol_sha256": "e0a5fe96c1cab432a39ebbcca95ecbdc167d287a714043b4e04f1a4e95fd47dc",
+    "completed_at": 1793700303363
   }
 ]
