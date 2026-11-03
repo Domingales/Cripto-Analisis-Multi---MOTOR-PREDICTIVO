@@ -33,7 +33,7 @@
     },
     "TREND_DOWN": {
       "baseline": {
-        "decisions": 76,
+        "decisions": 77,
         "signals": 20,
         "resolved": 20,
         "HIT": 11,
@@ -45,10 +45,10 @@
           0.3420820083075997,
           0.7418049791429071
         ],
-        "coverage": 0.2631578947368421
+        "coverage": 0.2597402597402597
       },
       "rejected_filter_shadow": {
-        "decisions": 76,
+        "decisions": 77,
         "signals": 12,
         "resolved": 12,
         "HIT": 6,
@@ -60,7 +60,7 @@
           0.2537781703934222,
           0.7462218296065778
         ],
-        "coverage": 0.15789473684210525
+        "coverage": 0.15584415584415584
       }
     },
     "TREND_UP": {
