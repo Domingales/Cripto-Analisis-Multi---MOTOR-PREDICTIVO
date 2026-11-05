@@ -1,17 +1,17 @@
 {
   "profile": "MAGNITUDE_TIME_V1",
-  "updated_at": 1793893864344,
+  "updated_at": 1793917324758,
   "combinations": [
     {
       "engine": "original",
-      "signals": 80,
-      "pending": 6,
-      "HIT": 43,
+      "signals": 82,
+      "pending": 7,
+      "HIT": 44,
       "APPROXIMATE": 9,
       "LATE": 13,
       "FAIL": 9,
-      "exact_rate": 0.581081081081081,
-      "approximate_or_exact_rate": 0.7027027027027027,
+      "exact_rate": 0.5866666666666667,
+      "approximate_or_exact_rate": 0.7066666666666667,
       "first_nonoverlap_ids": [
         "TRX-1h-1792576799999",
         "RUNE-30m-1792578599999",
@@ -37,7 +37,8 @@
         "RUNE-30m-1793579399999",
         "TRX-1h-1793642399999",
         "ATOM-1d-1793663999999",
-        "ADA-4h-1793663999999"
+        "ADA-4h-1793663999999",
+        "TRX-4h-1793908799999"
       ]
     },
     {
@@ -57,7 +58,7 @@
     }
   ],
   "status": "COLLECTING_NO_CONFIRMED_IMPROVEMENT",
-  "registered_decisions": 732,
+  "registered_decisions": 741,
   "limits": "New contracts only; different directions/selection frequencies. Shared target from original range. Rates are descriptive, not independent-trial evidence or profitability.",
   "winner": null
 }
