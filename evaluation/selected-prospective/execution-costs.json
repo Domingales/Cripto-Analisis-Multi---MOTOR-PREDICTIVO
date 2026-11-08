@@ -22,7 +22,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "3582e9e1472d8c62a3100bf7cc5eb3cd2e4be85159e440a15efb7ea03fde9d7f",
+        "source_file_sha256": "e9f1c018d62c5571879df21ad51074d4c1758bbac8c3a518cb11fb34475bc0bd",
         "first_open": 1792170300000,
         "horizon_end": 1792256699999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -2415,7 +2415,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "TRXUSDT_5m.csv",
-        "source_file_sha256": "a20547558218cb046e9e8e9bf9a3b3ef8bcc9594b147ab4bb86bc6cb2c396d49",
+        "source_file_sha256": "e80626094db05e585dfa455ae25910f058b3b708d216d58c5933b626a2f885b9",
         "first_open": 1792201200000,
         "horizon_end": 1792287599999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -4815,7 +4815,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "3582e9e1472d8c62a3100bf7cc5eb3cd2e4be85159e440a15efb7ea03fde9d7f",
+        "source_file_sha256": "e9f1c018d62c5571879df21ad51074d4c1758bbac8c3a518cb11fb34475bc0bd",
         "first_open": 1792258800000,
         "horizon_end": 1792345199999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -7180,7 +7180,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "ADAUSDT_5m.csv",
-        "source_file_sha256": "fdd10527e774d589a9bfced9d5dde8f1876c5bc70c93211f0e4178a3d6a0146c",
+        "source_file_sha256": "375f59d457a014cd051e90efd75073b91d3952880b72d70cbb46d24b96ced839",
         "first_open": 1792258800000,
         "horizon_end": 1792517999999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -14195,7 +14195,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "3582e9e1472d8c62a3100bf7cc5eb3cd2e4be85159e440a15efb7ea03fde9d7f",
+        "source_file_sha256": "e9f1c018d62c5571879df21ad51074d4c1758bbac8c3a518cb11fb34475bc0bd",
         "first_open": 1792352700000,
         "horizon_end": 1792439099999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -16574,7 +16574,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "TRXUSDT_5m.csv",
-        "source_file_sha256": "a20547558218cb046e9e8e9bf9a3b3ef8bcc9594b147ab4bb86bc6cb2c396d49",
+        "source_file_sha256": "e80626094db05e585dfa455ae25910f058b3b708d216d58c5933b626a2f885b9",
         "first_open": 1792370100000,
         "horizon_end": 1792629299999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -23575,7 +23575,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "3582e9e1472d8c62a3100bf7cc5eb3cd2e4be85159e440a15efb7ea03fde9d7f",
+        "source_file_sha256": "e9f1c018d62c5571879df21ad51074d4c1758bbac8c3a518cb11fb34475bc0bd",
         "first_open": 1792459500000,
         "horizon_end": 1792545899999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -25961,7 +25961,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "3582e9e1472d8c62a3100bf7cc5eb3cd2e4be85159e440a15efb7ea03fde9d7f",
+        "source_file_sha256": "e9f1c018d62c5571879df21ad51074d4c1758bbac8c3a518cb11fb34475bc0bd",
         "first_open": 1792579200000,
         "horizon_end": 1792665599999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -28326,7 +28326,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "TRXUSDT_5m.csv",
-        "source_file_sha256": "a20547558218cb046e9e8e9bf9a3b3ef8bcc9594b147ab4bb86bc6cb2c396d49",
+        "source_file_sha256": "e80626094db05e585dfa455ae25910f058b3b708d216d58c5933b626a2f885b9",
         "first_open": 1792597500000,
         "horizon_end": 1792856699999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -35369,7 +35369,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "3582e9e1472d8c62a3100bf7cc5eb3cd2e4be85159e440a15efb7ea03fde9d7f",
+        "source_file_sha256": "e9f1c018d62c5571879df21ad51074d4c1758bbac8c3a518cb11fb34475bc0bd",
         "first_open": 1792678500000,
         "horizon_end": 1792937699999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -42349,7 +42349,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "ADAUSDT_5m.csv",
-        "source_file_sha256": "fdd10527e774d589a9bfced9d5dde8f1876c5bc70c93211f0e4178a3d6a0146c",
+        "source_file_sha256": "375f59d457a014cd051e90efd75073b91d3952880b72d70cbb46d24b96ced839",
         "first_open": 1792695600000,
         "horizon_end": 1792954799999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -49322,7 +49322,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "TRXUSDT_5m.csv",
-        "source_file_sha256": "a20547558218cb046e9e8e9bf9a3b3ef8bcc9594b147ab4bb86bc6cb2c396d49",
+        "source_file_sha256": "e80626094db05e585dfa455ae25910f058b3b708d216d58c5933b626a2f885b9",
         "first_open": 1792709400000,
         "horizon_end": 1792968599999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -56365,7 +56365,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "3582e9e1472d8c62a3100bf7cc5eb3cd2e4be85159e440a15efb7ea03fde9d7f",
+        "source_file_sha256": "e9f1c018d62c5571879df21ad51074d4c1758bbac8c3a518cb11fb34475bc0bd",
         "first_open": 1792998300000,
         "horizon_end": 1793257499999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -63338,7 +63338,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "ADAUSDT_5m.csv",
-        "source_file_sha256": "fdd10527e774d589a9bfced9d5dde8f1876c5bc70c93211f0e4178a3d6a0146c",
+        "source_file_sha256": "375f59d457a014cd051e90efd75073b91d3952880b72d70cbb46d24b96ced839",
         "first_open": 1792998300000,
         "horizon_end": 1793257499999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -70311,7 +70311,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "TRXUSDT_5m.csv",
-        "source_file_sha256": "a20547558218cb046e9e8e9bf9a3b3ef8bcc9594b147ab4bb86bc6cb2c396d49",
+        "source_file_sha256": "e80626094db05e585dfa455ae25910f058b3b708d216d58c5933b626a2f885b9",
         "first_open": 1793045700000,
         "horizon_end": 1793132099999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -72676,7 +72676,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "TRXUSDT_5m.csv",
-        "source_file_sha256": "a20547558218cb046e9e8e9bf9a3b3ef8bcc9594b147ab4bb86bc6cb2c396d49",
+        "source_file_sha256": "e80626094db05e585dfa455ae25910f058b3b708d216d58c5933b626a2f885b9",
         "first_open": 1793060100000,
         "horizon_end": 1793146499999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -75097,7 +75097,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "TRXUSDT_5m.csv",
-        "source_file_sha256": "a20547558218cb046e9e8e9bf9a3b3ef8bcc9594b147ab4bb86bc6cb2c396d49",
+        "source_file_sha256": "e80626094db05e585dfa455ae25910f058b3b708d216d58c5933b626a2f885b9",
         "first_open": 1793178900000,
         "horizon_end": 1793265299999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -77490,7 +77490,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "3582e9e1472d8c62a3100bf7cc5eb3cd2e4be85159e440a15efb7ea03fde9d7f",
+        "source_file_sha256": "e9f1c018d62c5571879df21ad51074d4c1758bbac8c3a518cb11fb34475bc0bd",
         "first_open": 1793281500000,
         "horizon_end": 1793540699999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -84463,7 +84463,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "ADAUSDT_5m.csv",
-        "source_file_sha256": "fdd10527e774d589a9bfced9d5dde8f1876c5bc70c93211f0e4178a3d6a0146c",
+        "source_file_sha256": "375f59d457a014cd051e90efd75073b91d3952880b72d70cbb46d24b96ced839",
         "first_open": 1793281500000,
         "horizon_end": 1793540699999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -91462,7 +91462,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "TRXUSDT_5m.csv",
-        "source_file_sha256": "a20547558218cb046e9e8e9bf9a3b3ef8bcc9594b147ab4bb86bc6cb2c396d49",
+        "source_file_sha256": "e80626094db05e585dfa455ae25910f058b3b708d216d58c5933b626a2f885b9",
         "first_open": 1793329500000,
         "horizon_end": 1793415899999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -93897,7 +93897,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "TRXUSDT_5m.csv",
-        "source_file_sha256": "a20547558218cb046e9e8e9bf9a3b3ef8bcc9594b147ab4bb86bc6cb2c396d49",
+        "source_file_sha256": "e80626094db05e585dfa455ae25910f058b3b708d216d58c5933b626a2f885b9",
         "first_open": 1793436900000,
         "horizon_end": 1793523299999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -96285,7 +96285,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "3582e9e1472d8c62a3100bf7cc5eb3cd2e4be85159e440a15efb7ea03fde9d7f",
+        "source_file_sha256": "e9f1c018d62c5571879df21ad51074d4c1758bbac8c3a518cb11fb34475bc0bd",
         "first_open": 1793581800000,
         "horizon_end": 1793668199999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -98664,7 +98664,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "TRXUSDT_5m.csv",
-        "source_file_sha256": "a20547558218cb046e9e8e9bf9a3b3ef8bcc9594b147ab4bb86bc6cb2c396d49",
+        "source_file_sha256": "e80626094db05e585dfa455ae25910f058b3b708d216d58c5933b626a2f885b9",
         "first_open": 1793646000000,
         "horizon_end": 1793732399999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -101036,7 +101036,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "ADAUSDT_5m.csv",
-        "source_file_sha256": "fdd10527e774d589a9bfced9d5dde8f1876c5bc70c93211f0e4178a3d6a0146c",
+        "source_file_sha256": "375f59d457a014cd051e90efd75073b91d3952880b72d70cbb46d24b96ced839",
         "first_open": 1793646000000,
         "horizon_end": 1793905199999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -108064,7 +108064,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "TRXUSDT_5m.csv",
-        "source_file_sha256": "a20547558218cb046e9e8e9bf9a3b3ef8bcc9594b147ab4bb86bc6cb2c396d49",
+        "source_file_sha256": "e80626094db05e585dfa455ae25910f058b3b708d216d58c5933b626a2f885b9",
         "first_open": 1793863800000,
         "horizon_end": 1793950199999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -110444,7 +110444,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "RUNEUSDT_5m.csv",
-        "source_file_sha256": "3582e9e1472d8c62a3100bf7cc5eb3cd2e4be85159e440a15efb7ea03fde9d7f",
+        "source_file_sha256": "e9f1c018d62c5571879df21ad51074d4c1758bbac8c3a518cb11fb34475bc0bd",
         "first_open": 1793964900000,
         "horizon_end": 1794051299999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -112837,7 +112837,7 @@
       "price_evidence": {
         "schema": 1,
         "source_file": "TRXUSDT_5m.csv",
-        "source_file_sha256": "a20547558218cb046e9e8e9bf9a3b3ef8bcc9594b147ab4bb86bc6cb2c396d49",
+        "source_file_sha256": "e80626094db05e585dfa455ae25910f058b3b708d216d58c5933b626a2f885b9",
         "first_open": 1794021300000,
         "horizon_end": 1794107699999,
         "normalization": "PARSED_OHLC_MS_JSON_SORTED_KEYS_COMPACT_V1",
@@ -115164,7 +115164,7 @@
       "mfe_mae_scope": "SOURCE_FULL_WINDOW_AT_REGISTERED_REFERENCE_NOT_EXECUTED_PNL"
     }
   ],
-  "eligible_decisions": 1155,
+  "eligible_decisions": 1164,
   "counts": {
     "original": {
       "NOT_EXECUTABLE_AT_REGISTERED_LEVELS": 4,
@@ -115178,13 +115178,13 @@
     }
   },
   "strictly_paired_admitted": [],
-  "evaluated_at": 1794124945011,
-  "market_cutoff": 1794124200000,
+  "evaluated_at": 1794152500267,
+  "market_cutoff": 1794151800000,
   "event_journals": {
     "events-2026-10.jsonl": "741a2af7db13b6c7547810e352369780e118b9113c34545d0b5a8833e36dfad4",
-    "events-2026-11.jsonl": "e98112271680cbfcd39e114586a21d118b1d673563023d5be59eba840b2ce5ea"
+    "events-2026-11.jsonl": "bafe3ca20bd074ee61fac85298b468d71185da3235789410d8b7a1a46f8e8764"
   },
-  "receipts_sha256": "2be18c4158d7cbac00939f7466fde650bbf934d899082dfa29d0cd3cc3cb982d",
-  "official_manifest_sha256": "a8c4813f5e4247c35dec33e0e52c022d227d82e2ad484daa7da67f99cef1be6e",
+  "receipts_sha256": "6b9cd1844725c1346e26c73cc47b978d60c92eb14df375867d71d34b1e49c7f5",
+  "official_manifest_sha256": "7112b5d62595a46fbdee0a57363d25b2800fa565b9b363b8e7610b787b2006b7",
   "freeze_lock_sha256": "9c836a5da6dfed6d5e86f4a2eae44fd49586707aa37f04f051c6e6ddcd4c53e0"
 }
