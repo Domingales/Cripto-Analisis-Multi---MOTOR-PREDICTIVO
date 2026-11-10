@@ -1,17 +1,17 @@
 {
   "profile": "MAGNITUDE_TIME_V1",
-  "updated_at": 1794306356537,
+  "updated_at": 1794334535074,
   "combinations": [
     {
       "engine": "original",
       "signals": 100,
-      "pending": 4,
-      "HIT": 50,
-      "APPROXIMATE": 13,
+      "pending": 2,
+      "HIT": 51,
+      "APPROXIMATE": 14,
       "LATE": 21,
       "FAIL": 12,
-      "exact_rate": 0.5208333333333334,
-      "approximate_or_exact_rate": 0.65625,
+      "exact_rate": 0.5204081632653061,
+      "approximate_or_exact_rate": 0.6632653061224489,
       "first_nonoverlap_ids": [
         "TRX-1h-1792576799999",
         "RUNE-30m-1792578599999",
@@ -51,13 +51,13 @@
     {
       "engine": "alternative",
       "signals": 8,
-      "pending": 2,
+      "pending": 1,
       "HIT": 2,
-      "APPROXIMATE": 1,
+      "APPROXIMATE": 2,
       "LATE": 1,
       "FAIL": 2,
-      "exact_rate": 0.3333333333333333,
-      "approximate_or_exact_rate": 0.5,
+      "exact_rate": 0.2857142857142857,
+      "approximate_or_exact_rate": 0.5714285714285714,
       "first_nonoverlap_ids": [
         "TRX-4h-1792583999999",
         "TRX-1h-1793044799999",
@@ -66,7 +66,7 @@
     }
   ],
   "status": "COLLECTING_NO_CONFIRMED_IMPROVEMENT",
-  "registered_decisions": 924,
+  "registered_decisions": 933,
   "limits": "New contracts only; different directions/selection frequencies. Shared target from original range. Rates are descriptive, not independent-trial evidence or profitability.",
   "winner": null
 }
