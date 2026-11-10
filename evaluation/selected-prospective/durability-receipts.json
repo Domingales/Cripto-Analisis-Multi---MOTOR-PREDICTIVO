@@ -9034,5 +9034,59 @@
     "commit": "23df6bfd9c302e0f0bbfc356c274ee0a5479686c",
     "confirmed_at": 1794306349363,
     "run_id": "42797840257"
+  },
+  "TRX-15m-1794333599999": {
+    "event_sha256": "64b1bcb8a0d86513a98c8b3aa97db5dec851ad843848dd215c6fbb86489f4964",
+    "commit": "815d478c7a4c52d42bc178248b47a668bea30054",
+    "confirmed_at": 1794334527810,
+    "run_id": "42872079440"
+  },
+  "TRX-30m-1794333599999": {
+    "event_sha256": "dd86df1be72836b0e1ca0c6e7a27244c35d5f2515a3fc6e4e5faaf5c43424ee4",
+    "commit": "815d478c7a4c52d42bc178248b47a668bea30054",
+    "confirmed_at": 1794334527810,
+    "run_id": "42872079440"
+  },
+  "TRX-1h-1794333599999": {
+    "event_sha256": "96e230df4d70af575fb876e6cafb54d03255744ece6c41358b9aeca6b214e153",
+    "commit": "815d478c7a4c52d42bc178248b47a668bea30054",
+    "confirmed_at": 1794334527810,
+    "run_id": "42872079440"
+  },
+  "TRX-4h-1794326399999": {
+    "event_sha256": "94cd2ca4e8178106f89a21d398db92106a957861b4daf3c7940316fc157ddfd1",
+    "commit": "815d478c7a4c52d42bc178248b47a668bea30054",
+    "confirmed_at": 1794334527810,
+    "run_id": "42872079440"
+  },
+  "RUNE-15m-1794333599999": {
+    "event_sha256": "50492019bae6137070c1cf1221060e5a3ed1240f14f6d61242a3fbd32d2f72e1",
+    "commit": "815d478c7a4c52d42bc178248b47a668bea30054",
+    "confirmed_at": 1794334527810,
+    "run_id": "42872079440"
+  },
+  "RUNE-30m-1794333599999": {
+    "event_sha256": "9002047501226339afd5d7bd645be002930124a7cc5d06aa9cd6ce323ecc579c",
+    "commit": "815d478c7a4c52d42bc178248b47a668bea30054",
+    "confirmed_at": 1794334527810,
+    "run_id": "42872079440"
+  },
+  "RUNE-1h-1794333599999": {
+    "event_sha256": "b214ebd3aac263f01cb6045035c55cb6ca34295081e21cac3f00f2ac69e372b0",
+    "commit": "815d478c7a4c52d42bc178248b47a668bea30054",
+    "confirmed_at": 1794334527810,
+    "run_id": "42872079440"
+  },
+  "RUNE-4h-1794326399999": {
+    "event_sha256": "611d1df2b04137e9ac4c6609b6f52ab2cb0f67d8320dd39eec4c0bfc02ecd00a",
+    "commit": "815d478c7a4c52d42bc178248b47a668bea30054",
+    "confirmed_at": 1794334527810,
+    "run_id": "42872079440"
+  },
+  "ADA-4h-1794326399999": {
+    "event_sha256": "b802ee7bafb1e0cf10df761d823706bafebc865c9b18000209028ee167046de2",
+    "commit": "815d478c7a4c52d42bc178248b47a668bea30054",
+    "confirmed_at": 1794334527810,
+    "run_id": "42872079440"
   }
 }
