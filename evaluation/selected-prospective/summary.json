@@ -1,15 +1,15 @@
 {
   "status": "COLLECTING_NO_CONFIRMED_IMPROVEMENT",
   "protocol_sha256": "e0a5fe96c1cab432a39ebbcca95ecbdc167d287a714043b4e04f1a4e95fd47dc",
-  "updated_at": 1794354414568,
+  "updated_at": 1794380807621,
   "combinations": [
     {
       "symbol": "SOL",
       "timeframe": "1d",
       "engine": "original",
-      "decisions": 32,
-      "signals": 5,
-      "pending": 5,
+      "decisions": 33,
+      "signals": 6,
+      "pending": 6,
       "accuracy": null,
       "HIT": 0,
       "FAIL": 0,
@@ -19,7 +19,7 @@
       "symbol": "SOL",
       "timeframe": "1d",
       "engine": "alternative",
-      "decisions": 32,
+      "decisions": 33,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -27,8 +27,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 18,
-        "brier": 0.2359362328611163,
+        "scored_resolved": 19,
+        "brier": 0.2396903044725998,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -68,9 +68,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 18,
-            "mean_probability": 0.5597164220109139,
-            "observed_hit_rate": 0.6666666666666666
+            "cases": 19,
+            "mean_probability": 0.559432064207919,
+            "observed_hit_rate": 0.631578947368421
           },
           {
             "low": 0.6,
@@ -108,9 +108,9 @@
       "symbol": "ETH",
       "timeframe": "1d",
       "engine": "original",
-      "decisions": 32,
-      "signals": 2,
-      "pending": 1,
+      "decisions": 33,
+      "signals": 3,
+      "pending": 2,
       "accuracy": 1.0,
       "HIT": 1,
       "FAIL": 0,
@@ -120,7 +120,7 @@
       "symbol": "ETH",
       "timeframe": "1d",
       "engine": "alternative",
-      "decisions": 32,
+      "decisions": 33,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -128,8 +128,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 18,
-        "brier": 0.2519481164511324,
+        "scored_resolved": 19,
+        "brier": 0.2538061951813385,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -169,9 +169,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 18,
-            "mean_probability": 0.5324541080998978,
-            "observed_hit_rate": 0.4444444444444444
+            "cases": 19,
+            "mean_probability": 0.5326385546202893,
+            "observed_hit_rate": 0.42105263157894735
           },
           {
             "low": 0.6,
@@ -209,7 +209,7 @@
       "symbol": "ARB",
       "timeframe": "1d",
       "engine": "original",
-      "decisions": 32,
+      "decisions": 33,
       "signals": 1,
       "pending": 1,
       "accuracy": null,
@@ -221,7 +221,7 @@
       "symbol": "ARB",
       "timeframe": "1d",
       "engine": "alternative",
-      "decisions": 32,
+      "decisions": 33,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -229,8 +229,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 18,
-        "brier": 0.2533244375795979,
+        "scored_resolved": 19,
+        "brier": 0.2564726116390001,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -270,9 +270,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 18,
-            "mean_probability": 0.5598342200595646,
-            "observed_hit_rate": 0.5
+            "cases": 19,
+            "mean_probability": 0.5598213088398267,
+            "observed_hit_rate": 0.47368421052631576
           },
           {
             "low": 0.6,
@@ -310,7 +310,7 @@
       "symbol": "ATOM",
       "timeframe": "1d",
       "engine": "original",
-      "decisions": 32,
+      "decisions": 33,
       "signals": 5,
       "pending": 4,
       "accuracy": 0.0,
@@ -322,7 +322,7 @@
       "symbol": "ATOM",
       "timeframe": "1d",
       "engine": "alternative",
-      "decisions": 32,
+      "decisions": 33,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -330,8 +330,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 18,
-        "brier": 0.2392214989900081,
+        "scored_resolved": 19,
+        "brier": 0.23809602615535813,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -371,9 +371,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 18,
-            "mean_probability": 0.5359117435188187,
-            "observed_hit_rate": 0.6666666666666666
+            "cases": 19,
+            "mean_probability": 0.5357726693027841,
+            "observed_hit_rate": 0.6842105263157895
           },
           {
             "low": 0.6,
@@ -411,7 +411,7 @@
       "symbol": "VET",
       "timeframe": "1d",
       "engine": "original",
-      "decisions": 32,
+      "decisions": 33,
       "signals": 3,
       "pending": 3,
       "accuracy": null,
@@ -423,7 +423,7 @@
       "symbol": "VET",
       "timeframe": "1d",
       "engine": "alternative",
-      "decisions": 32,
+      "decisions": 33,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -431,8 +431,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 18,
-        "brier": 0.2814412892252213,
+        "scored_resolved": 19,
+        "brier": 0.2829304901275865,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -472,9 +472,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 18,
-            "mean_probability": 0.5530538590341607,
-            "observed_hit_rate": 0.2777777777777778
+            "cases": 19,
+            "mean_probability": 0.5532373086824605,
+            "observed_hit_rate": 0.2631578947368421
           },
           {
             "low": 0.6,
@@ -512,7 +512,7 @@
       "symbol": "TRX",
       "timeframe": "15m",
       "engine": "original",
-      "decisions": 150,
+      "decisions": 151,
       "signals": 9,
       "pending": 0,
       "accuracy": 0.3333333333333333,
@@ -524,7 +524,7 @@
       "symbol": "TRX",
       "timeframe": "15m",
       "engine": "alternative",
-      "decisions": 150,
+      "decisions": 151,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -532,8 +532,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 116,
-        "brier": 0.2590853820027711,
+        "scored_resolved": 117,
+        "brier": 0.25862766337161774,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -573,9 +573,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 111,
-            "mean_probability": 0.5562201252027513,
-            "observed_hit_rate": 0.4774774774774775
+            "cases": 112,
+            "mean_probability": 0.556134617788362,
+            "observed_hit_rate": 0.48214285714285715
           },
           {
             "low": 0.6,
@@ -613,7 +613,7 @@
       "symbol": "TRX",
       "timeframe": "30m",
       "engine": "original",
-      "decisions": 150,
+      "decisions": 151,
       "signals": 8,
       "pending": 0,
       "accuracy": 0.42857142857142855,
@@ -625,7 +625,7 @@
       "symbol": "TRX",
       "timeframe": "30m",
       "engine": "alternative",
-      "decisions": 150,
+      "decisions": 151,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -633,8 +633,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 116,
-        "brier": 0.25983573339282545,
+        "scored_resolved": 117,
+        "brier": 0.25931009765686985,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -674,9 +674,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 107,
-            "mean_probability": 0.5585673541695404,
-            "observed_hit_rate": 0.4766355140186916
+            "cases": 108,
+            "mean_probability": 0.558531085180681,
+            "observed_hit_rate": 0.48148148148148145
           },
           {
             "low": 0.6,
@@ -714,7 +714,7 @@
       "symbol": "TRX",
       "timeframe": "1h",
       "engine": "original",
-      "decisions": 150,
+      "decisions": 151,
       "signals": 22,
       "pending": 0,
       "accuracy": 0.47619047619047616,
@@ -726,7 +726,7 @@
       "symbol": "TRX",
       "timeframe": "1h",
       "engine": "alternative",
-      "decisions": 150,
+      "decisions": 151,
       "signals": 2,
       "pending": 0,
       "accuracy": 0.5,
@@ -734,8 +734,8 @@
       "FAIL": 1,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 116,
-        "brier": 0.26247100801885087,
+        "scored_resolved": 117,
+        "brier": 0.2621401654751686,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -775,9 +775,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 103,
-            "mean_probability": 0.5491879674873454,
-            "observed_hit_rate": 0.4563106796116505
+            "cases": 104,
+            "mean_probability": 0.548974281863643,
+            "observed_hit_rate": 0.46153846153846156
           },
           {
             "low": 0.6,
@@ -815,7 +815,7 @@
       "symbol": "TRX",
       "timeframe": "4h",
       "engine": "original",
-      "decisions": 144,
+      "decisions": 145,
       "signals": 17,
       "pending": 3,
       "accuracy": 0.21428571428571427,
@@ -827,7 +827,7 @@
       "symbol": "TRX",
       "timeframe": "4h",
       "engine": "alternative",
-      "decisions": 144,
+      "decisions": 145,
       "signals": 14,
       "pending": 2,
       "accuracy": 0.3333333333333333,
@@ -835,8 +835,8 @@
       "FAIL": 8,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 131,
-        "brier": 0.25933009829038056,
+        "scored_resolved": 132,
+        "brier": 0.26019925161567087,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -883,9 +883,9 @@
           {
             "low": 0.6,
             "high": 0.7,
-            "cases": 37,
-            "mean_probability": 0.6371865773893872,
-            "observed_hit_rate": 0.5405405405405406
+            "cases": 38,
+            "mean_probability": 0.6365133276681313,
+            "observed_hit_rate": 0.5263157894736842
           },
           {
             "low": 0.7,
@@ -916,7 +916,7 @@
       "symbol": "RUNE",
       "timeframe": "15m",
       "engine": "original",
-      "decisions": 150,
+      "decisions": 151,
       "signals": 8,
       "pending": 0,
       "accuracy": 0.75,
@@ -928,7 +928,7 @@
       "symbol": "RUNE",
       "timeframe": "15m",
       "engine": "alternative",
-      "decisions": 150,
+      "decisions": 151,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -936,8 +936,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 146,
-        "brier": 0.2499669784589989,
+        "scored_resolved": 147,
+        "brier": 0.24997002747454214,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -977,9 +977,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 146,
-            "mean_probability": 0.5039106260193842,
-            "observed_hit_rate": 0.5273972602739726
+            "cases": 147,
+            "mean_probability": 0.5038868463288394,
+            "observed_hit_rate": 0.5238095238095238
           },
           {
             "low": 0.6,
@@ -1017,7 +1017,7 @@
       "symbol": "RUNE",
       "timeframe": "30m",
       "engine": "original",
-      "decisions": 150,
+      "decisions": 151,
       "signals": 14,
       "pending": 0,
       "accuracy": 0.5,
@@ -1029,7 +1029,7 @@
       "symbol": "RUNE",
       "timeframe": "30m",
       "engine": "alternative",
-      "decisions": 150,
+      "decisions": 151,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -1037,8 +1037,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 146,
-        "brier": 0.25014289275441126,
+        "scored_resolved": 147,
+        "brier": 0.2501133712038237,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -1078,9 +1078,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 146,
-            "mean_probability": 0.5027580552444212,
-            "observed_hit_rate": 0.4315068493150685
+            "cases": 147,
+            "mean_probability": 0.5027679632870331,
+            "observed_hit_rate": 0.43537414965986393
           },
           {
             "low": 0.6,
@@ -1118,7 +1118,7 @@
       "symbol": "RUNE",
       "timeframe": "1h",
       "engine": "original",
-      "decisions": 150,
+      "decisions": 151,
       "signals": 28,
       "pending": 0,
       "accuracy": 0.42857142857142855,
@@ -1130,7 +1130,7 @@
       "symbol": "RUNE",
       "timeframe": "1h",
       "engine": "alternative",
-      "decisions": 150,
+      "decisions": 151,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -1138,8 +1138,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 146,
-        "brier": 0.25033853626028674,
+        "scored_resolved": 147,
+        "brier": 0.25031428984067466,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -1179,9 +1179,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 146,
-            "mean_probability": 0.5030977919694108,
-            "observed_hit_rate": 0.4589041095890411
+            "cases": 147,
+            "mean_probability": 0.5030987332495865,
+            "observed_hit_rate": 0.46258503401360546
           },
           {
             "low": 0.6,
@@ -1219,7 +1219,7 @@
       "symbol": "RUNE",
       "timeframe": "4h",
       "engine": "original",
-      "decisions": 144,
+      "decisions": 145,
       "signals": 20,
       "pending": 0,
       "accuracy": 0.2,
@@ -1231,7 +1231,7 @@
       "symbol": "RUNE",
       "timeframe": "4h",
       "engine": "alternative",
-      "decisions": 144,
+      "decisions": 145,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -1239,8 +1239,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 133,
-        "brier": 0.25058838107268466,
+        "scored_resolved": 134,
+        "brier": 0.25075303966205925,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -1280,9 +1280,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 133,
-            "mean_probability": 0.5291771941804742,
-            "observed_hit_rate": 0.48872180451127817
+            "cases": 134,
+            "mean_probability": 0.5291248382535158,
+            "observed_hit_rate": 0.48507462686567165
           },
           {
             "low": 0.6,
@@ -1320,7 +1320,7 @@
       "symbol": "RUNE",
       "timeframe": "1d",
       "engine": "original",
-      "decisions": 32,
+      "decisions": 33,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -1332,7 +1332,7 @@
       "symbol": "RUNE",
       "timeframe": "1d",
       "engine": "alternative",
-      "decisions": 32,
+      "decisions": 33,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -1340,8 +1340,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 18,
-        "brier": 0.28524354079907577,
+        "scored_resolved": 19,
+        "brier": 0.28735372866691977,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -1381,9 +1381,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 15,
-            "mean_probability": 0.5718200224990586,
-            "observed_hit_rate": 0.2
+            "cases": 16,
+            "mean_probability": 0.571730227417884,
+            "observed_hit_rate": 0.1875
           },
           {
             "low": 0.6,
@@ -1421,9 +1421,9 @@
       "symbol": "ADA",
       "timeframe": "4h",
       "engine": "original",
-      "decisions": 144,
-      "signals": 35,
-      "pending": 3,
+      "decisions": 145,
+      "signals": 36,
+      "pending": 4,
       "accuracy": 0.3125,
       "HIT": 10,
       "FAIL": 22,
@@ -1433,7 +1433,7 @@
       "symbol": "ADA",
       "timeframe": "4h",
       "engine": "alternative",
-      "decisions": 144,
+      "decisions": 145,
       "signals": 0,
       "pending": 0,
       "accuracy": null,
@@ -1441,8 +1441,8 @@
       "FAIL": 0,
       "NEUTRAL": 0,
       "probability_quality": {
-        "scored_resolved": 133,
-        "brier": 0.24928166959448736,
+        "scored_resolved": 134,
+        "brier": 0.24926831394810978,
         "calibration_bins": [
           {
             "low": 0.0,
@@ -1482,9 +1482,9 @@
           {
             "low": 0.5,
             "high": 0.6,
-            "cases": 133,
-            "mean_probability": 0.5023624811556531,
-            "observed_hit_rate": 0.6090225563909775
+            "cases": 134,
+            "mean_probability": 0.5023636141975415,
+            "observed_hit_rate": 0.6119402985074627
           },
           {
             "low": 0.6,
