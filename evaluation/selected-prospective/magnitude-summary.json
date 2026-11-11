@@ -1,11 +1,11 @@
 {
   "profile": "MAGNITUDE_TIME_V1",
-  "updated_at": 1794354424342,
+  "updated_at": 1794380815614,
   "combinations": [
     {
       "engine": "original",
-      "signals": 102,
-      "pending": 4,
+      "signals": 105,
+      "pending": 7,
       "HIT": 51,
       "APPROXIMATE": 14,
       "LATE": 21,
@@ -46,7 +46,9 @@
         "TRX-1h-1794207599999",
         "ADA-4h-1794196799999",
         "TRX-30m-1794245399999",
-        "TRX-4h-1794340799999"
+        "TRX-4h-1794340799999",
+        "SOL-1d-1794355199999",
+        "ETH-1d-1794355199999"
       ]
     },
     {
@@ -67,7 +69,7 @@
     }
   ],
   "status": "COLLECTING_NO_CONFIRMED_IMPROVEMENT",
-  "registered_decisions": 942,
+  "registered_decisions": 957,
   "limits": "New contracts only; different directions/selection frequencies. Shared target from original range. Rates are descriptive, not independent-trial evidence or profitability.",
   "winner": null
 }
