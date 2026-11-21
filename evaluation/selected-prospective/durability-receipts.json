@@ -11284,5 +11284,95 @@
     "commit": "c9b88e5064d010d55ef8b6ed8278ba43e13e4cba",
     "confirmed_at": 1795200768298,
     "run_id": "44795676289"
+  },
+  "SOL-1d-1795219199999": {
+    "event_sha256": "4a7f30920c2122f967d877f504328bddedbf8f49c1a783ddc6ca87a47364a21e",
+    "commit": "2d9af74a874ee95dcb340be09be329130d03d60b",
+    "confirmed_at": 1795222945401,
+    "run_id": "44847009907"
+  },
+  "ETH-1d-1795219199999": {
+    "event_sha256": "20b9c3dbf0d18b6331cd28d9c71922822c0f6979b105aa9c3808c7c7719ed7c2",
+    "commit": "2d9af74a874ee95dcb340be09be329130d03d60b",
+    "confirmed_at": 1795222945401,
+    "run_id": "44847009907"
+  },
+  "ARB-1d-1795219199999": {
+    "event_sha256": "61acd2f5ab40b12697ac13cc522242aff66f0817a1fe0f235090dc569be47f96",
+    "commit": "2d9af74a874ee95dcb340be09be329130d03d60b",
+    "confirmed_at": 1795222945401,
+    "run_id": "44847009907"
+  },
+  "ATOM-1d-1795219199999": {
+    "event_sha256": "6cb5ffb47d58eac45152844a3da4830dd6b29a190c4555a95015ce68ceac258a",
+    "commit": "2d9af74a874ee95dcb340be09be329130d03d60b",
+    "confirmed_at": 1795222945401,
+    "run_id": "44847009907"
+  },
+  "VET-1d-1795219199999": {
+    "event_sha256": "680566aa6a66da6a66cc34570531bb9e7f109c8716c792f34e28fe4826a9d5ae",
+    "commit": "2d9af74a874ee95dcb340be09be329130d03d60b",
+    "confirmed_at": 1795222945401,
+    "run_id": "44847009907"
+  },
+  "TRX-15m-1795221899999": {
+    "event_sha256": "8ba4a221722a616f86ceb814eb45b0771da3c9f573fee50d0b014eb7ae66f2f2",
+    "commit": "2d9af74a874ee95dcb340be09be329130d03d60b",
+    "confirmed_at": 1795222945401,
+    "run_id": "44847009907"
+  },
+  "TRX-30m-1795220999999": {
+    "event_sha256": "d4581c49ff12f383ea888b80f0b3097fab5d03a87e53e4cf75ae9fd22154144f",
+    "commit": "2d9af74a874ee95dcb340be09be329130d03d60b",
+    "confirmed_at": 1795222945401,
+    "run_id": "44847009907"
+  },
+  "TRX-1h-1795219199999": {
+    "event_sha256": "4f45f432b219b234049fe172e9b8f5d4e1556f1af0592e09fcab3b3025b81dba",
+    "commit": "2d9af74a874ee95dcb340be09be329130d03d60b",
+    "confirmed_at": 1795222945401,
+    "run_id": "44847009907"
+  },
+  "TRX-4h-1795219199999": {
+    "event_sha256": "f944453f7ead2f1757057a5f77956b42c84b5461bd8b37387a8aab7567124dc4",
+    "commit": "2d9af74a874ee95dcb340be09be329130d03d60b",
+    "confirmed_at": 1795222945401,
+    "run_id": "44847009907"
+  },
+  "RUNE-15m-1795221899999": {
+    "event_sha256": "61e59f338eb0ef69c56bfe02ad7d8ac03a2e33d1a32c7424530fe6a34e15c49f",
+    "commit": "2d9af74a874ee95dcb340be09be329130d03d60b",
+    "confirmed_at": 1795222945401,
+    "run_id": "44847009907"
+  },
+  "RUNE-30m-1795220999999": {
+    "event_sha256": "fb5d05a45409452c2264a0f0b29a895eb32ab41f1cd40c4909458f363d8df8d7",
+    "commit": "2d9af74a874ee95dcb340be09be329130d03d60b",
+    "confirmed_at": 1795222945401,
+    "run_id": "44847009907"
+  },
+  "RUNE-1h-1795219199999": {
+    "event_sha256": "2c08a382038454b64306bb8d3ddff5fa648ce9985356834c406131fce1255b60",
+    "commit": "2d9af74a874ee95dcb340be09be329130d03d60b",
+    "confirmed_at": 1795222945401,
+    "run_id": "44847009907"
+  },
+  "RUNE-4h-1795219199999": {
+    "event_sha256": "8f5822935a12ff78d2c73ced0838354cdd145f0719feca3bab07b7efa5e37a73",
+    "commit": "2d9af74a874ee95dcb340be09be329130d03d60b",
+    "confirmed_at": 1795222945401,
+    "run_id": "44847009907"
+  },
+  "RUNE-1d-1795219199999": {
+    "event_sha256": "302cbbeddc3b501e25827f7cd6207ad641b3a6a5449dc907022ee269fa5f9d8f",
+    "commit": "2d9af74a874ee95dcb340be09be329130d03d60b",
+    "confirmed_at": 1795222945401,
+    "run_id": "44847009907"
+  },
+  "ADA-4h-1795219199999": {
+    "event_sha256": "1628e339bc923933fcc8f8b909d45ff2952dce070eb6eb5deb0ac455968da4ac",
+    "commit": "2d9af74a874ee95dcb340be09be329130d03d60b",
+    "confirmed_at": 1795222945401,
+    "run_id": "44847009907"
   }
 }
