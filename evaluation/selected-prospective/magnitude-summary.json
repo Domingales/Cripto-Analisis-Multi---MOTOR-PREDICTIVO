@@ -1,11 +1,11 @@
 {
   "profile": "MAGNITUDE_TIME_V1",
-  "updated_at": 1795299928440,
+  "updated_at": 1795315432855,
   "combinations": [
     {
       "engine": "original",
-      "signals": 172,
-      "pending": 8,
+      "signals": 175,
+      "pending": 11,
       "HIT": 93,
       "APPROXIMATE": 26,
       "LATE": 26,
@@ -66,7 +66,8 @@
         "ETH-1d-1795219199999",
         "ARB-1d-1795219199999",
         "VET-1d-1795219199999",
-        "RUNE-4h-1795247999999"
+        "RUNE-4h-1795247999999",
+        "ATOM-1d-1795305599999"
       ]
     },
     {
@@ -87,7 +88,7 @@
     }
   ],
   "status": "COLLECTING_NO_CONFIRMED_IMPROVEMENT",
-  "registered_decisions": 1341,
+  "registered_decisions": 1356,
   "limits": "New contracts only; different directions/selection frequencies. Shared target from original range. Rates are descriptive, not independent-trial evidence or profitability.",
   "winner": null
 }
