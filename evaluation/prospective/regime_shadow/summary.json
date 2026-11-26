@@ -4,7 +4,7 @@
   "by_regime": {
     "RANGE_OR_MIXED": {
       "baseline": {
-        "decisions": 29,
+        "decisions": 30,
         "signals": 2,
         "resolved": 2,
         "HIT": 0,
@@ -16,10 +16,10 @@
           0.0,
           0.6576280471103807
         ],
-        "coverage": 0.06896551724137931
+        "coverage": 0.06666666666666667
       },
       "rejected_filter_shadow": {
-        "decisions": 29,
+        "decisions": 30,
         "signals": 0,
         "resolved": 0,
         "HIT": 0,
@@ -35,30 +35,30 @@
       "baseline": {
         "decisions": 134,
         "signals": 35,
-        "resolved": 34,
-        "HIT": 16,
+        "resolved": 35,
+        "HIT": 17,
         "FAIL": 18,
         "NEUTRAL": 0,
-        "PENDING": 1,
-        "accuracy": 0.47058823529411764,
+        "PENDING": 0,
+        "accuracy": 0.4857142857142857,
         "descriptive_wilson_interval": [
-          0.31451251633111366,
-          0.6326355957994516
+          0.32993980391252736,
+          0.6443146037328837
         ],
         "coverage": 0.26119402985074625
       },
       "rejected_filter_shadow": {
         "decisions": 134,
         "signals": 21,
-        "resolved": 20,
-        "HIT": 6,
+        "resolved": 21,
+        "HIT": 7,
         "FAIL": 14,
         "NEUTRAL": 0,
-        "PENDING": 1,
-        "accuracy": 0.3,
+        "PENDING": 0,
+        "accuracy": 0.3333333333333333,
         "descriptive_wilson_interval": [
-          0.14547527396899385,
-          0.5189767762289793
+          0.17194536432683688,
+          0.5462692434278971
         ],
         "coverage": 0.15671641791044777
       }
